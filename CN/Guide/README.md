@@ -1,22 +1,73 @@
 # FlipperZero 中文教学导航
 
-这个目录用于顺序化学习。建议按编号阅读。
+这个目录是中文教学主入口。建议按编号顺序阅读，不建议跳着读。
 
-## 阅读顺序
+## 1. 学习顺序
 
-1. `00-Study-Map.md`
-2. `01-Device-Ecosystem.md`
-3. `02-Protocol-Domains.md`
-4. `03-App-Development.md`
-5. `04-Build-Debug-Tools.md`
-6. `05-JavaScript.md`
-7. `06-System-Programming.md`
-8. `07-File-Formats.md`
-9. `08-Community-Reference.md`
+### [00. 学习总图](00-Study-Map.md)
 
-## 配套主文件
+- 作用：先建立整体路线图
+- 适合：刚进入仓库、不知道从哪里开始的读者
+- 读完后应能：知道先读什么、后读什么，哪些内容是主线，哪些内容是补充
 
-- `../FlipperZero-Master-CN.md`
-- `../Official-Docs-CN-Full.md`
-- `../FlipperZero-AI-Pack-CN.md`
-- `../../Official-Docs-Coverage.md`
+### [01. 设备与生态](01-Device-Ecosystem.md)
+
+- 作用：理解设备界面、桌面端、移动端、CLI 和 Apps
+- 适合：还没有建立设备整体工作流的读者
+- 读完后应能：完成基础管理、同步、更新、备份和日志查看
+
+### [02. 协议域](02-Protocol-Domains.md)
+
+- 作用：按能力域组织知识
+- 适合：开始接触 NFC、Sub-GHz、iButton、U2F 等能力域的读者
+- 读完后应能：先判断问题属于哪个域，再决定应该查哪类资料
+
+### [03. App 开发](03-App-Development.md)
+
+- 作用：进入默认开发主线
+- 适合：准备开始编写 App 的读者
+- 读完后应能：理解 `application.fam`、`.fap`、示例和发布流程的关系
+
+### [04. 构建、调试与工具链](04-Build-Debug-Tools.md)
+
+- 作用：理解构建系统、IDE、Dev Board 和更新机制
+- 适合：需要建立正式开发环境的读者
+- 读完后应能：理解 `FBT`、`uFBT`、VS Code 和 Dev Board 的基本分工
+
+### [05. JavaScript](05-JavaScript.md)
+
+- 作用：建立脚本开发路线
+- 适合：希望快速实现轻量功能、自动化或原型的读者
+- 读完后应能：判断哪些任务适合走 JavaScript 路线
+
+### [06. 系统编程](06-System-Programming.md)
+
+- 作用：进入平台层与系统层
+- 适合：需要进一步理解 HAL、崩溃检查、target、资源构建的读者
+- 读完后应能：识别哪些问题已经进入系统层
+
+### [07. 文件格式](07-File-Formats.md)
+
+- 作用：把文件格式作为平台能力来理解
+- 适合：涉及导入、导出、转换、解析、批处理、数据资产管理的读者
+- 读完后应能：优先从格式层定位问题
+
+### [08. 社区参考](08-Community-Reference.md)
+
+- 作用：在官方基线之外补充高信号资料
+- 适合：已经建立官方基线、希望扩展视野的读者
+- 读完后应能：区分官方事实与社区经验
+
+## 2. 配套主文件
+
+- [中文主知识库](../FlipperZero-Master-CN.md)
+  作用：建立全局认识
+
+- [官方文档中文精读总表](../Official-Docs-CN-Full.md)
+  作用：按官方资料深挖
+
+- [中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)
+  作用：用于 AI 检索、RAG 和回答约束
+
+- [官方文档覆盖表](../../Official-Docs-Coverage.md)
+  作用：查看整理进度与未完成项
