@@ -1,0 +1,27 @@
+nav:
+  - Home: index.md
+  - Usage:
+    - General:
+      - First Boot: usage/general/first-boot.md
+      - Rebooting: usage/general/rebooting.md
+      - Flashing Firmware: usage/general/flashing-firmware.md
+    - Applications:
+      - Power: usage/applications/power.md
+  - Development:
+    - Firmware:
+      - Command Line Interface: development/firmware/cli.md
+    - Hardware:
+      - Circuit Diagrams: development/hardware/schematic.md
+      - Developer Board: development/hardware/devboard-stlinkV3.md
+    - Mechanics:
+      - Blueprints: development/mechanics/blueprints.md
+
+site_name: Flipper Zero — Documentation
+site_url: https://docs.flipperzero.one/en/
+edit_uri: https://github.com/Flipper-Zero/docs/edit/master/en/content/
+
+extra:
+  remark: docs-en
+
+theme:
+  language: en

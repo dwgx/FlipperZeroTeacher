@@ -1,0 +1,35 @@
+nav:
+  - Главная: index.md
+  - Использование:
+    - Основное:
+      - Первое включение: usage/general/first-boot.md
+      - Перезагрузка: usage/general/rebooting.md
+      - Обновление прошивки: usage/general/flashing-firmware.md
+    - Приложения:
+      - Power: usage/applications/power.md
+  - Рaзработка:
+    - Прошивка:
+      - Командная строка: development/firmware/cli.md
+    - Железо:
+      - Принципиальные схемы: development/hardware/schematic.md
+      - Отладочная плата: development/hardware/devboard-stlinkV3.md
+    - Механика:
+      - Чертежи: development/mechanics/blueprints.md
+    
+
+site_name: Flipper Zero — Документация
+site_url: https://docs.flipperzero.one/ru/
+edit_uri: https://github.com/Flipper-Zero/docs/edit/master/ru/content/
+
+extra:
+  remark: docs-ru
+
+copyright: Copyright &copy; 2021 Flipper Devices Inc.
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+
+theme:
+  language: ru
