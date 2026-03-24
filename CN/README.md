@@ -43,5 +43,8 @@
 - [官方文档覆盖表](../Official-Docs-Coverage.md)
   用途：查看当前已经整理到什么程度。
 
+- [官方资料归档与 Wiki 资源](../Wiki-Resources/README.md)
+  用途：查看官网快照、官方源码快照和后续 Wiki 搭建素材。
+
 - [仓库首页](../README.md)
   用途：回到默认中文首页与总入口。

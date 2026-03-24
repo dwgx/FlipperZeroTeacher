@@ -19,3 +19,8 @@ If you prefer English reading, start from this directory.
 - If you already know the device basics, start with `Guide/03-App-Development.md`
 - If you are organizing sources, prioritize `Official-Docs-EN-Full.md`
 - If you are building AI context, prioritize `FlipperZero-AI-Pack-EN.md`
+
+## 3. Archive resources
+
+- [Official archive and wiki resources](../Wiki-Resources/README.md)
+- Use this folder for preserved web snapshots, source-doc snapshots, and future GitHub Wiki/Pages assets

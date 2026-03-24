@@ -78,6 +78,9 @@
 - [All-Markdown-Manifest.md](All-Markdown-Manifest.md)
   Markdown 文件清单，适合做索引和归档管理。
 
+- [Wiki-Resources/README.md](Wiki-Resources/README.md)
+  官方网页快照、官方文档源码快照与后续 Wiki/Pages 资源入口。
+
 ## 这几个目录怎么用
 
 - `CN/`：中文教学主目录。
