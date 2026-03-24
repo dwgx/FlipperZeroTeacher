@@ -1,35 +1,95 @@
 # 00. 学习总图
 
-## 目标
+[返回中文教学导航](README.md) | [下一章：01. 设备与生态](01-Device-Ecosystem.md) | [返回中文入口](../README.md)
 
-这份章节用于建立整体学习顺序，避免一开始就跳进零散资料。
+## 本章作用
 
-## 建议顺序
+这一章的任务不是介绍某个单独功能，而是先告诉你整个知识库应该怎样读。Flipper Zero 的资料横跨设备使用、协议能力、App 开发、工具链、系统层、文件格式和社区项目。如果一开始就进入零散仓库、第三方项目或某个具体协议，很容易形成只记住片段、不理解结构的问题。
 
-1. `01-Device-Ecosystem.md`
-2. `02-Protocol-Domains.md`
-3. `03-App-Development.md`
-4. `04-Build-Debug-Tools.md`
-5. `05-JavaScript.md`
-6. `06-System-Programming.md`
-7. `07-File-Formats.md`
-8. `08-Community-Reference.md`
+本章要做的事情，是先建立“阅读顺序”和“判断边界”。你读完这一章之后，应该知道哪些内容属于主线，哪些内容属于补充；哪些页面是官方定义，哪些页面只是社区经验；哪些文档适合人类顺序学习，哪些文档适合 AI 检索和引用。
+
+## 本章建议先读的仓库内文档
+
+- [中文入口](../README.md)：确认中文主入口和整体目录结构。
+- [仓库首页](../../README.md)：查看整个仓库的默认阅读方式。
+- [中文主知识库](../FlipperZero-Master-CN.md)：建立全局地图。
+- [官方文档中文精读总表](../Official-Docs-CN-Full.md)：确认官方资料是整个知识库的基线。
+- [中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)：理解给 AI 使用时的约束方式。
+- [官方文档覆盖表](../../Official-Docs-Coverage.md)：了解目前已经整理到什么深度。
+
+## 你需要先建立的四层结构
+
+### 1. 教学导览层
+
+也就是当前这个 `Guide/` 目录。它负责把知识拆成可以顺序阅读的章节，适合从零开始学习的人，也适合之后回头补课。
+
+### 2. 主知识库层
+
+对应 [中文主知识库](../FlipperZero-Master-CN.md)。它负责给你一个全局视角，帮助你知道各条主线如何互相连接。
+
+### 3. 官方精读层
+
+对应 [官方文档中文精读总表](../Official-Docs-CN-Full.md)。当你需要确认一个技术事实、字段定义、开发入口或官方术语时，应优先回到这一层。
+
+### 4. AI 检索层
+
+对应 [中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)。这一层不是给人直接顺着读的，而是给 AI、RAG、检索系统和自动化问答使用的约束层。
 
 ## 三个核心原则
 
-- 先官方，后社区
-- 先外部应用，后固件
-- 先理解协议域，再进入具体实现
+- 先官方，后社区。
+- 先理解平台边界，再看具体项目。
+- 先建立协议域与开发层级，再进入细节实现。
 
-## 当前主文件
+这三个原则决定了整个仓库不会把零散项目放在前面，也不会把某个社区仓库写成“平台定义”。
 
-- 主线知识库：`../FlipperZero-Master-CN.md`
-- 官方总表：`../Official-Docs-CN-Full.md`
-- AI 规则包：`../FlipperZero-AI-Pack-CN.md`
-- 覆盖表：`../../Official-Docs-Coverage.md`
+## 建议阅读顺序
 
-## 完成这一章后应达到的状态
+建议按下面顺序进入：
 
-- 知道整个知识库的阅读顺序
-- 知道什么内容属于官方基线
-- 知道为什么不应先从第三方固件或零散项目开始
+1. [01. 设备与生态](01-Device-Ecosystem.md)
+   先建立设备、桌面端、移动端、CLI 和应用生态的完整工作流。
+
+2. [02. 协议域](02-Protocol-Domains.md)
+   学会从能力域而不是从零散用途来理解平台。
+
+3. [03. App 开发](03-App-Development.md)
+   确认官方推荐的开发主线，建立 App 结构认识。
+
+4. [04. 构建、调试与工具链](04-Build-Debug-Tools.md)
+   建立正式开发环境和调试路径。
+
+5. [05. JavaScript](05-JavaScript.md)
+   理解脚本路线的适用边界。
+
+6. [06. 系统编程](06-System-Programming.md)
+   从应用层进入系统层、平台层和硬件抽象层。
+
+7. [07. 文件格式](07-File-Formats.md)
+   把格式理解为平台能力的一部分。
+
+8. [08. 社区参考](08-Community-Reference.md)
+   在官方基线已经建立之后，再吸收高信号社区资料。
+
+## 如果你属于不同类型的读者
+
+- 如果你完全从零开始：从 [01. 设备与生态](01-Device-Ecosystem.md) 开始，不要直接跳到开发章节。
+- 如果你已经会基本使用设备：从 [02. 协议域](02-Protocol-Domains.md) 和 [03. App 开发](03-App-Development.md) 开始。
+- 如果你已经在写代码：优先阅读 [03. App 开发](03-App-Development.md)、[04. 构建、调试与工具链](04-Build-Debug-Tools.md)、[07. 文件格式](07-File-Formats.md)。
+- 如果你主要为 AI 建知识库：先读 [中文主知识库](../FlipperZero-Master-CN.md)、[官方文档中文精读总表](../Official-Docs-CN-Full.md)、[中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)。
+
+## 学完本章后应具备的能力
+
+- 知道整个知识库的阅读顺序。
+- 知道 `Guide`、`Master`、`Official Docs Full`、`AI Pack` 各自的作用。
+- 知道为什么不应从第三方固件或零散社区项目直接入门。
+- 能把后续每一章放进正确的学习位置里理解。
+
+## 继续阅读
+
+- 下一章：[01. 设备与生态](01-Device-Ecosystem.md)
+- 回到入口：[中文教学导航](README.md)
+- 回到总览：[中文主知识库](../FlipperZero-Master-CN.md)
+- 查看官方深读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)
+
+[返回中文教学导航](README.md) | [下一章：01. 设备与生态](01-Device-Ecosystem.md) | [返回仓库首页](../../README.md)
