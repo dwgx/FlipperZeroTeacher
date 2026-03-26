@@ -164,10 +164,11 @@
 
 ## 继续阅读
 
+- [下一章：09. 固件参考 2025-2026](09-Firmware-Reference-2025.md)
 - 返回课程入口：[中文教学导航](README.md)
 - 回到总览主线：[中文主知识库](../FlipperZero-Master-CN.md)
 - 回到官方深读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)
 - 回到 AI 约束层：[中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)
 - 查看覆盖进度：[官方文档覆盖表](../../Official-Docs-Coverage.md)
 
-[返回中文教学导航](README.md) | [上一章：07. 文件格式](07-File-Formats.md) | [返回仓库首页](../../README.md)
+[返回中文教学导航](README.md) | [上一章：07. 文件格式](07-File-Formats.md) | [下一章：09. 固件参考 2025-2026](09-Firmware-Reference-2025.md) | [返回仓库首页](../../README.md)

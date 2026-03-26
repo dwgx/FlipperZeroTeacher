@@ -28,6 +28,7 @@
 8. [06. 系统编程](Guide/06-System-Programming.md)
 9. [07. 文件格式](Guide/07-File-Formats.md)
 10. [08. 社区参考](Guide/08-Community-Reference.md)
+11. [09. 固件参考 2025-2026](Guide/09-Firmware-Reference-2025.md)
 
 ## 配套主文件
 

@@ -55,6 +55,9 @@
 9. [08. 社区参考](CN/Guide/08-Community-Reference.md)
    在不偏离官方基线的前提下吸收高信号社区资料。
 
+10. [09. 固件参考 2025-2026](CN/Guide/09-Firmware-Reference-2025.md)
+    了解当前社区固件最新状态（Momentum、Unleashed、Marauder）。
+
 ## 仓库地图
 
 - [CN/README.md](CN/README.md)
