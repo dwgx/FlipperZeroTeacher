@@ -1,8 +1,24 @@
 # Flipper Zero Fun Apps Collection
 
-> Curated fun, prank, and utility apps from official catalog and community
+> Flipper Zero is not just a security tool. It's a toy, a learning platform, and an entry point to explore the wireless world.
 > Based on official Catalog (336 apps) + community projects
 > Updated: 2026-03-27
+
+---
+
+## What is this?
+
+The official Flipper Zero app catalog has 336 apps, and the community has countless weird projects. This document picks out the most interesting, useful, and worth-playing ones.
+
+**What you'll find here:**
+- **BLE Toys** — AirPods popups, AirTag simulation, use as Bluetooth keyboard
+- **USB Tools** — Make mouse move by itself, simulate barcode scanner, act as Lego ToyPad
+- **Classic Games** — Doom, Tetris, Wolfenstein, Asteroids
+- **Hardware Extensions** — Connect ESP32-CAM as camera, check weather, control servos
+- **Music Tools** — Ocarina of Time, metronome, tuning fork
+- **Crypto Toys** — WWII Enigma machine, password generator
+
+**Bottom line: Have fun, learn something.**
 
 ---
 
@@ -12,31 +28,12 @@
 - [USB Tools](#2-usb-tools)
 - [Classic Games](#3-classic-games)
 - [Creative Tools](#4-creative-tools)
-- [Prank Tools](#5-prank-tools)
-- [GPIO Peripherals](#6-gpio-peripherals)
-- [Multimedia](#7-multimedia)
-- [Security/Crypto](#8-securitycrypto)
-- [Utility Tools](#9-utility-tools)
+- [GPIO Peripherals](#5-gpio-peripherals)
+- [Multimedia](#6-multimedia)
+- [Security/Crypto](#7-securitycrypto)
+- [Utility Tools](#8-utility-tools)
 - [Installation Guide](#installation-guide)
 - [Quick Index](#quick-index)
-
----
-
-## Official App Catalog
-
-Official store: https://catalog.flipperzero.one/
-
-Total apps: 336 (as of 2026-03-24)
-
-Categories:
-- Bluetooth: 11
-- GPIO: 130+
-- Games: 80+
-- Infrared: 30+
-- NFC: 25+
-- Sub-GHz: 20+
-- Tools: 40+
-- USB: 15+
 
 ---
 
@@ -46,47 +43,68 @@ Categories:
 
 | Attribute | Details |
 |-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Bluetooth/findmy |
+| **Source** | Community |
 | **GitHub** | https://github.com/MatthewKuKanich/FindMyFlipper |
+| **Catalog** | ✅ applications/Bluetooth/findmy |
 | **Author** | @MatthewKuKanich |
 | **Version** | v3.0 |
 
-**Description**
+**What does it do?**
 
-Turn your Flipper Zero into an AirTag. Trackable on:
-- Apple Find My network
+Turn your Flipper Zero into an AirTag. Throw it in your bag, then see it on iPhone's Find My.
+
+**Supported networks:**
+- Apple Find My
 - Samsung SmartThings Find
 - Tile network
 
-**Usage**
-- Put Flipper in your bag as a tracker
+**How to play:**
+- Use Flipper as a tracker in your bag
 - Test Find My network coverage
-- Learn how AirTags work
+- Study how AirTags work (broadcast format, encryption)
+
+**Install:**
+```bash
+Apps > Bluetooth > FindMy
+```
 
 ---
 
-### 1.2 BLE Spam (ble_spam_ofw)
+### 1.2 BLE Spam 🔥 The Wild One
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Community |
 | **GitHub** | https://github.com/noproto/ble_spam_ofw |
-| **Catalog** | ❌ Not listed (may violate policies) |
+| **Catalog** | ❌ Not listed (too wild) |
 | **Firmware** | Official |
 
-**Description**
+**What does it do?**
 
-Send BLE broadcast packets to trigger pairing popups:
-- Apple devices: AirPods / AirTag / Apple TV popups
-- Android: Fast Pair popups
-- Windows: Swift Pair popups
+Spam BLE broadcast packets, making nearby devices think there are new AirPods/AirTag/Apple TV nearby.
 
-**Technical Principle**
+**Effects:**
+- iPhone: "AirPods Pro" pairing popup
+- Android: Fast Pair popup
+- Windows: Swift Pair popup
 
-Sends forged BLE advertisement packets, making nearby devices think new AirPods are nearby.
+**Technical Principle:**
 
-**Note**: For educational purposes only. May cause issues in public spaces.
+BLE devices constantly broadcast their presence. Your phone scans these broadcasts. This tool forges AirPods broadcast packets, tricking phones into thinking new headphones are nearby.
+
+**Learning value:**
+- BLE GAP protocol
+- Broadcast packet structure (AD Structure)
+- Device pairing flow
+- Wireless protocol openness
+
+**How to use:**
+
+Test on your own devices, see how BLE broadcasting works. Once you understand it, you'll also understand how AirTags can be tracked by Find My network.
+
+**Note:**
+
+Flipper official didn't include this because it can cause interference. Learn the tech, play in controlled environments, don't mess around in public places.
 
 ---
 
@@ -98,21 +116,26 @@ Sends forged BLE advertisement packets, making nearby devices think new AirPods 
 | **Catalog** | ✅ applications/Bluetooth/hid_ble |
 | **Features** | BT keyboard, mouse, media controller |
 
-**Modes**
+**Functions:**
 
 | Mode | Description |
 |------|-------------|
-| Keyboard | Full BT keyboard with modifiers |
-| Mouse | BT mouse control |
+| Keyboard | Full Bluetooth keyboard |
+| Mouse | Bluetooth mouse |
 | Media | Media playback control |
-| Mouse Jiggler | BT mouse movement (anti-sleep) |
+| Mouse Jiggler | Automatic mouse movement |
 | Stealth Jiggler | Random movement patterns |
+
+**How to play:**
+- Use phone/tablet as computer, Flipper as keyboard
+- Remote control presentation slides
+- Study Bluetooth HID protocol
 
 ---
 
 ## 2. USB Tools
 
-### 2.1 Mouse Jiggler ⭐ Useful
+### 2.1 Mouse Jiggler ⭐ The Classic
 
 | Attribute | Details |
 |-----------|---------|
@@ -121,19 +144,30 @@ Sends forged BLE advertisement packets, making nearby devices think new AirPods 
 | **GitHub** | https://github.com/DavidBerdik/flipper-mouse-jiggler |
 | **Author** | @DavidBerdik |
 
-**Description**
+**What does it do?**
 
-Prevents computer sleep by simulating mouse movement.
+Make mouse move slightly to prevent computer from sleeping or locking.
 
-**Features**
-- Random movement patterns
-- Harder to detect
-- Adjustable frequency
+**Core mechanism:**
+- Simulates USB HID mouse device
+- Sends tiny mouse movements (few pixels)
+- Random patterns (harder to detect)
+- Adjustable frequency and amplitude
 
-**Usage**
-- Remote work presence
-- Prevent meeting screen lock
-- Keep downloads active
+**Use cases:**
+- Keep computer active during long downloads
+- Keep scripts running continuously
+- Stay online during remote meetings
+- When monitoring software tracks activity
+
+**Technical points:**
+
+USB HID protocol. Flipper registers as a USB mouse, constantly reporting "mouse moved". OS thinks user is active, won't lock screen.
+
+**Install:**
+```
+Apps > USB > Mouse Jiggler
+```
 
 ---
 
@@ -146,14 +180,24 @@ Prevents computer sleep by simulating mouse movement.
 | **GitHub** | https://github.com/polarikus/flipper-zero_bc_scanner_emulator |
 | **Author** | @polarikus |
 
-**Description**
+**What does it do?**
 
-Emulates USB barcode scanner. Auto-inputs barcode when plugged in.
+Simulates USB barcode scanner. When plugged in, it inputs barcode data like a real scanner.
 
-**Features**
-- Custom barcode data
-- Multiple formats
-- POS system testing
+**How it works:**
+
+Flipper registers as USB HID keyboard device. When you "scan" a barcode, it converts barcode content to keystroke sequences sent to the computer.
+
+**Use cases:**
+- Test your own POS system
+- Automate test data input
+- Study barcode scanning tech
+- Debug without physical scanner
+
+**Technical points:**
+- USB HID protocol
+- Barcode formats (Code128, EAN, UPC)
+- POS system data input flow
 
 ---
 
@@ -166,20 +210,38 @@ Emulates USB barcode scanner. Auto-inputs barcode when plugged in.
 | **GitHub** | https://github.com/SegerEnd/Flipper-Zero-LD-Toypad-Emulator |
 | **Author** | @SegerEnd |
 
-**Description**
+**What does it do?**
 
-Emulates Lego Dimensions ToyPad USB device.
+Simulates Lego Dimensions ToyPad. ToyPad is a USB device where placing physical Lego figures unlocks game characters.
 
-**Features**
-- Place virtual minifigs
-- Unlock game characters
-- No physical ToyPad needed
+**Technical points:**
+- USB device enumeration
+- Specific hardware protocol reverse engineering
+- HID report descriptors
+
+**How to play:**
+- Unlock game characters (you know what I mean)
+- Study how gaming peripherals work
+- Learn USB device simulation
 
 ---
 
 ## 3. Classic Games
 
-### 3.1 Tetris
+### 3.1 Doom
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Games/doom |
+| **GitHub** | https://github.com/p4nic4ttack/doom-flipper-zero |
+| **Version** | v1.5 |
+
+Doom-like game, not full Doom, simplified clone. But playing FPS on Flipper's tiny screen is a unique experience.
+
+---
+
+### 3.2 Tetris
 
 | Attribute | Details |
 |-----------|---------|
@@ -188,35 +250,22 @@ Emulates Lego Dimensions ToyPad USB device.
 | **Original** | @jeffplang |
 | **Maintainer** | @xMasterX |
 
-**Controls**
+**Controls:**
 - D-pad: Move
 - OK: Rotate
 - Back: Pause
 
 ---
 
-### 3.2 Flappy Bird
+### 3.3 Flappy Bird
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/Games/flappy_bird |
 | **Original** | @DroomOne |
-| **Maintainer** | @xMasterX |
 
----
-
-### 3.3 Doom
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Games/doom |
-| **GitHub** | https://github.com/p4nic4ttack/doom-flipper-zero |
-| **Maintainers** | @xMasterX @Svarich @hedger |
-| **Version** | v1.5 |
-
-**Note**: Doom-like clone, not full Doom.
+Classic Flappy Bird ported to Flipper.
 
 ---
 
@@ -230,7 +279,7 @@ Emulates Lego Dimensions ToyPad USB device.
 | **Author** | @SimplyMinimal |
 | **Version** | v3.4.0 |
 
-**Features**
+**Features:**
 - Auto-fire
 - Power-up system
 - High scores
@@ -241,18 +290,7 @@ Emulates Lego Dimensions ToyPad USB device.
 
 ---
 
-### 3.5 Arkanoid
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Games/arkanoid |
-| **Original** | @gotnull |
-| **Maintainer** | @xMasterX |
-
----
-
-### 3.6 Chess
+### 3.5 Chess
 
 | Attribute | Details |
 |-----------|---------|
@@ -262,71 +300,84 @@ Emulates Lego Dimensions ToyPad USB device.
 | **Author** | @xtruan |
 | **Version** | v1.12 |
 
-**Features**
-- Full chess rules
-- AI opponent
-- Illegal move bug fixed
+Full chess rules with AI opponent.
 
 ---
 
-### 3.7 Minesweeper
+### 3.6 Minesweeper
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/Games/minesweeper_redux |
 | **GitHub** | https://github.com/squee72564/F0_Minesweeper_Fap |
-| **Author** | Alexander Rodriguez |
+
+Classic Minesweeper.
 
 ---
 
-### 3.8 Flipper Hero
+### 3.7 Wolfenduino
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Games/flipper_hero |
-| **GitHub** | https://github.com/mentoster/flipper-hero |
-| **Author** | @mentoster |
+| **Catalog** | ✅ applications/Games/wolfenduino |
+| **GitHub** | https://github.com/apfxtech/FlipperWolfenstein.git |
+| **Author** | @apfxtech |
 
-**Type**: Rhythm game like Guitar Hero
+Wolfenstein 3D port for Flipper, based on Arduboy FX version. First-person shooter with simplified 3D rendering.
 
 ---
 
-### 3.9 Five Nights at Flipper's (FNAF)
+### 3.8 Scorched Tanks
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Games/flipperzero_fnaf |
-| **GitHub** | https://github.com/sillygir1/flipperzero-fnaf |
-| **Author** | @sillygir1 |
+| **Catalog** | ✅ applications/Games/scorched_tanks |
+| **Author** | @jasniec |
+| **Version** | v1.4 |
 
-**Type**: Horror survival FNAF fan game
+Turn-based tank battle, adjustable angle and power, terrain destruction.
+
+---
+
+### 3.9 ZombieZ
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Games/zombiez |
+| **Original** | @Dooskington |
+| **Maintainer** | @DevMilanIan & @xMasterX |
+| **Version** | v1.3 |
+
+Tower defense game, build defenses against zombie waves.
 
 ---
 
 ### 3.10 More Games
 
-| Game | Type | Description |
-|------|------|-------------|
-| 2048 | Puzzle | Classic 2048 |
-| Wolfenduino | FPS | Wolfenstein 3D port |
-| Scorched Tanks | Strategy | Tank battle game |
-| Roots of Life | Puzzle | Zen puzzle game |
-| City Bloxx | Building | Stack building blocks |
-| ZombieZ | Tower Defense | Zombie defense |
-| Snake | Classic | Classic snake |
-| T-Rex Runner | Runner | Chrome dinosaur game |
-| Color Guess | Memory | Color memory game |
-| Game 15 | Puzzle | 15-puzzle |
-| Hanoi Towers | Puzzle | Tower of Hanoi |
-| Laser Tag | Action | Laser gun battle |
-| Mandelbrot Set | Demo | Fractal visualization |
-| Paint | Drawing | Pixel paint app |
-| Pinball | Arcade | Pinball game |
-| Slot Machine | Random | Slot machine |
-| Tic Tac Toe | Strategy | Tic-tac-toe |
+| Game | Type |
+|------|------|
+| 2048 | Puzzle |
+| Arkanoid | Brick breaker |
+| City Bloxx | Stacking |
+| Color Guess | Memory |
+| Dice App | Dice roller |
+| Flipper Hero | Rhythm |
+| FNAF | Horror survival |
+| Game 15 | 15-puzzle |
+| Hanoi Towers | Puzzle |
+| Laser Tag | Action |
+| Mandelbrot Set | Visualization |
+| Paint | Drawing |
+| Pinball | Arcade |
+| Roots of Life | Zen puzzle |
+| Snake | Classic |
+| Space Impact | Shooter |
+| T-Rex Runner | Runner |
+| Tic Tac Toe | Strategy |
 
 ---
 
@@ -341,14 +392,7 @@ Emulates Lego Dimensions ToyPad USB device.
 | **GitHub** | https://github.com/Hoasker/flipper-theme-manager.git |
 | **Author** | @Hoasker |
 
-**Description**
-
 Manage dolphin animation themes from SD card.
-
-**Features**
-- Switch themes
-- Preview effects
-- No firmware flash needed
 
 ---
 
@@ -359,7 +403,8 @@ Manage dolphin animation themes from SD card.
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/Tools/analog_clock |
 | **Author** | @scrolltex |
-| **Maintainer** | @xMasterX |
+
+Show analog clock on Flipper screen.
 
 ---
 
@@ -371,143 +416,43 @@ Manage dolphin animation themes from SD card.
 | **Catalog** | ✅ applications/Tools/pomodoro_timer |
 | **GitHub** | https://github.com/Th3Un1q3/flipp_pomodoro |
 
-**Description**
-
-Pomodoro technique timer.
-
-**Features**
-- 25 min work + 5 min break
-- Cycle counter
-- Sound alerts
+Pomodoro technique timer. 25 min work + 5 min break.
 
 ---
 
-## 5. Prank Tools
+## 5. GPIO Peripherals
 
-### 5.1 Executor Keychain (80s Keychain)
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Media/executor_keychain |
-| **GitHub** | https://github.com/EstebanFuentealba/Flipper-Keyller.git |
-| **Author** | Esteban Fuentealba |
-| **Name** | Flipper Keyller |
-| **Version** | 0.1 |
-
-**Description**
-
-Emulates classic 80s electronic keychain sounds.
-
-**Sound Effects**
-- Unlock sound
-- Alarm sound
-- Laser gun sound
-- Classic 8-bit effects
-
-**Usage**
-- Retro nostalgia
-- Prank sound effects
-- Speaker testing
-
----
-
-### 5.2 DCF77 Clock Spoof
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Tools/dcf77_clock_spoof |
-| **GitHub** | https://github.com/molodos/dcf77-clock-spoof.git |
-| **Author** | @Molodos |
-
-**Description**
-
-Spoof DCF77 time signal via RFID antenna and A4 GPIO.
-
-**Technical**
-
-DCF77 is Germany's longwave time signal. This app sends forged signals to make nearby radio clocks sync to your chosen time.
-
----
-
-### 5.3 Fire String
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Tools/fire_string |
-| **GitHub** | https://github.com/RyanAboueljoud/Fire-String.git |
-
-**Description**
-
-Screen visual effect simulating fire strings.
-
----
-
-### 5.4 Flipper95
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Tools/flipper95 |
-| **GitHub** | https://github.com/CookiePLMonster/flipper-bakery.git |
-
-**Description**
-
-Windows 95 style interface simulator.
-
-**Features**
-- Retro Win95 UI
-- Start menu
-- Window management
-- Classic sounds
-
----
-
-### 5.5 Orgasmotron
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Tools/orgasmotron |
-| **GitHub** | https://github.com/leedave/Leeds-Flipper-Zero-Applications |
-| **Author** | Leedave |
-
-**Description**
-
-Vibration motor test tool (name is a joke).
-
----
-
-## 6. GPIO Peripherals
-
-### 6.1 Camera Suite (ESP32-CAM) ⭐ Popular
+### 5.1 Camera Suite (ESP32-CAM) ⭐ Popular
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/GPIO/camera_suite |
 | **GitHub** | https://github.com/CodyTolene/Flipper-Zero-Camera-Suite.git |
-| **Authors** | @CodyTolene @Z4urce @leedave @rnadyrshin |
+| **Author** | @CodyTolene et al. |
 
-**Description**
+**What does it do?**
 
-Connect ESP32-CAM module to Flipper Zero for camera functionality.
+Connect ESP32-CAM module to Flipper Zero, turn it into a camera.
 
-**Features**
+**Features:**
 - Live preview
-- Photo capture to SD
+- Photo capture to SD card
 - Grayscale/color modes
 - Settings adjustment
 
-**Hardware Required**
-- ESP32-CAM module
+**Hardware:**
+- ESP32-CAM module (~$2 on Taobao/AliExpress)
 - GPIO cables
+
+**Technical points:**
+- ESP32 camera driver
+- Serial communication protocol
+- Image data transmission
 
 ---
 
-### 6.2 Flipagotchi
+### 5.2 Flipagotchi
 
 | Attribute | Details |
 |-----------|---------|
@@ -516,13 +461,11 @@ Connect ESP32-CAM module to Flipper Zero for camera functionality.
 | **GitHub** | https://github.com/Matt-London/pwnagotchi-flipper.git |
 | **Author** | @Matt-London |
 
-**Description**
-
-Display interface for Pwnagotchi AI.
+Display interface for Pwnagotchi (WiFi handshake capture AI).
 
 ---
 
-### 6.3 FlipWeather
+### 5.3 FlipWeather
 
 | Attribute | Details |
 |-----------|---------|
@@ -532,18 +475,37 @@ Display interface for Pwnagotchi AI.
 | **Author** | @JBlanked |
 | **Version** | 1.2 |
 
-**Description**
+Get GPS and weather info via WiFi module.
 
-Get GPS and weather via WiFi.
-
-**Hardware Required**
-- ESP8266/ESP32 WiFi module
+**Hardware:** ESP8266/ESP32 WiFi module
 
 ---
 
-## 7. Multimedia
+### 5.4 Servo Tester
 
-### 7.1 Tuning Fork
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/GPIO/servotester |
+
+Test and calibrate servos, control servo angles.
+
+---
+
+### 5.5 Air Mouse
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/GPIO/air_mouse |
+
+Use MPU6050 gyroscope module to control mouse, gesture operation.
+
+---
+
+## 6. Multimedia
+
+### 6.1 Tuning Fork
 
 | Attribute | Details |
 |-----------|---------|
@@ -553,19 +515,11 @@ Get GPS and weather via WiFi.
 | **Author** | @besya |
 | **Version** | 2.1 |
 
-**Description**
-
-Use Flipper as a tuning fork.
-
-**Features**
-- Multiple standard pitches
-- 440Hz A reference
-- Guitar tuning mode
-- Continuous tone
+Use Flipper as a tuning fork. 440Hz A standard, guitar tuning mode.
 
 ---
 
-### 7.2 Ocarina
+### 6.2 Ocarina
 
 | Attribute | Details |
 |-----------|---------|
@@ -574,35 +528,71 @@ Use Flipper as a tuning fork.
 | **Original** | @invalidna-me |
 | **Version** | v1.3 |
 
-**Description**
+Ocarina of Time from Zelda. Full octave range, same controls as N64 version.
 
-Ocarina simulator from Zelda: Ocarina of Time.
-
-**Features**
-- Full octave range
-- Same controls as N64 version
-- Play classic songs
+**Controls:** D-pad + OK to play
 
 ---
 
-### 7.3 BPM Tapper
+### 6.3 BPM Tapper
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/Media/bpm_tapper |
 | **Original** | @panki27 |
-| **Version** | v1.3 |
 
-**Description**
-
-Tap center button to measure BPM.
+Tap center button to measure BPM. For music practice and DJing.
 
 ---
 
-## 8. Security/Crypto
+### 6.4 Music Player
 
-### 8.1 Enigma
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Media/music_player |
+
+Play RTTTL format music.
+
+---
+
+### 6.5 Metronome
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Media/metronome |
+
+Professional metronome, adjustable BPM, different time signatures.
+
+---
+
+### 6.6 Morse Code
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Media/morse_code |
+
+Learn and send Morse code. Study telegraph communication.
+
+---
+
+### 6.7 DVD Screensaver
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Media/dvd_screensaver |
+
+Classic DVD bouncing logo screensaver. Wait for it to hit the corner.
+
+---
+
+## 7. Security/Crypto
+
+### 7.1 Enigma
 
 | Attribute | Details |
 |-----------|---------|
@@ -612,89 +602,175 @@ Tap center button to measure BPM.
 | **Author** | @xtruan |
 | **Version** | v1.1 |
 
-**Description**
+WWII German Enigma machine simulator. Full rotor system, 8 rotor types, plugboard settings.
 
-WWII German Enigma machine simulator.
-
-**Features**
-- Full rotor system
-- 8 rotor types
-- Plugboard settings
-- Historical crypto experience
+**Learning value:** Cryptography history, symmetric encryption principles, mechanical cipher machines.
 
 ---
 
-## 9. Utility Tools
+### 7.2 Password Generator
 
-### 9.1 Calculator
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/passgen |
+
+Strong password generator.
+
+---
+
+### 7.3 Caesar Cipher
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/caesar_cipher |
+
+Caesar cipher encryption/decryption. Oldest substitution cipher.
+
+---
+
+### 7.4 ROT13
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/rot13_app |
+
+ROT13 encoding conversion.
+
+---
+
+### 7.5 Flip Crypt
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/flip_crypt |
+| **GitHub** | https://github.com/Tyl3rA/FlipCrypt.git |
+| **Author** | @Tyl3rA |
+
+File encryption tool, password-protect files.
+
+---
+
+## 8. Utility Tools
+
+### 8.1 Calculator
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/Tools/calculator |
 
+Scientific calculator.
+
 ---
 
-### 9.2 QR Code Generator
+### 8.2 QR Code Generator
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/Tools/qrcode_generator |
 
+Generate QR codes on Flipper screen.
+
 ---
 
-### 9.3 Hex Viewer
+### 8.3 Hex Viewer
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
 | **Catalog** | ✅ applications/Tools/hex_viewer |
 
+View file hex content. Essential for reverse engineering.
+
 ---
 
-### 9.4 Text Viewer
+### 8.4 DCF77 Clock Spoof
 
 | Attribute | Details |
 |-----------|---------|
 | **Source** | Official Catalog |
-| **Catalog** | ✅ applications/Tools/text_viewer |
+| **Catalog** | ✅ applications/Tools/dcf77_clock_spoof |
+| **GitHub** | https://github.com/molodos/dcf77-clock-spoof.git |
+| **Author** | @Molodos |
+
+**What does it do?**
+
+Forge DCF77 time signal. DCF77 is Germany's longwave time signal transmitter. European radio clocks sync to it. This tool sends forged signals to make nearby radio clocks sync to your chosen time.
+
+**Technical points:**
+- Longwave time signal protocol
+- RF signal modulation
+- RFID antenna as transmitter
+
+**How to play:**
+- Test radio clocks
+- Study time sync protocols
+- Learn about radio time systems
+
+---
+
+### 8.5 Flipper95
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/flipper95 |
+| **GitHub** | https://github.com/CookiePLMonster/flipper-bakery.git |
+
+Windows 95 style interface simulator. Retro Win95 UI, start menu, window management.
+
+---
+
+### 8.6 Executor Keychain
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Media/executor_keychain |
+| **GitHub** | https://github.com/EstebanFuentealba/Flipper-Keyller.git |
+| **Author** | Esteban Fuentealba |
+
+Simulates 80s electronic keychain sound effects. Unlock sound, alarm sound, laser gun sound.
 
 ---
 
 ## Installation Guide
 
-### Method 1: Official Catalog (Recommended)
+### Method 1: Official Catalog (Easiest)
 
-1. Ensure latest firmware
-2. Go to **Apps** → **Flipper Lab**
-3. Browse or search
+1. Make sure Flipper has latest firmware
+2. Apps → Flipper Lab
+3. Search for the app
 4. Click install
 
 ### Method 2: qFlipper
 
 1. Download `.fap` from GitHub Release
-2. Connect Flipper to PC
+2. Connect Flipper to computer
 3. Open qFlipper
-4. Copy `.fap` to `/apps/` folder
-5. Run from **Apps** menu
+4. Drag `.fap` to SD card `/apps/` folder
+5. On Flipper: Apps → find and run
 
-### Method 3: Momentum Firmware
+### Method 3: Momentum Firmware (Pre-installed)
 
-Momentum includes many apps built-in:
+Momentum firmware already has many apps built-in:
 - Find My / Bad KB / BLE Spam
 - Mouse Jiggler
-- Games
-- Tools
+- Various games and tools
 
-### Method 4: Compile from Source
+### Method 4: Compile Yourself
 
 ```bash
 # Clone repo
 git clone <repo-url>
 cd <repo>
 
-# Build with uFBT
+# Compile
 ufbt
 
 # .fap file in dist/ folder
@@ -706,42 +782,56 @@ ufbt
 
 ### By Category
 
-**Games (30+)**
-Tetris, Flappy Bird, Doom, Asteroids, Arkanoid, Chess, Minesweeper, Flipper Hero, FNAF, Wolfenduino, Scorched Tanks, ZombieZ, 2048, Snake, and more.
+| Category | Count | Representative Apps |
+|----------|-------|---------------------|
+| Bluetooth/BLE | 6 | FindMyFlipper, BLE Spam, HID BLE |
+| USB Tools | 6 | Mouse Jiggler, Barcode Scanner, LD Toypad |
+| Games | 30+ | Doom, Tetris, Wolfenduino, Chess |
+| GPIO Peripherals | 6 | Camera Suite, FlipWeather, Air Mouse |
+| Multimedia | 8 | Tuning Fork, Ocarina, BPM Tapper |
+| Security/Crypto | 6 | Enigma, Password Generator, Flip Crypt |
+| Utility | 10 | Calculator, QR Code, DCF77 Spoof |
 
-**Bluetooth (6)**
-FindMyFlipper, BLE Spam, HID BLE, BT Trigger, BTHome, PC Monitor
+### Filter by Function
 
-**USB (6)**
-Mouse Jiggler, Barcode Scanner, LD Toypad, USB HID Autofire, COM Port Scanner, XInput Controller
+**Want to play with radio?**
+- Sub-GHz apps (check FlipperZero resources)
+- DCF77 Clock Spoof
 
-**GPIO (6+)**
-Camera Suite, Flipagotchi, FlipWeather, Servo Tester, Flashlight, Air Mouse
+**Want to mess with Bluetooth?**
+- FindMyFlipper
+- BLE Spam
+- HID BLE
 
-**Media (8+)**
-Tuning Fork, Ocarina, BPM Tapper, Music Player, Metronome, Morse Code, WAV Player, DVD Screensaver
+**Want to play games?**
+- Doom, Tetris, Wolfenduino, Chess
+- 30+ games to choose from
 
-**Security (6)**
-Enigma, Password Generator, Caesar Cipher, ROT13, Roman Decoder, Flip Crypt
+**Want to connect hardware?**
+- Camera Suite (camera)
+- FlipWeather (WiFi)
+- Servo Tester (servos)
 
-**Prank (5)**
-Executor Keychain, DCF77 Clock Spoof, Fire String, Flipper95, BLE Spam
+**Want to learn crypto?**
+- Enigma (WWII cipher machine)
+- Caesar Cipher
+- Flip Crypt
 
 ---
 
 ## Resources
 
-- [Official Catalog](https://catalog.flipperzero.one/)
-- [Flipper Lab](https://lab.flipper.net/)
-- [awesome-flipperzero](https://github.com/djsime1/awesome-flipperzero)
-- [xMasterX/all-the-plugins](https://github.com/xMasterX/all-the-plugins)
+- **Official Catalog**: https://catalog.flipperzero.one/
+- **Flipper Lab**: https://lab.flipper.net/
+- **Community Plugins**: https://github.com/xMasterX/all-the-plugins
+- **Awesome Flipper**: https://github.com/djsime1/awesome-flipperzero
 
 ---
 
 ## Changelog
 
-- 2026-03-27: Initial release, curated from 336 official catalog apps + community projects
+- 2026-03-27: Initial release, 80+ curated apps
 
 ---
 
-*Document based on official Catalog and community resources. For educational purposes only.*
+**Have fun, learn something.**
