@@ -85,9 +85,22 @@
 
 这几层决定你是否具备管理、调试、传输、发布和排障的完整工作流能力。
 
-## 7. 社区精华只保留这些
+## 7. 资源补充库
 
-### 7.1 生态总地图
+除了上述核心入口，还有两个补充资源：
+
+- `FlipperZero_资源库/`
+  本地整理的完整技术资源，包含频率数据库、BLE详解、NFC/RFID技术、固件指南等。适合作为快速查阅的补充资料。
+
+- `Wiki-Resources/`
+  官方资源存档，包含网页快照、官方源码仓库（qFlipper、docs、flipper-application-catalog等）。详见 [Wiki-Resources/README.md](../Wiki-Resources/README.md)
+
+- `CN/qFlipper-全网融合总文档.md`
+  qFlipper 桌面端完整使用指南，包含CLI命令、故障排除、更新通道等。
+
+## 8. 社区精华只保留这些
+
+### 8.1 生态总地图
 
 - `UberGuidoZ/Flipper`
   URL：`https://github.com/UberGuidoZ/Flipper`
@@ -136,7 +149,7 @@
   URL：`https://github.com/UberGuidoZ/Flipper-IRDB`
   为什么保留：红外资料库的事实标准之一
 
-## 8. 不建议一开始就走的路
+## 9. 不建议一开始就走的路
 
 下面这些不是不能看，而是不该作为主线起点：
 
@@ -145,6 +158,6 @@
 - 只追社区案例，不先读官方 docs
 - 只看零散仓库，不建立自己的目录体系
 
-## 9. 一句总原则
+## 10. 一句总原则
 
 - `先官方，后社区；先外部应用，后固件；先理解协议，再进入具体应用场景。`
