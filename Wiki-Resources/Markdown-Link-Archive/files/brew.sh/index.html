@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'none';
+                    connect-src https://D9HG3G8GS4-dsn.algolia.net;
+                    font-src data: https://fonts.gstatic.com;
+                    img-src 'self' https://avatars2.githubusercontent.com https://avatars.githubusercontent.com;
+                    object-src 'none';
+                    
+                    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com ;
+                    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+                    
+                    ">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Homebrew — The Missing Package Manager for macOS (or Linux)</title>
+      <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Homebrew">
+<meta property="og:locale" content="en">
+<meta name="description" content="The Missing Package Manager for macOS (or Linux).">
+<meta property="og:description" content="The Missing Package Manager for macOS (or Linux).">
+<link rel="canonical" href="https://brew.sh/">
+<meta property="og:url" content="https://brew.sh/">
+<meta property="og:site_name" content="Homebrew">
+<meta property="og:image" content="https://brew.sh/assets/img/homebrew-social-card.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://brew.sh/assets/img/homebrew-social-card.png">
+<meta property="twitter:title" content="Homebrew">
+<meta name="twitter:site" content="@MacHomebrew">
+<meta property="article:publisher" content="https://www.facebook.com/machomebrew/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"The Missing Package Manager for macOS (or Linux).","headline":"Homebrew","image":"https://brew.sh/assets/img/homebrew-social-card.png","name":"Homebrew","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://brew.sh/assets/img/homebrew.svg"}},"url":"https://brew.sh/"}</script>
+<!-- End Jekyll SEO tag -->
+    <link type="application/atom+xml" rel="alternate" href="https://brew.sh/atom.xml" title="Homebrew">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/assets/img/homebrew.svg" sizes="any" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="screen">
+    <link rel="preconnect" href="https://D9HG3G8GS4-dsn.algolia.net" crossorigin>
+    <link rel="alternate" hreflang="ar" href="https://brew.sh/ar">
+        <link rel="alternate" hreflang="az" href="https://brew.sh/az">
+        <link rel="alternate" hreflang="be" href="https://brew.sh/be">
+        <link rel="alternate" hreflang="bg" href="https://brew.sh/bg">
+        <link rel="alternate" hreflang="ca" href="https://brew.sh/ca">
+        <link rel="alternate" hreflang="cs" href="https://brew.sh/cs">
+        <link rel="alternate" hreflang="da" href="https://brew.sh/da">
+        <link rel="alternate" hreflang="de" href="https://brew.sh/de">
+        <link rel="alternate" hreflang="el" href="https://brew.sh/el">
+        <link rel="alternate" hreflang="en" href="https://brew.sh">
+          <link rel="alternate" hreflang="x-default" href="https://brew.sh">
+        <link rel="alternate" hreflang="es" href="https://brew.sh/es">
+        <link rel="alternate" hreflang="fa" href="https://brew.sh/fa">
+        <link rel="alternate" hreflang="fi" href="https://brew.sh/fi">
+        <link rel="alternate" hreflang="fr" href="https://brew.sh/fr">
+        <link rel="alternate" hreflang="gl" href="https://brew.sh/gl">
+        <link rel="alternate" hreflang="he" href="https://brew.sh/he">
+        <link rel="alternate" hreflang="hi" href="https://brew.sh/hi">
+        <link rel="alternate" hreflang="hu" href="https://brew.sh/hu">
+        <link rel="alternate" hreflang="id" href="https://brew.sh/id">
+        <link rel="alternate" hreflang="it" href="https://brew.sh/it">
+        <link rel="alternate" hreflang="ja" href="https://brew.sh/ja">
+        <link rel="alternate" hreflang="ko" href="https://brew.sh/ko">
+        <link rel="alternate" hreflang="ku" href="https://brew.sh/ku">
+        <link rel="alternate" hreflang="lb" href="https://brew.sh/lb">
+        <link rel="alternate" hreflang="nb" href="https://brew.sh/nb">
+        <link rel="alternate" hreflang="nl" href="https://brew.sh/nl">
+        <link rel="alternate" hreflang="nn" href="https://brew.sh/nn">
+        <link rel="alternate" hreflang="pl" href="https://brew.sh/pl">
+        <link rel="alternate" hreflang="pt" href="https://brew.sh/pt">
+        <link rel="alternate" hreflang="pt-br" href="https://brew.sh/pt-br">
+        <link rel="alternate" hreflang="ro" href="https://brew.sh/ro">
+        <link rel="alternate" hreflang="ru" href="https://brew.sh/ru">
+        <link rel="alternate" hreflang="sr" href="https://brew.sh/sr">
+        <link rel="alternate" hreflang="sv" href="https://brew.sh/sv">
+        <link rel="alternate" hreflang="ta" href="https://brew.sh/ta">
+        <link rel="alternate" hreflang="th" href="https://brew.sh/th">
+        <link rel="alternate" hreflang="tl" href="https://brew.sh/tl">
+        <link rel="alternate" hreflang="tr" href="https://brew.sh/tr">
+        <link rel="alternate" hreflang="uk" href="https://brew.sh/uk">
+        <link rel="alternate" hreflang="vi" href="https://brew.sh/vi">
+        <link rel="alternate" hreflang="zh-cn" href="https://brew.sh/zh-cn">
+        <link rel="alternate" hreflang="zh-tw" href="https://brew.sh/zh-tw">
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch-css/3.9.0/style.min.css" integrity="sha512-sIgq4M6w/5zPkFzkEpaTuKtZnko/4fsTWj/4XcsVLfpj5q68YkybfOxxLidjo5yZ16dsidABSz4RaapCvzbntQ==" crossorigin="anonymous" referrerpolicy="no-referrer" as="style" media="screen" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="https://fosstodon.org/@homebrew" rel="me">
+      </head>
+  <body>
+    <div id="wrap">
+      <header id="header">
+        <img alt="Homebrew logo" src="/assets/img/homebrew.svg" width="128" height="128">
+        <h1><a href="/">Homebrew</a></h1>
+        <p id="subtitle"><strong>The Missing Package Manager for macOS (or Linux)</strong></p>
+        <div id="search-container"></div>
+
+        <label class="hidden" for="language">Language</label>
+          <select id="language" name="language" title="Language" aria-label="Language" onchange="loadLanguage(this.options[this.selectedIndex].value)">
+            <option value="ar">العربية</option>
+              <option value="az">Azərbaycanca</option>
+              <option value="be">Беларуская</option>
+              <option value="bg">Български</option>
+              <option value="ca">Català</option>
+              <option value="cs">Čeština</option>
+              <option value="da">Dansk</option>
+              <option value="de">Deutsch</option>
+              <option value="el">Ελληνικά</option>
+              <option value="en" selected="selected">English</option>
+              <option value="es">Español</option>
+              <option value="fa">فارسی</option>
+              <option value="fi">Suomi</option>
+              <option value="fr">Français</option>
+              <option value="gl">Galego</option>
+              <option value="he">עברית</option>
+              <option value="hi">हिंदी</option>
+              <option value="hu">Magyar</option>
+              <option value="id">Indonesia</option>
+              <option value="it">Italiano</option>
+              <option value="ja">日本語</option>
+              <option value="ko">한국어</option>
+              <option value="ku">کوردی</option>
+              <option value="lb">Lëtzebuergesch</option>
+              <option value="nb">Norsk bokmål</option>
+              <option value="nl">Nederlands</option>
+              <option value="nn">Norsk nynorsk</option>
+              <option value="pl">Polski</option>
+              <option value="pt">Português</option>
+              <option value="pt-br">Português Brasileiro</option>
+              <option value="ro">Română</option>
+              <option value="ru">Русский</option>
+              <option value="sr">Српски</option>
+              <option value="sv">Svenska</option>
+              <option value="ta">தமிழ்</option>
+              <option value="th">ไทย</option>
+              <option value="tl">Tagalog</option>
+              <option value="tr">Türkçe</option>
+              <option value="uk">Українська</option>
+              <option value="vi">Tiếng Việt</option>
+              <option value="zh-cn">简体中文</option>
+              <option value="zh-tw">繁體中文</option>
+              </select>
+        </header>
+
+      <main> 
+        <div id="information">
+  <ul>
+    <li>
+      <section class="group row">
+        <h2 id="install">Install Homebrew</h2>
+        <br>
+        <div class="copyable">
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span></code></pre></figure>
+        </div>
+        <br>
+        <br>
+        <div class="col-1">
+          <p>Paste that in a macOS Terminal or Linux shell prompt.</p>
+        </div>
+        <div class="col-2">
+          <p>The script explains what it will do and then pauses before it does it. Read about other <a href="https://docs.brew.sh/Installation">installation options</a>.</p>
+        </div>
+      </section>
+      <section class="group row">
+        <div class="col-1">
+          <p>If you're on macOS, try our new <code>.pkg</code> installer.</p>
+        </div>
+        <div class="col-2">
+          <p>Download it from <a href="https://github.com/Homebrew/brew/releases/latest">Homebrew's latest GitHub release</a>.</p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <section class="group row">
+       <h2 id="question">What Does Homebrew Do?</h2>
+       <br>
+        <div class="col-1">
+          <p>Homebrew installs <a href="https://formulae.brew.sh/formula/" title="List of Homebrew packages">the stuff you need</a> that Apple (or your Linux system) didn’t.</p>
+        </div>
+        <div class="col-2">
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew <span class="nb">install </span>wget</code></pre></figure>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>Homebrew installs packages to their own directory and then symlinks their files into <code>/opt/homebrew</code> (on Apple Silicon).</p>
+        </div>
+        <div class="col-2">
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /opt/homebrew
+<span class="nv">$ </span>find Cellar
+Cellar/wget/1.16.1
+Cellar/wget/1.16.1/bin/wget
+Cellar/wget/1.16.1/share/man/man1/wget.1
+
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> bin
+bin/wget -&gt; ../Cellar/wget/1.16.1/bin/wget</code></pre></figure>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>Homebrew won’t install files outside its prefix and you can place a Homebrew installation wherever you like.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>Trivially create your own Homebrew packages.</p>
+        </div>
+        <div class="col-2">
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew create https://foo.com/foo-1.0.tgz
+Created /opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/foo.rb</code></pre></figure>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>It’s all Git and Ruby underneath, so hack away with the knowledge that you can easily revert your modifications and merge upstream updates.</p>
+        </div>
+        <div class="col-2">
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew edit wget <span class="c"># opens in $EDITOR!</span></code></pre></figure>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>Homebrew formulae are simple Ruby scripts:</p>
+        </div>
+        <div class="col-2">
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Wget</span> <span class="o">&lt;</span> <span class="no">Formula</span>
+  <span class="n">desc</span> <span class="s2">"Internet file retriever"</span>
+  <span class="n">homepage</span> <span class="s2">"https://www.gnu.org/software/wget/"</span>
+  <span class="n">url</span> <span class="s2">"https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz"</span>
+  <span class="n">sha256</span> <span class="s2">"fa2dc35bab5184ecbc46a9ef83def2aaaa3f4c9f3c97d4bd19dcb07d4da637de"</span>
+  <span class="n">license</span> <span class="s2">"GPL-3.0-or-later"</span>
+
+  <span class="k">def</span> <span class="nf">install</span>
+    <span class="nb">system</span> <span class="s2">"./configure"</span><span class="p">,</span> <span class="s2">"--prefix=</span><span class="si">#{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">"</span>
+    <span class="nb">system</span> <span class="s2">"make"</span><span class="p">,</span> <span class="s2">"install"</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>Homebrew complements macOS (or your Linux system). Install your RubyGems with <code>gem</code> and their dependencies with <code>brew</code>.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>“To install, drag this icon…” no more. <a href="https://formulae.brew.sh/cask/">Homebrew&nbsp;Cask</a> installs macOS apps, fonts and plugins and other non-open source software.</p>
+        </div>
+        <div class="col-2">
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew <span class="nb">install</span> <span class="nt">--cask</span> firefox</code></pre></figure>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="group row">
+        <div class="col-1">
+          <p>Making a cask is as simple as creating a formula.</p>
+        </div>
+        <div class="col-2">
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew create <span class="nt">--cask</span> https://foo.com/foo-1.0.dmg
+Editing /opt/homebrew/Library/Taps/homebrew/homebrew-cask/Casks/foo.rb</code></pre></figure>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <section class="group row">
+        <h2><code>brew</code> command documentation</h2>
+        <div class="button">
+          <p><a href="https://docs.brew.sh/Manpage">docs.brew.sh/Manpage</a></p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <section class="group row">
+        <h2 id="further-doc">Further Documentation</h2>
+        <div class="button">
+          <p><a href="https://docs.brew.sh">docs.brew.sh</a></p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <section class="group row">
+        <h2 id="homebrew-community">Community Discussion</h2>
+        <div class="button">
+          <p><a href="https://github.com/Homebrew/discussions/discussions">Homebrew/discussions</a></p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <section class="group row">
+        <h2 id="homebrew-blog">Homebrew Blog</h2>
+        <div class="button">
+          <p><a href="/blog/">brew.sh/blog</a></p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <section class="group row">
+        <h2 id="homebrew-formulae">Homebrew Packages</h2>
+        <div class="button">
+          <p><a href="https://formulae.brew.sh/">formulae.brew.sh</a></p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <section class="group row">
+        <h2 id="analytics-data">Analytics Data</h2>
+        <div class="button">
+          <p><a href="https://formulae.brew.sh/analytics/">formulae.brew.sh/analytics</a></p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <section class="group row">
+        <h2 id="homebrew-donate">Donate to Homebrew</h2>
+        <div class="button">
+          <p><a href="https://github.com/Homebrew/brew#donations">Homebrew/brew#donations</a></p>
+        </div>
+      </section>
+    </li>
+
+    <li>
+      <footer class="group row credits">
+        <p>Homebrew was created by <a href="https://mxcl.github.io/">Max Howell</a>. Website by <a href="https://exomel.com/">Rémi Prévost</a>, <a href="https://mikemcquaid.com">Mike McQuaid</a> and <a href="https://cargocollective.com/danilalo">Danielle Lalonde</a>.<br></p>
+      </footer>
+    </li>
+  </ul>
+</div>
+
+        </main>
+    </div>
+
+    <aside>
+      <a href="https://github.com/Homebrew/brew">
+        <img id="forkme" src="/assets/img/forkme_right_gray_6d6d6d.svg" alt="Fork me on GitHub">
+      </a>
+    </aside>
+    <script>
+      function loadLanguage(lang) {
+        if (lang === "en") {
+          return;
+        } else if (lang === 'en') {
+          window.location.assign('/');
+        } else {
+          window.location.assign('/' + lang);
+        }
+      }
+
+      function loadAnchors() {
+        anchors.options = {
+          placement: 'left',
+          visible: 'hover',
+        };
+        anchors.add('#page > h2, #page > h3, #page > h4, #page > h5, #page > h6');
+      };
+
+      function loadSearch(lang, site) {
+        docsearch(Object.assign(
+          { searchParameters: { facetFilters: ['site: ' + site] } },
+          { initialQuery: new URLSearchParams(window.location.search).get('search') },
+          { placeholder: "Search Homebrew" },
+          {"apiKey":"e3369d62b2366b374c54b2c5a2835a00","indexName":"brew_all","appId":"D9HG3G8GS4","container":"#search-container"}
+        ));
+      };
+
+      
+
+      let escapeHTML = (identity) => identity;
+
+      if (window.trustedTypes && window.trustedTypes.createPolicy) {
+        let policy = trustedTypes.createPolicy(
+          "forceInner",
+          {
+            createHTML: (to_escape) => to_escape
+          }
+        );
+        escapeHTML = (html) => policy.createHTML(html);
+      };
+
+      async function setupCopyables() {
+        if (navigator.clipboard) {
+          for (const element of document.getElementsByClassName('copyable')) {
+            let text = element.innerText.trim();
+            if (text.startsWith('$')) {
+              text = text.substr(1).trimLeft();
+            }
+
+
+            const button = document.createElement('button');
+            button.innerHTML = escapeHTML('📋');
+            button.setAttribute('aria-label', 'Copy to clipboard');
+            button.onclick = () => {
+              navigator.clipboard.writeText(text);
+              button.innerHTML = escapeHTML('✅');
+              setTimeout(() => button.innerHTML=escapeHTML('📋'), 1000);
+            }
+            element.appendChild(button);
+          }
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", function() {
+        setupCopyables();
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" 
+            integrity="sha512-byAcNWVEzFfu+tZItctr+WIMUJvpzT2kokkqcBq+VsrM3OrC5Aj9E2gh+hHpU0XNA3wDmX4sDbV5/nkhvTrj4w==" 
+            crossorigin="anonymous" 
+            referrerpolicy="no-referrer"
+            onload="loadAnchors()"
+            async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch-js/3.9.0/umd/index.min.js" 
+            integrity="sha512-GQvKUarIhGPpbful5R03aNwrhDKd/b+KdasOD9Uq0SFTZHJV14rly+Uss2pKazgeZz+G3JQ0wk1ximS6crma/w==" 
+            crossorigin="anonymous" 
+            referrerpolicy="no-referrer"
+            onload="loadSearch('en', '')"
+            async></script>
+  </body>
+</html>

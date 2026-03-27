@@ -1,0 +1,284 @@
+{
+  "created_at": "2026-03-25 02:58:04",
+  "source_root": "Wiki-Resources/Official-Web-Snapshots/Flipper-Official-Docs-Snapshot-2026-03-24",
+  "output_root": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs",
+  "asset_downloads": [
+    {
+      "url": "https://cdn.flipperzero.one/Flipper_Zero_WiFi_devboard_laptop_CDN.jpg",
+      "path": "_external/cdn.flipperzero.one/ec/Flipper_Zero_WiFi_devboard_laptop_CDN__ecb33f2e4c2c3167.jpg",
+      "content_type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/Get_developer_board_button_green_600.png",
+      "path": "_external/cdn.flipperzero.one/4f/Get_developer_board_button_green_600__4ffce98209726f4f.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipper.net/Flipper_Zero_devboard_main_parts.jpg",
+      "path": "_external/cdn.flipper.net/17/Flipper_Zero_devboard_main_parts__178f529ccfc4396f.jpg",
+      "content_type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.flipper.net/Flipper_Zero_wifi_devboard_pinout_updated.png",
+      "path": "_external/cdn.flipper.net/de/Flipper_Zero_wifi_devboard_pinout_updated__debe38ab801aeedb.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://archbee-image-uploads.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/bdrFahDgLa2dzRPP1iAf5_32.ico",
+      "path": "_external/archbee-image-uploads.s3.amazonaws.com/45/bdrFahDgLa2dzRPP1iAf5_32__457259cb072b8ba3.ico",
+      "content_type": "image/vnd.microsoft.icon"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "path": "_external/fonts.googleapis.com/82/css2__823ce7ca3c9ae8ff.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2",
+      "path": "_external/fonts.gstatic.com/c4/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU__c428ca13a1cc9928.woff2",
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2",
+      "path": "_external/fonts.gstatic.com/ec/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU__ec7f5af97c9d10f8.woff2",
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2",
+      "path": "_external/fonts.gstatic.com/08/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU__085cd7907a4366c1.woff2",
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2",
+      "path": "_external/fonts.gstatic.com/46/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU__4609148e1a78e15e.woff2",
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2",
+      "path": "_external/fonts.gstatic.com/1f/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU__1f53bf00fe0a853b.woff2",
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2",
+      "path": "_external/fonts.gstatic.com/36/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU__367ba69ac0a2c903.woff2",
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+      "path": "_external/fonts.gstatic.com/be/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw__bec94a4daf0632dd.woff2",
+      "content_type": "font/woff2"
+    },
+    {
+      "url": "https://cdn.archbee.com/b25b42ca5ce6338cb2a2d327612abda85c6a6974/public/normalize.css",
+      "path": "_external/cdn.archbee.com/47/normalize__47e9a149ad8a684f.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
+      "path": "_external/cdnjs.cloudflare.com/8e/all.min__8e597ce94f282c33.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://unpkg.com/lucide-static@0.540.0/font/lucide.css",
+      "path": "_external/unpkg.com/15/lucide__1562e99f9e3cf87f.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://cdn.archbee.com/b25b42ca5ce6338cb2a2d327612abda85c6a6974/_next/static/chunks/11a9d41b86c0fea5.css",
+      "path": "_external/cdn.archbee.com/03/11a9d41b86c0fea5__03366319967c223b.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://cdn.archbee.com/b25b42ca5ce6338cb2a2d327612abda85c6a6974/_next/static/chunks/532833c1cafaa517.css",
+      "path": "_external/cdn.archbee.com/6d/532833c1cafaa517__6db3feaecb22d2a9.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://cdn.archbee.com/b25b42ca5ce6338cb2a2d327612abda85c6a6974/_next/static/chunks/0154b58e28d2c671.css",
+      "path": "_external/cdn.archbee.com/4b/0154b58e28d2c671__4b2ccd7619b85b6b.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://cdn.archbee.com/b25b42ca5ce6338cb2a2d327612abda85c6a6974/_next/static/chunks/5682e231667ed4d3.css",
+      "path": "_external/cdn.archbee.com/31/5682e231667ed4d3__31eb6db6cb6e45b4.css",
+      "content_type": "text/css"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/archbee_lp_main_book.svg",
+      "path": "_external/cdn.flipperzero.one/a6/archbee_lp_main_book__a620a663f86659fb.svg",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "url": "https://cdn.flipper.net/FOOTER_flipper_logo_gray.svg",
+      "path": "_external/cdn.flipper.net/cf/FOOTER_flipper_logo_gray__cf511ee7ed841cfc.svg",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/archbee_lp_one_warning_strip.svg",
+      "path": "_external/cdn.flipperzero.one/ce/archbee_lp_one_warning_strip__ce7df63261cba4d8.svg",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/archbee_lp_zero_new_tile.png",
+      "path": "_external/cdn.flipperzero.one/6d/archbee_lp_zero_new_tile__6dcda0184cf24d31.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/archbee_lp_one_transparent_tile.png",
+      "path": "_external/cdn.flipperzero.one/d2/archbee_lp_one_transparent_tile__d2ad29a9e55a1a33.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://archbee-image-uploads.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/Fai01NMulJ9a2s616L-iW_32.ico",
+      "path": "_external/archbee-image-uploads.s3.amazonaws.com/c1/Fai01NMulJ9a2s616L-iW_32__c1248611a2327f90.ico",
+      "content_type": "image/vnd.microsoft.icon"
+    },
+    {
+      "url": "https://images.archbee.com/3StCFqarJkJQZV-7N79yY/XjZ2QQQGKOayp2Dm8qgSF_logo.png",
+      "path": "_external/images.archbee.com/2a/XjZ2QQQGKOayp2Dm8qgSF_logo__2a52ba190728c81e.png",
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "https://archbee-profile-photos.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/Kvhn1YR6-yun24x5ivBKZ_.blob",
+      "path": "_external/archbee-profile-photos.s3.amazonaws.com/e2/Kvhn1YR6-yun24x5ivBKZ___e25a0d15f574961b.blob",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://s3.amazonaws.com/archbee-animals/fox.png",
+      "path": "_external/s3.amazonaws.com/70/fox__70cc04b219d36c1b.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://archbee-profile-photos.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/9ZGZMvCvge7w6eeQGBRXs_.blob",
+      "path": "_external/archbee-profile-photos.s3.amazonaws.com/65/9ZGZMvCvge7w6eeQGBRXs___659c0d43a9ef487a.blob",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/callout-flipper-info.png",
+      "path": "_external/cdn.flipperzero.one/5c/callout-flipper-info__5c3a6bc856149928.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/callout-flipper-warning.png",
+      "path": "_external/cdn.flipperzero.one/65/callout-flipper-warning__65505f0367d3949c.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/callout-flipper-dead.png",
+      "path": "_external/cdn.flipperzero.one/33/callout-flipper-dead__3337b708364bd1b4.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/callout-sdcard.png",
+      "path": "_external/cdn.flipperzero.one/b0/callout-sdcard__b09272ba37f2081d.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/quickstart.png",
+      "path": "_external/cdn.flipperzero.one/e9/quickstart__e9fecbe25ae1a2cb.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/quickstart_back.png",
+      "path": "_external/cdn.flipperzero.one/10/quickstart_back__10ee8bc5975f6a3f.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/sub1.png",
+      "path": "_external/cdn.flipperzero.one/05/sub1__0547cb4730ea3c18.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/sub1_back.png",
+      "path": "_external/cdn.flipperzero.one/2f/sub1_back__2f48efb7f9e71452.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/RFID_docs.png",
+      "path": "_external/cdn.flipperzero.one/8f/RFID_docs__8f1bc5071be95ac1.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/RFID_back.png",
+      "path": "_external/cdn.flipperzero.one/84/RFID_back__848c2a66e52f6dd2.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/nfc.png",
+      "path": "_external/cdn.flipperzero.one/be/nfc__befc115407e08cbe.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/nfc_back.png",
+      "path": "_external/cdn.flipperzero.one/d2/nfc_back__d288f41bdc43c570.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/Infrared.png",
+      "path": "_external/cdn.flipperzero.one/ee/Infrared__eed0d12bbd324295.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/infrared_back.png",
+      "path": "_external/cdn.flipperzero.one/56/infrared_back__569342afc7ec0190.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/iButton.png",
+      "path": "_external/cdn.flipperzero.one/65/iButton__6533c53339d6fd2f.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/iButton_back.png",
+      "path": "_external/cdn.flipperzero.one/4c/iButton_back__4cca0fc3eeba1112.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/GPIO.png",
+      "path": "_external/cdn.flipperzero.one/e5/GPIO__e538e163678dd51e.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/GPIO_back.png",
+      "path": "_external/cdn.flipperzero.one/fe/GPIO_back__fe980142b5788553.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/devs.png",
+      "path": "_external/cdn.flipperzero.one/00/devs__003cbe7a63072e4a.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://cdn.flipperzero.one/devs_back.png",
+      "path": "_external/cdn.flipperzero.one/6a/devs_back__6ac13ebc7e4dd0e3.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://archbee-profile-photos.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/M0-xIlCC-rvB_j9AcNphx_.blob",
+      "path": "_external/archbee-profile-photos.s3.amazonaws.com/55/M0-xIlCC-rvB_j9AcNphx___557b043b4aba3e49.blob",
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "https://archbee-profile-photos.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/i9GthUOrRWXfoOGGVD3GN_.blob",
+      "path": "_external/archbee-profile-photos.s3.amazonaws.com/9b/i9GthUOrRWXfoOGGVD3GN___9beffef7c3ab324f.blob",
+      "content_type": "application/octet-stream"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/a-/AOh14Gjw_ub02aP4HhBcd2jjV5wdG7VnvxlS1gNcZQQ4=s96-c",
+      "path": "_external/lh3.googleusercontent.com/54/AOh14Gjw_ub02aP4HhBcd2jjV5wdG7VnvxlS1gNcZQQ4-s96__54f05a6275d9adf4.jpg",
+      "content_type": "image/jpeg"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/a-/ALV-UjXiHsEmdZ8YOo54CCulfz-kj2UrlCVGh4oJ4XGsVcIT6ynyBlNWaMg-Kf1e7uviJgXSJf1cUc3RH7_f-F-24yomrPYqxQErFaSip_BO_WAd2DiiM_xP3oczaGmKiZEZ8iwMinApBA6lzVTq0XxG8O47NcS4bm9GYw6VkqOrncvj7FJj6hYsxaWGnO1S7AO6UUiXja12C2h7OnV6FdYaJFTLYlpvvn4RNKatSJb_cmIaL9DLZS4nNQIx4O9CSg_G8h1JabSkS8PRZIMFjNfyHwtXzbrmj5cz2Ac4_d5HSaRTv8S6E2fCvWBPB5sN8agRSzSszLiqCQjl-mZsjCiHlcYQF5l-O1qjPhcdJdPSnAq0bO1UdvuUnpvkN0hlaj7ayd18ZOOIIqtG5BCdxQHK2PYmT194ML8Hhkoszp3x5LL3YLjUVmNDEUcv6jkXvxTdGAZ_DB6YFngFuVy0a38dQTmRAsBc9BV7orOkZSGRaBiDNt-XiO3uayRFo5D6GPlOfyxKkYt-2DtTn9aKfsRLyCi0LqLPAZqUoe4WVKLclzaVCAecJQsW1gfo64eocfn8JlDdxoDAFyXoMLU5wVh4gkrcTaNMhthUFks2Vjs8iPwCGp9iTmcpJSqcb4Vj7KvkEjmWMvzcWBUXK3nJbDSA0VxVh4yJGygRTCCKUVjVYWXdoFYgMtsWRrzTO0DQBnf25-AHR0zuBtFBfjuF1rHzD5CKQWFEDsxfLDfMnTCpvvurBAw9Oo4jQw4Nac7lyyJBYJ5nOrvjIOLT1GNo3HQvPfJcVFzQnSZdm8lKUFESkzs9tDlyuOimH9H2Qzg43FYQ4uE2MUVBI7wwJsc6PGRw1dfMVqJ9QaJQoPhZLGTlGF04zbI0KIQo9I2t8Cb1SbU3Xeuu3rG7_OTo_tCWmjJAzjKcSyqmEaFf1kjDy42PFWREOhDjGF4cvDl5_lmQLBAunBLyF71mleNkekuPiyPYIu6cvQ=s96-c",
+      "path": "_external/lh3.googleusercontent.com/cf/ALV-UjXiHsEmdZ8YOo54CCulfz-kj2UrlCVGh4oJ4XGsVcIT__cf35ac4188085400.png",
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/a-/ALV-UjX0ZE_c1TQb2PADqWFsleps1MsvTGr9tz0itTGSYSrdSrotOUKhvER-Lgxaoo9fx_6qu2nUX3L6_CNpBH23nHfXtxU1E7Mw9Zk5NS9t4eQYZDN7IgDSxqjhBfL_kAyECBkNwZT9b_aOSedda7LxH3PLg5qiS7P5wlNZw8APWuxuRlAg_5czR6p42Kh_teYieFKBMZFZ1wnMfG7ONWyxtv8h1Z1ecEBKi0fvQzrPaEYPnKC0oQDJgeOpFmxsYYfJ8uBOxJgZiyHKyMLy0FRidWWjyjOg5BZJzvq-IkoS9VN_WpXjot790Rf1AIVZJP2sacsuZDrD2QTNSg0BmqTtw5E7-yhglNQrXA9pgOw8a_48zyCQXvlHBP1s6kJxq-uqOWanZUxoGfLu50-ZraNDzUNzz_Y4V7JSeeJUc7cwaqlKHDQRIZHPSNFGvb87PIA0UpAJV-cMRcLilRLgjVvQCNxt3qGGbdm8UNHKSNx-YhP4H-jFjuIwnKmd40Ts5-6oMFNbH8wK8T-Jkmh-GJhWtkfcEz0ns3-4gKXTGS8RxqKpN0h2WVY0z3sfeY0WrvirZFl42H8aWVFZZ7K3VvtoShr9yHgYUv76fbJdwQd1HHMXXJwLgCbEMCZY6siTFFSGn40X97RSYqua5mwNSVfkQgq_izDZaP0rJ0yU1-pctKQpCS190hxwZDNoAUFNY5oWYGJIkgrynmOFNcj0ewUKDLV62oCT44Z3W1w8nVLZZVkY_3682ozH1iuGJ2nXYF2d-mMvkjeGpcBTt4A0QAD6Jy14gm6J0sJFJ5lhl4Tb4odIAo86GSwkeGQupcEQJG9yzALlwPq_QVVYHSqXj40E7DSZQ2m3rv19ZcZPLH7Gz_gOiw7xz5HsBenpSPAn6YsUAT4pCNjnhPPv80_tpz7YCPEDz79K5bt6Tb9y9iysrlRaxJHRkF7ttsEVjaro7VCfft8qLwLbDi2kFe--89Up7BZf=s96-c",
+      "path": "_external/lh3.googleusercontent.com/a3/ALV-UjX0ZE_c1TQb2PADqWFsleps1MsvTGr9tz0itTGSYSrd__a3e0b002f238e8bc.png",
+      "content_type": "image/png"
+    }
+  ],
+  "link_rewrites": 3910,
+  "asset_rewrites": 1018
+}

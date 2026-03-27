@@ -1,0 +1,523 @@
+# Markdown Link Archive
+
+这个目录保存仓库内 Markdown 文档引用到的外部网页、文件和资源快照。
+
+## 统计
+
+- 唯一外链总数：118
+- 已映射到仓库内现有资料：48
+- 新下载快照：57
+- 下载失败：13
+
+## 说明
+
+- `files/` 保存真实下载下来的网页或文件。
+- 官方 `docs.flipper.net` 与 `developer.flipper.net` 会优先指向仓库内已有镜像。
+- 完整元数据见 `manifest.json`。
+
+## 按域名索引
+
+### brew.sh
+
+- 原始链接：`https://brew.sh`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/brew.sh/index.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+
+### cdn.flipperzero.one
+
+- 原始链接：`https://cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.pdf`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.pdf`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.png`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.png`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/FlipperZero-External-Module-No-Case-PLS-Headers.png`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/FlipperZero-External-Module-No-Case-PLS-Headers.png`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/FlipperZero-ext-module-secA.png`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/FlipperZero-ext-module-secA.png`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/PDF_file_icon.png`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/PDF_file_icon.png`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/devboard-stlinkv3.png`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/devboard-stlinkv3.png`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/ds3m4.png`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/ds3m4.png`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/flipperzero-antenna-pcb-preview.jpg`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-antenna-pcb-preview.jpg`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/flipperzero-ibutton-pcb-preview.jpg`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-ibutton-pcb-preview.jpg`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/flipperzero-main-pcb-preview.jpg`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-main-pcb-preview.jpg`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/flipperzero-nfc-pcb-preview.jpg`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-nfc-pcb-preview.jpg`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://cdn.flipperzero.one/flipperzero-pcb-names-inside.jpg`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-pcb-names-inside.jpg`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+
+### developer.flipper.net
+
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/index.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 14 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/annotated.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/annotated.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/app_examples.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/app_examples.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 14 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/app_manifests.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/app_manifests.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 14 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/app_publishing.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/app_publishing.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 12 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/applications.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/applications.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 14 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/apps_on_sd_card.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/apps_on_sd_card.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 14 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/badusb_file_format.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/badusb_file_format.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Guide/07-File-Formats.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/dev_board.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board_debug_modes.html`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_debug_modes.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board_debugging_guide.html`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_debugging_guide.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board_fw_update.html`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_fw_update.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board_get_started.html`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_get_started.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board_reading_logs.html`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_reading_logs.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board_usb_uart.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_board_wifi.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dev_tools.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/dev_tools.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/dolphin_assets.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/dolphin_assets.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/example_apps_data.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/example_assets.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/example_number_input.html`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/example_number_input.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/example_onewire.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/fbt.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/fbt.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 12 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/file_formats.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/file_formats.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 13 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/files.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/files.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/firmware_assets.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/firmware_assets.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Guide/06-System-Programming.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/furi_check.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/furi_check.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/furi_hal_debug.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/hardware_targets.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/hardware_targets.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/heatshrink_tar_format.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Guide/07-File-Formats.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/infrared_file_format.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/infrared_file_format.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 13 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_badusb.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_badusb.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_event_loop.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_event_loop.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_flipper.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_flipper.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_gpio.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_gpio.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_gui.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_gui.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_notification.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_notification.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_serial.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_serial.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_storage.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_storage.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/js_your_first_js_app.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_your_first_js_app.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Guide/07-File-Formats.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/nfc_file_format.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/nfc_file_format.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Guide/07-File-Formats.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/ota_updates.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/ota_updates.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/pages.html`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/pages.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/subghz_file_format.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/subghz_file_format.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Guide/07-File-Formats.md` 等 8 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/system.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/system.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 9 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/unit_tests.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/unit_tests.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Guide/06-System-Programming.md` 等 6 个文件
+- 原始链接：`https://developer.flipper.net/flipperzero/doxygen/vscode.html`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/vscode.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+
+### dfu-util.sourceforge.net
+
+- 原始链接：`http://dfu-util.sourceforge.net/build.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+
+### docs.flipper.net
+
+- 原始链接：`https://docs.flipper.net/`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/index.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 3 个文件
+- 原始链接：`https://docs.flipper.net/apps`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/apps.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 9 个文件
+- 原始链接：`https://docs.flipper.net/apps/apps-catalog`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`Legacy/FlipperZero-AI-All-In-One.md` 等 4 个文件
+- 原始链接：`https://docs.flipper.net/basics/desktop`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/basics/desktop.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 11 个文件
+- 原始链接：`https://docs.flipper.net/development/hardware/devboard-stlinkv3`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/development/hardware/devboard-stlinkv3.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 7 个文件
+- 原始链接：`https://docs.flipper.net/development/hardware/modules-blueprints`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/development/hardware/modules-blueprints.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 7 个文件
+- 原始链接：`https://docs.flipper.net/development/hardware/schematic`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/development/hardware/schematic.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 7 个文件
+- 原始链接：`https://docs.flipper.net/gpio-and-modules`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/gpio-and-modules.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/Guide/02-Protocol-Domains.md` 等 8 个文件
+- 原始链接：`https://docs.flipper.net/ibutton`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/ibutton.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://docs.flipper.net/mobile-app`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/mobile-app.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://docs.flipper.net/nfc`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/nfc.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://docs.flipper.net/qflipper`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/qflipper.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 11 个文件
+- 原始链接：`https://docs.flipper.net/sub-ghz`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/sub-ghz.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://docs.flipper.net/zero/development`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 12 个文件
+- 原始链接：`https://docs.flipper.net/zero/development/cli`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/cli.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 12 个文件
+- 原始链接：`https://docs.flipper.net/zero/development/hardware/devboard-schematics`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/hardware/devboard-schematics.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://docs.flipper.net/zero/development/hardware/flipper-blueprints`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/hardware/flipper-blueprints.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 4 个文件
+- 原始链接：`https://docs.flipper.net/zero/development/hardware/tech-specs`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/hardware/tech-specs.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/Official-Docs-CN-Full.md` 等 7 个文件
+- 原始链接：`https://docs.flipper.net/zero/nfc/mfkey32`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/nfc/mfkey32.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`Legacy/FlipperZero-Human-All-In-One.md` 等 3 个文件
+- 原始链接：`https://docs.flipper.net/zero/u2f`
+  - 存档：`Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/u2f.html`
+  - 模式：`existing-local`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+
+### github.com
+
+- 原始链接：`https://github.com/0xchocolate/flipperzero-esp-flasher`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/0xchocolate/flipperzero-esp-flasher.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/DarkFlippers/unleashed-firmware`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/DarkFlippers/unleashed-firmware.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 7 个文件
+- 原始链接：`https://github.com/DroomOne/Flipper-Plugin-Tutorial`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/DroomOne/Flipper-Plugin-Tutorial.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/Flipper-Zero/flipperzero-devboard-stlinkv3`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-devboard-stlinkv3.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://github.com/Next-Flip/Momentum-Firmware`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/Next-Flip/Momentum-Firmware.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 7 个文件
+- 原始链接：`https://github.com/UberGuidoZ/Flipper`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/UberGuidoZ/Flipper.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/UberGuidoZ/Flipper-IRDB`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/UberGuidoZ/Flipper-IRDB.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/bmatcuk/flipperzero-qrcode`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/bmatcuk/flipperzero-qrcode.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/djsime1/awesome-flipperzero`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/djsime1/awesome-flipperzero.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/evilpete/flipper_toolbox`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/evilpete/flipper_toolbox.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 7 个文件
+- 原始链接：`https://github.com/ezod/flipperzero-gps`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/ezod/flipperzero-gps.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/flipperdevices`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Legacy/FlipperZero-Human-All-In-One.md` 等 3 个文件
+- 原始链接：`https://github.com/flipperdevices/flipper-application-catalog`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipper-application-catalog.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 11 个文件
+- 原始链接：`https://github.com/flipperdevices/flipperzero-firmware`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-firmware.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 14 个文件
+- 原始链接：`https://github.com/flipperdevices/flipperzero-good-faps`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-good-faps.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 9 个文件
+- 原始链接：`https://github.com/flipperdevices/flipperzero-ufbt`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-ufbt.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 14 个文件
+- 原始链接：`https://github.com/flipperdevices/flipperzero-ufbt-action`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-ufbt-action.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Legacy/FlipperZero-AI-All-In-One.md` 等 5 个文件
+- 原始链接：`https://github.com/flipperdevices/qFlipper`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/qFlipper.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 8 个文件
+- 原始链接：`https://github.com/jamisonderek/flipper-zero-tutorials`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/jamisonderek/flipper-zero-tutorials.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-Master-CN.md` 等 4 个文件
+- 原始链接：`https://github.com/jamisonderek/flipper-zero-tutorials/wiki`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/jamisonderek/flipper-zero-tutorials/wiki.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/jblanked/FlipperHTTP`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/jblanked/FlipperHTTP.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+- 原始链接：`https://github.com/liamhays/flipwire`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/github.com/liamhays/flipwire.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`CN/FlipperZero-AI-Pack-CN.md` 等 10 个文件
+
+### raw.githubusercontent.com
+
+- 原始链接：`https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+
+### squidfunk.github.io
+
+- 原始链接：`https://squidfunk.github.io/mkdocs-material/insiders/`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/squidfunk.github.io/mkdocs-material/insiders.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 2 个文件
+- 原始链接：`https://squidfunk.github.io/mkdocs-material/reference/abbreviations/`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/squidfunk.github.io/mkdocs-material/reference/abbreviations.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 2 个文件
+
+### update.flipperzero.one
+
+- 原始链接：`https://update.flipperzero.one/latest-firmware-banner.png`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://update.flipperzero.one/release/full.dfu`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+
+### www.mkdocs.org
+
+- 原始链接：`https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown`
+  - 存档：`Wiki-Resources/Markdown-Link-Archive/files/www.mkdocs.org/user-guide/writing-your-docs.html`
+  - 模式：`downloaded`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 2 个文件
+
+### www.st.com
+
+- 原始链接：`https://www.st.com/en/development-tools/stlink-v3mini.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件
+- 原始链接：`https://www.st.com/en/development-tools/stsw-stm32080.html`
+  - 存档：`下载失败`
+  - 模式：`failed`
+  - 来源 Markdown：`Wiki-Resources/Markdown-Link-Archive/README.md` 等 3 个文件

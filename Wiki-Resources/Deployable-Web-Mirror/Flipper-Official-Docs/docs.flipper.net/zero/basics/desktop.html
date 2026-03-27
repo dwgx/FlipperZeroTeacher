@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" data-next-head=""/><title data-next-head="">Desktop - Flipper Zero Documentation</title><meta content="Learn about the Desktop, status bar indicators, and what menus and apps you can access from there" data-next-head="" name="description"/><meta content="https://archbee-image-uploads.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/JL1pDHY45_d0ilefcMIUY_flipper-zero-desktop-prev.png" data-next-head="" name="image"/><meta content="summary_large_image" data-next-head="" name="twitter:card"/><meta content="Desktop - Flipper Zero Documentation" data-next-head="" name="twitter:title"/><meta content="Learn about the Desktop, status bar indicators, and what menus and apps you can access from there" data-next-head="" name="twitter:description"/><meta content="https://archbee-image-uploads.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/JL1pDHY45_d0ilefcMIUY_flipper-zero-desktop-prev.png" data-next-head="" name="twitter:image"/><meta content="Desktop - Flipper Zero Documentation" data-next-head="" property="og:title"/><meta content="product" data-next-head="" property="og:type"/><meta content="https://archbee-image-uploads.s3.amazonaws.com/3StCFqarJkJQZV-7N79yY/JL1pDHY45_d0ilefcMIUY_flipper-zero-desktop-prev.png" data-next-head="" property="og:image"/><meta content="Learn about the Desktop, status bar indicators, and what menus and apps you can access from there" data-next-head="" property="og:description"/><meta content="en" data-next-head="" name="language"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=6.0, user-scalable=1" data-next-head="" name="viewport"/><meta content="no-referrer-when-downgrade" data-next-head="" name="referrer"/><link data-next-head="" href="../../../_external/archbee-image-uploads.s3.amazonaws.com/c1/Fai01NMulJ9a2s616L-iW_32__c1248611a2327f90.ico" rel="shortcut icon"/><style data-next-head="">
+  /* footer width fix */
+  .ab-footer-container.container {
+    width: 100%;
+    max-width: 100vw;
+    background: #000000;
+  } 
+</style><style data-next-head="">
+  b, strong {
+    font-weight: 700 !important;
+  }
+  b.text-gray-800, strong.text-gray-800 {
+    color: #4b5563 !important;
+  }
+  .lang-switch {
+    width: 2.75rem;
+  }
+  .lang-switch > img {
+    height: 1.75rem;
+    position: relative;
+    top: -1px;
+    user-select: none;
+  }
+  .ab-theme-switcher {
+    display: none;
+  }
+  #ab-public-nav-header > div > div > div.print\:hidden > div > div.flex.items-center.border {
+    display: none;
+  }
+</style><style data-next-head="">
+  /* auto-replaced inline icons */
+  .inline-icon {
+    position: relative;
+    top: -1px;
+    margin-right: 1px;
+  }
+
+  /* reset overflow for tab items to un-clip the icons */
+  div[data-cy="tab-item"] .truncate {
+    overflow: visible;
+  }
+
+  /* embed block auto height */
+  .ab-iframe {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  /* custom callout */
+  .flipper-callout {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    margin-left: 120px;
+    white-space: normal;
+    border: 1px solid #9BA3AF;
+    border-radius: 30px 30px 30px 5px;
+    --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  }
+  .flipper-callout:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    height: 100px;
+    width: 106px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+  .flipper-callout.info:before {
+    background-image: url(../../../_external/cdn.flipperzero.one/5c/callout-flipper-info__5c3a6bc856149928.png);
+  }
+  .flipper-callout.warning:before {
+    background-image: url(../../../_external/cdn.flipperzero.one/65/callout-flipper-warning__65505f0367d3949c.png);
+  }
+  .flipper-callout.dead:before {
+    background-image: url(../../../_external/cdn.flipperzero.one/33/callout-flipper-dead__3337b708364bd1b4.png);
+  }
+  .flipper-callout.sdcard:before {
+    background-image: url(../../../_external/cdn.flipperzero.one/b0/callout-sdcard__b09272ba37f2081d.png);
+  }
+
+  .flipper-callout > .callout-header {
+    display: block;
+    padding-bottom: 0.75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+  .flipper-callout > .callout-header:empty {
+    display: none;
+  }
+  
+  /* custom language switch button */
+  @media (max-width: 1024px) {
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div > div.no-print.flex.flex-1 > div.flex.items-center > div.flex.items-center.shadow-inner.border.border-gray-200.dark\:border-gray-700.bg-gray-50.dark\:bg-gray-800.py-1\.5.px-2\.5.rounded-2xl {
+      box-shadow: none;
+      background: transparent;
+      border: none;
+      padding-left: 1rem;
+      padding-right: 0;
+    }
+  
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div > div.no-print.flex.flex-1 > div.flex.items-center > div.flex.items-center.shadow-inner.border.border-gray-200.dark\:border-gray-700.bg-gray-50.dark\:bg-gray-800.py-1\.5.px-2\.5.rounded-2xl > input,
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div > div.no-print.flex.flex-1 > div.flex.items-center > div.flex.items-center.shadow-inner.border.border-gray-200.dark\:border-gray-700.bg-gray-50.dark\:bg-gray-800.py-1\.5.px-2\.5.rounded-2xl > kbd {
+      display: none;
+    }
+  
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div > div.no-print.flex.flex-1 {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @media (max-width: 400px) {
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div > div.relative.flex.justify-start.items-center.w-80 > a > img {
+      width: 80%;
+      float: left;
+    }
+
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div {
+      padding: 0 1rem;
+    }
+
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div > div.no-print.flex.flex-1 > div.flex.items-center > div.flex.items-center.shadow-inner.border.border-gray-200.dark\:border-gray-700.bg-gray-50.dark\:bg-gray-800.py-1\.5.px-2\.5.rounded-2xl {
+      padding-left: 0.5rem;
+      padding-right: 0;
+    }
+
+    #__next > div > div > div.ab-top-navbar.sticky.top-0.flex.items-center.border-b.bg-white.dark\:bg-gray-900.border-gray-200.dark\:border-gray-800.z-10.shadow-sm > div > div.no-print.flex.flex-1 > div.flex.items-center > div.text-gray-400.cursor-pointer.mx-4 {
+      margin: 0 0.5rem;
+    }
+  }
+</style><style data-next-head="">
+  /* homepage */
+  .card {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    margin: 40px 0;
+    border: 1px solid #9ba3af;
+    border-radius: 20px;
+  }
+
+  .card a:hover {
+    text-decoration: underline;
+  }
+
+  .card > .banner {
+    min-height: 338px;
+    width: 250px;
+    border-radius: 20px 0 0 20px;
+    background-size: cover, 250px 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .card:nth-of-type(1) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/e9/quickstart__e9fecbe25ae1a2cb.png), url(../../../_external/cdn.flipperzero.one/10/quickstart_back__10ee8bc5975f6a3f.png);
+  }
+  
+  .card:nth-of-type(2) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/05/sub1__0547cb4730ea3c18.png), url(../../../_external/cdn.flipperzero.one/2f/sub1_back__2f48efb7f9e71452.png);
+  }
+  
+  .card:nth-of-type(3) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/8f/RFID_docs__8f1bc5071be95ac1.png), url(../../../_external/cdn.flipperzero.one/84/RFID_back__848c2a66e52f6dd2.png);
+  }
+  
+  .card:nth-of-type(4) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/be/nfc__befc115407e08cbe.png), url(../../../_external/cdn.flipperzero.one/d2/nfc_back__d288f41bdc43c570.png);
+  }
+  
+  .card:nth-of-type(5) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/ee/Infrared__eed0d12bbd324295.png), url(../../../_external/cdn.flipperzero.one/56/infrared_back__569342afc7ec0190.png);
+  }
+  
+  .card:nth-of-type(6) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/65/iButton__6533c53339d6fd2f.png), url(../../../_external/cdn.flipperzero.one/4c/iButton_back__4cca0fc3eeba1112.png);
+  }
+  
+  .card:nth-of-type(7) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/e5/GPIO__e538e163678dd51e.png), url(../../../_external/cdn.flipperzero.one/fe/GPIO_back__fe980142b5788553.png);
+  }
+  
+  .card:nth-of-type(8) > .banner {
+    background-image: url(../../../_external/cdn.flipperzero.one/00/devs__003cbe7a63072e4a.png), url(../../../_external/cdn.flipperzero.one/6a/devs_back__6ac13ebc7e4dd0e3.png);
+  }
+
+  .card > .desc {
+    padding: 30px;
+  }
+
+  .card > .desc > a {
+    font-size: 175%;
+  }
+
+  .list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 18px 30px;
+  }
+</style><style data-next-head="">
+.flipper-button {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  position: relative;
+  top: 5px;
+  margin-right: 3px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+.flipper-button.back {
+  background-image: url("data:image/svg+xml;utf8,<svg style='display:inline;fill:rgb(75 85 99);stroke:rgb(75 85 99);stroke-width:0.55px;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M22,12C22,6.514 17.486,2 12,2C6.514,2 2,6.514 2,12C2,17.486 6.514,22 12,22C17.486,22 22,17.486 22,12M20,12C20,16.389 16.389,20 12,20C7.611,20 4,16.389 4,12C4,7.611 7.611,4 12,4C16.389,4 20,7.611 20,12'/><path d='M7.154,9.781L9.62,8L9.62,9.096L14.004,9.096C15.874,9.096 17.154,10.969 17.154,12.52C17.154,14.333 15.959,15.945 14.278,15.945L9.757,15.945L9.757,14.712L14.141,14.712C15.224,14.712 15.785,13.409 15.785,12.657C15.785,11.906 15.425,10.466 14.141,10.466L9.62,10.466L9.62,11.425L7.154,9.781Z' style='stroke-width:0.55px;'/></svg>");
+}
+.flipper-button.down {
+  background-image: url("data:image/svg+xml;utf8,<svg style='display:inline;fill:rgb(75 85 99);stroke:rgb(75 85 99);stroke-width:0.55px;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z' /></svg>");
+}
+.flipper-button.left {
+  background-image: url("data:image/svg+xml;utf8,<svg style='display:inline;fill:rgb(75 85 99);stroke:rgb(75 85 99);stroke-width:0.55px;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M22,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12M14,7L9,12L14,17V7Z' /></svg>");
+}
+.flipper-button.ok {
+  background-image: url("data:image/svg+xml;utf8,<svg style='display:inline;fill:rgb(75 85 99);stroke:rgb(75 85 99);stroke-width:0.55px;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M22,12C22,6.514 17.486,2 12,2C6.514,2 2,6.514 2,12C2,17.486 6.514,22 12,22C17.486,22 22,17.486 22,12M20,12C20,16.389 16.389,20 12,20C7.611,20 4,16.389 4,12C4,7.611 7.611,4 12,4C16.389,4 20,7.611 20,12'/> <path d='M16,12C16,9.806 14.194,8 12,8C9.806,8 8,9.806 8,12C8,14.194 9.806,16 12,16C14.194,16 16,14.194 16,12'/></svg>");
+}
+.flipper-button.right {
+  background-image: url("data:image/svg+xml;utf8,<svg style='display:inline;fill:rgb(75 85 99);stroke:rgb(75 85 99);stroke-width:0.55px;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12M4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12M10,17L15,12L10,7V17Z' /></svg>");
+}
+.flipper-button.up {
+  background-image: url("data:image/svg+xml;utf8,<svg style='display:inline;fill:rgb(75 85 99);stroke:rgb(75 85 99);stroke-width:0.55px;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M17,14L12,9L7,14H17Z' /></svg>");
+}
+</style><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="yes" name="apple-mobile-web-app-capable"/><link href="../../../_external/fonts.googleapis.com/82/css2__823ce7ca3c9ae8ff.css" rel="stylesheet"/><link href="../../../_external/cdn.archbee.com/47/normalize__47e9a149ad8a684f.css" type="text/css"/><style data-emotion-css="0 11o07ua 780kdu u4v8xq 1dgdik1 1b94hea 9whsf3 w36zip 1ydoibe whnwm4 xigd0 9uy14h h2ms9 eesil5 5bmvt3 1l4rp5l f7rzsn">:root{--smokey-grey:hsl(var(--ab-gray-300));--blue:#2166ae;--dark-blue:hsl(var(--ab-gray-900));--red:#E95C5C;--grey:hsl(var(--ab-gray-900));--light-grey:hsl(var(--ab-gray-400));--very-light-grey:hsl(var(--ab-gray-300));--smokey-grey-background:hsl(var(--ab-gray-100));--line-grey:hsl(var(--ab-gray-300));}.graphiql-container .topBar{height:auto!important;}.doc-explorer-back{overflow:hidden;}.doc-explorer-title{overflow:hidden;}@media (prefers-color-scheme: dark){.dark .graphiql-container,.dark .CodeMirror-info,.dark .CodeMirror-lint-tooltip,.dark .graphiql-dialog,.dark .graphiql-dialog-overlay,.dark .graphiql-tooltip,.dark [data-radix-popper-content-wrapper]{--color-primary:338,100%,67%;--color-secondary:243,100%,77%;--color-tertiary:188,100%,44%;--color-info:208,100%,72%;--color-success:158,100%,42%;--color-warning:30,100%,80%;--color-error:13,100%,58%;--color-neutral:219,29%,78%;--color-base:219,29%,18%;--popover-box-shadow:none;--popover-border:1px solid hsl(var(--color-neutral));}}.dark .graphiql-container,.dark .CodeMirror-info,.dark .CodeMirror-lint-tooltip,.dark .graphiql-dialog,.dark .graphiql-dialog-overlay,.dark .graphiql-tooltip,.dark [data-radix-popper-content-wrapper]{--color-primary:338,100%,67%;--color-secondary:243,100%,77%;--color-tertiary:188,100%,44%;--color-info:208,100%,72%;--color-success:158,100%,42%;--color-warning:30,100%,80%;--color-error:13,100%,58%;--color-neutral:219,29%,78%;--color-base:219,29%,18%;--popover-box-shadow:none;--popover-border:1px solid hsl(var(--color-neutral));}.css-u4v8xq{height:inherit;max-width:inherit;}.css-1dgdik1{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);}.css-1b94hea{margin-top:14px;margin-bottom:14px;font-weight:600;}.css-9whsf3{max-width:100%;}.css-w36zip{margin-top:28px;margin-bottom:14px;font-weight:600;}.css-1ydoibe{max-width:calc(100% - 18px);}.css-whnwm4{margin-top:14px;margin-bottom:14px;font-weight:400;}.css-xigd0{z-index:0;min-width:24px;height:24px;}.css-9uy14h{width:24px;height:24px;}.css-h2ms9{margin-left:-0.375rem;}.css-eesil5{z-index:1;min-width:24px;height:24px;}.css-5bmvt3{z-index:2;min-width:24px;height:24px;}.css-1l4rp5l::before{white-space:nowrap;width:100%;overflow:hidden;text-overflow:ellipsis;}.css-f7rzsn{color:#e88004;}</style><link href="../../../_external/cdnjs.cloudflare.com/8e/all.min__8e597ce94f282c33.css" rel="stylesheet"/><link href="../../../_external/unpkg.com/15/lucide__1562e99f9e3cf87f.css" rel="stylesheet"/><link data-n-g="" href="../../../_external/cdn.archbee.com/03/11a9d41b86c0fea5__03366319967c223b.css" rel="stylesheet"/><link data-n-g="" href="../../../_external/cdn.archbee.com/6d/532833c1cafaa517__6db3feaecb22d2a9.css" rel="stylesheet"/><link data-n-g="" href="../../../_external/cdn.archbee.com/4b/0154b58e28d2c671__4b2ccd7619b85b6b.css" rel="stylesheet"/><link data-n-g="" href="../../../_external/cdn.archbee.com/31/5682e231667ed4d3__31eb6db6cb6e45b4.css" rel="stylesheet"/><noscript data-n-css=""></noscript><meta content="b320be886ab448c7f7feb45c51656198-4d5c37ecba11d9f6-1" name="sentry-trace"/><meta content="sentry-environment=live,sentry-release=b25b42ca5ce6338cb2a2d327612abda85c6a6974,sentry-public_key=85f7c86c49c24f5694f3eb6f528234a1,sentry-trace_id=b320be886ab448c7f7feb45c51656198,sentry-org_id=89939,sentry-transaction=GET%20%2Fpublic%2F%5B%5B...slug%5D%5D,sentry-sampled=true,sentry-sample_rand=0.9991865573996831,sentry-sample_rate=1" name="baggage"/></head><body style="display:block"><div id="__next"><div class="h-full w-full"><div class="h-full w-full"><div class="ab-space ab-collection min-h-full min-w-full h-full dark:text-white fixed top-0 left-0 right-0 bottom-0 print:overflow-visible print:!static print:!h-auto" data-overlayscrollbars-initialize="" id="docs-scroll-container"><div data-overlayscrollbars-contents=""><div class="ab-space-container ab-collection-container flex flex-col w-full justify-center bg-white dark:bg-gray-900"><nav class="ab-top-navbar flex flex-col z-20 sticky top-0 items-center bg-white/70 dark:bg-gray-900/80 border-b border-gray-100 dark:border-gray-800 css-1dgdik1" data-cy="app-widget-docs-content-navbar-container" id="ab-public-nav-header" role="navigation"><div class="ab-public-navbar-content w-full mx-auto px-2 xl:px-7"><div class="ab-logo-menu-language flex items-center justify-between w-full py-2 gap-2"><div class="flex items-center gap-4" data-cy="app-widget-docs-content-navbar-left-side-container"><div class="p-2.5 flex items-center justify-center rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-100 xl:hidden" data-cy="app-widget-docs-content-navbar-menu-button"><svg aria-hidden="true" class="lucide lucide-menu" data-cy="app-widget-docs-content-navbar-menu-button-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></div><a aria-label="website logo" class="ab-public-logo ab-tab-focus flex items-center max-w-[160px] h-[48px] relative justify-start" data-cy="app-widget-docs-content-navbar-logo" href="../../zero.html" tabindex="0"><img alt="Website logo" class="w-full block mx-auto py-1 object-contain css-u4v8xq" src="../../../_external/images.archbee.com/2a/XjZ2QQQGKOayp2Dm8qgSF_logo__2a52ba190728c81e.png"/></a><div class="hidden xl:flex items-center gap-0.5"></div></div><div class="flex items-center print:hidden" data-cy="app-widget-docs-content-navbar-right-side-container"><div class="flex items-center gap-2 text-gray-400 cursor-pointer"><div class="flex items-center"><div class="xl:hidden flex items-center justify-center p-2.5 mr-0 lg:mr-2 shrink-0 cursor-pointer rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-100 lg:hover:bg-transparent lg:hover:dark:bg-transparent" data-cy="app-widget-docs-content-navbar-right-side-search-button"><svg aria-hidden="true" class="lucide lucide-search" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg></div><div class="hidden flex-row items-center gap-2"></div><div class="ab-external-link-modal-toggle flex xl:hidden items-center justify-center p-2.5 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-400 dark:text-gray-100"><svg class="stroke-current" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></div></div></div></div><div class="ab-external-links-wrapper hidden xl:flex flex-1 items-center justify-end gap-2"><a class="ab-external-link-btn py-2 px-5 font-semibold rounded-lg text-lg btn ab-tab-focus text-gray-700 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800" data-cy="public-nav-header-external-link-button" href="https://flipper.net/" tabindex="0">Home</a><a class="ab-external-link-btn py-2 px-5 font-semibold rounded-lg text-lg btn ab-tab-focus text-gray-700 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800" data-cy="public-nav-header-external-link-button" href="https://flipper.net/collections/" tabindex="0">Products</a><a class="ab-external-link-btn py-2 px-5 font-semibold rounded-lg text-lg btn ab-tab-focus text-gray-700 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800" data-cy="public-nav-header-external-link-button" href="../../index.html" tabindex="0">Docs</a><a class="ab-external-link-btn py-2 px-5 font-semibold rounded-lg text-lg btn ab-tab-focus text-gray-700 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800" data-cy="public-nav-header-external-link-button" href="https://flipper.net/pages/downloads" tabindex="0">Downloads</a><a class="ab-external-link-btn py-2 px-5 font-semibold rounded-lg text-lg btn ab-tab-focus text-gray-700 dark:text-gray-100 hover:text-gray-800 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800" data-cy="public-nav-header-external-link-button" href="https://flipper.net/pages/community" tabindex="0">Community</a></div></div></div></nav><style data-emotion="css 14yoxd">.css-14yoxd{z-index:1200;}</style><div class="ab-space-content ab-collection-content w-full mx-auto relative xl:flex xl:flex-row justify-between px-7 xl:px-0"><div class="ab-tree-navigation no-print sticky flex-col border-r border-gray-100 dark:border-gray-800 w-[360px] hidden xl:flex xl:flex-shrink-0 transition-width transition-slowest ease" style="top:101px;height:calc(100vh - 101px);max-height:calc(100vh - 101px)"><div class="ab-left-nav-public-header flex flex-col w-full px-6 xl:px-7 xl:pt-7 pb-6 !px-0" data-cy="public-nav-header-container"><div class="ab-public-search flex justify-center px-6 xl:px-7 mt-4 xl:mt-0" role="search"><div class="w-full flex h-11 items-center border py-1 pr-2 pl-3 rounded-lg hover:shadow-sm border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xs"><div class="w-6 h-6 flex items-center justify-center mr-0 lg:mr-2 shrink-0 cursor-pointer"><svg aria-hidden="true" class="lucide lucide-search hover:stroke-primary-500 transition-colors" fill="none" height="16" stroke="hsl(var(--ab-gray-400))" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg></div><input class="ab-search-input border-none bg-transparent placeholder-gray-400::placeholder w-full leading-none font-medium" placeholder="Search..." value=""/><kbd class="inline-flex justify-center items-center rounded border align-middle leading-3 cursor-default text-gray-500 dark:text-gray-400 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 font-medium mx-0 ml-1 shadow-none p-0" style="height:22px;min-width:22px"><svg aria-hidden="true" class="lucide lucide-command shrink-0" fill="none" height="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"></path></svg></kbd><kbd class="inline-flex justify-center items-center rounded border align-middle leading-3 cursor-default text-gray-500 dark:text-gray-400 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 font-medium mx-0 ml-1 shadow-none p-0" style="height:22px;min-width:22px">K</kbd></div></div></div><div class="flex overflow-hidden relative w-full flex-col h-full"><div class="flex w-full overflow-hidden flex-col h-full css-0"><div class="ab-left-nav-public scroll-smooth flex flex-1 flex-col items-center max-h-full xl:px-7 xl:pb-5" data-overlayscrollbars-initialize="" id="ab-left-nav-public-wrap"><div data-overlayscrollbars-contents=""><div class="w-full relative overflow-x-hidden px-6 xl:px-0" data-cy="public-left-nav-docs-tree-items-container" role="navigation"><div title="Flipper Zero Documentation"><a href="../../zero.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-1b94hea" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Flipper Zero Documentation"><span class="truncate">Flipper Zero Documentation</span></div></div></div></a></div><div title="Basics"><a class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Basics"><span class="truncate">Basics</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="First start"><a href="first-start.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="First start"><span class="shrink-0 mr-4 flex items-center justify-center w-7 h-7"><span class="ab-font-emoji flex items-center justify-center w-6 h-6 text-xl leading-4 box-border text-gray-400 dark:text-gray-500">🐬</span></span><span class="truncate">First start</span></div></div></div></a></div><div title="MicroSD card setup"><a href="sd-card.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="MicroSD card setup"><span class="truncate">MicroSD card setup</span></div></div></div></a></div><div title="Firmware update"><a href="firmware-update.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Firmware update"><span class="truncate">Firmware update</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a></div><div title="Desktop"><a href="desktop.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-active !text-primary-500 text-gray-700 dark:text-gray-300 css-1b94hea" id="left-nav-link-PUBLISHED-eUX0BIqGL_97vlKnqrzEE" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Desktop"><span class="truncate">Desktop</span></div></div></div></a></div><div title="Pet dolphin"><a href="dolphin.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Pet dolphin"><span class="truncate">Pet dolphin</span></div></div></div></a></div><div title="Power"><a href="power.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Power"><span class="truncate">Power</span></div></div></div></a></div><div title="Reboot"><a href="reboot.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reboot"><span class="truncate">Reboot</span></div></div></div></a></div><div title="Controls"><a href="control.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Controls"><span class="truncate">Controls</span></div></div></div></a></div><div title="Settings"><a href="settings.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Settings"><span class="truncate">Settings</span></div></div></div></a></div></div></div><div title="Sub-GHz"><a href="../sub-ghz.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Sub-GHz"><span class="truncate">Sub-GHz</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Reading signals"><a href="../sub-ghz/read.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reading signals"><span class="truncate">Reading signals</span></div></div></div></a></div><div title="Reading RAW signals"><a href="../sub-ghz/read-raw.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reading RAW signals"><span class="truncate">Reading RAW signals</span></div></div></div></a></div><div title="Adding new remotes"><a href="../sub-ghz/add-new-remote.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Adding new remotes"><span class="truncate">Adding new remotes</span></div></div></div></a></div><div title="Supported Sub-GHz vendors"><a href="../sub-ghz/supported-vendors.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Supported Sub-GHz vendors"><span class="truncate">Supported Sub-GHz vendors</span></div></div></div></a></div><div title="Frequencies"><a href="../sub-ghz/frequencies.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Frequencies"><span class="truncate">Frequencies</span></div></div></div></a></div></div></div><div title="125 kHz RFID"><a href="../rfid.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="125 kHz RFID"><span class="truncate">125 kHz RFID</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Reading 125 kHz RFID cards"><a href="../rfid/read.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reading 125 kHz RFID cards"><span class="truncate">Reading 125 kHz RFID cards</span></div></div></div></a></div><div title="Adding 125 kHz cards manually"><a href="../rfid/add-manually.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Adding 125 kHz cards manually"><span class="truncate">Adding 125 kHz cards manually</span></div></div></div></a></div><div title="Writing data to T5577 cards"><a href="../rfid/write-data.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Writing data to T5577 cards"><span class="truncate">Writing data to T5577 cards</span></div></div></div></a></div><div title="Animal microchips"><a href="../rfid/animal-microchips.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Animal microchips"><span class="truncate">Animal microchips</span></div></div></div></a></div></div></div><div title="NFC"><a href="../nfc.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="NFC"><span class="truncate">NFC</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Reading NFC cards"><a href="../nfc/read.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reading NFC cards"><span class="truncate">Reading NFC cards</span></div></div></div></a></div><div title="Recovering MIFARE Classic keys"><a href="../nfc/mfkey32.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Recovering MIFARE Classic keys"><span class="truncate">Recovering MIFARE Classic keys</span></div></div></div></a></div><div title="Unlocking cards with passwords"><a href="../nfc/unlock-with-password.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Unlocking cards with passwords"><span class="truncate">Unlocking cards with passwords</span></div></div></div></a></div><div title="Writing data to magic cards"><a href="../nfc/magic-cards.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Writing data to magic cards"><span class="truncate">Writing data to magic cards</span></div></div></div></a></div><div title="Adding new NFC cards"><a href="../nfc/add-manually.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Adding new NFC cards"><span class="truncate">Adding new NFC cards</span></div></div></div></a></div></div></div><div title="Infrared"><a href="../infrared.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Infrared"><span class="truncate">Infrared</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Reading infrared signals"><a href="../infrared/read.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reading infrared signals"><span class="truncate">Reading infrared signals</span></div></div></div></a></div><div title="Using universal remotes"><a href="../infrared/universal-remotes.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Using universal remotes"><span class="truncate">Using universal remotes</span></div></div></div></a></div><div title="Remotes in Flipper Mobile App"><a href="../infrared/remotes-mobile.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Remotes in Flipper Mobile App"><span class="truncate">Remotes in Flipper Mobile App</span></div></div></div></a></div></div></div><div title="GPIO &amp; modules"><a href="../gpio-and-modules.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="GPIO &amp; modules"><span class="truncate">GPIO &amp; modules</span></div></div></div></a></div><div title="iButton"><a href="../ibutton.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="iButton"><span class="truncate">iButton</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Reading iButton keys"><a href="../ibutton/read.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reading iButton keys"><span class="truncate">Reading iButton keys</span></div></div></div></a></div><div title="Adding iButton keys manually"><a href="../ibutton/add-manually.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Adding iButton keys manually"><span class="truncate">Adding iButton keys manually</span></div></div></div></a></div><div title="Writing data to iButton keys"><a href="../ibutton/write.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Writing data to iButton keys"><span class="truncate">Writing data to iButton keys</span></div></div></div></a></div></div></div><div title="Bad USB"><a href="../bad-usb.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Bad USB"><span class="truncate">Bad USB</span></div></div></div></a></div><div title="U2F (Universal 2nd Factor)"><a href="../u2f.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="U2F (Universal 2nd Factor)"><span class="truncate">U2F (Universal 2nd Factor)</span></div></div></div></a></div><div title="Apps"><a href="../apps.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Apps"><span class="truncate">Apps</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="HID controllers"><a href="../apps/controllers.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="HID controllers"><span class="truncate">HID controllers</span></div></div></div></a></div><div title="Troubleshooting apps"><a href="../apps/troubleshoot.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Troubleshooting apps"><span class="truncate">Troubleshooting apps</span></div></div></div></a></div></div></div><div title="Flipper Mobile App"><a href="../mobile-app.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Flipper Mobile App"><span class="truncate">Flipper Mobile App</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Reporting Mobile App bugs"><a href="../mobile-app/bug-report.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Reporting Mobile App bugs"><span class="truncate">Reporting Mobile App bugs</span></div></div></div></a></div></div></div><div title="qFlipper"><a href="../qflipper.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="qFlipper"><span class="truncate">qFlipper</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Troubleshooting drivers on Windows"><a href="../qflipper/windows-debug.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Troubleshooting drivers on Windows"><span class="truncate">Troubleshooting drivers on Windows</span></div></div></div></a></div></div></div><div title="Development"><a href="../development.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Development"><span class="truncate">Development</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Developer Docs"><a class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" href="../../../developer.flipper.net/flipperzero/doxygen/index.html" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Developer Docs"><span class="w-7 h-7 shrink-0 mr-4 flex items-center justify-center"><svg aria-hidden="true" class="lucide lucide-external-link inline text-gray-400 dark:text-gray-500" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></span><span class="truncate">Developer Docs</span></div></a></div><div title="Wi-Fi Developer Board"><a class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" href="../../../developer.flipper.net/flipperzero/doxygen/dev_board.html" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Wi-Fi Developer Board"><span class="w-7 h-7 shrink-0 mr-4 flex items-center justify-center"><svg aria-hidden="true" class="lucide lucide-external-link inline text-gray-400 dark:text-gray-500" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></span><span class="truncate">Wi-Fi Developer Board</span></div></a></div><div title="JavaScript on Flipper Zero"><a class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" href="../../../developer.flipper.net/flipperzero/doxygen/js.html" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="JavaScript on Flipper Zero"><span class="w-7 h-7 shrink-0 mr-4 flex items-center justify-center"><svg aria-hidden="true" class="lucide lucide-external-link inline text-gray-400 dark:text-gray-500" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></span><span class="truncate">JavaScript on Flipper Zero</span></div></a></div><div title="Command-line interface"><a href="../development/cli.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Command-line interface"><span class="truncate">Command-line interface</span></div></div></div></a></div><div title="Hardware"><a href="../development/hardware.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Hardware"><span class="truncate">Hardware</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a></div></div></div><div title="Video Game Module"><a href="../video-game-module.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-1ydoibe" title="Video Game Module"><span class="truncate">Video Game Module</span></div><div aria-label="expandable" class="flex items-center justify-center self-start w-6 h-6 shrink-0" role="button"><svg aria-hidden="true" class="lucide lucide-chevron-right ab-left-nav-chevron transform w-4 h-4 transition-transform text-gray-300 dark:text-gray-600 rotate-90" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></div></div></div></a><div class="flex-1 max-w-full pl-7 ml-4"><div title="Quick start guide"><a href="../video-game-module/quick-start.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Quick start guide"><span class="truncate">Quick start guide</span></div></div></div></a></div><div title="Firmware update"><a href="../video-game-module/firmware-update.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Firmware update"><span class="truncate">Firmware update</span></div></div></div></a></div><div title="Сustom firmware"><a href="../video-game-module/custom-firmware.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Сustom firmware"><span class="truncate">Сustom firmware</span></div></div></div></a></div><div title="GPIO on Video Game Module"><a href="../video-game-module/gpio.html"><div><div class="ab-tree-navigation-link ab-tab-focus text-lg cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-gray-700 dark:text-gray-300 css-whnwm4" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="GPIO on Video Game Module"><span class="truncate">GPIO on Video Game Module</span></div></div></div></a></div></div></div><div title="Contributing to Flipper Docs"><a href="../contribute.html"><div><div class="ab-tree-navigation-link ab-tab-focus cursor-pointer select-none flex items-center justify-between pr-0 my-4 !leading-6 ab-tree-navigation-link-inactive text-lg text-gray-900 dark:text-white css-w36zip" role="link" tabindex="0"><div class="flex items-center css-9whsf3" title="Contributing to Flipper Docs"><span class="truncate">Contributing to Flipper Docs</span></div></div></div></a></div></div></div></div></div></div><div class="px-[24px] flex my-4"><a class="flex items-center justify-center mx-auto unselectable px-4 py-1 h-[40px] border cursor-pointer rounded-lg bg-gray-400/5 border-transparent w-full" href="https://www.archbee.com/?utm_campaign=hosted-docs&amp;utm_medium=referral&amp;utm_source=docs.flipper.net" target="_blank"><span class="text-gray-600 dark:text-gray-300">Docs powered by</span> <span class="flex items-center gap-1.5 font-semibold text-gray-600 dark:text-gray-100">Archbee</span></a></div></div><div class="flex flex-col w-full relative"><div class="flex w-full z-[1] relative"><div class="ab-center-column md:flex grow xl:px-7 xl:overflow-x-hidden w-full justify-center" role="main"><div class="w-full max-w-[680px] xl:w-[calc(100vw-709px)]" id="main-column"><div><div class="flex flex-col justify-center pt-4 xl:pt-7"><div class="flex flex-1 w-full justify-center pb-0"><div class="flex flex-initial flex-col w-full"><div class=""><div class="flex items-center pl-0 pr-2 mb-5 xl:-mt-1.5"><div class="flex"><div><div class="flex text-gray-400 flex-wrap gap-2"><div class="flex gap-2"><div class="flex text-gray-500 dark:text-gray-400 items-center font-semibold !text-primary-500">Basics</div></div></div></div></div></div><h1 class="ab-doc-name h1 font-bold text-5xl break-words w-full max-w-full mt-0 pb-0 xl:-mt-1.5 tracking-tighter mb-8">Desktop</h1><div class="flex items-center gap-4"></div></div><div><div class="max-h-dvh invisible"> the desktop is your digital pet’s home it’s the place to see what your dolphin pet is doing and how it’s feeling also, here you ’ll find the status bar with different indicators, such as battery level, charging status, bluetooth connectivity, microsd card status, and others on this page, you ’ ll learn about the desktop, status bar indicators, and what menus and apps you can access from there status bar at the top of the desktop, there ’ s a status bar displaying various icons that provide key information about your device ’ s current status and activity you might see the following indicators the battery is fully charged docid\ pguacq74pmzvvag7icac2 the battery is charging technical issue — please https //docs flipper net/basics/reboot#8egxn your flipper zero if the issue persists, https //support flipper net/hc/en us/requests/new the microsd card is mounted and operates normally docid\ jke9ski5pq3jnv3lernnp the microsd card mounting failed learn how to fix this in https //docs flipper net/basics/sd card#rtpsy bluetooth low energy (ble) is active https //docs flipper net/basics/settings#ejslp flipper zero is connected to another device via ble flipper zero is locked docid\ eux0biqgl 97vlknqrzee flipper zero is muted — no vibro and sound docid\ eux0biqgl 97vlknqrzee flipper zero is connected to a computer via https //docs flipper net/qflipper or https //lab flipper net/ flipper zero is in dummy mode the device disables most of its functions and turns into a gaming device docid\ eux0biqgl 97vlknqrzee an external module is connected to your flipper zero via the expansion module protocol https //docs flipper net/gpio and modules flipper zero is in ble beacon mode the device broadcasts a ble signal that is picked up by the findmy network this functionality can be enabled with the https //lab flipper net/apps/findmy app an app is running in the background navigating desktop while on the desktop, you can use the following default shortcuts to access the main menu, archive, device info, and customizable quick access apps you can reassign some of the shortcuts as described in https //docs flipper net/basics/settings#eid41 main menu the main menu provides access to various features, settings, and apps to access the main menu, press the %ok% ok button while on the desktop learn more about the apps available in the main menu https //docs flipperzero one/sub ghz https //docs flipperzero one/rfid https //docs flipperzero one/nfc https //docs flipperzero one/infrared https //docs flipperzero one/gpio and modules https //docs flipperzero one/ibutton https //docs flipperzero one/bad usb https //docs flipperzero one/u2f https //docs flipperzero one/apps https //docs flipperzero one/basics/settings lock menu in the lock menu, you can lock your flipper zero with and without a pin code, activate dummy mode, and mute the device to enter the lock menu, press %up% up while on the desktop lock by default, this option locks the controls of your flipper zero to unlock the controls, press the %back% back button three times to protect your device against unauthorized access, you can lock your flipper zero with a pin code to learn more, visit https //docs flipper net/basics/settings#joetm mute this function disables sound and vibro notifications on your flipper zero dummy mode in this mode, flipper zero disables most of its functions you can customize the controls by assigning quick access apps of your choice to the %left% left , %right% right , %down% down , and %ok% ok buttons to learn how to set apps to be accessible in dummy mode, visit https //docs flipper net/basics/settings#eid41 passport here, you can view your digital pet’s profile for details such as the unique name, appearance, mood, level, and progress please note that this shortcut may be assigned to a different application to learn more, visit https //docs flipper net/basics/settings#eid41 you can also access your digital pet’s passport by going to main menu &gt; settings &gt; passport archive the archive app lets you quickly access and manage saved tags, keys, remotes, payloads, and other apps the archive app consists of several tabs you can navigate among them by pressing the %left% left and %right% right buttons https //docs flipper net/sub ghz sub 1 ghz radio remotes https //docs flipper net/rfid low frequency rfid tags or keys https //docs flipper net/nfc high frequency 13 56 mhz tags or keys https //docs flipper net/infrared infrared remotes https //docs flipper net/ibutton 1 wire keys https //docs flipper net/bad usb ducky script payloads https //docs flipper net/u2f universal 2nd factor token https //docs flipper net/apps additional apps browser user and system files by selecting a tag, key, or remote and pressing the %ok% ok button, you access the contextual menu, which allows you to emulate, add to the favorites tab, rename, or delete the data to access the contextual menu in the favorites tab, press and hold the %ok% ok button device info you can easily access information about your flipper zero firmware and hardware by pressing and holding the %down% down button while on the desktop quick access apps the quick access apps feature allows you to assign apps to the pad buttons and open them directly from the desktop this way, you won’t need to look for them in the main menu whenever you want to run them to learn how to change default shortcuts and assign your own quick access apps, visit https //docs flipper net/basics/settings#eid41 </div></div></div></div><div class="flex flex-col items-center mb-10"><div class="flex w-full h-px bg-gray-100 dark:bg-gray-800"></div><div class="flex flex-col p-2 mt-6 rounded-2xl bg-gradient-to-t from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 w-full"><div class="flex-col sm:flex p-4"><div class="flex w-full sm:w-fit justify-center"><span class="ab-gray-disk-outer w-14 h-14"><svg aria-hidden="true" class="lucide lucide-message-circle-question-mark css-f7rzsn" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></span></div><div class="flex flex-col mt-4"><div class="flex text-3xl tracking-tighter font-bold text-gray-800 dark:text-gray-50 mb-2">Have a question?</div><div class="text-gray-600 dark:text-gray-300">Our knowledgeable support team and an awesome community will get you an answer in a flash. Please leave your questions in English.</div><div class="text-gray-600 dark:text-gray-300 mt-4">To ask a question or participate in discussions, you'll need to authenticate first.</div></div></div><div class="flex flex-col w-full items-center rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 relative"><div class="archbee-editor-v2 relative break-words flex flex-col electron-no-drag text-gray-700 dark:text-gray-200 text-base w-full [&amp;_.slate-editor]:px-4 [&amp;_.slate-editor]:py-2 [&amp;_.slate-editor]:min-h-[93px] [&amp;_.slate-editor]:pb-10" data-cy="archbee-editor" id="qna-editor-undefined-new"><div aria-multiline="true" class="slate-editor ignore-click-outside/toolbar" contenteditable="true" data-cy="plate-content" data-slate-editor="true" data-slate-node="value" role="textbox" spellcheck="false" style="position:relative;white-space:pre-wrap;word-wrap:break-word" translate="no" zindex="-1"><div class="slate-paragraph ab-plugin-wrapper transition-[background-color,box-shadow] duration-150 delay-75 w-full rounded-xl css-0" data-slate-node="element" style="position:relative"><p class="ab-paragraph w-full mt-0 leading-8 break-words slate-paragraph css-1l4rp5l" data-cy="editor-paragraph-block"><span data-slate-node="text"><span data-slate-leaf="true"><span data-slate-length="0" data-slate-zero-width="n">﻿<br/></span></span></span></p></div></div></div><div class="flex items-center mt-2 p-2 pt-0 justify-between absolute bottom-0 right-0 w-auto"><div class="flex items-center gap-4"><button class="btn btn-link justify-end h-full self-end css-f7rzsn">Post<svg aria-hidden="true" class="lucide lucide-send-horizontal ml-2 stroke-current" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z"></path><path d="M6 12h16"></path></svg></button></div></div></div></div></div><div class="flex flex-col"><div class="no-print flex flex-col justify-end sm:flex-col w-full max-w-full pt-16"><div class="ab-doc-template-footer-container flex flex-col md:flex-row md:pt-7 md:justify-between sm:items-center 2xl:pb-7 border-t border-gray-100 dark:border-gray-800"><div class="flex flex-1 flex-col 2xl:mb-0 p-6 md:p-0 items-center md:items-start"><div class="flex items-center text-gray-500 dark:text-gray-400 text-base"><svg aria-hidden="true" class="lucide lucide-calendar mr-1.5 stroke-current" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect height="18" rx="2" width="18" x="3" y="4"></rect><path d="M3 10h18"></path></svg>Updated<!-- --> <!-- -->16 Feb 2026</div><div class="flex items-center h-[37px]"><div class="flex items-center w-full" data-state="closed"><div class="flex rounded-lg relative css-xigd0" data-cy="editor-document-contributor-entry-container"><img alt="Doc contributor" class="absolute rounded-lg bg-gray-400 shrink-0 border-2 border-white dark:border-gray-900 css-9uy14h" data-cy="editor-document-contributor-entry-image" loading="lazy" src="../../../_external/archbee-profile-photos.s3.amazonaws.com/9b/i9GthUOrRWXfoOGGVD3GN___9beffef7c3ab324f.blob"/></div></div><div class="flex items-center w-full css-h2ms9" data-state="closed"><div class="flex rounded-lg relative css-eesil5" data-cy="editor-document-contributor-entry-container"><img alt="Doc contributor" class="absolute rounded-lg bg-gray-400 shrink-0 border-2 border-white dark:border-gray-900 css-9uy14h" data-cy="editor-document-contributor-entry-image" loading="lazy" src="../../../_external/archbee-profile-photos.s3.amazonaws.com/e2/Kvhn1YR6-yun24x5ivBKZ___e25a0d15f574961b.blob"/></div></div><div class="flex items-center w-full css-h2ms9" data-state="closed"><div class="flex rounded-lg relative css-5bmvt3" data-cy="editor-document-contributor-entry-container"><img alt="Doc contributor" class="absolute rounded-lg bg-gray-400 shrink-0 border-2 border-white dark:border-gray-900 css-9uy14h" data-cy="editor-document-contributor-entry-image" loading="lazy" src="../../../_external/archbee-profile-photos.s3.amazonaws.com/65/9ZGZMvCvge7w6eeQGBRXs___659c0d43a9ef487a.blob"/></div></div></div></div></div><div class="border-t border-gray-100 dark:border-gray-800 my-7 mt-0 md:mt-7 2xl:mt-0"></div><div class="flex flex-col lg:flex-row justify-between w-full dark:border-gray-800"><a class="ab-nav-left ab-tab-focus flex flex-1 items-center lg:max-w-[calc(50%-0.5rem)] justify-start text-left mb-2 rounded-2xl cursor-pointer py-3 px-4 bg-gray-50 dark:bg-gray-850 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-500 transition-all duration-200 ease-out hover:[&amp;_.navigation-arrow]:stroke-primary-500" href="firmware-update/firmware-recovery.html" tabindex="0" title="Firmware recovery"><div class="mr-3"><svg aria-hidden="true" class="lucide lucide-circle-arrow-left navigation-arrow stroke-current text-gray-300 dark:text-gray-500 transition-all" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="m12 8-4 4 4 4"></path><path d="M16 12H8"></path></svg></div><div class="max-w-[90%]"><div class="text-gray-500 dark:text-gray-400 text-xs font-bold mt-0.5 text-left">PREVIOUS</div><div class="ab-nav-left-text text-left font-bold text-lg truncate">Firmware recovery</div></div></a><a class="ab-nav-right ab-tab-focus flex flex-1 items-center lg:max-w-[calc(50%-0.5rem)] justify-end text-right mb-2 rounded-2xl cursor-pointer py-3 px-4 bg-gray-50 dark:bg-gray-850 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-500 transition-all duration-200 ease-out hover:[&amp;_.navigation-arrow]:stroke-primary-500" href="dolphin.html" tabindex="0" title="Pet dolphin"><div class="max-w-[90%]"><div class="text-gray-500 dark:text-gray-400 text-xs font-bold mt-0.5">NEXT</div><div class="ab-nav-right-text text-right max-w-full font-bold text-lg truncate">Pet dolphin</div></div><div class="ml-3"><svg aria-hidden="true" class="lucide lucide-circle-arrow-right navigation-arrow stroke-current text-gray-300 dark:text-gray-500 transition-all" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="m12 16 4-4-4-4"></path><path d="M8 12h8"></path></svg></div></a></div><div class="flex justify-center mt-12"><div class="my-2 flex mb-8 xl:hidden"><a class="flex items-center justify-center mx-auto unselectable px-4 py-1 h-[40px] border cursor-pointer rounded-lg bg-gray-400/5 border-transparent w-[248px]" href="https://www.archbee.com/?utm_campaign=hosted-docs&amp;utm_medium=referral&amp;utm_source=docs.flipper.net" target="_blank"><span class="text-gray-600 dark:text-gray-300">Docs powered by</span> <span class="flex items-center gap-1.5 font-semibold text-gray-600 dark:text-gray-100">Archbee</span></a></div></div></div></div></div></div></div></div><div class="hidden"><div class="absolute h-full w-full inset-0 pr-2 pt-7 overflow-y-auto"><div class="overflow-y-auto"><div class="[&amp;&gt;div:has(&gt;.ab-code-drawer-container)~div:has(&gt;.ab-code-drawer-container)]:hidden" id="ab-code-drawer"></div></div><div class="hidden xl:block"></div></div></div><div class="hidden xl:block w-[300px] 2xl:w-[360px] xl:flex-shrink-0"><div class="ab-right-column"><div class="ab-toc-container"><div id="ab-toc-portal"></div></div></div><div class="my-2 hidden"><a class="flex items-center justify-center mx-auto unselectable px-4 py-1 h-[40px] border cursor-pointer rounded-lg bg-gray-400/5 border-transparent w-full" href="https://www.archbee.com/?utm_campaign=hosted-docs&amp;utm_medium=referral&amp;utm_source=docs.flipper.net" target="_blank"><span class="text-gray-600 dark:text-gray-300">Docs powered by</span> <span class="flex items-center gap-1.5 font-semibold text-gray-600 dark:text-gray-100">Archbee</span></a></div></div></div></div></div><div class="ab-footer-container container relative mx-auto !z-50 break-words"><footer class="custom-footer" role="contentinfo">
+<div class="custom-footer__inner">
+<div class="custom-footer__top">
+<div class="custom-footer__columns">
+<div class="custom-footer__column">
+<ul class="custom-footer__links">
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://flipper.net/collections">Products</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://flipper.net/pages/downloads">Downloads</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://github.com/flipperdevices">GitHub</a>
+</li>
+</ul>
+</div>
+<div class="custom-footer__column">
+<ul class="custom-footer__links">
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://support.flipper.net">Support</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://flipper.net/pages/community">Community</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="../../index.html">Documentation</a>
+</li>
+</ul>
+</div>
+<div class="custom-footer__column">
+<ul class="custom-footer__links">
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://blog.flipper.net">Blog</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://forms.gle/M7EYXKRAfVRPF2uu9">Resellers</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://hackspace.flipper.net">Hackspace</a>
+</li>
+</ul>
+</div>
+<div class="custom-footer__column">
+<ul class="custom-footer__links">
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://flipperdevices.com/jobs/">Jobs</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://flipperdevices.com">Company</a>
+</li>
+<li class="custom-footer__item">
+<a class="custom-footer__link" href="https://flipper.net/pages/contacts">Contacts</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="custom-footer__socials">
+<div class="social-icons__wrapper footer-utilities__icons">
+<div class="social-icons__icon-wrapper">
+<a aria-label="Youtube" href="https://www.youtube.com/flipperzero" rel="noopener noreferrer" target="_blank">
+<span class="social-icons__icon-label">Youtube</span>
+<svg aria-hidden="true" class="social-icons__icon" focusable="false" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.16 5.87c.34 1.309.34 4.08.34 4.08s0 2.771-.34 4.08a2.125 2.125 0 0 1-1.53 1.53c-1.309.34-6.63.34-6.63.34s-5.321 0-6.63-.34a2.125 2.125 0 0 1-1.53-1.53c-.34-1.309-.34-4.08-.34-4.08s0-2.771.34-4.08a2.173 2.173 0 0 1 1.53-1.53C4.679 4 10 4 10 4s5.321 0 6.63.34a2.173 2.173 0 0 1 1.53 1.53ZM8.3 12.5l4.42-2.55L8.3 7.4v5.1Z">
+</path>
+</svg>
+</a>
+</div>
+<div class="social-icons__icon-wrapper">
+<a aria-label="Instagram" href="https://www.instagram.com/flipper_zero/" rel="noopener noreferrer" target="_blank">
+<span class="social-icons__icon-label">Instagram</span>
+<svg aria-hidden="true" class="social-icons__icon" focusable="false" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M13.23 3.492c-.84-.037-1.096-.046-3.23-.046-2.144 0-2.39.01-3.238.055-.776.027-1.195.164-1.487.273a2.43 2.43 0 0 0-.912.593 2.486 2.486 0 0 0-.602.922c-.11.282-.238.702-.274 1.486-.046.84-.046 1.095-.046 3.23 0 2.134.01 2.39.046 3.229.004.51.097 1.016.274 1.495.145.365.319.639.602.913.282.282.538.456.92.602.474.176.974.268 1.479.273.848.046 1.103.046 3.238.046 2.134 0 2.39-.01 3.23-.046.784-.036 1.203-.164 1.486-.273.374-.146.648-.329.921-.602.283-.283.447-.548.602-.922.177-.476.27-.979.274-1.486.037-.84.046-1.095.046-3.23 0-2.134-.01-2.39-.055-3.229-.027-.784-.164-1.204-.274-1.495a2.43 2.43 0 0 0-.593-.913 2.604 2.604 0 0 0-.92-.602c-.284-.11-.703-.237-1.488-.273ZM6.697 2.05c.857-.036 1.131-.045 3.302-.045 1.1-.014 2.202.001 3.302.045.664.014 1.321.14 1.943.374a3.968 3.968 0 0 1 1.414.922c.41.397.728.88.93 1.414.23.622.354 1.279.365 1.942C18 7.56 18 7.824 18 10.005c0 2.17-.01 2.444-.046 3.292-.036.858-.173 1.442-.374 1.943-.2.53-.474.976-.92 1.423a3.896 3.896 0 0 1-1.415.922c-.51.191-1.095.337-1.943.374-.857.036-1.122.045-3.302.045-2.171 0-2.445-.009-3.302-.055-.849-.027-1.432-.164-1.943-.364a4.152 4.152 0 0 1-1.414-.922 4.128 4.128 0 0 1-.93-1.423c-.183-.51-.329-1.085-.365-1.943C2.009 12.45 2 12.167 2 10.004c0-2.161 0-2.435.055-3.302.027-.848.164-1.432.365-1.942a4.44 4.44 0 0 1 .92-1.414 4.18 4.18 0 0 1 1.415-.93c.51-.183 1.094-.33 1.943-.366Zm.427 4.806a4.105 4.105 0 1 1 5.805 5.805 4.105 4.105 0 0 1-5.805-5.805Zm1.882 5.371a2.668 2.668 0 1 0 2.042-4.93 2.668 2.668 0 0 0-2.042 4.93Zm5.922-5.942a.958.958 0 1 1-1.355-1.355.958.958 0 0 1 1.355 1.355Z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+<div class="social-icons__icon-wrapper">
+<a aria-label="Facebook" href="https://www.facebook.com/flipperzero/" rel="noopener noreferrer" target="_blank">
+<span class="social-icons__icon-label">Facebook</span>
+<svg aria-hidden="true" class="social-icons__icon" focusable="false" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 10.049C18 5.603 14.419 2 10 2c-4.419 0-8 3.603-8 8.049C2 14.067 4.925 17.396 8.75 18v-5.624H6.719v-2.328h2.03V8.275c0-2.017 1.195-3.132 3.023-3.132.874 0 1.79.158 1.79.158v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.219l-.355 2.326H11.25V18c3.825-.604 6.75-3.933 6.75-7.951Z">
+</path>
+</svg>
+</a>
+</div>
+<div class="social-icons__icon-wrapper">
+<a aria-label="Twitter" href="https://twitter.com/flipper_net" rel="noopener noreferrer" target="_blank">
+<span class="social-icons__icon-label">Twitter</span>
+<svg aria-hidden="true" class="social-icons__icon" focusable="false" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M 7.7352 17.9146 c 6.6407 0 10.274 -5.3207 10.274 -9.9352 c 0 -0.1507 0 -0.3014 -0.011 -0.451 A 7.216 7.216 90 0 0 19.8 5.72 c -0.66 0.2816 -1.3585 0.4675 -2.0735 0.55 a 3.5277 3.5277 90 0 0 1.5873 -1.9327 c -0.7095 0.407 -1.485 0.693 -2.2935 0.847 a 3.6542 3.6542 90 0 0 -2.0482 -1.0538 a 3.7224 3.7224 90 0 0 -2.2902 0.3674 a 3.5453 3.5453 90 0 0 -1.5862 1.639 a 3.388 3.388 90 0 0 -0.2288 2.233 a 10.527 10.527 90 0 1 -4.1217 -1.0593 a 10.1959 10.1959 90 0 1 -3.3198 -2.5894 a 3.3946 3.3946 90 0 0 -0.396 2.5454 c 0.2079 0.8657 0.748 1.6225 1.5136 2.1164 a 3.6784 3.6784 90 0 1 -1.639 -0.4378 v 0.044 c 0 0.8074 0.2893 1.5884 0.8173 2.211 a 3.63 3.63 90 0 0 2.079 1.2122 c -0.5313 0.1408 -1.089 0.1606 -1.6302 0.0605 a 3.509 3.509 90 0 0 1.2848 1.7347 a 3.696 3.696 90 0 0 2.09 0.6897 A 7.4052 7.4052 90 0 1 2.2 16.346 a 10.4797 10.4797 90 0 0 5.5352 1.5653" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+<div class="social-icons__icon-wrapper">
+<a aria-label="Reddit" href="https://www.reddit.com/r/flipperzero/" rel="noopener noreferrer" target="_blank">
+<span class="social-icons__icon-label">Reddit</span>
+<svg aria-hidden="true" class="social-icons__icon" focusable="false" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.024 7.512c-.569 0-1.093.192-1.511.514-1.14-.705-2.577-1.148-4.15-1.207v-.007c0-1.054.783-1.929 1.8-2.073a1.772 1.772 0 1 0-.011-.766 2.86 2.86 0 0 0-2.55 2.84v.01c-1.558.065-2.98.508-4.109 1.208a2.481 2.481 0 1 0-2.57 4.21c.083 2.881 3.222 5.198 7.083 5.198 3.86 0 7.004-2.32 7.082-5.202a2.482 2.482 0 0 0-1.064-4.723v-.002Z">
+</path>
+</svg>
+</a>
+</div>
+<div class="social-icons__icon-wrapper">
+<a aria-label="Discord" href="https://discord.gg/flipper" rel="noopener noreferrer" target="_blank">
+<span class="social-icons__icon-label">Discord</span>
+<svg aria-hidden="true" class="social-icons__icon" focusable="false" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.534 3.178a10.55 10.55 0 0 0-.478.965 13.91 13.91 0 0 0-4.12 0 9.65 9.65 0 0 0-.478-.965 15 15 0 0 0-3.715 1.145C1.395 7.8.76 11.19 1.076 14.532a14.93 14.93 0 0 0 4.555 2.287c.37-.496.696-1.023.976-1.573a9.866 9.866 0 0 1-1.536-.732c.13-.093.255-.19.377-.284a10.696 10.696 0 0 0 9.107 0c.122.101.248.198.377.284a9.766 9.766 0 0 1-1.54.736c.28.55.607 1.077.976 1.572a14.923 14.923 0 0 0 4.556-2.283c.373-3.877-.64-7.237-2.675-10.213a14.77 14.77 0 0 0-3.711-1.141l-.004-.007Zm-5.525 9.297c-.886 0-1.622-.804-1.622-1.798 0-.995.707-1.802 1.619-1.802s1.637.81 1.622 1.802c-.014.99-.714 1.798-1.619 1.798Zm5.98 0c-.89 0-1.618-.804-1.618-1.798 0-.995.707-1.802 1.619-1.802s1.633.81 1.619 1.802c-.015.99-.715 1.798-1.62 1.798Z">
+</path>
+</svg>
+</a>
+</div>
+<div class="social-icons__icon-wrapper">
+<a aria-label="Tiktok" href="https://www.tiktok.com/@flipperzero" rel="noopener noreferrer" target="_blank">
+<span class="social-icons__icon-label">Tiktok</span>
+<svg aria-hidden="true" class="social-icons__icon" focusable="false" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.511 1.705h2.74s-.157 3.51 3.795 3.768v2.711s-2.114.129-3.796-1.158l.028 5.606A5.073 5.073 0 1 1 8.213 7.56h.708v2.785a2.298 2.298 0 1 0 1.618 2.205L10.51 1.705Z">
+</path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="custom-footer__bottom">
+<div class="custom-footer__brand-and-copyright">
+<div class="custom-footer__brand">
+<img alt="" height="21" src="../../../_external/cdn.flipper.net/cf/FOOTER_flipper_logo_gray__cf511ee7ed841cfc.svg" width="180"/>
+</div>
+<div class="custom-footer__copyright">
+          Copyright © <span id="footer-copyright-year">2025</span> Flipper Devices Inc.
+        </div>
+</div>
+<nav aria-label="Footer bottom" class="custom-footer__bottom-nav">
+<ul class="custom-footer__bottom-links">
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/policies/shipping-policy">Shipping</a>
+</li>
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/pages/b2b-and-tax-exemption-policy">VAT Exemption</a>
+</li>
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/policies/refund-policy">Returns</a>
+</li>
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/pages/warranty-policy">Warranty</a>
+</li>
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/policies/privacy-policy">Privacy</a>
+</li>
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/pages/abuse-report">Abuse Report</a>
+</li>
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/pages/compliance">Compliance</a>
+</li>
+<li>
+<a class="custom-footer__bottom-link" href="https://flipper.net/policies/terms-of-service">Terms of Service</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<style>
+    .custom-footer {
+      background: #000;
+      color: #d0d0d0;
+      padding: 40px;
+    }
+
+    .custom-footer__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .custom-footer__top {
+      display: flex;
+      gap: 48px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .custom-footer__columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px 120px;
+    }
+
+    .custom-footer__heading {
+      color: #9a9a9a;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .custom-footer__links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .custom-footer__item {
+      margin: 8px 0;
+    }
+
+    .custom-footer__link {
+      text-decoration: none;
+      color: #A4A4A4;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .custom-footer__social-list {
+      display: flex;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    .custom-footer__socials .social-icons__wrapper {
+      display: flex;
+      gap: 21px;
+    }
+
+    .custom-footer__socials .social-icons__icon-wrapper:has(.social-icons__icon path) {
+      width: 32px;
+      height: 32px;
+    }
+
+    .custom-footer__socials .social-icons__icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      color: #A4A4A4;
+    }
+
+    .custom-footer__bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      color: #A4A4A4;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .custom-footer__brand-and-copyright {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .custom-footer__brand img {
+      width: 180px;
+    }
+
+    .custom-footer__bottom-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 45px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .custom-footer__bottom-link {
+      color: #9a9a9a;
+      text-decoration: none;
+    }
+
+    .social-icons__icon {
+      fill: currentColor;
+    }
+    .social-icons__icon-label {
+      display: none;
+    }
+
+    @media (max-width: 870px) {
+      .custom-footer__top {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .custom-footer__brand-and-copyright {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .custom-footer__bottom {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 46px;
+      }
+
+      .custom-footer__brand-and-copyright {
+        flex-direction: column;
+      }
+
+      .custom-footer__bottom-links {
+        gap: 20px 24px;
+        justify-content: start;
+      }
+    }
+
+    @media (max-width: 750px) {
+      .custom-footer {
+        padding: 20px 16px;
+      }
+
+      .custom-footer__columns {
+        gap: 30px 60px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .custom-footer__inner {
+        gap: 40px;
+      }
+
+      .custom-footer__columns {
+        width: 100%;
+        justify-content: space-between;
+        gap: 30px 24px;
+      }
+
+      .custom-footer__column {
+        width: 128px;
+      }
+
+      .custom-footer__socials {
+        width: 100%;
+      }
+
+      .custom-footer__socials .social-icons__wrapper {
+        justify-content: space-between;
+        gap: 0;
+      }
+
+      .custom-footer__socials .social-icons__icon-wrapper:has(.social-icons__icon path),
+      .custom-footer__socials .social-icons__icon {
+        width: 31px;
+        height: 31px;
+      }
+    }
+  </style>
+</footer>
+
+</div></div></div></div></div><section aria-atomic="false" aria-label="Notifications alt+T" aria-live="polite" aria-relevant="additions text" tabindex="-1"></section></div></div>
+</body></html>
