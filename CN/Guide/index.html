@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文教学导航 - Flipper Zero 知识库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0d1117; --card-bg: #161b22; --border: #30363d;
+            --text: #e6edf3; --text-muted: #8b949e;
+            --accent: #ff6b35; --accent-2: #00d4aa; --accent-3: #7c3aed;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { margin-bottom: 40px; text-align: center; }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--text-muted); margin-bottom: 30px; }
+        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-size: 14px; margin-bottom: 20px; }
+        .back:hover { color: var(--accent); }
+        .chapters { display: flex; flex-direction: column; gap: 10px; }
+        a.chapter {
+            display: flex; align-items: center; gap: 16px;
+            background: var(--card-bg); border: 1px solid var(--border);
+            padding: 20px; border-radius: 12px; text-decoration: none;
+            color: var(--text); transition: all 0.2s;
+        }
+        a.chapter:hover { border-color: var(--accent); transform: translateX(5px); }
+        .num {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px;
+            background: rgba(255,107,53,0.2); color: var(--accent);
+        }
+        a.chapter:nth-child(2) .num { background: rgba(0,212,170,0.2); color: var(--accent-2); }
+        a.chapter:nth-child(3) .num { background: rgba(124,58,237,0.2); color: var(--accent-3); }
+        .info h3 { font-size: 16px; margin-bottom: 4px; }
+        .info p { font-size: 13px; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back">← 返回首页</a>
+        <header>
+            <h1>中文教学<span>导航</span></h1>
+            <p class="subtitle">10 章课程，按顺序学习</p>
+        </header>
+        <div class="chapters">
+            <a href="00-Study-Map.html" class="chapter"><div class="num">00</div><div class="info"><h3>学习总图</h3><p>整体路线与阅读边界</p></div></a>
+            <a href="01-Device-Ecosystem.html" class="chapter"><div class="num">01</div><div class="info"><h3>设备与生态</h3><p>qFlipper、Mobile App、CLI</p></div></a>
+            <a href="02-Protocol-Domains.html" class="chapter"><div class="num">02</div><div class="info"><h3>协议域</h3><p>SubGHz、NFC、IR、BLE</p></div></a>
+            <a href="03-App-Development.html" class="chapter"><div class="num">03</div><div class="info"><h3>App 开发</h3><p>官方应用开发主线</p></div></a>
+            <a href="04-Build-Debug-Tools.html" class="chapter"><div class="num">04</div><div class="info"><h3>构建调试</h3><p>FBT、VS Code、Dev Board</p></div></a>
+            <a href="05-JavaScript.html" class="chapter"><div class="num">05</div><div class="info"><h3>JavaScript</h3><p>脚本开发路线</p></div></a>
+            <a href="06-System-Programming.html" class="chapter"><div class="num">06</div><div class="info"><h3>系统编程</h3><p>HAL、测试、底层</p></div></a>
+            <a href="07-File-Formats.html" class="chapter"><div class="num">07</div><div class="info"><h3>文件格式</h3><p>格式层与接口</p></div></a>
+            <a href="08-Community-Reference.html" class="chapter"><div class="num">08</div><div class="info"><h3>社区参考</h3><p>高信号社区资料</p></div></a>
+            <a href="09-Firmware-Reference-2025.html" class="chapter"><div class="num">09</div><div class="info"><h3>固件参考</h3><p>社区固件对比</p></div></a>
+        </div>
+    </div>
+</body>
+</html>
