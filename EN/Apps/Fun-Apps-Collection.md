@@ -22,6 +22,35 @@ The official Flipper Zero app catalog has 336 apps, and the community has countl
 
 ---
 
+## About this Document
+
+### Document Structure
+
+Each app includes:
+- **Source**: Official catalog / Community project
+- **GitHub**: Source code link
+- **Function**: What it does
+- **How to play**: How to use it
+- **Technical points**: What you can learn
+
+### Official App Catalog
+
+Official store: https://catalog.flipperzero.one/
+
+Total: 336 apps (as of 2026-03-24)
+
+Categories:
+- Bluetooth: 11
+- GPIO: 130+
+- Games: 80+
+- Infrared: 30+
+- NFC: 25+
+- Sub-GHz: 20+
+- Tools: 40+
+- USB: 15+
+
+---
+
 ## Table of Contents
 
 - [Bluetooth/BLE](#1-bluetoothble)
@@ -35,6 +64,7 @@ The official Flipper Zero app catalog has 336 apps, and the community has countl
 - [Utility Tools](#9-utility-tools)
 - [Installation Guide](#installation-guide)
 - [Quick Index](#quick-index)
+- [Screenshots](#screenshots)
 
 ---
 
@@ -904,7 +934,159 @@ ufbt
 
 ---
 
-## Resources
+## Detailed Index
+
+### Bluetooth/BLE
+
+| App | Function | Catalog |
+|-----|----------|---------|
+| FindMyFlipper | AirTag simulator | ✅ |
+| BLE Spam | BLE popup tool | ❌ |
+| HID BLE | Bluetooth keyboard/mouse | ✅ |
+| BT Trigger | Bluetooth trigger | ✅ |
+| BTHome | Smart home protocol | ✅ |
+| PC Monitor | PC status monitor | ✅ |
+
+### USB Tools
+
+| App | Function | Catalog |
+|-----|----------|---------|
+| Mouse Jiggler | Mouse jiggler | ✅ |
+| Barcode Scanner | Barcode scanner emulator | ✅ |
+| LD Toypad | Lego ToyPad emulator | ✅ |
+| USB HID Autofire | Auto-clicker | ❌ |
+| COM Port Scanner | Serial scanner | ❌ |
+| XInput Controller | Xbox controller | ✅ |
+
+### Games
+
+| App | Type | Catalog |
+|-----|------|---------|
+| Tetris | Puzzle | ✅ |
+| Flappy Bird | Arcade | ✅ |
+| Doom | FPS | ✅ |
+| Asteroids | Shooter | ✅ |
+| Arkanoid | Brick breaker | ✅ |
+| Chess | Strategy | ✅ |
+| Minesweeper | Puzzle | ✅ |
+| Flipper Hero | Rhythm | ✅ |
+| FNAF | Horror | ✅ |
+| Wolfenduino | FPS | ✅ |
+| Scorched Tanks | Strategy | ✅ |
+| Roots of Life | Puzzle | ✅ |
+| City Bloxx | Building | ✅ |
+| ZombieZ | Tower defense | ✅ |
+| 2048 | Puzzle | ✅ |
+| Snake | Classic | ✅ |
+| T-Rex Runner | Runner | ✅ |
+| Color Guess | Memory | ✅ |
+| Flipper Pong | Arcade | ✅ |
+| Game 15 | Puzzle | ✅ |
+| Hanoi Towers | Puzzle | ✅ |
+| Laser Tag | Action | ✅ |
+| Mandelbrot Set | Visualization | ✅ |
+| Paint | Drawing | ✅ |
+| Pinball | Arcade | ✅ |
+| Slot Machine | Random | ✅ |
+| Tic Tac Toe | Strategy | ✅ |
+
+### GPIO Peripherals
+
+| App | Function | Catalog |
+|-----|----------|---------|
+| Camera Suite | ESP32-CAM camera | ✅ |
+| Flipagotchi | Pwnagotchi display | ✅ |
+| FlipWeather | Weather | ✅ |
+| Servo Tester | Servo tester | ✅ |
+| Flashlight | Flashlight | ✅ |
+| Air Mouse | Air mouse | ✅ |
+
+### Multimedia
+
+| App | Function | Catalog |
+|-----|----------|---------|
+| Tuning Fork | Tuning fork | ✅ |
+| Ocarina | Ocarina | ✅ |
+| BPM Tapper | BPM tapper | ✅ |
+| Music Player | Music player | ✅ |
+| Metronome | Metronome | ✅ |
+| Morse Code | Morse code | ✅ |
+| WAV Player | WAV player | ✅ |
+| DVD Screensaver | DVD screensaver | ✅ |
+| Executor Keychain | 80s keychain | ✅ |
+
+### Security/Crypto
+
+| App | Function | Catalog |
+|-----|----------|---------|
+| Enigma | Enigma machine | ✅ |
+| Password Generator | Password generator | ✅ |
+| Caesar Cipher | Caesar cipher | ✅ |
+| ROT13 | ROT13 | ✅ |
+| Roman Decoder | Roman decoder | ✅ |
+| Flip Crypt | File encryption | ✅ |
+| Password Manager | Password manager | ✅ |
+
+### Utility Tools
+
+| App | Function | Catalog |
+|-----|----------|---------|
+| Theme Manager | Theme manager | ✅ |
+| Analog Clock | Analog clock | ✅ |
+| Calculator | Calculator | ✅ |
+| Pomodoro Timer | Pomodoro timer | ✅ |
+| QR Code Generator | QR generator | ✅ |
+| Hex Viewer | Hex viewer | ✅ |
+| Text Viewer | Text viewer | ✅ |
+| Tasks | Tasks | ✅ |
+| Key Copier | Key copier | ✅ |
+| Programmer Calc | Programmer calc | ✅ |
+| DCF77 Clock Spoof | DCF77 spoof | ✅ |
+| Fire String | Fire effect | ✅ |
+| Flipper95 | Win95 simulator | ✅ |
+| Orgasmotron | Vibration test | ✅ |
+
+### Prank Tools
+
+| App | Function | Catalog |
+|-----|----------|---------|
+| Executor Keychain | 80s keychain | ✅ |
+| DCF77 Clock Spoof | Time signal spoof | ✅ |
+| Fire String | Fire effect | ✅ |
+| Flipper95 | Win95 UI | ✅ |
+| BLE Spam | BLE popup | ❌ |
+
+---
+
+## Screenshots
+
+### Game Screenshots
+
+| Game | Preview | Description |
+|------|---------|-------------|
+| Doom | ![doom](https://catalog.flipperzero.one/application/doom/screenshot) | Classic FPS |
+| Tetris | ![tetris](https://catalog.flipperzero.one/application/tetris/screenshot) | Tetris |
+| Flappy Bird | ![flappy](https://catalog.flipperzero.one/application/flappy_bird/screenshot) | Flappy Bird |
+
+### Tool Screenshots
+
+| Tool | Preview | Description |
+|------|---------|-------------|
+| FindMyFlipper | ![findmy](https://catalog.flipperzero.one/application/findmy/screenshot) | AirTag simulator |
+| Mouse Jiggler | ![jiggler](https://catalog.flipperzero.one/application/mouse_jiggler/screenshot) | Mouse jiggler |
+| Camera Suite | ![camera](https://catalog.flipperzero.one/application/camera_suite/screenshot) | Camera suite |
+
+### Official Catalog Screenshot Source
+
+All official catalog app screenshots available at:
+```
+https://catalog.flipperzero.one/application/<app-id>/page
+```
+
+Examples:
+- FindMy: https://catalog.flipperzero.one/application/findmy/page
+- Doom: https://catalog.flipperzero.one/application/doom/page
+- Tetris: https://catalog.flipperzero.one/application/tetris_game/page
 
 - **Official Catalog**: https://catalog.flipperzero.one/
 - **Flipper Lab**: https://lab.flipper.net/
