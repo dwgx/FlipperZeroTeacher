@@ -1,116 +1,131 @@
-# FlipperZero 教学知识库
+# 🐬 Flipper Zero 教学知识库
 
-这是一个 Flipper Zero 双语教学型知识库。它的目标不是简单罗列资料，而是把官方文档、开发资料、文件格式、社区高信号项目和 AI 检索规则整理成一套适合 GitHub 阅读、适合长期维护、适合人类学习、也适合 AI 使用的结构化体系。
+<p align="center">
+  <img src="https://img.shields.io/github/stars/yourusername/FlipperZero-Final?style=flat&logo=github" alt="stars">
+  <img src="https://img.shields.io/github/forks/yourusername/FlipperZero-Final?style=flat&logo=github" alt="forks">
+  <img src="https://img.shields.io/github/license/yourusername/FlipperZero-Final?style=flat" alt="license">
+</p>
 
-英文镜像入口见：[EN/README.md](EN/README.md)
+> 📚 双语教学型知识库 | 官方文档 | 社区精选 | AI 友好
 
-## 立即开始
+---
 
-如果你第一次进入这个仓库，建议先点下面三个入口之一：
+## ✨ 快速开始
 
-- [中文教学导航](CN/Guide/README.md)
-  适合：希望按课程顺序系统学习的人。
+| 入口 | 适合人群 | 描述 |
+|:---:|:---:|:---|
+| 🧭 [中文教学导航](CN/Guide/README.md) | 初学者 | 按课程顺序系统学习 |
+| 📖 [中文主知识库](CN/FlipperZero-Master-CN.md) | 进阶 | 建立全局视角 |
+| 🤖 [中文 AI 规则包](CN/FlipperZero-AI-Pack-CN.md) | 开发者 | RAG/检索系统专用 |
 
-- [中文主知识库](CN/FlipperZero-Master-CN.md)
-  适合：想先建立全局视角，再决定深入方向的人。
+---
 
-- [中文 AI 规则包](CN/FlipperZero-AI-Pack-CN.md)
-  适合：准备把内容直接喂给 AI、RAG、检索系统或自动化问答的人。
+## 📂 仓库目录
 
-## 这个仓库适合谁
+```
+FlipperZero-Final/
+├── 📁 CN/                          # 中文主目录
+│   ├── 📖 Guide/                   # 课程学习路线
+│   │   ├── 00-Study-Map.md         # 学习总图
+│   │   ├── 01-Device-Ecosystem.md  # 设备与生态
+│   │   ├── 02-Protocol-Domains.md  # 协议域
+│   │   ├── 03-App-Development.md   # App 开发
+│   │   ├── 04-Build-Debug-Tools.md # 构建调试
+│   │   ├── 05-JavaScript.md        # JavaScript
+│   │   ├── 06-System-Programming.md # 系统编程
+│   │   ├── 07-File-Formats.md      # 文件格式
+│   │   ├── 08-Community-Reference.md # 社区参考
+│   │   └── 09-Firmware-Reference-2025.md # 固件参考
+│   ├── 📖 FlipperZero-Master-CN.md # 主知识库
+│   ├── 📖 FlipperZero-AI-Pack-CN.md # AI 规则包
+│   ├── 📖 Official-Docs-CN-Full.md # 官方文档精读
+│   ├── 📖 qFlipper-全网融合总文档.md # 桌面端指南
+│   └── 📁 Apps/                    # 应用收录
+│
+├── 📁 EN/                          # 英文镜像
+│   └── (结构同 CN/)
+│
+├── 📁 FlipperZero_资源库/           # 本地技术资源
+│   ├── 📊 频率数据库/               # SubGHz 频率
+│   ├── 📡 BLE蓝牙功能详解.md        # 蓝牙技术
+│   ├── 💳 NFC_RFID_技术详解.md      # NFC/RFID
+│   ├── 🔧 固件刷机指南/             # 刷机教程
+│   └── 💻 示例代码/                 # 代码示例
+│
+├── 📁 Wiki-Resources/              # 官方资源存档
+│   ├── 📦 Official-Source-Repos/    # 官方源码
+│   │   ├── qflipper/               # 桌面端应用
+│   │   ├── flipper-application-catalog/ # 应用目录
+│   │   └── docs/                   # 官方文档
+│   └── 🕸️ Deployable-Web-Mirror/   # 网页快照
+│
+├── 📁 Legacy/                      # 早期资料存档
+├── 📁 Original-Notes/               # 原始笔记
+└── 📄 README.md                    # 本文件
+```
 
-- 想从零开始系统学习 Flipper Zero 的读者。
-- 已经会基本使用设备、准备进入开发阶段的读者。
-- 需要整理官方资料、社区资料和工程实践的人。
-- 希望把内容同时用于人类阅读与 AI 学习的人。
+---
 
-## 中文默认学习路线
+## 🗺️ 学习路线
 
-建议按下面顺序进入：
+```
+第1步 ──▶ 第2步 ──▶ 第3步 ──▶ 第4步 ──▶ 第5步 ──▶ ...
+  ▼          ▼          ▼          ▼          ▼
+00学习总图 → 01设备生态 → 02协议域 → 03App开发 → 04构建调试
+```
 
-1. [00. 学习总图](CN/Guide/00-Study-Map.md)
-   建立整体路线、阅读顺序和边界判断。
+| 序号 | 章节 | 内容 |
+|:---:|:---|:---|
+| 00 | 学习总图 | 整体路线与边界判断 |
+| 01 | 设备与生态 | qFlipper、Mobile App、CLI |
+| 02 | 协议域 | SubGHz、NFC、RFID、IR、BLE |
+| 03 | App 开发 | 官方应用开发主线 |
+| 04 | 构建调试 | 环境搭建与调试流程 |
+| 05 | JavaScript | 脚本路线 |
+| 06 | 系统编程 | 平台层与系统层 |
+| 07 | 文件格式 | 格式层接口 |
+| 08 | 社区参考 | 高信号社区资料 |
+| 09 | 固件参考 | Momentum/Unleashed/Marauder |
 
-2. [01. 设备与生态](CN/Guide/01-Device-Ecosystem.md)
-   先理解设备、桌面端、移动端、Apps 和 CLI。
+---
 
-3. [02. 协议域](CN/Guide/02-Protocol-Domains.md)
-   学会按能力域组织知识，而不是按零散场景组织。
+## 🔧 核心工具
 
-4. [03. App 开发](CN/Guide/03-App-Development.md)
-   进入官方推荐的默认开发主线。
+| 工具 | 用途 | 文档 |
+|:---|:---|:---|
+| qFlipper | 桌面端管理 | [qFlipper全网融合总文档](CN/qFlipper-全网融合总文档.md) |
+| Flipper CLI | 命令行工具 | [CLI文档](CN/Guide/04-Build-Debug-Tools.md) |
+| Mobile App | 移动端控制 | 官方文档 |
 
-5. [04. 构建、调试与工具链](CN/Guide/04-Build-Debug-Tools.md)
-   建立正式开发环境与调试流程。
+---
 
-6. [05. JavaScript](CN/Guide/05-JavaScript.md)
-   理解脚本路线的边界与定位。
+## 📚 资源导航
 
-7. [06. 系统编程](CN/Guide/06-System-Programming.md)
-   从应用层进入平台层与系统层。
+- 📖 [Official-Docs-Coverage.md](Official-Docs-Coverage.md) - 官方资料覆盖表
+- 📋 [All-Markdown-Manifest.md](All-Markdown-Manifest.md) - 文件清单
+- 🗂️ [Wiki-Resources/README.md](Wiki-Resources/README.md) - 官方资源入口
 
-8. [07. 文件格式](CN/Guide/07-File-Formats.md)
-   把格式层作为平台能力接口来理解。
+---
 
-9. [08. 社区参考](CN/Guide/08-Community-Reference.md)
-   在不偏离官方基线的前提下吸收高信号社区资料。
+## 📜 使用原则
 
-10. [09. 固件参考 2025-2026](CN/Guide/09-Firmware-Reference-2025.md)
-    了解当前社区固件最新状态（Momentum、Unleashed、Marauder）。
+> ✅ 优先阅读中文主线
+> ✅ 优先采用官方资料
+> ✅ 社区资料仅作补充
+> ✅ 先理解协议，再进入场景
 
-11. [有趣 App 收录](CN/Apps/趣味App完全收录.md)
-    独立安装的趣味/恶搞/实用玩具类 App 整理（BLE 弹窗、鼠标抖动器、游戏等）。
+---
 
-## 仓库地图
+## 🌐 其他语言
 
-- [CN/README.md](CN/README.md)
-  中文总入口，适合按目的分流。
+- [English Entry](EN/README.md)
+- [English Learning Tree](EN/Guide/README.md)
+- [English Master Guide](EN/FlipperZero-Master-EN.md)
 
-- [CN/Guide/README.md](CN/Guide/README.md)
-  中文课程入口，适合顺序学习。
+---
 
-- [CN/FlipperZero-Master-CN.md](CN/FlipperZero-Master-CN.md)
-  中文主线知识库，适合建立全局认识。
+<div align="center">
 
-- [CN/Official-Docs-CN-Full.md](CN/Official-Docs-CN-Full.md)
-  官方资料中文精读总表，适合深挖官方定义与技术细节。
+**⭐ Star 这个仓库，一起构建最好的 Flipper Zero 知识库！**
 
-- [CN/FlipperZero-AI-Pack-CN.md](CN/FlipperZero-AI-Pack-CN.md)
-  中文 AI 规则包，适合检索、RAG 和回答约束。
-
-- [Official-Docs-Coverage.md](Official-Docs-Coverage.md)
-  官方资料覆盖表，适合查看整理进度和待补部分。
-
-- [All-Markdown-Manifest.md](All-Markdown-Manifest.md)
-  Markdown 文件清单，适合做索引和归档管理。
-
-- [Wiki-Resources/README.md](Wiki-Resources/README.md)
-  官方网页快照、官方文档源码快照与后续 Wiki/Pages 资源入口。
-
-## 这几个目录怎么用
-
-- `CN/`：中文教学主目录。
-- `EN/`：英文镜像结构，便于英文读者和双语使用场景。
-- `Original-Notes/`：保留原始资料，不作为主入口。
-- `Legacy/`：保留早期整理文件，仅供对照，不作为主入口。
-
-## 使用原则
-
-- 默认优先阅读中文主线。
-- 默认优先采用官方资料作为基线。
-- 社区资料只用于补充，不替代官方定义。
-- `Guide/` 用于顺序学习。
-- `Master` 用于总览。
-- `Official Docs Full` 用于深入整理。
-- `AI Pack` 用于 AI 检索与规则控制。
-
-## 英文入口
-
-如果你需要英文版本，请从以下页面进入：
-
-- [English entry](EN/README.md)
-- [English learning tree](EN/Guide/README.md)
-- [English master guide](EN/FlipperZero-Master-EN.md)
-- [English official docs guide](EN/Official-Docs-EN-Full.md)
-- [English AI pack](EN/FlipperZero-AI-Pack-EN.md)
-- [Fun Apps Collection (EN)](EN/Apps/Fun-Apps-Collection.md)
+</div>
