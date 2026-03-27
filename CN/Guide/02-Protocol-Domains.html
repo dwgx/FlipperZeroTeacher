@@ -3,132 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02. 协议域 - Flipper Zero 知识库</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
-        .container { max-width: 800px; margin: 0 auto; }
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
-        .back:hover { color: var(--accent); }
-        h1 { font-size: 28px; margin-bottom: 8px; }
-        h1 span { color: var(--accent); }
-        .subtitle { color: var(--muted); margin-bottom: 30px; }
-        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
-        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
-        .nav a:hover { background: var(--border); }
-        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
-        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
-        .content h3 { font-size: 16px; margin: 20px 0 10px; }
-        .content p { margin: 12px 0; color: var(--muted); }
-        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
-        .content li { margin: 8px 0; color: var(--muted); }
-        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
-        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
-        .content th { background: var(--bg); }
-        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
-    </style>
+    <title>02. 协议域 - Flipper Zero Teacher</title>
+    <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
-<body>
-    <div class="container">
-        <a href="index.html" class="back">← 返回课程导航</a>
-        <h1>02. <span>02. 协议域</span></h1>
-        <p class="subtitle">Flipper Zero 不是一个单一功能设备，而是多个能力域并存的平台。真正高效的学习方式，不是从“我要做某个场景”出发，而是先问：这个问题属于哪个协议域、哪个硬件边界、哪个文件格式、哪个开发层级。</p>
+<body class="reader-page" data-site-root="../../" data-fetch="02-Protocol-Domains.md" data-repo-path="CN/Guide/02-Protocol-Domains.md" data-title="02. 协议域" data-description="Flipper Zero 不是一个单一功能设备，而是多个能力域并存的平台。真正高效的学习方式，不是从“我要做某个场景”出发，而是先问：这个问题属于哪个协议域、哪个硬件边界、哪个文件格式、哪个开发层级。" data-kicker="CN Guide" data-mode-label="Guide Shell · Markdown Runtime Render">
+    <div class="reader-shell">
+        <header class="site-topbar">
+            <a class="site-brand" href="../../index.html">
+                <span class="site-brand-mark">02</span>
+                <span class="site-brand-text">
+                    <strong>02. 协议域</strong>
+                    <span>章节壳页 · 内容来自同目录 Markdown</span>
+                </span>
+            </a>
+            <nav class="site-nav">
+                <a href="../../index.html">首页</a>
+                <a href="../../CN/Guide/index.html">课程导航</a>
+                <a href="../../viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                <a href="../../viewer.html?file=CN/qFlipper-全网融合总文档.md">qFlipper</a>
+            </nav>
+        </header>
 
-        <div class="content">
+        <main class="reader-main">
+            <section class="doc-hero">
+                <div>
+                    <p class="eyebrow" id="docEyebrow">CN Guide</p>
+                    <h1 class="doc-title" id="docTitle">02. 协议域</h1>
+                    <p class="doc-lead" id="docLead">Flipper Zero 不是一个单一功能设备，而是多个能力域并存的平台。真正高效的学习方式，不是从“我要做某个场景”出发，而是先问：这个问题属于哪个协议域、哪个硬件边界、哪个文件格式、哪个开发层级。</p>
+                </div>
+                <div class="doc-meta">
+                    <div class="doc-meta-card">
+                        <dl>
+                            <div>
+                                <dt>Source</dt>
+                                <dd id="docPath">CN/Guide/02-Protocol-Domains.md</dd>
+                            </div>
+                            <div>
+                                <dt>Mode</dt>
+                                <dd id="docMode">Guide Shell · Markdown Runtime Render</dd>
+                            </div>
+                        </dl>
+                        <a class="source-link" id="sourceLink" href="../../CN/Guide/02-Protocol-Domains.md">查看源 Markdown</a>
+                    </div>
+                </div>
+            </section>
 
-<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：01. 设备与生态](01-Device-Ecosystem.md)</td><td>[下一章：03. App 开发](03-App-Development.md)</td></tr>
+            <div class="reader-grid">
+                <article class="doc-panel markdown-body" id="docContent">
+                    <p class="empty-state">正在读取 Markdown 内容…</p>
+                </article>
 
-<h2>本章作用</h2>
+                <aside class="toc-panel">
+                    <h2 class="toc-title">本页目录</h2>
+                    <nav id="docToc">
+                        <p class="empty-state">文档渲染后会在这里生成章节目录。</p>
+                    </nav>
+                </aside>
+            </div>
 
-<p>Flipper Zero 不是一个单一功能设备，而是多个能力域并存的平台。真正高效的学习方式，不是从“我要做某个场景”出发，而是先问：这个问题属于哪个协议域、哪个硬件边界、哪个文件格式、哪个开发层级。</p>
-
-<p>本章的作用，就是帮助你建立协议域思维。只要这个思维建立起来，后面无论阅读官方文档、写 App、分析文件、整理社区项目，都会清楚很多。</p>
-
-<h2>本章建议先读的仓库内文档</h2>
-
-<li>[01. 设备与生态](01-Device-Ecosystem.md)：先知道从哪里进入各项能力。</li>
-<li>[07. 文件格式](07-File-Formats.md)：稍后回头把协议域和文件格式对应起来。</li>
-<li>[中文主知识库](../FlipperZero-Master-CN.md)：回看各能力域在全局中的位置。</li>
-<li>[官方文档中文精读总表](../Official-Docs-CN-Full.md)：用于进一步核对术语与边界。</li>
-
-<h2>官方核心页面</h2>
-
-<li>[NFC](https://docs.flipper.net/nfc)</li>
-<li>[Sub-GHz](https://docs.flipper.net/sub-ghz)</li>
-<li>[iButton](https://docs.flipper.net/ibutton)</li>
-<li>[U2F](https://docs.flipper.net/zero/u2f)</li>
-<li>[GPIO & Modules](https://docs.flipper.net/gpio-and-modules)</li>
-
-<h2>本章要解决的核心问题</h2>
-
-<li>为什么必须先区分不同能力域，再谈工具、脚本或项目。</li>
-<li>为什么不同域之间不能随意混用术语、样例和文件。</li>
-<li>为什么同一个“功能需求”可能同时跨越协议域、App 层和文件层。</li>
-
-<h2>必须分开的主域</h2>
-
-<h3>1. NFC</h3>
-
-<p>[NFC](https://docs.flipper.net/nfc) 是独立能力域，有自己的读取流程、菜单入口、数据类型和文件组织方式。不要把它与 LF RFID、iButton 或 Sub-GHz 混为一谈。</p>
-
-<h3>2. Sub-GHz</h3>
-
-<p>[Sub-GHz](https://docs.flipper.net/sub-ghz) 涉及频段、协议、预设、RAW 与非 RAW 数据等概念。它既有较强的射频属性，也高度依赖文件格式和设备支持边界。</p>
-
-<h3>3. iButton</h3>
-
-<p>[iButton](https://docs.flipper.net/ibutton) 是单独的能力域。虽然它和访问控制场景常被一起提起，但不能因此把 iButton 与 RFID 或 NFC 合并理解。</p>
-
-<h3>4. RFID 与其他身份类域</h3>
-
-<p>LF RFID、NFC、iButton 看起来都可能出现在身份识别或门禁环境中，但它们是不同技术域。后面阅读 [07. 文件格式](07-File-Formats.md) 时要特别注意不同格式不能互相代替。</p>
-
-<h3>5. Infrared、BadUSB、GPIO、U2F</h3>
-
-<p>这些能力同样属于各自独立的域或子系统。尤其是 [GPIO & Modules](https://docs.flipper.net/gpio-and-modules) 与 [U2F](https://docs.flipper.net/zero/u2f)，它们在后续开发和外设扩展中经常出现，但不属于前面几类协议域的简单延伸。</p>
-
-<h2>理解协议域时要注意的三层分离</h2>
-
-<li>第一层是能力域本身：例如 NFC、Sub-GHz、iButton。</li>
-<li>第二层是承载形式：例如设备菜单、App、CLI、脚本、文件格式。</li>
-<li>第三层是工程实现：例如外部应用、系统 API、外设模块、社区项目。</li>
-
-<p>这三层如果混在一起，就很容易出现“看起来都能做，但不知道实际在做哪一层”的问题。</p>
-
-<h2>建议阅读顺序</h2>
-
-<li>先看 [NFC](https://docs.flipper.net/nfc)、[Sub-GHz](https://docs.flipper.net/sub-ghz)、[iButton](https://docs.flipper.net/ibutton)、[U2F](https://docs.flipper.net/zero/u2f) 的官方页面。</li>
-<li>再回到 [07. 文件格式](07-File-Formats.md)，把每个域对应的文件结构补上。</li>
-<li>然后阅读 [03. App 开发](03-App-Development.md)，理解一个 App 怎样围绕这些域工作。</li>
-<li>最后再结合 [08. 社区参考](08-Community-Reference.md)，吸收某些域的社区数据或样例仓库。</li>
-
-<h2>学完本章后应具备的能力</h2>
-
-<li>看到一个需求时，能先判断它属于哪个协议域。</li>
-<li>能区分“能力域”“文件格式”“App 层”“系统层”这几个层次。</li>
-<li>能知道后续查资料时该先去官方页面、格式文档还是开发文档。</li>
-
-<h2>继续阅读</h2>
-
-<li>下一章：[03. App 开发](03-App-Development.md)</li>
-<li>回到上一章：[01. 设备与生态](01-Device-Ecosystem.md)</li>
-<li>查看主线总览：[中文主知识库](../FlipperZero-Master-CN.md)</li>
-<li>查看官方精读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
-
-<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：01. 设备与生态](01-Device-Ecosystem.md)</td><td>[下一章：03. App 开发](03-App-Development.md)</td></tr>
-
-        </div>
-
-        <div class="nav">
-            <a href="01-Device-Ecosystem.html">← 上一章</a>
-            <a href="03-App-Development.html">下一章 →</a>
-        </div>
+            <nav class="pager" id="docPager"></nav>
+        </main>
     </div>
+
+    <script src="../../assets/js/guide-manifest.js"></script>
+    <script src="../../assets/vendor/marked.min.js"></script>
+    <script src="../../assets/js/reader.js"></script>
 </body>
 </html>

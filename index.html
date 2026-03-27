@@ -3,401 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipper Zero 教学知识库</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-card: #1a1d23;
-            --bg-card-hover: #22262e;
-            --border: #2d333b;
-            --text-main: #e6edf3;
-            --text-muted: #8b949e;
-            --accent: #ff6b35;
-            --accent-2: #00d4aa;
-            --accent-3: #7c3aed;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0d1117;
-            color: var(--text-main);
-            min-height: 100vh;
-            background-image:
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 107, 53, 0.15), transparent),
-                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 212, 170, 0.1), transparent),
-                radial-gradient(ellipse 50% 30% at 20% 80%, rgba(124, 58, 237, 0.1), transparent);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .logo-wrap {
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-
-        .nav-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-        }
-
-        a.card {
-            display: block;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        a.card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent);
-            opacity: 0;
-            transition: opacity 0.25s;
-        }
-
-        a.card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        a.card:hover::before {
-            opacity: 1;
-        }
-
-        .card:nth-child(2):hover::before { background: var(--accent-2); }
-        .card:nth-child(2):hover { border-color: var(--accent-2); }
-
-        .card:nth-child(3):hover::before { background: var(--accent-3); }
-        .card:nth-child(3):hover { border-color: var(--accent-3); }
-
-        .card:nth-child(4):hover::before { background: #f59e0b; }
-        .card:nth-child(4):hover { border-color: #f59e0b; }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .card-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-
-        .card:nth-child(1) .card-icon { background: rgba(255, 107, 53, 0.2); }
-        .card:nth-child(2) .card-icon { background: rgba(0, 212, 170, 0.2); }
-        .card:nth-child(3) .card-icon { background: rgba(124, 58, 237, 0.2); }
-        .card:nth-child(4) .card-icon { background: rgba(245, 158, 11, 0.2); }
-
-        .card h3 {
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .card-meta {
-            display: flex;
-            gap: 8px;
-            margin-top: 14px;
-        }
-
-        .tag {
-            font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-        }
-
-        .cta-wrap {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .btn-start {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent);
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .btn-start:hover {
-            background: #ff8555;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
-        }
-
-        .quick-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .quick-link {
-            color: var(--text-muted);
-            font-size: 14px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .quick-link:hover {
-            color: var(--accent);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--accent);
-        }
-
-        .badges {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-
-        .badge {
-            font-size: 12px;
-            padding: 6px 14px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-        }
-    </style>
+    <title>Flipper Zero Teacher</title>
+    <link rel="stylesheet" href="./assets/css/site.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="badges">
-                <span class="badge">📚 双语教学</span>
-                <span class="badge">🎯 官方基线</span>
-                <span class="badge">🤖 AI 友好</span>
-            </div>
-
-            <div class="logo-wrap">
-                <div class="logo-icon">🐬</div>
-                <h1>Flipper Zero 教学知识库</h1>
-            </div>
-            <p class="subtitle">从入门到进阶的完整学习资源</p>
+<body class="home-page">
+    <div class="site-shell">
+        <header class="site-topbar">
+            <a class="site-brand" href="./index.html">
+                <span class="site-brand-mark">FZ</span>
+                <span class="site-brand-text">
+                    <strong>Flipper Zero Teacher</strong>
+                    <span>双语教学仓库 · Pages 阅读站 · Markdown 单源</span>
+                </span>
+            </a>
+            <nav class="site-nav">
+                <a href="./CN/Guide/index.html">中文课程</a>
+                <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                <a href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">qFlipper</a>
+                <a href="./viewer.html?file=EN/README.md">English</a>
+            </nav>
         </header>
 
-        <div class="nav-section">
-            <div class="section-title">核心入口</div>
-            <div class="grid">
-                <a href="CN/Guide/index.html" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">🧭</div>
-                        <h3>中文教学导航</h3>
-                    </div>
-                    <p>按课程顺序系统学习，从零开始掌握 Flipper Zero</p>
-                    <div class="card-meta">
-                        <span class="tag">10 章课程</span>
-                        <span class="tag">推荐入门</span>
-                    </div>
-                </a>
+        <section class="hero-panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Branch Root Pages · Clean Route Model</p>
+                <h1 class="hero-title">先有路径，再有资料堆叠。</h1>
+                <p class="hero-lead">这个站点不再把人直接丢进原始 Markdown。首页负责分流，课程页负责顺序学习，章节页负责沉浸阅读，课程外的大文档统一走一个阅读器。仓库本体还是 Markdown 单源，但人类入口终于像成品了。</p>
 
-                <a href="CN/FlipperZero-Master-CN.md" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">📖</div>
-                        <h3>中文主知识库</h3>
-                    </div>
-                    <p>建立全局视角，理解 Flipper Zero 的完整定位与生态</p>
-                    <div class="card-meta">
-                        <span class="tag">全局认知</span>
-                        <span class="tag">推荐进阶</span>
-                    </div>
-                </a>
+                <div class="hero-actions">
+                    <a class="solid-button" href="./CN/Guide/index.html">进入中文课程</a>
+                    <a class="ghost-button" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">打开主知识库</a>
+                </div>
 
-                <a href="CN/FlipperZero-AI-Pack-CN.md" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">🤖</div>
-                        <h3>AI 规则包</h3>
-                    </div>
-                    <p>RAG 向量检索、自动化问答、给 AI 用的知识约束</p>
-                    <div class="card-meta">
-                        <span class="tag">AI 专用</span>
-                        <span class="tag">开发者</span>
-                    </div>
-                </a>
+                <div class="meta-strip">
+                    <span class="meta-pill">GitHub Pages 已上线</span>
+                    <span class="meta-pill">Markdown 单源渲染</span>
+                    <span class="meta-pill">qFlipper / Wiki / 资源库并列可达</span>
+                </div>
 
-                <a href="EN/README.md" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">🌐</div>
-                        <h3>English Entry</h3>
-                    </div>
-                    <p>English learning resources and documentation</p>
-                    <div class="card-meta">
-                        <span class="tag">English</span>
-                        <span class="tag">Bilingual</span>
-                    </div>
-                </a>
+                <div class="hero-notes">
+                    <div class="hero-note"><strong>课程入口</strong> 10 章中文课程按顺序推进，适合从零到开发主线的完整阅读。</div>
+                    <div class="hero-note"><strong>主知识库</strong> 保留你原来的全局框架，但换成更适合网页阅读的呈现方式。</div>
+                    <div class="hero-note"><strong>qFlipper</strong> 入口文案按官方事实收敛为：桌面端、固件与数据更新、内部存储备份恢复、CLI、投屏与基础远控、跨平台。</div>
+                </div>
             </div>
-        </div>
 
-        <div class="nav-section">
-            <div class="section-title">快速链接</div>
-            <div class="grid">
-                <a href="CN/Official-Docs-CN-Full.md" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">📚</div>
-                        <h3>官方文档精读</h3>
+            <div class="hero-visual">
+                <div class="signal-stack">
+                    <div class="signal-panel">
+                        <strong>01 / Device</strong>
+                        <h3>Device · Apps · Archive</h3>
+                        <p>设备本体仍是验证终点；课程和主知识库只是在帮你把入口结构讲明白。</p>
                     </div>
-                    <p>官方资料的完整中文整理，按主题分类</p>
-                </a>
-
-                <a href="CN/qFlipper-全网融合总文档.md" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">💻</div>
-                        <h3>qFlipper 桌面端</h3>
+                    <div class="signal-panel">
+                        <strong>02 / Desktop</strong>
+                        <h3>qFlipper · Backup · CLI</h3>
+                        <p>官方桌面端不只是升级固件，还覆盖内部存储备份恢复、命令行、投屏与基础远控。</p>
                     </div>
-                    <p>官方桌面管理工具的完整使用指南</p>
-                </a>
-
-                <a href="CN/Apps/趣味App完全收录.md" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">🎮</div>
-                        <h3>趣味 App 收录</h3>
+                    <div class="signal-panel">
+                        <strong>03 / Knowledge</strong>
+                        <h3>Guide · Master · Viewer</h3>
+                        <p>课程页、通用阅读页和 404 回退现在走同一套路由，不再四处断裂。</p>
                     </div>
-                    <p>独立安装的趣味应用整理</p>
-                </a>
-
-                <a href="Wiki-Resources/README.md" class="card">
-                    <div class="card-header">
-                        <div class="card-icon">🗄️</div>
-                        <h3>官方资源存档</h3>
-                    </div>
-                    <p>官方文档快照、源码仓库、离线查阅</p>
-                </a>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="cta-wrap">
-            <a href="CN/Guide/index.html" class="btn-start">
-                开始学习 →
+        <section class="portal-grid">
+            <a class="portal-card portal-card--primary" href="./CN/Guide/index.html">
+                <div class="portal-label">Path / CN Guide</div>
+                <h2 class="portal-title">按章节进入，先把路线吃透。</h2>
+                <p class="portal-summary">如果你点进这个仓库只想知道“先看什么”，这里就是第一入口。10 章课程把设备、生态、协议域、App 开发、构建调试、系统层和社区参考按顺序串起来了。</p>
+                <div class="portal-footer">
+                    <span>10 Chapters</span>
+                    <span>顺序阅读</span>
+                    <span>卡片目录</span>
+                </div>
+                <div class="portal-ghost">00</div>
             </a>
-        </div>
 
-        <div class="quick-links">
-            <a href="CN/FlipperZero-Master-CN.md" class="quick-link">主知识库</a>
-            <a href="Official-Docs-Coverage.md" class="quick-link">整理进度</a>
-            <a href="All-Markdown-Manifest.md" class="quick-link">文件清单</a>
-            <a href="https://github.com/dwgx/FlipperZeroTeacher" class="quick-link">GitHub</a>
-        </div>
+            <a class="portal-card portal-card--wide" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
+                <div class="portal-label">Core / Master</div>
+                <h2 class="portal-title">中文主知识库</h2>
+                <p class="portal-summary">这是你整个项目的认知骨架。现在不再裸露成纯文本，而是会带目录、章节锚点和稳定回退入口。</p>
+                <div class="portal-footer">
+                    <span>Viewer Route</span>
+                    <span>全局框架</span>
+                </div>
+                <div class="portal-ghost">KB</div>
+            </a>
 
-        <footer>
-            <p>Built for Flipper Zero Community</p>
-        </footer>
+            <a class="portal-card portal-card--wide" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">
+                <div class="portal-label">Desktop / qFlipper</div>
+                <h2 class="portal-title">qFlipper 专题入口</h2>
+                <p class="portal-summary">按官方事实重新收口：Windows / macOS / Linux，固件与补充数据更新，内部存储备份恢复，CLI，投屏与基础远控。</p>
+                <div class="portal-footer">
+                    <span>Official Desktop</span>
+                    <span>Backup / Restore / CLI</span>
+                </div>
+                <div class="portal-ghost">QF</div>
+            </a>
+
+            <a class="portal-card portal-card--compact" href="./Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/index.html">
+                <div class="portal-label">Mirror / Docs</div>
+                <h2 class="portal-title">官方镜像</h2>
+                <p class="portal-summary">直接进可部署官方文档镜像。</p>
+                <div class="portal-footer">
+                    <span>docs.flipper.net</span>
+                </div>
+                <div class="portal-ghost">OF</div>
+            </a>
+
+            <a class="portal-card portal-card--compact" href="./viewer.html?file=CN/FlipperZero-AI-Pack-CN.md">
+                <div class="portal-label">RAG / AI</div>
+                <h2 class="portal-title">AI 规则包</h2>
+                <p class="portal-summary">给检索、问答和自动化系统的约束层。</p>
+                <div class="portal-footer">
+                    <span>Prompt Layer</span>
+                </div>
+                <div class="portal-ghost">AI</div>
+            </a>
+
+            <a class="portal-card portal-card--compact" href="./viewer.html?file=FlipperZero_资源库/频率数据库/SubGHz_频率数据库.md">
+                <div class="portal-label">RF / Sub-GHz</div>
+                <h2 class="portal-title">频率数据库</h2>
+                <p class="portal-summary">把本地整理的频率资料接进统一阅读页。</p>
+                <div class="portal-footer">
+                    <span>Resource Library</span>
+                </div>
+                <div class="portal-ghost">RF</div>
+            </a>
+
+            <a class="portal-card portal-card--compact" href="./viewer.html?file=EN/README.md">
+                <div class="portal-label">EN / Entry</div>
+                <h2 class="portal-title">English Lane</h2>
+                <p class="portal-summary">英文入口不再直出原始 README。</p>
+                <div class="portal-footer">
+                    <span>Bilingual</span>
+                </div>
+                <div class="portal-ghost">EN</div>
+            </a>
+        </section>
     </div>
 </body>
 </html>
