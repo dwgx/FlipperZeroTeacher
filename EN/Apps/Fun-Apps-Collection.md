@@ -451,6 +451,39 @@ Pomodoro technique timer. 25 min work + 5 min break.
 
 ---
 
+### 4.4 Calculator
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/calculator |
+
+Scientific calculator.
+
+---
+
+### 4.5 QR Code Generator
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/qrcode_generator |
+
+Generate QR codes on Flipper screen.
+
+---
+
+### 4.6 Tone Generator
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/tone_gen |
+
+Audio signal generator, produces different frequencies.
+
+---
+
 ## 5. Prank Tools
 
 ### 5.1 Executor Keychain (80s Keychain)
@@ -618,6 +651,17 @@ Use MPU6050 gyroscope module to control mouse, gesture operation.
 
 ---
 
+### 5.6 Flashlight
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/GPIO/flashlight |
+
+Use GPIO to control external LED as flashlight.
+
+---
+
 ## 7. Multimedia
 
 ### 6.1 Tuning Fork
@@ -705,6 +749,17 @@ Classic DVD bouncing logo screensaver. Wait for it to hit the corner.
 
 ---
 
+### 6.8 WAV Player
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Media/wav_player |
+
+Play WAV audio files.
+
+---
+
 ## 8. Security/Crypto
 
 ### 7.1 Enigma
@@ -756,7 +811,18 @@ ROT13 encoding conversion.
 
 ---
 
-### 7.5 Flip Crypt
+### 7.5 Roman Decoder
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/roman_decoder |
+
+Convert between Roman numerals and Arabic numbers.
+
+---
+
+### 7.6 Flip Crypt
 
 | Attribute | Details |
 |-----------|---------|
@@ -841,7 +907,51 @@ Windows 95 style interface simulator. Retro Win95 UI, start menu, window managem
 
 ---
 
-### 8.6 Executor Keychain
+### 8.6 Text Viewer
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/text_viewer |
+
+Read text files.
+
+---
+
+### 8.7 Tasks
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/tasks |
+
+Simple task list.
+
+---
+
+### 8.8 Key Copier
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/key_copier |
+
+Physical key decoding and copying.
+
+---
+
+### 8.9 Programmer Calculator
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/programmercalc |
+
+Binary/octal/hexadecimal calculator.
+
+---
+
+### 8.10 Executor Keychain
 
 | Attribute | Details |
 |-----------|---------|
