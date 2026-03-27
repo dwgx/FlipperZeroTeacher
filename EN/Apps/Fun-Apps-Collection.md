@@ -28,10 +28,11 @@ The official Flipper Zero app catalog has 336 apps, and the community has countl
 - [USB Tools](#2-usb-tools)
 - [Classic Games](#3-classic-games)
 - [Creative Tools](#4-creative-tools)
-- [GPIO Peripherals](#5-gpio-peripherals)
-- [Multimedia](#6-multimedia)
-- [Security/Crypto](#7-securitycrypto)
-- [Utility Tools](#8-utility-tools)
+- [Prank Tools](#5-prank-tools)
+- [GPIO Peripherals](#6-gpio-peripherals)
+- [Multimedia](#7-multimedia)
+- [Security/Crypto](#8-securitycrypto)
+- [Utility Tools](#9-utility-tools)
 - [Installation Guide](#installation-guide)
 - [Quick Index](#quick-index)
 
@@ -420,7 +421,91 @@ Pomodoro technique timer. 25 min work + 5 min break.
 
 ---
 
-## 5. GPIO Peripherals
+## 5. Prank Tools
+
+### 5.1 Executor Keychain (80s Keychain)
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Media/executor_keychain |
+| **GitHub** | https://github.com/EstebanFuentealba/Flipper-Keyller.git |
+| **Author** | Esteban Fuentealba |
+| **Name** | Flipper Keyller |
+| **Version** | 0.1 |
+
+Simulates 80s electronic keychain sounds. Retro 8-bit effects: unlock sound, alarm sound, laser gun sound.
+
+**How to play:**
+- Retro nostalgia
+- Test Flipper speaker
+- Show off to friends
+
+---
+
+### 5.2 DCF77 Clock Spoof
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/dcf77_clock_spoof |
+| **GitHub** | https://github.com/molodos/dcf77-clock-spoof.git |
+| **Author** | @Molodos |
+
+**What does it do?**
+
+Forge DCF77 time signal. DCF77 is Germany's longwave time signal transmitter. European radio clocks sync to it. This tool sends forged signals to make nearby radio clocks sync to your chosen time.
+
+**Technical points:**
+- Longwave time signal protocol
+- RF signal modulation
+- RFID antenna as transmitter
+
+**How to play:**
+- Test radio clocks
+- Study time sync protocols
+- Learn about radio time systems
+
+---
+
+### 5.3 Fire String
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/fire_string |
+| **GitHub** | https://github.com/RyanAboueljoud/Fire-String.git |
+
+Screen visual effect simulating fire strings.
+
+---
+
+### 5.4 Flipper95
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/flipper95 |
+| **GitHub** | https://github.com/CookiePLMonster/flipper-bakery.git |
+
+Windows 95 style interface simulator. Retro Win95 UI, start menu, window management, classic sounds.
+
+---
+
+### 5.5 Orgasmotron
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Official Catalog |
+| **Catalog** | ✅ applications/Tools/orgasmotron |
+| **GitHub** | https://github.com/leedave/Leeds-Flipper-Zero-Applications |
+| **Author** | Leedave |
+
+Vibration motor test tool (name is a joke). Tests Flipper's vibration function.
+
+---
+
+## 6. GPIO Peripherals
 
 ### 5.1 Camera Suite (ESP32-CAM) ⭐ Popular
 
@@ -503,7 +588,7 @@ Use MPU6050 gyroscope module to control mouse, gesture operation.
 
 ---
 
-## 6. Multimedia
+## 7. Multimedia
 
 ### 6.1 Tuning Fork
 
@@ -590,7 +675,7 @@ Classic DVD bouncing logo screensaver. Wait for it to hit the corner.
 
 ---
 
-## 7. Security/Crypto
+## 8. Security/Crypto
 
 ### 7.1 Enigma
 
@@ -654,7 +739,7 @@ File encryption tool, password-protect files.
 
 ---
 
-## 8. Utility Tools
+## 9. Utility Tools
 
 ### 8.1 Calculator
 
