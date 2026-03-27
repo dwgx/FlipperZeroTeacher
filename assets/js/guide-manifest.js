@@ -1,0 +1,102 @@
+window.GUIDE_MANIFEST = [
+  {
+    "order": 0,
+    "number": "00",
+    "title": "00. 学习总图",
+    "summary": "这一章的任务不是介绍某个单独功能，而是先告诉你整个知识库应该怎样读。Flipper Zero 的资料横跨设备使用、协议能力、App 开发、工具链、系统层、文件格式和社区项目。如果一开始就进入零散仓库、第三方项目或某个具体协议，很容易形成只记住片段、不理解结构的问题。",
+    "path": "CN/Guide/00-Study-Map.md",
+    "html": "CN/Guide/00-Study-Map.html",
+    "filename": "00-Study-Map.md",
+    "stem": "00-Study-Map"
+  },
+  {
+    "order": 1,
+    "number": "01",
+    "title": "01. 设备与生态",
+    "summary": "本章负责建立 Flipper Zero 的“使用层总工作流”。很多人一上来就只关注某个协议、某个脚本或者某个插件，但真正的长期使用能力，首先来自对设备端、桌面端、移动端、应用商店与命令行入口的整体理解。",
+    "path": "CN/Guide/01-Device-Ecosystem.md",
+    "html": "CN/Guide/01-Device-Ecosystem.html",
+    "filename": "01-Device-Ecosystem.md",
+    "stem": "01-Device-Ecosystem"
+  },
+  {
+    "order": 2,
+    "number": "02",
+    "title": "02. 协议域",
+    "summary": "Flipper Zero 不是一个单一功能设备，而是多个能力域并存的平台。真正高效的学习方式，不是从“我要做某个场景”出发，而是先问：这个问题属于哪个协议域、哪个硬件边界、哪个文件格式、哪个开发层级。",
+    "path": "CN/Guide/02-Protocol-Domains.md",
+    "html": "CN/Guide/02-Protocol-Domains.html",
+    "filename": "02-Protocol-Domains.md",
+    "stem": "02-Protocol-Domains"
+  },
+  {
+    "order": 3,
+    "number": "03",
+    "title": "03. App 开发",
+    "summary": "本章是整个开发主线的真正起点。对于大多数正式开发者来说，最合理的默认路线不是先改系统，也不是先研究第三方固件，而是先从 App 开发进入，理解官方的应用模型、目录结构、构建产物、示例模式和发布思路。",
+    "path": "CN/Guide/03-App-Development.md",
+    "html": "CN/Guide/03-App-Development.html",
+    "filename": "03-App-Development.md",
+    "stem": "03-App-Development"
+  },
+  {
+    "order": 4,
+    "number": "04",
+    "title": "04. 构建、调试与工具链",
+    "summary": "本章负责把开发环境真正落地。前一章解决的是“应用模型是什么”，这一章解决的是“怎样把它构建出来、跑起来、调起来、更新起来”。如果没有清晰的工具链心智模型，后续很多问题都会混在一起：构建失败、设备运行失败、资源没打进去、日志看不到、更新路径不对。",
+    "path": "CN/Guide/04-Build-Debug-Tools.md",
+    "html": "CN/Guide/04-Build-Debug-Tools.html",
+    "filename": "04-Build-Debug-Tools.md",
+    "stem": "04-Build-Debug-Tools"
+  },
+  {
+    "order": 5,
+    "number": "05",
+    "title": "05. JavaScript",
+    "summary": "这一章的重点不是教你把 JavaScript 当成万能方案，而是帮助你准确理解它在 Flipper Zero 平台上的位置。很多误解来自把设备端 JavaScript 想象成浏览器 JavaScript 或 Node.js 运行时，这样会直接导致错误的 API 期待、错误的模块理解和错误的资源判断。",
+    "path": "CN/Guide/05-JavaScript.md",
+    "html": "CN/Guide/05-JavaScript.html",
+    "filename": "05-JavaScript.md",
+    "stem": "05-JavaScript"
+  },
+  {
+    "order": 6,
+    "number": "06",
+    "title": "06. 系统编程",
+    "summary": "当你已经理解 App 开发、工具链和脚本路线之后，就会遇到一个关键问题：哪些需求仍然能留在应用层，哪些需求已经进入系统层。本章的目标，就是帮助你建立“系统编程边界感”，知道什么时候需要进入平台层、硬件抽象层、资源打包层和测试层。",
+    "path": "CN/Guide/06-System-Programming.md",
+    "html": "CN/Guide/06-System-Programming.html",
+    "filename": "06-System-Programming.md",
+    "stem": "06-System-Programming"
+  },
+  {
+    "order": 7,
+    "number": "07",
+    "title": "07. 文件格式",
+    "summary": "很多人会把文件格式看成附属资料，实际上它是平台能力的重要接口层。只要涉及导入、导出、保存、共享、批处理、转换、样本库、社区数据仓库和 AI 检索，文件格式都会成为关键点。",
+    "path": "CN/Guide/07-File-Formats.md",
+    "html": "CN/Guide/07-File-Formats.html",
+    "filename": "07-File-Formats.md",
+    "stem": "07-File-Formats"
+  },
+  {
+    "order": 8,
+    "number": "08",
+    "title": "08. 社区参考",
+    "summary": "本章不是用来替代官方文档，而是帮助你在已经建立官方基线之后，系统吸收高信号社区资料。Flipper Zero 的社区生态很活跃，但其中混杂了样例仓库、数据仓库、第三方固件兼容说明、一次性实验项目和过时资料。真正有价值的做法，不是单纯收集得越多越好，而是先建立判断框架，再有选择地纳入知识库。",
+    "path": "CN/Guide/08-Community-Reference.md",
+    "html": "CN/Guide/08-Community-Reference.html",
+    "filename": "08-Community-Reference.md",
+    "stem": "08-Community-Reference"
+  },
+  {
+    "order": 9,
+    "number": "09",
+    "title": "09. 固件参考 2025-2026",
+    "summary": "本章补充截至 2025-2026 年的主流固件最新状态。社区固件（Unleashed、Momentum）更新频繁，功能演进快，需要定期同步。本章与 [08. 社区参考](08-Community-Reference.md) 的区别在于：08 章讲\"如何判断社区资料价值\"，本章讲\"当前各固件实际有什么功能\"。",
+    "path": "CN/Guide/09-Firmware-Reference-2025.md",
+    "html": "CN/Guide/09-Firmware-Reference-2025.html",
+    "filename": "09-Firmware-Reference-2025.md",
+    "stem": "09-Firmware-Reference-2025"
+  }
+];

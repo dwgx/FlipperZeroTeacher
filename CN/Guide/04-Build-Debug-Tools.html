@@ -3,134 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>04. 构建、调试与工具链 - Flipper Zero 知识库</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
-        .container { max-width: 800px; margin: 0 auto; }
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
-        .back:hover { color: var(--accent); }
-        h1 { font-size: 28px; margin-bottom: 8px; }
-        h1 span { color: var(--accent); }
-        .subtitle { color: var(--muted); margin-bottom: 30px; }
-        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
-        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
-        .nav a:hover { background: var(--border); }
-        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
-        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
-        .content h3 { font-size: 16px; margin: 20px 0 10px; }
-        .content p { margin: 12px 0; color: var(--muted); }
-        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
-        .content li { margin: 8px 0; color: var(--muted); }
-        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
-        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
-        .content th { background: var(--bg); }
-        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
-    </style>
+    <title>04. 构建、调试与工具链 - Flipper Zero Teacher</title>
+    <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
-<body>
-    <div class="container">
-        <a href="index.html" class="back">← 返回课程导航</a>
-        <h1>04. <span>04. 构建、调试与工具链</span></h1>
-        <p class="subtitle">本章负责把开发环境真正落地。前一章解决的是“应用模型是什么”，这一章解决的是“怎样把它构建出来、跑起来、调起来、更新起来”。如果没有清晰的工具链心智模型，后续很多问题都会混在一起：构建失败、设备运行失...</p>
+<body class="reader-page" data-site-root="../../" data-fetch="04-Build-Debug-Tools.md" data-repo-path="CN/Guide/04-Build-Debug-Tools.md" data-title="04. 构建、调试与工具链" data-description="本章负责把开发环境真正落地。前一章解决的是“应用模型是什么”，这一章解决的是“怎样把它构建出来、跑起来、调起来、更新起来”。如果没有清晰的工具链心智模型，后续很多问题都会混在一起：构建失败、设备运行失败、资源没打进去、日志看不到、更新路径不对。" data-kicker="CN Guide" data-mode-label="Guide Shell · Markdown Runtime Render">
+    <div class="reader-shell">
+        <header class="site-topbar">
+            <a class="site-brand" href="../../index.html">
+                <span class="site-brand-mark">04</span>
+                <span class="site-brand-text">
+                    <strong>04. 构建、调试与工具链</strong>
+                    <span>章节壳页 · 内容来自同目录 Markdown</span>
+                </span>
+            </a>
+            <nav class="site-nav">
+                <a href="../../index.html">首页</a>
+                <a href="../../CN/Guide/index.html">课程导航</a>
+                <a href="../../viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                <a href="../../viewer.html?file=CN/qFlipper-全网融合总文档.md">qFlipper</a>
+            </nav>
+        </header>
 
-        <div class="content">
+        <main class="reader-main">
+            <section class="doc-hero">
+                <div>
+                    <p class="eyebrow" id="docEyebrow">CN Guide</p>
+                    <h1 class="doc-title" id="docTitle">04. 构建、调试与工具链</h1>
+                    <p class="doc-lead" id="docLead">本章负责把开发环境真正落地。前一章解决的是“应用模型是什么”，这一章解决的是“怎样把它构建出来、跑起来、调起来、更新起来”。如果没有清晰的工具链心智模型，后续很多问题都会混在一起：构建失败、设备运行失败、资源没打进去、日志看不到、更新路径不对。</p>
+                </div>
+                <div class="doc-meta">
+                    <div class="doc-meta-card">
+                        <dl>
+                            <div>
+                                <dt>Source</dt>
+                                <dd id="docPath">CN/Guide/04-Build-Debug-Tools.md</dd>
+                            </div>
+                            <div>
+                                <dt>Mode</dt>
+                                <dd id="docMode">Guide Shell · Markdown Runtime Render</dd>
+                            </div>
+                        </dl>
+                        <a class="source-link" id="sourceLink" href="../../CN/Guide/04-Build-Debug-Tools.md">查看源 Markdown</a>
+                    </div>
+                </div>
+            </section>
 
-<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：03. App 开发](03-App-Development.md)</td><td>[下一章：05. JavaScript](05-JavaScript.md)</td></tr>
+            <div class="reader-grid">
+                <article class="doc-panel markdown-body" id="docContent">
+                    <p class="empty-state">正在读取 Markdown 内容…</p>
+                </article>
 
-<h2>本章作用</h2>
+                <aside class="toc-panel">
+                    <h2 class="toc-title">本页目录</h2>
+                    <nav id="docToc">
+                        <p class="empty-state">文档渲染后会在这里生成章节目录。</p>
+                    </nav>
+                </aside>
+            </div>
 
-<p>本章负责把开发环境真正落地。前一章解决的是“应用模型是什么”，这一章解决的是“怎样把它构建出来、跑起来、调起来、更新起来”。如果没有清晰的工具链心智模型，后续很多问题都会混在一起：构建失败、设备运行失败、资源没打进去、日志看不到、更新路径不对。</p>
-
-<p>本章的目标，是让你把 `FBT`、`uFBT`、VS Code、Dev Board、CLI、OTA 更新这些对象放到统一工作流中理解。</p>
-
-<h2>本章建议先读的仓库内文档</h2>
-
-<li>[03. App 开发](03-App-Development.md)：先理解你要构建的对象是什么。</li>
-<li>[06. 系统编程](06-System-Programming.md)：后续进入系统层时会更依赖这里的工具链。</li>
-<li>[中文主知识库](../FlipperZero-Master-CN.md)</li>
-<li>[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
-<li>[官方文档覆盖表](../../Official-Docs-Coverage.md)</li>
-
-<h2>官方核心页面</h2>
-
-<li>[Developer Tools](https://developer.flipper.net/flipperzero/doxygen/dev_tools.html)</li>
-<li>[FBT](https://developer.flipper.net/flipperzero/doxygen/fbt.html)</li>
-<li>[VS Code](https://developer.flipper.net/flipperzero/doxygen/vscode.html)</li>
-<li>[Dev Board](https://developer.flipper.net/flipperzero/doxygen/dev_board.html)</li>
-<li>[OTA Updates](https://developer.flipper.net/flipperzero/doxygen/ota_updates.html)</li>
-<li>[CLI](https://docs.flipper.net/zero/development/cli)</li>
-
-<h2>本章要解决的核心问题</h2>
-
-<li>`FBT` 与 `uFBT` 的边界是什么。</li>
-<li>VS Code 工作区与命令行工作流如何配合。</li>
-<li>Dev Board 在日志、调试、网络与开发连接里扮演什么角色。</li>
-<li>OTA 更新与正式开发构建之间是什么关系。</li>
-
-<h2>需要先建立的工具链结构</h2>
-
-<h3>1. 构建核心：FBT</h3>
-
-<p>[FBT](https://developer.flipper.net/flipperzero/doxygen/fbt.html) 是官方构建链的核心入口。理解它，不只是知道一条命令怎么敲，而是要理解：</p>
-
-<li>它如何组织项目构建</li>
-<li>它怎样产出目标文件</li>
-<li>它如何参与资源处理</li>
-<li>它和应用、固件、目标平台之间怎样关联</li>
-
-<h3>2. 轻量项目路径：uFBT</h3>
-
-<p>[Developer Tools](https://developer.flipper.net/flipperzero/doxygen/dev_tools.html) 中会涉及更轻量的开发路径。你应当把 `uFBT` 理解为针对部分开发场景的轻量工作流，而不是完整替代 `FBT` 的所有功能。</p>
-
-<h3>3. 编辑器集成：VS Code</h3>
-
-<p>[VS Code](https://developer.flipper.net/flipperzero/doxygen/vscode.html) 的价值在于把工作区生成、索引、跳转、构建命令与代码阅读结合起来。它不是平台本身的一部分，但能显著提高正式开发效率。</p>
-
-<h3>4. 调试与连接：Dev Board 与 CLI</h3>
-
-<p>[Dev Board](https://developer.flipper.net/flipperzero/doxygen/dev_board.html) 和 [CLI](https://docs.flipper.net/zero/development/cli) 是调试链的重要组成。它们帮助你观察日志、连接设备、进入调试流程，并在出现问题时迅速缩小范围。</p>
-
-<h3>5. 更新机制：OTA</h3>
-
-<p>[OTA Updates](https://developer.flipper.net/flipperzero/doxygen/ota_updates.html) 更偏向正式更新与分发视角。你需要理解它与开发过程之间的关系，但不要把日常本地开发、调试和发布更新混成一个步骤。</p>
-
-<h2>建议阅读顺序</h2>
-
-<li>先读 [Developer Tools](https://developer.flipper.net/flipperzero/doxygen/dev_tools.html)，建立工具总览。</li>
-<li>再读 [FBT](https://developer.flipper.net/flipperzero/doxygen/fbt.html)，确认官方构建主线。</li>
-<li>接着读 [VS Code](https://developer.flipper.net/flipperzero/doxygen/vscode.html)，建立日常编码工作流。</li>
-<li>然后读 [Dev Board](https://developer.flipper.net/flipperzero/doxygen/dev_board.html) 与 [CLI](https://docs.flipper.net/zero/development/cli)，补足调试入口。</li>
-<li>最后读 [OTA Updates](https://developer.flipper.net/flipperzero/doxygen/ota_updates.html)，理解更新与交付路径。</li>
-
-<h2>学完本章后应具备的能力</h2>
-
-<li>能解释 `FBT`、`uFBT`、VS Code、Dev Board、CLI 和 OTA 各自的职责。</li>
-<li>能建立一个正式、稳定的开发与调试环境。</li>
-<li>知道排查构建问题、运行问题和连接问题时应该先查哪里。</li>
-<li>能把“本地开发”与“正式更新分发”区分开来。</li>
-
-<h2>继续阅读</h2>
-
-<li>下一章：[05. JavaScript](05-JavaScript.md)</li>
-<li>回到上一章：[03. App 开发](03-App-Development.md)</li>
-<li>查看系统层入口：[06. 系统编程](06-System-Programming.md)</li>
-<li>查看官方精读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
-
-<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：03. App 开发](03-App-Development.md)</td><td>[下一章：05. JavaScript](05-JavaScript.md)</td></tr>
-
-        </div>
-
-        <div class="nav">
-            <a href="03-App-Development.html">← 上一章</a>
-            <a href="05-JavaScript.html">下一章 →</a>
-        </div>
+            <nav class="pager" id="docPager"></nav>
+        </main>
     </div>
+
+    <script src="../../assets/js/guide-manifest.js"></script>
+    <script src="../../assets/vendor/marked.min.js"></script>
+    <script src="../../assets/js/reader.js"></script>
 </body>
 </html>
