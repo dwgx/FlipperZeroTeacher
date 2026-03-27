@@ -58,6 +58,9 @@
 10. [09. 固件参考 2025-2026](CN/Guide/09-Firmware-Reference-2025.md)
     了解当前社区固件最新状态（Momentum、Unleashed、Marauder）。
 
+11. [有趣 App 收录](CN/Apps/趣味App完全收录.md)
+    独立安装的趣味/恶搞/实用玩具类 App 整理（BLE 弹窗、鼠标抖动器、游戏等）。
+
 ## 仓库地图
 
 - [CN/README.md](CN/README.md)
@@ -110,3 +113,4 @@
 - [English master guide](EN/FlipperZero-Master-EN.md)
 - [English official docs guide](EN/Official-Docs-EN-Full.md)
 - [English AI pack](EN/FlipperZero-AI-Pack-EN.md)
+- [Fun Apps Collection (EN)](EN/Apps/Fun-Apps-Collection.md)
