@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07. 文件格式 - Flipper Zero 知识库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--muted); margin-bottom: 30px; }
+        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
+        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
+        .nav a:hover { background: var(--border); }
+        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
+        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
+        .content h3 { font-size: 16px; margin: 20px 0 10px; }
+        .content p { margin: 12px 0; color: var(--muted); }
+        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
+        .content li { margin: 8px 0; color: var(--muted); }
+        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        .content th { background: var(--bg); }
+        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回课程导航</a>
+        <h1>07. <span>07. 文件格式</span></h1>
+        <p class="subtitle">很多人会把文件格式看成附属资料，实际上它是平台能力的重要接口层。只要涉及导入、导出、保存、共享、批处理、转换、样本库、社区数据仓库和 AI 检索，文件格式都会成为关键点。</p>
+
+        <div class="content">
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：06. 系统编程](06-System-Programming.md)</td><td>[下一章：08. 社区参考](08-Community-Reference.md)</td></tr>
+
+<h2>本章作用</h2>
+
+<p>很多人会把文件格式看成附属资料，实际上它是平台能力的重要接口层。只要涉及导入、导出、保存、共享、批处理、转换、样本库、社区数据仓库和 AI 检索，文件格式都会成为关键点。</p>
+
+<p>本章的作用，是帮助你把格式层提升到与协议域、App 开发、系统工具同等重要的地位去理解。</p>
+
+<h2>本章建议先读的仓库内文档</h2>
+
+<li>[02. 协议域](02-Protocol-Domains.md)：先明确每种格式对应哪个能力域。</li>
+<li>[03. App 开发](03-App-Development.md)：很多应用直接依赖文件结构。</li>
+<li>[08. 社区参考](08-Community-Reference.md)：很多社区仓库本质上是格式样本库或数据仓库。</li>
+<li>[中文主知识库](../FlipperZero-Master-CN.md)</li>
+<li>[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+<li>[官方文档覆盖表](../../Official-Docs-Coverage.md)</li>
+
+<h2>官方核心页面</h2>
+
+<li>[File Formats 总览](https://developer.flipper.net/flipperzero/doxygen/file_formats.html)</li>
+<li>[Sub-GHz File Format](https://developer.flipper.net/flipperzero/doxygen/subghz_file_format.html)</li>
+<li>[NFC File Format](https://developer.flipper.net/flipperzero/doxygen/nfc_file_format.html)</li>
+<li>[iButton File Format](https://developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html)</li>
+<li>[LF RFID File Format](https://developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html)</li>
+<li>[BadUSB File Format](https://developer.flipper.net/flipperzero/doxygen/badusb_file_format.html)</li>
+
+<h2>本章要解决的核心问题</h2>
+
+<li>为什么格式层会直接影响设备功能、App 行为和社区资料管理。</li>
+<li>不同协议域的文件为什么不能混用。</li>
+<li>为什么 AI 很容易在格式字段、版本、上下文和枚举值上犯错。</li>
+
+<h2>需要重点理解的内容</h2>
+
+<h3>1. 通用格式头</h3>
+
+<p>阅读 [File Formats 总览](https://developer.flipper.net/flipperzero/doxygen/file_formats.html) 时，优先关注类型、版本、上下文、字段顺序和语义边界。这些字段不是可随意增删的装饰，而是让设备与工具正确理解数据的前提。</p>
+
+<h3>2. Sub-GHz</h3>
+
+<p>[Sub-GHz File Format](https://developer.flipper.net/flipperzero/doxygen/subghz_file_format.html) 常见重点包括：头部、频率、预设、协议字段、RAW 数据和上下文差异。它往往比初学者想象的更依赖严格结构。</p>
+
+<h3>3. NFC</h3>
+
+<p>[NFC File Format](https://developer.flipper.net/flipperzero/doxygen/nfc_file_format.html) 需要重点看通用头与设备专属段、字段含义和不同卡类型的组织方式。不要把不同 NFC 类型当成同一份简单文本模板。</p>
+
+<h3>4. iButton 与 LF RFID</h3>
+
+<p>[iButton File Format](https://developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html) 与 [LF RFID File Format](https://developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html) 适合对比着看。它们都与身份识别场景有关，但属于不同技术域和不同格式结构。</p>
+
+<h3>5. BadUSB</h3>
+
+<p>[BadUSB File Format](https://developer.flipper.net/flipperzero/doxygen/badusb_file_format.html) 展示了另一类“脚本式格式”。它提醒你：Flipper Zero 的格式层不只是存储原始数据，也可能承担脚本与执行逻辑的组织职责。</p>
+
+<h2>建议阅读顺序</h2>
+
+<li>先读 [File Formats 总览](https://developer.flipper.net/flipperzero/doxygen/file_formats.html)，建立统一格式视角。</li>
+<li>再按自己的主域进入 [Sub-GHz File Format](https://developer.flipper.net/flipperzero/doxygen/subghz_file_format.html)、[NFC File Format](https://developer.flipper.net/flipperzero/doxygen/nfc_file_format.html)、[iButton File Format](https://developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html)、[LF RFID File Format](https://developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html)。</li>
+<li>最后阅读 [BadUSB File Format](https://developer.flipper.net/flipperzero/doxygen/badusb_file_format.html)，补足脚本式格式的理解。</li>
+<li>阅读完后，再回到 [08. 社区参考](08-Community-Reference.md)，你会更容易判断社区数据仓库是否规范。</li>
+
+<h2>学完本章后应具备的能力</h2>
+
+<li>面对导入导出、转换、解析和样本库问题时，能先从格式层定位。</li>
+<li>能理解为什么某些文件不能跨域混用。</li>
+<li>能为 AI 检索或自动化处理准备更稳定的格式知识。</li>
+<li>能把格式层视为平台能力的一部分，而不是附录材料。</li>
+
+<h2>继续阅读</h2>
+
+<li>下一章：[08. 社区参考](08-Community-Reference.md)</li>
+<li>回到上一章：[06. 系统编程](06-System-Programming.md)</li>
+<li>回到协议域章节：[02. 协议域](02-Protocol-Domains.md)</li>
+<li>查看官方精读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：06. 系统编程](06-System-Programming.md)</td><td>[下一章：08. 社区参考](08-Community-Reference.md)</td></tr>
+
+        </div>
+
+        <div class="nav">
+            <a href="06-System-Programming.html">← 上一章</a>
+            <a href="08-Community-Reference.html">下一章 →</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00. 学习总图 - Flipper Zero 知识库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--muted); margin-bottom: 30px; }
+        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
+        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
+        .nav a:hover { background: var(--border); }
+        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
+        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
+        .content h3 { font-size: 16px; margin: 20px 0 10px; }
+        .content p { margin: 12px 0; color: var(--muted); }
+        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
+        .content li { margin: 8px 0; color: var(--muted); }
+        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        .content th { background: var(--bg); }
+        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回课程导航</a>
+        <h1>00. <span>00. 学习总图</span></h1>
+        <p class="subtitle">这一章的任务不是介绍某个单独功能，而是先告诉你整个知识库应该怎样读。Flipper Zero 的资料横跨设备使用、协议能力、App 开发、工具链、系统层、文件格式和社区项目。如果一开始就进入零散仓库、...</p>
+
+        <div class="content">
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[下一章：01. 设备与生态](01-Device-Ecosystem.md)</td><td>[返回中文入口](../README.md)</td></tr>
+
+<h2>本章作用</h2>
+
+<p>这一章的任务不是介绍某个单独功能，而是先告诉你整个知识库应该怎样读。Flipper Zero 的资料横跨设备使用、协议能力、App 开发、工具链、系统层、文件格式和社区项目。如果一开始就进入零散仓库、第三方项目或某个具体协议，很容易形成只记住片段、不理解结构的问题。</p>
+
+<p>本章要做的事情，是先建立“阅读顺序”和“判断边界”。你读完这一章之后，应该知道哪些内容属于主线，哪些内容属于补充；哪些页面是官方定义，哪些页面只是社区经验；哪些文档适合人类顺序学习，哪些文档适合 AI 检索和引用。</p>
+
+<h2>本章建议先读的仓库内文档</h2>
+
+<li>[中文入口](../README.md)：确认中文主入口和整体目录结构。</li>
+<li>[仓库首页](../../README.md)：查看整个仓库的默认阅读方式。</li>
+<li>[中文主知识库](../FlipperZero-Master-CN.md)：建立全局地图。</li>
+<li>[官方文档中文精读总表](../Official-Docs-CN-Full.md)：确认官方资料是整个知识库的基线。</li>
+<li>[中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)：理解给 AI 使用时的约束方式。</li>
+<li>[官方文档覆盖表](../../Official-Docs-Coverage.md)：了解目前已经整理到什么深度。</li>
+
+<h2>你需要先建立的四层结构</h2>
+
+<h3>1. 教学导览层</h3>
+
+<p>也就是当前这个 `Guide/` 目录。它负责把知识拆成可以顺序阅读的章节，适合从零开始学习的人，也适合之后回头补课。</p>
+
+<h3>2. 主知识库层</h3>
+
+<p>对应 [中文主知识库](../FlipperZero-Master-CN.md)。它负责给你一个全局视角，帮助你知道各条主线如何互相连接。</p>
+
+<h3>3. 官方精读层</h3>
+
+<p>对应 [官方文档中文精读总表](../Official-Docs-CN-Full.md)。当你需要确认一个技术事实、字段定义、开发入口或官方术语时，应优先回到这一层。</p>
+
+<h3>4. AI 检索层</h3>
+
+<p>对应 [中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)。这一层不是给人直接顺着读的，而是给 AI、RAG、检索系统和自动化问答使用的约束层。</p>
+
+<h2>三个核心原则</h2>
+
+<li>先官方，后社区。</li>
+<li>先理解平台边界，再看具体项目。</li>
+<li>先建立协议域与开发层级，再进入细节实现。</li>
+
+<p>这三个原则决定了整个仓库不会把零散项目放在前面，也不会把某个社区仓库写成“平台定义”。</p>
+
+<h2>建议阅读顺序</h2>
+
+<p>建议按下面顺序进入：</p>
+
+<li>[01. 设备与生态](01-Device-Ecosystem.md)</li>
+<p>先建立设备、桌面端、移动端、CLI 和应用生态的完整工作流。</p>
+
+<li>[02. 协议域](02-Protocol-Domains.md)</li>
+<p>学会从能力域而不是从零散用途来理解平台。</p>
+
+<li>[03. App 开发](03-App-Development.md)</li>
+<p>确认官方推荐的开发主线，建立 App 结构认识。</p>
+
+<li>[04. 构建、调试与工具链](04-Build-Debug-Tools.md)</li>
+<p>建立正式开发环境和调试路径。</p>
+
+<li>[05. JavaScript](05-JavaScript.md)</li>
+<p>理解脚本路线的适用边界。</p>
+
+<li>[06. 系统编程](06-System-Programming.md)</li>
+<p>从应用层进入系统层、平台层和硬件抽象层。</p>
+
+<li>[07. 文件格式](07-File-Formats.md)</li>
+<p>把格式理解为平台能力的一部分。</p>
+
+<li>[08. 社区参考](08-Community-Reference.md)</li>
+<p>在官方基线已经建立之后，再吸收高信号社区资料。</p>
+
+<h2>如果你属于不同类型的读者</h2>
+
+<li>如果你完全从零开始：从 [01. 设备与生态](01-Device-Ecosystem.md) 开始，不要直接跳到开发章节。</li>
+<li>如果你已经会基本使用设备：从 [02. 协议域](02-Protocol-Domains.md) 和 [03. App 开发](03-App-Development.md) 开始。</li>
+<li>如果你已经在写代码：优先阅读 [03. App 开发](03-App-Development.md)、[04. 构建、调试与工具链](04-Build-Debug-Tools.md)、[07. 文件格式](07-File-Formats.md)。</li>
+<li>如果你主要为 AI 建知识库：先读 [中文主知识库](../FlipperZero-Master-CN.md)、[官方文档中文精读总表](../Official-Docs-CN-Full.md)、[中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)。</li>
+
+<h2>学完本章后应具备的能力</h2>
+
+<li>知道整个知识库的阅读顺序。</li>
+<li>知道 `Guide`、`Master`、`Official Docs Full`、`AI Pack` 各自的作用。</li>
+<li>知道为什么不应从第三方固件或零散社区项目直接入门。</li>
+<li>能把后续每一章放进正确的学习位置里理解。</li>
+
+<h2>继续阅读</h2>
+
+<li>下一章：[01. 设备与生态](01-Device-Ecosystem.md)</li>
+<li>回到入口：[中文教学导航](README.md)</li>
+<li>回到总览：[中文主知识库](../FlipperZero-Master-CN.md)</li>
+<li>查看官方深读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[下一章：01. 设备与生态](01-Device-Ecosystem.md)</td><td>[返回仓库首页](../../README.md)</td></tr>
+
+        </div>
+
+        <div class="nav">
+            <span></span>
+            <a href="01-Device-Ecosystem.html">下一章 →</a>
+        </div>
+    </div>
+</body>
+</html>

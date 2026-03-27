@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05. JavaScript - Flipper Zero 知识库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--muted); margin-bottom: 30px; }
+        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
+        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
+        .nav a:hover { background: var(--border); }
+        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
+        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
+        .content h3 { font-size: 16px; margin: 20px 0 10px; }
+        .content p { margin: 12px 0; color: var(--muted); }
+        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
+        .content li { margin: 8px 0; color: var(--muted); }
+        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        .content th { background: var(--bg); }
+        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回课程导航</a>
+        <h1>05. <span>05. JavaScript</span></h1>
+        <p class="subtitle">这一章的重点不是教你把 JavaScript 当成万能方案，而是帮助你准确理解它在 Flipper Zero 平台上的位置。很多误解来自把设备端 JavaScript 想象成浏览器 JavaScrip...</p>
+
+        <div class="content">
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：04. 构建、调试与工具链](04-Build-Debug-Tools.md)</td><td>[下一章：06. 系统编程](06-System-Programming.md)</td></tr>
+
+<h2>本章作用</h2>
+
+<p>这一章的重点不是教你把 JavaScript 当成万能方案，而是帮助你准确理解它在 Flipper Zero 平台上的位置。很多误解来自把设备端 JavaScript 想象成浏览器 JavaScript 或 Node.js 运行时，这样会直接导致错误的 API 期待、错误的模块理解和错误的资源判断。</p>
+
+<p>本章的任务，是把 JavaScript 路线明确为“轻量脚本与快速原型路线”，并且告诉你它和外部应用、系统编程之间的分界线。</p>
+
+<h2>本章建议先读的仓库内文档</h2>
+
+<li>[03. App 开发](03-App-Development.md)：先知道标准 App 路线是什么。</li>
+<li>[04. 构建、调试与工具链](04-Build-Debug-Tools.md)：理解脚本运行也依赖整体开发环境。</li>
+<li>[06. 系统编程](06-System-Programming.md)：知道什么时候必须离开脚本层。</li>
+<li>[中文主知识库](../FlipperZero-Master-CN.md)</li>
+<li>[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+<li>[中文 AI 规则包](../FlipperZero-AI-Pack-CN.md)</li>
+
+<h2>官方核心页面</h2>
+
+<li>[JavaScript 总览](https://developer.flipper.net/flipperzero/doxygen/js.html)</li>
+<li>[About JS Engine](https://developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html)</li>
+<li>[Your First JS App](https://developer.flipper.net/flipperzero/doxygen/js_your_first_js_app.html)</li>
+<li>[Developing Apps Using JS SDK](https://developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html)</li>
+<li>[Using JS Modules](https://developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html)</li>
+
+<h2>本章要解决的核心问题</h2>
+
+<li>Flipper Zero 的 JavaScript 运行时到底是什么，不是什么。</li>
+<li>什么任务适合走 JS 路线，什么任务不适合。</li>
+<li>JS SDK、模块、设备运行时和平台能力之间是什么关系。</li>
+
+<h2>必须掌握的边界</h2>
+
+<h3>1. 它不是浏览器，也不是 Node.js</h3>
+
+<p>阅读 [About JS Engine](https://developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html) 时，应优先建立这一点。不要把网页脚本、Node 包生态和设备脚本环境混在一起。</p>
+
+<h3>2. 它适合轻量功能与快速原型</h3>
+
+<p>如果你的目标是：</p>
+
+<li>快速验证某个想法</li>
+<li>编写轻量功能</li>
+<li>处理较简单的交互或自动化</li>
+<li>做演示、教学或原型</li>
+
+<p>那么 JavaScript 路线通常更高效。</p>
+
+<h3>3. 它不适合替代所有系统级需求</h3>
+
+<p>如果你的目标涉及：</p>
+
+<li>深层系统控制</li>
+<li>更复杂的性能与资源管理</li>
+<li>需要直接进入更底层的平台接口</li>
+<li>与系统层、HAL、固件资源有更紧密耦合</li>
+
+<p>那么你通常需要回到 [03. App 开发](03-App-Development.md) 或进入 [06. 系统编程](06-System-Programming.md)。</p>
+
+<h3>4. JS SDK 与模块化</h3>
+
+<p>[Developing Apps Using JS SDK](https://developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html) 与 [Using JS Modules](https://developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html) 的重点在于：你要理解模块边界、加载方式、运行环境限制，以及“可用 API”并不是无穷无尽的。</p>
+
+<h2>建议阅读顺序</h2>
+
+<li>先读 [JavaScript 总览](https://developer.flipper.net/flipperzero/doxygen/js.html)，确认整体路线。</li>
+<li>再读 [About JS Engine](https://developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html)，先把边界想清楚。</li>
+<li>接着读 [Your First JS App](https://developer.flipper.net/flipperzero/doxygen/js_your_first_js_app.html)，理解最小可运行路径。</li>
+<li>然后读 [Developing Apps Using JS SDK](https://developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html)，补足开发模型。</li>
+<li>最后读 [Using JS Modules](https://developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html)，理解模块化组织方式。</li>
+
+<h2>学完本章后应具备的能力</h2>
+
+<li>能判断一个需求是否适合走 JavaScript 路线。</li>
+<li>能解释设备端 JavaScript 与浏览器/Node.js 的差异。</li>
+<li>能区分脚本层能力、App 层能力和系统层能力。</li>
+<li>能把 JavaScript 当作正式知识库中的一条独立开发路线，而不是零散技巧集合。</li>
+
+<h2>继续阅读</h2>
+
+<li>下一章：[06. 系统编程](06-System-Programming.md)</li>
+<li>回到上一章：[04. 构建、调试与工具链](04-Build-Debug-Tools.md)</li>
+<li>回到 App 主线：[03. App 开发](03-App-Development.md)</li>
+<li>查看官方精读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：04. 构建、调试与工具链](04-Build-Debug-Tools.md)</td><td>[下一章：06. 系统编程](06-System-Programming.md)</td></tr>
+
+        </div>
+
+        <div class="nav">
+            <a href="04-Build-Debug-Tools.html">← 上一章</a>
+            <a href="06-System-Programming.html">下一章 →</a>
+        </div>
+    </div>
+</body>
+</html>
