@@ -24,6 +24,27 @@
 - `Official-Source-Repos/flipperdevices-docs-2026-03-24/`
   官方公开文档仓库快照。
 
+- `Official-Source-Repos/qflipper/`
+  qFlipper 桌面端应用源码，官方桌面管理工具。
+
+- `Official-Source-Repos/flipper-application-catalog/`
+  官方应用目录仓库。
+
+- `Official-Source-Repos/docs/`
+  官方文档源码仓库 (en/ru)。
+
+- `Official-Source-Repos/webdfu/`
+  WebDFU 固件更新工具源码。
+
+- `Official-Source-Repos/webflipper/`
+  WebFlipper 在线工具源码。
+
+- `Official-Source-Repos/update.flipperzero.one/`
+  官方更新服务器前端源码。
+
+- `Official-Source-Repos/Casper-flipper-blog-theme/`
+  官方博客主题源码。
+
 ## 说明
 
 - 这批内容的用途是长期保存、整理与应急查阅。
