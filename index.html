@@ -5,228 +5,209 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipper Zero 教学知识库</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --accent-hover: #79c0ff;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #0a0a0f;
-            color: #fff;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
         }
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 24px;
         }
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                linear-gradient(180deg, rgba(10,10,15,0.3) 0%, rgba(10,10,15,0.95) 100%),
-                url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, transparent 0%, #0a0a0f 70%);
-            z-index: 0;
-        }
-        .content {
-            position: relative;
-            z-index: 1;
+
+        header {
             text-align: center;
-            padding: 20px;
+            margin-bottom: 60px;
         }
-        .logo {
-            width: 180px;
-            height: 180px;
-            margin-bottom: 30px;
-            border-radius: 40px;
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
-            animation: pulse 3s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 30px 80px rgba(0, 217, 255, 0.5); }
-        }
+
         h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
+
         h1 span {
-            background: linear-gradient(90deg, #00d9ff, #00ff88, #00d9ff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shine 3s linear infinite;
+            color: var(--accent);
         }
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
+
         .subtitle {
-            font-size: 22px;
-            color: #8892b0;
-            margin-bottom: 50px;
-            font-weight: 300;
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
         }
-        .nav-grid {
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto 50px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        @media (max-width: 900px) {
-            .nav-grid { grid-template-columns: repeat(2, 1fr); }
-            h1 { font-size: 36px; }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 28px;
+            }
         }
-        @media (max-width: 500px) {
-            .nav-grid { grid-template-columns: 1fr; }
-        }
-        .nav-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 30px 20px;
+
+        a.card {
+            display: block;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
             text-decoration: none;
-            color: #fff;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(10px);
+            color: var(--text-primary);
+            transition: all 0.2s ease;
         }
-        .nav-card:hover {
-            background: rgba(0, 217, 255, 0.1);
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(0, 217, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+
+        a.card:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent);
+            transform: translateY(-2px);
         }
-        .nav-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+
+        .card-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
             display: block;
         }
-        .nav-card h3 {
-            font-size: 18px;
+
+        .card h3 {
+            font-size: 17px;
             font-weight: 600;
-            margin-bottom: 8px;
-            color: #fff;
+            margin-bottom: 6px;
         }
-        .nav-card p {
-            color: #8892b0;
-            font-size: 13px;
-            line-height: 1.5;
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
         }
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #00d9ff 0%, #00ff88 100%);
-            color: #0a0a0f;
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
-        }
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.5);
-        }
-        .footer {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
+
+        .cta-section {
             text-align: center;
-            color: #4a5568;
+            margin-top: 48px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
             font-size: 14px;
         }
-        .footer a {
-            color: #00d9ff;
+
+        footer a {
+            color: var(--accent);
             text-decoration: none;
         }
+
         .badges {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
         }
+
         .badge {
-            background: rgba(255,255,255,0.1);
-            padding: 8px 16px;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 13px;
-            color: #8892b0;
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="hero-bg"></div>
-
-        <div class="content">
+    <div class="container">
+        <header>
             <div class="badges">
-                <span class="badge">📚 双语教学</span>
-                <span class="badge">🚀 官方文档</span>
-                <span class="badge">🤖 AI 友好</span>
+                <span class="badge">双语教学</span>
+                <span class="badge">官方文档</span>
+                <span class="badge">AI 友好</span>
             </div>
 
-            <img src="https://store.flipperzero.com/cdn/shop/files/Flipper-Zero-White.png?height=400&v=1"
-                 alt="Flipper Zero" class="logo"
-                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🐬</text></svg>'">
+            <h1>Flipper Zero <span>教学知识库</span></h1>
+            <p class="subtitle">系统学习 Flipper Zero 的完整资源</p>
 
-            <h1><span>Flipper Zero</span></h1>
-            <p class="subtitle">教学知识库 | 官方文档 | 社区精选 | AI 友好</p>
-
-            <div class="nav-grid">
-                <a href="CN/Guide/README.md" class="nav-card">
-                    <span class="nav-icon">🧭</span>
+            <div class="grid">
+                <a href="CN/Guide/README.md" class="card">
+                    <span class="card-icon">📚</span>
                     <h3>中文教学导航</h3>
                     <p>按课程顺序系统学习</p>
                 </a>
-                <a href="CN/FlipperZero-Master-CN.md" class="nav-card">
-                    <span class="nav-icon">📖</span>
+
+                <a href="CN/FlipperZero-Master-CN.md" class="card">
+                    <span class="card-icon">📖</span>
                     <h3>中文主知识库</h3>
                     <p>建立全局视角与认知框架</p>
                 </a>
-                <a href="CN/FlipperZero-AI-Pack-CN.md" class="nav-card">
-                    <span class="nav-icon">🤖</span>
+
+                <a href="CN/FlipperZero-AI-Pack-CN.md" class="card">
+                    <span class="card-icon">🤖</span>
                     <h3>中文 AI 规则包</h3>
-                    <p>RAG/检索/自动化问答</p>
+                    <p>RAG / 检索 / 自动化问答</p>
                 </a>
-                <a href="EN/README.md" class="nav-card">
-                    <span class="nav-icon">🌐</span>
+
+                <a href="EN/README.md" class="card">
+                    <span class="card-icon">🌐</span>
                     <h3>English Entry</h3>
                     <p>English Learning Resources</p>
                 </a>
             </div>
+        </header>
 
-            <a href="CN/Guide/README.md" class="cta-btn">
-                开始学习 →
-            </a>
+        <div class="cta-section">
+            <a href="CN/Guide/README.md" class="btn">开始学习</a>
         </div>
 
-        <div class="footer">
-            <p>Built with ❤️ for Flipper Zero Community</p>
+        <footer>
+            <p>Built for Flipper Zero Community</p>
             <p>GitHub: <a href="https://github.com/dwgx/FlipperZeroTeacher">dwgx/FlipperZeroTeacher</a></p>
-        </div>
+        </footer>
     </div>
 </body>
 </html>
