@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01. 设备与生态 - Flipper Zero 知识库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--muted); margin-bottom: 30px; }
+        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
+        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
+        .nav a:hover { background: var(--border); }
+        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
+        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
+        .content h3 { font-size: 16px; margin: 20px 0 10px; }
+        .content p { margin: 12px 0; color: var(--muted); }
+        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
+        .content li { margin: 8px 0; color: var(--muted); }
+        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        .content th { background: var(--bg); }
+        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回课程导航</a>
+        <h1>01. <span>01. 设备与生态</span></h1>
+        <p class="subtitle">本章负责建立 Flipper Zero 的“使用层总工作流”。很多人一上来就只关注某个协议、某个脚本或者某个插件，但真正的长期使用能力，首先来自对设备端、桌面端、移动端、应用商店与命令行入口的整体理解...</p>
+
+        <div class="content">
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：00. 学习总图](00-Study-Map.md)</td><td>[下一章：02. 协议域](02-Protocol-Domains.md)</td></tr>
+
+<h2>本章作用</h2>
+
+<p>本章负责建立 Flipper Zero 的“使用层总工作流”。很多人一上来就只关注某个协议、某个脚本或者某个插件，但真正的长期使用能力，首先来自对设备端、桌面端、移动端、应用商店与命令行入口的整体理解。</p>
+
+<p>读完本章后，你应当能够把设备本身、`qFlipper`、Mobile App、Apps 生态和 CLI 视为同一个平台的不同入口，而不是互相独立的工具。</p>
+
+<h2>本章建议先读的仓库内文档</h2>
+
+<li>[00. 学习总图](00-Study-Map.md)：确认本章在总路线中的位置。</li>
+<li>[中文主知识库](../FlipperZero-Master-CN.md)：建立设备与平台的整体认识。</li>
+<li>[官方文档中文精读总表](../Official-Docs-CN-Full.md)：在本章之外进一步追官方原始说明。</li>
+<li>[官方文档覆盖表](../../Official-Docs-Coverage.md)：查看桌面端、移动端与 CLI 的覆盖情况。</li>
+
+<h2>官方核心页面</h2>
+
+<li>[Desktop 基础界面](https://docs.flipper.net/basics/desktop)</li>
+<li>[qFlipper](https://docs.flipper.net/qflipper)</li>
+<li>[Mobile App](https://docs.flipper.net/mobile-app)</li>
+<li>[Apps](https://docs.flipper.net/apps)</li>
+<li>[CLI](https://docs.flipper.net/zero/development/cli)</li>
+
+<h2>本章要解决的核心问题</h2>
+
+<li>设备主界面、菜单、Archive、文件管理与 Device Info 的关系是什么。</li>
+<li>电脑端与手机端各适合做什么，不适合做什么。</li>
+<li>安装应用、更新固件、备份设备、查看日志这些动作分别从哪里完成。</li>
+<li>为什么命令行和日志入口对于后续开发十分重要。</li>
+
+<h2>你需要先建立的五个入口</h2>
+
+<h3>1. 设备本体入口</h3>
+
+<p>设备本体是第一入口。你需要知道主菜单、Archive、Settings、Device Info、协议能力入口与 App 列表的关系。后续所有的导入、调试、运行和验证，最终都要回到设备本体确认结果。</p>
+
+<h3>2. 桌面端入口：qFlipper</h3>
+
+<p>[qFlipper](https://docs.flipper.net/qflipper) 是正式日常维护的重要入口。它主要适合以下任务：</p>
+
+<li>固件更新</li>
+<li>文件管理</li>
+<li>备份与恢复</li>
+<li>查看设备连接状态</li>
+<li>在开发与测试过程中快速管理设备内容</li>
+
+<p>如果你以后要长期做资料管理或样例整理，桌面端入口是必须熟悉的。</p>
+
+<h3>3. 移动端入口：Mobile App</h3>
+
+<p>[Mobile App](https://docs.flipper.net/mobile-app) 更适合移动场景、BLE 连接、同步、安装应用和部分更新流程。它不是桌面端的完全替代品，而是另一个日常入口。</p>
+
+<h3>4. 应用生态入口：Apps</h3>
+
+<p>[Apps](https://docs.flipper.net/apps) 与官方应用分发体系有关。你应当知道设备上的应用、外部应用、安装来源和后续开发之间的关系。到了 [03. App 开发](03-App-Development.md) 这一章，你会把它与 `.fap`、`application.fam` 和发布流程连接起来。</p>
+
+<h3>5. 开发入口：CLI</h3>
+
+<p>[CLI](https://docs.flipper.net/zero/development/cli) 是很多初学者容易忽略的入口，但它对日志、调试、系统信息和自动化操作非常关键。后续当你处理构建、运行、排错时，会频繁依赖命令行与日志输出。</p>
+
+<h2>建议阅读顺序</h2>
+
+<li>先读 [Desktop 基础界面](https://docs.flipper.net/basics/desktop)，把设备菜单和常用界面记清楚。</li>
+<li>再读 [qFlipper](https://docs.flipper.net/qflipper)，理解电脑端维护入口。</li>
+<li>然后读 [Mobile App](https://docs.flipper.net/mobile-app)，理解移动端入口与同步方式。</li>
+<li>接着看 [Apps](https://docs.flipper.net/apps)，把应用分发与安装体系纳入整体认识。</li>
+<li>最后读 [CLI](https://docs.flipper.net/zero/development/cli)，为后面的开发章节做准备。</li>
+
+<h2>学完本章后应具备的能力</h2>
+
+<li>能正确管理设备文件、备份与恢复流程。</li>
+<li>能区分桌面端与移动端各自的角色。</li>
+<li>能找到 App 安装入口、日志入口和命令行入口。</li>
+<li>能把“设备使用”与“开发前准备”连接起来理解。</li>
+
+<h2>继续阅读</h2>
+
+<li>下一章：[02. 协议域](02-Protocol-Domains.md)</li>
+<li>回到课程入口：[中文教学导航](README.md)</li>
+<li>回到主线总览：[中文主知识库](../FlipperZero-Master-CN.md)</li>
+<li>回到官方精读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：00. 学习总图](00-Study-Map.md)</td><td>[下一章：02. 协议域](02-Protocol-Domains.md)</td></tr>
+
+        </div>
+
+        <div class="nav">
+            <a href="00-Study-Map.html">← 上一章</a>
+            <a href="02-Protocol-Domains.html">下一章 →</a>
+        </div>
+    </div>
+</body>
+</html>

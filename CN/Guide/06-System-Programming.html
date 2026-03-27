@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06. 系统编程 - Flipper Zero 知识库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--muted); margin-bottom: 30px; }
+        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
+        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
+        .nav a:hover { background: var(--border); }
+        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
+        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
+        .content h3 { font-size: 16px; margin: 20px 0 10px; }
+        .content p { margin: 12px 0; color: var(--muted); }
+        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
+        .content li { margin: 8px 0; color: var(--muted); }
+        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        .content th { background: var(--bg); }
+        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回课程导航</a>
+        <h1>06. <span>06. 系统编程</span></h1>
+        <p class="subtitle">当你已经理解 App 开发、工具链和脚本路线之后，就会遇到一个关键问题：哪些需求仍然能留在应用层，哪些需求已经进入系统层。本章的目标，就是帮助你建立“系统编程边界感”，知道什么时候需要进入平台层、硬件...</p>
+
+        <div class="content">
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：05. JavaScript](05-JavaScript.md)</td><td>[下一章：07. 文件格式](07-File-Formats.md)</td></tr>
+
+<h2>本章作用</h2>
+
+<p>当你已经理解 App 开发、工具链和脚本路线之后，就会遇到一个关键问题：哪些需求仍然能留在应用层，哪些需求已经进入系统层。本章的目标，就是帮助你建立“系统编程边界感”，知道什么时候需要进入平台层、硬件抽象层、资源打包层和测试层。</p>
+
+<p>本章不是鼓励一开始就深入系统内部，而是帮助你在真正需要时，能以正确顺序阅读官方系统资料。</p>
+
+<h2>本章建议先读的仓库内文档</h2>
+
+<li>[03. App 开发](03-App-Development.md)：先确认应用层已经掌握。</li>
+<li>[04. 构建、调试与工具链](04-Build-Debug-Tools.md)：系统层问题高度依赖调试链。</li>
+<li>[07. 文件格式](07-File-Formats.md)：很多资源和数据问题最终会回到格式层。</li>
+<li>[中文主知识库](../FlipperZero-Master-CN.md)</li>
+<li>[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+<li>[官方文档覆盖表](../../Official-Docs-Coverage.md)</li>
+
+<h2>官方核心页面</h2>
+
+<li>[System](https://developer.flipper.net/flipperzero/doxygen/system.html)</li>
+<li>[Unit Tests](https://developer.flipper.net/flipperzero/doxygen/unit_tests.html)</li>
+<li>[furi_check](https://developer.flipper.net/flipperzero/doxygen/furi_check.html)</li>
+<li>[Furi HAL Bus](https://developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html)</li>
+<li>[Hardware Targets](https://developer.flipper.net/flipperzero/doxygen/hardware_targets.html)</li>
+<li>[Firmware Assets](https://developer.flipper.net/flipperzero/doxygen/firmware_assets.html)</li>
+
+<h2>本章要解决的核心问题</h2>
+
+<li>如何判断一个问题已经不是单纯的 App 问题。</li>
+<li>单元测试、断言、崩溃检查、HAL 和 target 分别属于哪一层。</li>
+<li>固件资源、目标平台和运行环境之间如何互相影响。</li>
+
+<h2>必须掌握的几个系统入口</h2>
+
+<h3>1. 系统总览</h3>
+
+<p>[System](https://developer.flipper.net/flipperzero/doxygen/system.html) 是系统层入口页。它帮助你知道官方把哪些内容视为平台内部能力，而不是普通应用能力。</p>
+
+<h3>2. 单元测试</h3>
+
+<p>[Unit Tests](https://developer.flipper.net/flipperzero/doxygen/unit_tests.html) 能帮助你理解系统级代码如何验证。它的重要性在于：当你不再只是写一个界面或简单逻辑时，测试方式会开始影响你的工程质量。</p>
+
+<h3>3. 断言与崩溃检查</h3>
+
+<p>[furi_check](https://developer.flipper.net/flipperzero/doxygen/furi_check.html) 对理解断言、崩溃、强制停止和调试关系非常关键。很多系统层问题最终都要借助这里的机制定位。</p>
+
+<h3>4. 硬件抽象层</h3>
+
+<p>[Furi HAL Bus](https://developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html) 是理解硬件抽象层边界的重要入口。读这类页面时，要始终问自己：我是在做平台能力扩展，还是只是在做某个应用功能。</p>
+
+<h3>5. 硬件目标与资源打包</h3>
+
+<p>[Hardware Targets](https://developer.flipper.net/flipperzero/doxygen/hardware_targets.html) 与 [Firmware Assets](https://developer.flipper.net/flipperzero/doxygen/firmware_assets.html) 说明了目标平台和资源打包的结构。它们对于理解不同目标、资源组织和最终运行环境都很重要。</p>
+
+<h2>建议阅读顺序</h2>
+
+<li>先读 [System](https://developer.flipper.net/flipperzero/doxygen/system.html)，建立系统层地图。</li>
+<li>再读 [Unit Tests](https://developer.flipper.net/flipperzero/doxygen/unit_tests.html) 与 [furi_check](https://developer.flipper.net/flipperzero/doxygen/furi_check.html)，理解测试与调试。</li>
+<li>接着读 [Furi HAL Bus](https://developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html)，进入硬件抽象层边界。</li>
+<li>最后读 [Hardware Targets](https://developer.flipper.net/flipperzero/doxygen/hardware_targets.html) 与 [Firmware Assets](https://developer.flipper.net/flipperzero/doxygen/firmware_assets.html)，补足目标平台与资源结构。</li>
+
+<h2>学完本章后应具备的能力</h2>
+
+<li>能判断一个问题是否已经进入系统层。</li>
+<li>能知道系统级资料应该按什么顺序阅读。</li>
+<li>能理解测试、断言、HAL、target、资源打包之间的大致关系。</li>
+<li>能避免在应用层问题上过早进入系统层，也能避免在系统层问题上继续只看应用层文档。</li>
+
+<h2>继续阅读</h2>
+
+<li>下一章：[07. 文件格式](07-File-Formats.md)</li>
+<li>回到上一章：[05. JavaScript](05-JavaScript.md)</li>
+<li>回到 App 主线：[03. App 开发](03-App-Development.md)</li>
+<li>查看官方精读：[官方文档中文精读总表](../Official-Docs-CN-Full.md)</li>
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：05. JavaScript](05-JavaScript.md)</td><td>[下一章：07. 文件格式](07-File-Formats.md)</td></tr>
+
+        </div>
+
+        <div class="nav">
+            <a href="05-JavaScript.html">← 上一章</a>
+            <a href="07-File-Formats.html">下一章 →</a>
+        </div>
+    </div>
+</body>
+</html>

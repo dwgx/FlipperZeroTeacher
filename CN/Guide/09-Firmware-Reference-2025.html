@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09. 固件参考 2025-2026 - Flipper Zero 知识库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #ff6b35; --accent2: #00d4aa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--muted); margin-bottom: 30px; }
+        .nav { display: flex; gap: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); justify-content: space-between; }
+        .nav a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border-radius: 8px; font-size: 14px; }
+        .nav a:hover { background: var(--border); }
+        .content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
+        .content h2 { font-size: 20px; margin: 24px 0 12px; color: var(--accent); }
+        .content h3 { font-size: 16px; margin: 20px 0 10px; }
+        .content p { margin: 12px 0; color: var(--muted); }
+        .content ul, .content ol { margin: 12px 0; padding-left: 24px; }
+        .content li { margin: 8px 0; color: var(--muted); }
+        .content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .content pre { background: var(--bg); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .content th, .content td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        .content th { background: var(--bg); }
+        .content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 12px 0; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回课程导航</a>
+        <h1>09. <span>09. 固件参考 2025-2026</span></h1>
+        <p class="subtitle">本章补充截至 2025-2026 年的主流固件最新状态。社区固件（Unleashed、Momentum）更新频繁，功能演进快，需要定期同步。本章与 [08. 社区参考](08-Community-Re...</p>
+
+        <div class="content">
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：08. 社区参考](08-Community-Reference.md)</td><td>[返回中文入口](../README.md)</td></tr>
+
+<h2>本章作用</h2>
+
+<p>本章补充截至 2025-2026 年的主流固件最新状态。社区固件（Unleashed、Momentum）更新频繁，功能演进快，需要定期同步。本章与 [08. 社区参考](08-Community-Reference.md) 的区别在于：08 章讲"如何判断社区资料价值"，本章讲"当前各固件实际有什么功能"。</p>
+
+<p><strong>注意</strong>：社区固件功能可能随版本快速变化，使用前应核对官方 Release 页面获取最新信息。</p>
+
+<p>---</p>
+
+<h2>主流固件版本速查（2026年3月）</h2>
+
+<tr><td>固件</td><td>最新版本</td><td>发布日期</td><td>定位</td></tr>
+<p>|------|----------|----------|------|</p>
+<tr><td>**官方固件**</td><td>1.4.3</td><td>2025-12-05</td><td>基线功能，符合法规</td></tr>
+<tr><td>**Momentum**</td><td>mntm-012</td><td>2025-12-31</td><td>UI定制+功能增强</td></tr>
+<tr><td>**Unleashed**</td><td>unlshd-086</td><td>2026-03-08</td><td>协议破解+安全测试</td></tr>
+<tr><td>**Marauder**</td><td>v1.11.0</td><td>2026-03-10</td><td>Wi-Fi/BLE 安全测试（ESP32）</td></tr>
+
+<p>---</p>
+
+<h2>官方固件（Official Firmware）</h2>
+
+<h3>当前状态（v1.4.3）</h3>
+
+<p>官方固件是平台的<strong>事实标准</strong>。所有社区固件都基于它修改，所有 App 开发都应先以官方固件为测试基线。</p>
+
+<p><strong>v1.4.3 更新内容：</strong></p>
+<li>Infrared CLI 插件修复 MissingImports 错误</li>
+<li>基于 v1.4.2 的 bugfix 版本</li>
+
+<p><strong>官方固件特点：</strong></p>
+<li>无线电频段符合各国法规限制</li>
+<li>不包含破解/绕过安全机制的功能</li>
+<li>滚动码（Rolling Code）协议支持有限</li>
+<li>最稳定的 API 兼容性</li>
+
+<p><strong>适用场景：</strong></p>
+<li>日常使用和开发</li>
+<li>需要稳定性的项目</li>
+<li>合规要求严格的环境</li>
+
+<p>---</p>
+
+<h2>Momentum 固件</h2>
+
+<h3>定位与特点</h3>
+
+<p>Momentum 强调 <strong>UI 个性化</strong> 和 <strong>高级功能</strong>，是追求视觉体验与功能丰富性的用户首选。</p>
+
+<p><strong>核心特色：</strong></p>
+<li>资产包与主题系统（动画、图标、字体）</li>
+<li>Find My / Bad KB / BLE Spam 蓝牙工具包</li>
+<li>新界面与控制中心</li>
+<li>JavaScript API 扩展（USBDisk、Storage、GUI、BLE、SubGHz）</li>
+<li>支持脚本化自动化流程</li>
+
+<h3>mntm-012 重大更新（2025-12-31）</h3>
+
+<p><strong>⚠️ 破坏性变更：JavaScript SDK 1.0</strong></p>
+
+<p>两个模块 API 发生变更，旧脚本需要更新：</p>
+
+<tr><td>模块</td><td>变更内容</td><td>迁移成本</td></tr>
+<p>|------|----------|----------|</p>
+<tr><td>`gui/submenu`</td><td>子菜单项从 view prop 改为 view children</td><td>很低</td></tr>
+<tr><td>`gui/widget`</td><td>`button` 事件返回对象格式变化（`{key, type}` 而非仅 key name）</td><td>很低</td></tr>
+
+<p><strong>新增 40+ 应用：</strong></p>
+
+<tr><td>类别</td><td>新应用</td></tr>
+<p>|------|--------|</p>
+<tr><td>**GPIO**</td><td>Ghost ESP、GPIO Explorer、FM Transmitter、FTDI232H FlipTDI、INA2xx Meter</td></tr>
+<tr><td>**GPIO/FlipBoard**</td><td>FlipBoard Blinky/Keyboard/Signal/Simon（by @jamisonderek）</td></tr>
+<tr><td>**GPIO/FlipperHTTP**</td><td>FlipMap、FlipTelegram、Free Roam（by @jblanked）</td></tr>
+<tr><td>**NFC**</td><td>Amiibo Toolkit、NFC-Eink、SaFlip、NFC Login</td></tr>
+<tr><td>**SubGHz**</td><td>Chief Cooker、Flipper Share、HC-11 Modem、Sub Analyzer、Sub-GHz Scheduler</td></tr>
+<tr><td>**Infrared**</td><td>Hitachi/Midea/Mitsubishi AC Remote、LIDAR Emulator、Xbox Controller</td></tr>
+<tr><td>**Media**</td><td>Video Player、Image Viewer、Space Playground、Fmatrix</td></tr>
+<tr><td>**USB**</td><td>LEGO Dimensions Toy Pad、USB-MIDI</td></tr>
+<tr><td>**工具**</td><td>CAN Tools、FlipCrypt、IconEdit、Programmer Calculator、Tasks</td></tr>
+
+<p><strong>NFC 重大改进：</strong></p>
+
+<li>**MIFARE Ultralight C 完整支持**</li>
+<li>字典攻击（使用系统/用户字典）</li>
+<li>密钥管理：添加/列出/删除 Ultralight C 密钥</li>
+<li>与 MIFARE Classic 功能对等</li>
+
+<li>**MFKey 4.0**（by @noproto）</li>
+<li>密钥恢复速度提升 20%</li>
+<li>Static Encrypted Nested 攻击速度提升 **70 倍**</li>
+<li>NFC 应用中 Nested 攻击速度提升 **10 倍**</li>
+
+<li>**FeliCa 增强**</li>
+<li>服务目录遍历 + 导出所有未加密可读块</li>
+<li>模拟处理特定 Polling 命令</li>
+<li>导出所有系统</li>
+<li>Amusement IC Card 解析器（FeliCa Lite/Lite-S）</li>
+
+<p><strong>SubGHz 增强：</strong></p>
+
+<li>Roger（静态 28 bit）支持手动添加</li>
+<li>V2 Phoenix 完整支持（按钮切换、手动添加、计数器加解密）</li>
+<li>Keeloq 新增：Motorline、Rosh、Pecinin、Rossi、Merlin、Steelmate 支持</li>
+<li>BFT 在读模式实时解码（2按钮遥控器）</li>
+<li>Came Atomo TOP44RBN 支持</li>
+<li>实验性计数器溢出模式（OFEX）</li>
+
+<p><strong>桌面端改进：</strong></p>
+<li>主菜单支持目录和普通文件（包括 JS 文件）</li>
+<li>锁屏支持跳过滑入动画</li>
+<li>冬季动画启用</li>
+
+<p><strong>下载方式：</strong></p>
+<li>[Web Updater（推荐）](https://momentum-fw.dev/update?version=mntm-012)</li>
+<li>[Flipper Lab](https://lab.flipper.net/)</li>
+<li>qFlipper 安装包</li>
+
+<p>---</p>
+
+<h2>Unleashed 固件</h2>
+
+<h3>定位与特点</h3>
+
+<p>Unleashed 专注于 <strong>SubGHz 协议破解</strong> 和 <strong>安全测试功能</strong>，是安全研究者的首选社区固件。</p>
+
+<p><strong>核心特色：</strong></p>
+<li>移除地区限制，支持更多频率</li>
+<li>滚动码（Rolling Code）协议支持</li>
+<li>RF 分析仪、频谱扫描</li>
+<li>蓝牙测试工具</li>
+<li>GPS 子驾功能</li>
+
+<h3>unlshd-086 更新内容（2026-03-08）</h3>
+
+<p><strong>SubGHz 新协议：</strong></p>
+<li>**Ditec GOL4** 54bit 动态协议（支持编程模式、按钮切换、手动添加）</li>
+<li>**KeyFinder** 24bit 静态协议</li>
+<li>**Somfy Keytis** 按钮切换和手动添加支持</li>
+<li>**Genius Echo/Bravo** 2 按钮长按模拟</li>
+<li>**Roger** 静态协议（来自 Momentum 同步）</li>
+
+<p><strong>SubGHz 修复与改进：</strong></p>
+<li>修复读取界面的传输 bug</li>
+<li>BFT Mitto 解码 bug 修复（种子在成功解码后未重置）</li>
+<li>KeeLoq：更改 delta 大小</li>
+<li>KeeLoq：修复 AN-Motors 和 HCS101 密钥显示</li>
+<li>Nero Radio 显示更多数据</li>
+<li>Marantec 协议 CRC 验证和手动添加</li>
+
+<p><strong>其他更新：</strong></p>
+<li>LFRFID：Indala 224-bit（长格式）协议支持</li>
+<li>MFKey：更新至 v4.1</li>
+<li>应用构建标签：22feb2026</li>
+
+<p><strong>已知问题：</strong></p>
+<li>Mifare Mini 克隆卡读取损坏（原版 Mini 正常）</li>
+<li>某些 EMV 卡通过 NFC->Read 读取时可能导致崩溃，请通过 Extra actions->Read specific card type->EMV 读取</li>
+
+<p><strong>安装选项：</strong></p>
+
+<tr><td>后缀</td><td>基础应用</td><td>额外应用</td><td>说明</td></tr>
+<p>|------|----------|----------|------|</p>
+<tr><td>无后缀</td><td>✅</td><td>❌</td><td>默认版本</td></tr>
+<tr><td>`e`</td><td>✅</td><td>✅</td><td>完整版（Extra apps）</td></tr>
+<tr><td>`c`</td><td>❌</td><td>❌</td><td>精简版（No apps）</td></tr>
+
+<li>[Web 安装器](https://web.unleashedflip.com)</li>
+<li>[Lab.flipper.net 安装](https://lab.flipper.net/)</li>
+
+<p>---</p>
+
+<h2>ESP32 Marauder 固件</h2>
+
+<h3>定位</h3>
+
+<p>Marauder 是运行在 <strong>ESP32 开发板</strong>上的独立固件，通过 GPIO 与 Flipper Zero 连接，提供 Wi-Fi 和蓝牙安全测试能力。</p>
+
+<p><strong>当前版本：v1.11.0（2026-03-10）</strong></p>
+
+<h3>支持的硬件</h3>
+
+<li>Flipper Zero Wi-Fi 开发板（官方，ESP32-S2）</li>
+<li>Flipper Zero ESP32-S3 开发板</li>
+<li>Rabbit-Labs Flipper Zero ESP32-C5 多功能板</li>
+<li>M5StickC Plus/Plus2</li>
+<li>CYD（Cheap Yellow Display）系列</li>
+<li>Marauder Dev Board Pro</li>
+<li>ESP32 LDDB</li>
+<li>其他 ESP32 开发板</li>
+
+<h3>核心命令</h3>
+
+<p><strong>扫描类：</strong></p>
+<p>scanap      # 扫描无线接入点</p>
+<p>scansta     # 扫描接入点下的客户端</p>
+<p>sniffbeacon # 捕获信标帧</p>
+<p>sniffpmkid  # 捕获 PMKID 数据</p>
+
+<p><strong>攻击类：</strong></p>
+<p>attack      # 发送攻击（信标骚扰、deauth、探测请求、rickroll）</p>
+
+<h3>与 Flipper Zero 连接</h3>
+
+<li>将 Marauder 固件刷入 ESP32 开发板</li>
+<li>通过 GPIO 连接线与 Flipper Zero 连接</li>
+<li>在 Flipper 上安装 Wi-Fi Marauder 应用</li>
+<li>通过串口通信控制 ESP32</li>
+
+<p><strong>第三方扩展板亮点（Rabbit-Labs C5）：</strong></p>
+<li>双频 Wi-Fi 6（2.4 GHz 和 5 GHz）</li>
+<li>BLE 5.0 和 802.15.4（Zigbee、Thread、Matter）</li>
+<li>集成 CC1101 sub-GHz 收发器</li>
+<li>GPS 模块</li>
+<li>microSD 卡槽</li>
+
+<p>---</p>
+
+<h2>固件选择建议</h2>
+
+<tr><td>用户需求</td><td>推荐固件</td><td>理由</td></tr>
+<p>|----------|----------|------|</p>
+<tr><td>初学者入门</td><td>官方固件</td><td>稳定、合规、文档齐全</td></tr>
+<tr><td>追求 UI 和丰富功能</td><td>Momentum</td><td>主题系统、JS API、40+新应用</td></tr>
+<tr><td>安全测试/协议研究</td><td>Unleashed</td><td>滚动码支持、更多协议</td></tr>
+<tr><td>Wi-Fi/蓝牙安全测试</td><td>Marauder</td><td>专业的无线安全工具</td></tr>
+<tr><td>开发 App</td><td>官方固件</td><td>API 最稳定，兼容性最好</td></tr>
+<tr><td>需要 GPIO 扩展</td><td>Momentum</td><td>最多的 GPIO 应用支持</td></tr>
+
+<p>---</p>
+
+<h2>应用生态结构</h2>
+
+<p>截至 2026 年，官方应用目录包含以下类别：</p>
+
+<p>applications/</p>
+<p>├── Bluetooth/     # 蓝牙工具（BT Trigger、BTHome、FindMy、HID BLE 等）</p>
+<p>├── GPIO/          # GPIO 扩展（ESP Flasher、GPS、传感器、调试器等）</p>
+<p>├── Games/         # 游戏</p>
+<p>├── Infrared/      # 红外遥控</p>
+<p>├── Media/         # 媒体播放</p>
+<p>├── NFC/           # NFC 工具（读取、模拟、破解）</p>
+<p>├── RFID/          # RFID 工具</p>
+<p>├── Sub-GHz/       # 无线协议（遥控器、门禁）</p>
+<p>├── Tools/         # 通用工具</p>
+<p>├── USB/           # USB 工具（BadUSB、Mass Storage 等）</p>
+<p>└── iButton/       # iButton 工具</p>
+
+<p>---</p>
+
+<h2>学习建议</h2>
+
+<li>**先建立官方基线**</li>
+<li>先熟悉官方固件，理解平台原生能力</li>
+<li>阅读 [01. 设备与生态](01-Device-Ecosystem.md)</li>
+
+<li>**明确需求再选固件**</li>
+<li>不要为了"功能多"而刷社区固件</li>
+<li>根据实际使用场景选择</li>
+
+<li>**关注更新日志**</li>
+<li>社区固件更新频繁</li>
+<li>关注 GitHub Releases 获取最新信息</li>
+
+<li>**备份原固件**</li>
+<li>刷机前备份原厂固件</li>
+<li>保留恢复能力</li>
+
+<p>---</p>
+
+<h2>参考链接</h2>
+
+<li>[官方固件 Release](https://github.com/flipperdevices/flipperzero-firmware/releases)</li>
+<li>[Momentum 固件](https://github.com/Next-Flip/Momentum-Firmware/releases)</li>
+<li>[Momentum 官网](https://momentum-fw.dev)</li>
+<li>[Unleashed 固件](https://github.com/DarkFlippers/unleashed-firmware/releases)</li>
+<li>[Unleashed Web 安装器](https://web.unleashedflip.com)</li>
+<li>[ESP32 Marauder](https://github.com/justcallmekoko/ESP32Marauder/releases)</li>
+<li>[官方应用目录](https://github.com/flipperdevices/flipper-application-catalog)</li>
+
+<p>---</p>
+
+<tr><td>[返回中文教学导航](README.md)</td><td>[上一章：08. 社区参考](08-Community-Reference.md)</td><td>[返回中文入口](../README.md)</td></tr>
+
+        </div>
+
+        <div class="nav">
+            <a href="08-Community-Reference.html">← 上一章</a>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
