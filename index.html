@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipper Zero 教学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #8892b0;
+            margin-bottom: 50px;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .nav-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .nav-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+        }
+        .nav-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #00d9ff;
+        }
+        .nav-card p {
+            color: #8892b0;
+            font-size: 14px;
+        }
+        .cta {
+            display: inline-block;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            color: #1a1a2e;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 80px;
+            color: #8892b0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🐬</div>
+        <h1>Flipper Zero 教学知识库</h1>
+        <p class="subtitle">双语教学型知识库 | 官方文档 | 社区精选 | AI 友好</p>
+
+        <div class="nav-grid">
+            <a href="CN/Guide/README.html" class="nav-card">
+                <h3>🧭 中文教学导航</h3>
+                <p>按课程顺序系统学习</p>
+            </a>
+            <a href="CN/FlipperZero-Master-CN.html" class="nav-card">
+                <h3>📖 中文主知识库</h3>
+                <p>建立全局视角与认知框架</p>
+            </a>
+            <a href="CN/FlipperZero-AI-Pack-CN.html" class="nav-card">
+                <h3>🤖 中文 AI 规则包</h3>
+                <p>RAG/检索/自动化问答</p>
+            </a>
+            <a href="EN/README.html" class="nav-card">
+                <h3>🌐 English Entry</h3>
+                <p>English Learning Resources</p>
+            </a>
+        </div>
+
+        <a href="CN/Guide/README.html" class="cta">开始学习 →</a>
+
+        <div class="footer">
+            <p>Built with ❤️ for Flipper Zero Community</p>
+            <p>GitHub: dwgx/FlipperZeroTeacher</p>
+        </div>
+    </div>
+</body>
+</html>
