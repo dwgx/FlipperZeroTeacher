@@ -1,0 +1,2102 @@
+{
+  "created_at": "2026-03-25 03:09:00",
+  "summary": {
+    "total_urls": 118,
+    "existing_local": 48,
+    "downloaded": 57,
+    "failed": 13
+  },
+  "items": [
+    {
+      "url": "http://dfu-util.sourceforge.net/build.html",
+      "domain": "dfu-util.sourceforge.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "http://dfu-util.sourceforge.net/build.html",
+      "error": "403 Client Error: Forbidden for url: https://dfu-util.sourceforge.net/build.html",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/usage/general/flashing-firmware.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/usage/general/flashing-firmware.md"
+      ]
+    },
+    {
+      "url": "https://brew.sh",
+      "domain": "brew.sh",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/brew.sh/index.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://brew.sh/",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/usage/general/flashing-firmware.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/usage/general/flashing-firmware.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.pdf",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.pdf",
+      "mode": "downloaded",
+      "content_type": "application/pdf",
+      "final_url": "https://cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.pdf",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/mechanics/blueprints.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/mechanics/blueprints.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.png",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.png",
+      "mode": "downloaded",
+      "content_type": "image/png",
+      "final_url": "https://cdn.flipperzero.one/Flipper-Zero-Uncased-Ext-module-Drawing.png",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/mechanics/blueprints.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/mechanics/blueprints.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/FlipperZero-External-Module-No-Case-PLS-Headers.png",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/FlipperZero-External-Module-No-Case-PLS-Headers.png",
+      "mode": "downloaded",
+      "content_type": "image/png",
+      "final_url": "https://cdn.flipperzero.one/FlipperZero-External-Module-No-Case-PLS-Headers.png",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/mechanics/blueprints.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/mechanics/blueprints.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/FlipperZero-ext-module-secA.png",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/FlipperZero-ext-module-secA.png",
+      "mode": "downloaded",
+      "content_type": "image/png",
+      "final_url": "https://cdn.flipperzero.one/FlipperZero-ext-module-secA.png",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/mechanics/blueprints.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/mechanics/blueprints.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/PDF_file_icon.png",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/PDF_file_icon.png",
+      "mode": "downloaded",
+      "content_type": "image/png",
+      "final_url": "https://cdn.flipperzero.one/PDF_file_icon.png",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/mechanics/blueprints.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/mechanics/blueprints.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/devboard-stlinkv3.png",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/devboard-stlinkv3.png",
+      "mode": "downloaded",
+      "content_type": "image/png",
+      "final_url": "https://cdn.flipperzero.one/devboard-stlinkv3.png",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/devboard-stlinkV3.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/devboard-stlinkV3.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/ds3m4.png",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/ds3m4.png",
+      "mode": "downloaded",
+      "content_type": "image/png",
+      "final_url": "https://cdn.flipperzero.one/ds3m4.png",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/mechanics/blueprints.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/mechanics/blueprints.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/flipperzero-antenna-pcb-preview.jpg",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-antenna-pcb-preview.jpg",
+      "mode": "downloaded",
+      "content_type": "image/jpeg",
+      "final_url": "https://cdn.flipperzero.one/flipperzero-antenna-pcb-preview.jpg",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/schematic.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/schematic.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/flipperzero-ibutton-pcb-preview.jpg",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-ibutton-pcb-preview.jpg",
+      "mode": "downloaded",
+      "content_type": "image/jpeg",
+      "final_url": "https://cdn.flipperzero.one/flipperzero-ibutton-pcb-preview.jpg",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/schematic.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/schematic.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/flipperzero-main-pcb-preview.jpg",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-main-pcb-preview.jpg",
+      "mode": "downloaded",
+      "content_type": "image/jpeg",
+      "final_url": "https://cdn.flipperzero.one/flipperzero-main-pcb-preview.jpg",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/schematic.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/schematic.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/flipperzero-nfc-pcb-preview.jpg",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-nfc-pcb-preview.jpg",
+      "mode": "downloaded",
+      "content_type": "image/jpeg",
+      "final_url": "https://cdn.flipperzero.one/flipperzero-nfc-pcb-preview.jpg",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/schematic.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/schematic.md"
+      ]
+    },
+    {
+      "url": "https://cdn.flipperzero.one/flipperzero-pcb-names-inside.jpg",
+      "domain": "cdn.flipperzero.one",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/cdn.flipperzero.one/flipperzero-pcb-names-inside.jpg",
+      "mode": "downloaded",
+      "content_type": "image/jpeg",
+      "final_url": "https://cdn.flipperzero.one/flipperzero-pcb-names-inside.jpg",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/schematic.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/schematic.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/index.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/annotated.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/annotated.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/annotated.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/app_examples.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/app_examples.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/app_examples.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/03-App-Development.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/03-App-Development.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/app_manifests.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/app_manifests.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/app_manifests.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/03-App-Development.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/03-App-Development.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/app_publishing.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/app_publishing.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/app_publishing.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/03-App-Development.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/03-App-Development.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/applications.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/applications.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/applications.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/03-App-Development.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/03-App-Development.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/apps_on_sd_card.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/apps_on_sd_card.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/apps_on_sd_card.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/03-App-Development.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/03-App-Development.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/badusb_file_format.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/badusb_file_format.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/badusb_file_format.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/07-File-Formats.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Guide/07-File-Formats.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/dev_board.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/04-Build-Debug-Tools.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/04-Build-Debug-Tools.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_debug_modes.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_debug_modes.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_debug_modes.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_debugging_guide.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_debugging_guide.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_debugging_guide.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_fw_update.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_fw_update.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_fw_update.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_get_started.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_get_started.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_get_started.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_reading_logs.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/dev_board_reading_logs.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_reading_logs.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_usb_uart.html",
+      "domain": "developer.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_usb_uart.html",
+      "error": "403 Client Error: Forbidden for url: https://developer.flipper.net/flipperzero/doxygen/dev_board_usb_uart.html",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_wifi.html",
+      "domain": "developer.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_board_wifi.html",
+      "error": "403 Client Error: Forbidden for url: https://developer.flipper.net/flipperzero/doxygen/dev_board_wifi.html",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dev_tools.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/dev_tools.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dev_tools.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/04-Build-Debug-Tools.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/04-Build-Debug-Tools.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/dolphin_assets.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/dolphin_assets.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/dolphin_assets.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/example_apps_data.html",
+      "domain": "developer.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/example_apps_data.html",
+      "error": "403 Client Error: Forbidden for url: https://developer.flipper.net/flipperzero/doxygen/example_apps_data.html",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/example_assets.html",
+      "domain": "developer.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/example_assets.html",
+      "error": "403 Client Error: Forbidden for url: https://developer.flipper.net/flipperzero/doxygen/example_assets.html",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/example_number_input.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/example_number_input.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/example_number_input.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/example_onewire.html",
+      "domain": "developer.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/example_onewire.html",
+      "error": "403 Client Error: Forbidden for url: https://developer.flipper.net/flipperzero/doxygen/example_onewire.html",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/fbt.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/fbt.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/fbt.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/04-Build-Debug-Tools.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/04-Build-Debug-Tools.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/file_formats.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/file_formats.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/file_formats.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/07-File-Formats.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/07-File-Formats.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/files.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/files.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/files.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/firmware_assets.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/firmware_assets.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/firmware_assets.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/06-System-Programming.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Guide/06-System-Programming.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/furi_check.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/furi_check.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/furi_check.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/06-System-Programming.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/06-System-Programming.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/furi_hal_bus.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/06-System-Programming.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/06-System-Programming.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/furi_hal_debug.html",
+      "domain": "developer.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/furi_hal_debug.html",
+      "error": "403 Client Error: Forbidden for url: https://developer.flipper.net/flipperzero/doxygen/furi_hal_debug.html",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/hardware_targets.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/hardware_targets.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/hardware_targets.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/06-System-Programming.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/06-System-Programming.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/heatshrink_tar_format.html",
+      "domain": "developer.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/heatshrink_tar_format.html",
+      "error": "403 Client Error: Forbidden for url: https://developer.flipper.net/flipperzero/doxygen/heatshrink_tar_format.html",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/ibutton_file_format.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/07-File-Formats.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Guide/07-File-Formats.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/infrared_file_format.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/infrared_file_format.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/infrared_file_format.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/05-JavaScript.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/05-JavaScript.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_about_js_engine.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/05-JavaScript.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/05-JavaScript.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_badusb.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_badusb.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_badusb.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_developing_apps_using_js_sdk.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/05-JavaScript.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/05-JavaScript.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_event_loop.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_event_loop.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_event_loop.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_flipper.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_flipper.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_flipper.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_gpio.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_gpio.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_gpio.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_gui.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_gui.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_gui.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_notification.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_notification.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_notification.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_serial.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_serial.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_serial.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_storage.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_storage.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_storage.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_using_js_modules.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/05-JavaScript.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/05-JavaScript.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/js_your_first_js_app.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/js_your_first_js_app.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/js_your_first_js_app.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/05-JavaScript.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/05-JavaScript.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/lfrfid_file_format.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/07-File-Formats.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Guide/07-File-Formats.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/nfc_file_format.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/nfc_file_format.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/nfc_file_format.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/07-File-Formats.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Guide/07-File-Formats.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/ota_updates.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/ota_updates.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/ota_updates.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/04-Build-Debug-Tools.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/04-Build-Debug-Tools.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/pages.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/developer.flipper.net/flipperzero/doxygen/pages.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/pages.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/subghz_file_format.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/subghz_file_format.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/subghz_file_format.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/07-File-Formats.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Guide/07-File-Formats.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/system.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/system.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/system.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/06-System-Programming.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/06-System-Programming.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/unit_tests.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/unit_tests.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/unit_tests.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/06-System-Programming.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Guide/06-System-Programming.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://developer.flipper.net/flipperzero/doxygen/vscode.html",
+      "domain": "developer.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/developer.flipper.net/flipperzero/doxygen/vscode.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://developer.flipper.net/flipperzero/doxygen/vscode.html",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/04-Build-Debug-Tools.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/04-Build-Debug-Tools.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/index.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/apps",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/apps.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/apps",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/01-Device-Ecosystem.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/01-Device-Ecosystem.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/apps/apps-catalog",
+      "domain": "docs.flipper.net",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://docs.flipper.net/apps/apps-catalog",
+      "error": "404 Client Error: Not Found for url: https://docs.flipper.net/apps/apps-catalog",
+      "source_markdowns": [
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/basics/desktop",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/basics/desktop.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/basics/desktop",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/01-Device-Ecosystem.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/01-Device-Ecosystem.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/development/hardware/devboard-stlinkv3",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/development/hardware/devboard-stlinkv3.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development/hardware/devboard-stlinkv3",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/development/hardware/modules-blueprints",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/development/hardware/modules-blueprints.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development/hardware/modules-blueprints",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/development/hardware/schematic",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/development/hardware/schematic.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development/hardware/schematic",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/gpio-and-modules",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/gpio-and-modules.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/gpio-and-modules",
+      "error": "",
+      "source_markdowns": [
+        "CN/Guide/02-Protocol-Domains.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/ibutton",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/ibutton.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/ibutton",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/02-Protocol-Domains.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/02-Protocol-Domains.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/mobile-app",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/mobile-app.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/mobile-app",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/01-Device-Ecosystem.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/01-Device-Ecosystem.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/nfc",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/nfc.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/nfc",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/02-Protocol-Domains.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/02-Protocol-Domains.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/qflipper",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/qflipper.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/qflipper",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/01-Device-Ecosystem.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/01-Device-Ecosystem.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/sub-ghz",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/docs.flipper.net/zero/sub-ghz.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/sub-ghz",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/02-Protocol-Domains.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/02-Protocol-Domains.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/zero/development",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/zero/development/cli",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/cli.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development/cli",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/01-Device-Ecosystem.md",
+        "CN/Guide/04-Build-Debug-Tools.md",
+        "CN/Guide/08-Community-Reference.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/01-Device-Ecosystem.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/zero/development/hardware/devboard-schematics",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/hardware/devboard-schematics.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development/hardware/devboard-schematics",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/zero/development/hardware/flipper-blueprints",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/hardware/flipper-blueprints.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development/hardware/flipper-blueprints",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/zero/development/hardware/tech-specs",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/development/hardware/tech-specs.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/development/hardware/tech-specs",
+      "error": "",
+      "source_markdowns": [
+        "CN/Official-Docs-CN-Full.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/zero/nfc/mfkey32",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/nfc/mfkey32.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/nfc/mfkey32",
+      "error": "",
+      "source_markdowns": [
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://docs.flipper.net/zero/u2f",
+      "domain": "docs.flipper.net",
+      "archive_path": "Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/docs.flipper.net/zero/u2f.html",
+      "mode": "existing-local",
+      "content_type": "text/html",
+      "final_url": "https://docs.flipper.net/zero/u2f",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Guide/02-Protocol-Domains.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Guide/02-Protocol-Domains.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/0xchocolate/flipperzero-esp-flasher",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/0xchocolate/flipperzero-esp-flasher.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/0xchocolate/flipperzero-esp-flasher",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/DarkFlippers/unleashed-firmware",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/DarkFlippers/unleashed-firmware.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/DarkFlippers/unleashed-firmware",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/DroomOne/Flipper-Plugin-Tutorial",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/DroomOne/Flipper-Plugin-Tutorial.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/DroomOne/Flipper-Plugin-Tutorial",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/Flipper-Zero/flipperzero-devboard-stlinkv3",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-devboard-stlinkv3.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices/flipperzero-devboard-stlinkv3",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/devboard-stlinkV3.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/devboard-stlinkV3.md"
+      ]
+    },
+    {
+      "url": "https://github.com/Next-Flip/Momentum-Firmware",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/Next-Flip/Momentum-Firmware.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/Next-Flip/Momentum-Firmware",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/UberGuidoZ/Flipper",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/UberGuidoZ/Flipper.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/UberGuidoZ/Flipper",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/UberGuidoZ/Flipper-IRDB",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/UberGuidoZ/Flipper-IRDB.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/UberGuidoZ/Flipper-IRDB",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/bmatcuk/flipperzero-qrcode",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/bmatcuk/flipperzero-qrcode.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/bmatcuk/flipperzero-qrcode",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/djsime1/awesome-flipperzero",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/djsime1/awesome-flipperzero.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/djsime1/awesome-flipperzero",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/evilpete/flipper_toolbox",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/evilpete/flipper_toolbox.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/evilpete/flipper_toolbox",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/ezod/flipperzero-gps",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/ezod/flipperzero-gps.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/ezod/flipperzero-gps",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/flipperdevices",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices",
+      "error": "",
+      "source_markdowns": [
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/flipperdevices/flipper-application-catalog",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipper-application-catalog.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices/flipper-application-catalog",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/flipperdevices/flipperzero-firmware",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-firmware.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices/flipperzero-firmware",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/flipperdevices/flipperzero-good-faps",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-good-faps.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices/flipperzero-good-faps",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/flipperdevices/flipperzero-ufbt",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-ufbt.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices/flipperzero-ufbt",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Original-Notes/Flipper Zero.md",
+        "Original-Notes/FlipperZero-Original-Desktop-Notes-All-In-One.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/flipperdevices/flipperzero-ufbt-action",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/flipperzero-ufbt-action.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices/flipperzero-ufbt-action",
+      "error": "",
+      "source_markdowns": [
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/flipperdevices/qFlipper",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/flipperdevices/qFlipper.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/flipperdevices/qFlipper",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/Official-Docs-CN-Full.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/Official-Docs-EN-Full.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Official-Docs-Coverage.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/jamisonderek/flipper-zero-tutorials",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/jamisonderek/flipper-zero-tutorials.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/jamisonderek/flipper-zero-tutorials",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/jamisonderek/flipper-zero-tutorials/wiki",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/jamisonderek/flipper-zero-tutorials/wiki.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/jamisonderek/flipper-zero-tutorials/wiki",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/jblanked/FlipperHTTP",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/jblanked/FlipperHTTP.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/jblanked/FlipperHTTP",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://github.com/liamhays/flipwire",
+      "domain": "github.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/github.com/liamhays/flipwire.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://github.com/liamhays/flipwire",
+      "error": "",
+      "source_markdowns": [
+        "CN/FlipperZero-AI-Pack-CN.md",
+        "CN/FlipperZero-Master-CN.md",
+        "CN/Guide/08-Community-Reference.md",
+        "EN/FlipperZero-AI-Pack-EN.md",
+        "EN/FlipperZero-Master-EN.md",
+        "Legacy/FlipperZero-AI-All-In-One.md",
+        "Legacy/FlipperZero-AI-Training-Pack.md",
+        "Legacy/FlipperZero-Human-All-In-One.md",
+        "Legacy/FlipperZero-Master-Knowledge-Base.md",
+        "Wiki-Resources/Markdown-Link-Archive/README.md"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh",
+      "domain": "raw.githubusercontent.com",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/raw.githubusercontent.com/Homebrew/install/HEAD/install.sh",
+      "mode": "downloaded",
+      "content_type": "text/plain",
+      "final_url": "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/usage/general/flashing-firmware.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/usage/general/flashing-firmware.md"
+      ]
+    },
+    {
+      "url": "https://squidfunk.github.io/mkdocs-material/insiders/",
+      "domain": "squidfunk.github.io",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/squidfunk.github.io/mkdocs-material/insiders.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://squidfunk.github.io/mkdocs-material/insiders/",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/README.md"
+      ]
+    },
+    {
+      "url": "https://squidfunk.github.io/mkdocs-material/reference/abbreviations/",
+      "domain": "squidfunk.github.io",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/squidfunk.github.io/mkdocs-material/reference/abbreviations.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://squidfunk.github.io/mkdocs-material/reference/abbreviations/",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/README.md"
+      ]
+    },
+    {
+      "url": "https://update.flipperzero.one/latest-firmware-banner.png",
+      "domain": "update.flipperzero.one",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://update.flipperzero.one/latest-firmware-banner.png",
+      "error": "404 Client Error: Not Found for url: https://update.flipperzero.one/latest-firmware-banner.png",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/usage/general/flashing-firmware.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/usage/general/flashing-firmware.md"
+      ]
+    },
+    {
+      "url": "https://update.flipperzero.one/release/full.dfu",
+      "domain": "update.flipperzero.one",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://update.flipperzero.one/release/full.dfu",
+      "error": "404 Client Error: Not Found for url: https://update.flipperzero.one/release/full.dfu",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/usage/general/flashing-firmware.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/usage/general/flashing-firmware.md"
+      ]
+    },
+    {
+      "url": "https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown",
+      "domain": "www.mkdocs.org",
+      "archive_path": "Wiki-Resources/Markdown-Link-Archive/files/www.mkdocs.org/user-guide/writing-your-docs.html",
+      "mode": "downloaded",
+      "content_type": "text/html",
+      "final_url": "https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown",
+      "error": "",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/README.md"
+      ]
+    },
+    {
+      "url": "https://www.st.com/en/development-tools/stlink-v3mini.html",
+      "domain": "www.st.com",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://www.st.com/en/development-tools/stlink-v3mini.html",
+      "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=45)",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/development/hardware/devboard-stlinkV3.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/development/hardware/devboard-stlinkV3.md"
+      ]
+    },
+    {
+      "url": "https://www.st.com/en/development-tools/stsw-stm32080.html",
+      "domain": "www.st.com",
+      "archive_path": null,
+      "mode": "failed",
+      "content_type": "",
+      "final_url": "https://www.st.com/en/development-tools/stsw-stm32080.html",
+      "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=45)",
+      "source_markdowns": [
+        "Wiki-Resources/Markdown-Link-Archive/README.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/en/content/usage/general/flashing-firmware.md",
+        "Wiki-Resources/Official-Source-Repos/flipperdevices-docs-2026-03-24/ru/content/usage/general/flashing-firmware.md"
+      ]
+    }
+  ]
+}
