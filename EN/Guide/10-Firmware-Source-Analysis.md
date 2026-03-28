@@ -5,10 +5,10 @@
 ## Chapter Purpose
 
 This chapter differs from [09. Firmware Reference](09-Firmware-Reference-2025.md):
-- **Chapter 09**: User-oriented, introducing firmware features and selection advice
-- **This chapter**: Developer-oriented, deep source-level analysis of 4 mainstream community firmware architectures, implementation mechanisms, and learning paths
+- **Chapter 09**: User-oriented, focused on firmware features and selection guidance
+- **This chapter**: Developer-oriented, focused on source-level analysis of four major community firmware codebases, implementation patterns, and study paths
 
-If you need to **port code**, **understand底层机制**, or **maintain custom firmware**, this chapter is required reading.
+If you need to **port code**, **understand low-level implementation details**, or **maintain custom firmware**, this chapter is required reading.
 
 ---
 
@@ -19,9 +19,9 @@ This chapter is based on locally archived firmware source code analysis:
 | Firmware | Local Directory | Branch | Status |
 |----------|-----------------|--------|--------|
 | **Momentum** | `vendor_firmware/momentum` | `dev` | Active, recommended main baseline |
-| **Unleashed** | `vendor_firmware/unleashed` | `dev` | Active, protocol enhancement type |
+| **Unleashed** | `vendor_firmware/unleashed` | `dev` | Active, protocol-focused variant |
 | **Xtreme** | `vendor_firmware/xtreme` | `dev` | Archived, historical reference |
-| **RogueMaster** | `vendor_firmware/roguemaster` | `420` | Active, mega aggregation repo |
+| **RogueMaster** | `vendor_firmware/roguemaster` | `420` | Active, large aggregation repository |
 
 ---
 
@@ -29,10 +29,10 @@ This chapter is based on locally archived firmware source code analysis:
 
 | Firmware | Core Positioning | Best for Learning |
 |----------|------------------|-------------------|
-| **Momentum** | Making "community firmware" into a mature distribution | Systematic customization, theme assets, boot migration |
+| **Momentum** | Turning community firmware into a maintainable distribution | Systematic customization, theme assets, boot migration |
 | **Unleashed** | Protocol capability enhancement priority | How to enhance protocol stack on stable baseline |
-| **Xtreme** | Ancestor-type deep customization firmware | Large-scale UX transformation historical evolution |
-| **RogueMaster** | Mega external app aggregation | Anti-pattern of large repo maintenance |
+| **Xtreme** | Early deep-customization firmware | Historical evolution of large-scale UX modification |
+| **RogueMaster** | Massive external-app aggregation | A cautionary example of large-repo maintenance |
 
 **Learning Priority**: Momentum → Unleashed → Xtreme → RogueMaster
 
@@ -51,7 +51,7 @@ This chapter is based on locally archived firmware source code analysis:
 
 Momentum is not a firmware that "adds a few more features", but a deeply modified firmware that systematically implements `theme assets + boot migration + menu reorganization + settings center + compatibility with old configurations`.
 
-It is the best of these 4 for learning "how to long-term maintain a custom Flipper distribution".
+Among these four, it is the best example for learning how to maintain a custom Flipper distribution over time.
 
 **Repository Skeleton and Build Chain**
 
@@ -659,7 +659,7 @@ In other words, RogueMaster's main capability is not "inventing all modules itse
 
 #### Menu
 
-This is a major主轴 of RogueMaster:
+This is one of RogueMaster's main structural themes:
 - Main menu configurable
 - Game menu configurable
 - Menu items can be added, deleted, and reordered
@@ -1504,7 +1504,7 @@ These helpers often:
 - May also secretly differ from main chain helper versions
 
 **Conclusion**
-- Don't move helper本体
+- Do not move helper implementations wholesale
 - Only extract "patterns"
 - Maintain unified helper in main chain
 
@@ -1542,26 +1542,26 @@ Key points:
 
 **How to actually migrate here**
 
-Don't try to mix 3 routes into one pot.
+Do not try to blend all three routes into a single design.
 
 More reasonable approach:
-1. In Momentum keep its existing `extend_range + bypass` file control plane
-2. From Unleashed / Xtreme learn **HAL switch morphology**
-3. Don't directly wholesale move their UI / state names
+1. In Momentum, keep its existing `extend_range + bypass` file-based control path
+2. Learn HAL switch structure from Unleashed and Xtreme
+3. Do not wholesale-copy their UI entries or state naming
 
 ### Truly Executable Porting Route
 
-#### Step 1: First Lock Main Chain, Don't Touch External
+#### Step 1: Lock the Mainline Path First, Leave Externals Alone
 
-Only work around Momentum's existing three main chains:
+Only work around Momentum's existing three mainline paths:
 - BLE startup: `targets/f7/furi_hal/furi_hal_bt.c:165`
 - Companion bridge: `applications/services/bt/bt_service/bt.c:200`
 - Sub-GHz transmit entry: `applications/main/subghz/helpers/subghz_txrx.c:352`
 
-That is to say first ensure:
-- Main chain is clear
-- Control plane is clear
-- Config file naming is clear
+In practice, first make sure:
+- The mainline flow is clear
+- The control path is clear
+- The config file naming is clear
 
 #### Step 2: Migrate Unleashed System Service Logic
 
@@ -1576,8 +1576,8 @@ Reasons:
 
 #### Step 3: Migrate Xtreme Control Plane Patterns
 
-Focus is not moving BLE, but moving:
-- `xtreme_app_apply()`'s "UI options -> write control file"套路
+The focus is not porting BLE directly, but porting:
+- The `xtreme_app_apply()` pattern of "UI option -> control-file writeback"
 
 When migrating first do:
 - BLE HAL signature adaptation
@@ -1586,19 +1586,19 @@ When migrating first do:
 #### Step 4: Finally Pick Point Functions from RogueMaster
 
 Rules are simple:
-- Only pick functions with no existing upstream对照物
+- Only pick functions that do not already have a clear upstream equivalent
 - Only copy entry patterns, don't copy external helper wholesale
 - Before migrating first unify config file naming
 
-### One Sentence Compressed Conclusion
+### One-Sentence Summary
 
-If you really want to continue "transforming wireless" later, best strategy is not moving all four together, but:
-- **Momentum as mother version**
-- **Unleashed supplements system services**
-- **Xtreme supplements settings control plane**
-- **RogueMaster only digs point functions**
+If you later want to keep extending wireless support, the best strategy is not to merge all four at once, but:
+- **Use Momentum as the base**
+- **Borrow system-service logic from Unleashed**
+- **Borrow settings and control-path patterns from Xtreme**
+- **Take only isolated point solutions from RogueMaster**
 
-If only remember one sentence: **First hold Momentum main chain, then absorb other's patterns, don't do it反过来.**
+If you remember only one sentence, remember this: **Keep Momentum's mainline intact first, then absorb patterns from the others, not the other way around.**
 
 ---
 
