@@ -46,7 +46,24 @@
                     <span><strong data-search-count>0</strong> 条检索入口</span>
                     <span>GitHub Pages 静态部署</span>
                 </div>
+            </div>
 
+            <div class="hero-visual pixel-motion-host" data-pixel-motion="hero">
+                <div class="hero-visual-card">
+                    <img class="hero-wordmark" src="./assets/official/brand/flipper-logo.svg" alt="Flipper Zero logo" width="270" height="25">
+                    <p class="hero-visual-copy">官网和 qFlipper 源码里可复用的资产现在已经抽到站点自己的 `assets/official` 下，避免 Pages 构建时再依赖子仓库路径。</p>
+                    <img class="hero-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" fetchpriority="high">
+                </div>
+            </div>
+        </section>
+
+        <section class="home-systems" aria-label="运行概览">
+            <div class="system-card system-card--wide">
+                <div class="system-card-head">
+                    <p class="eyebrow">Runtime Layer</p>
+                    <h2 class="system-card-title">把首页背后的运行态放到第二层，不抢首屏。</h2>
+                    <p class="system-card-lead">这里保留终端和监控感，但不再挤进主文案区域。这样第一眼先看懂站点是什么，第二眼再看系统怎么跑。</p>
+                </div>
                 <div class="hero-console" aria-label="运行状态">
                     <div class="hero-console-row">
                         <span class="hero-console-label">reader</span>
@@ -64,17 +81,14 @@
                         <span class="hero-console-value">official mirror ready</span>
                     </div>
                 </div>
-
                 <div class="terminal-panel terminal-panel--hero" data-terminal-stream="home" aria-label="首页运行日志"></div>
             </div>
 
-            <div class="hero-visual pixel-motion-host" data-pixel-motion="hero">
-                <div class="hero-visual-card">
-                    <img class="hero-wordmark" src="./assets/official/brand/flipper-logo.svg" alt="Flipper Zero logo" width="270" height="25">
-                    <p class="hero-visual-copy">官网和 qFlipper 源码里可复用的资产现在已经抽到站点自己的 `assets/official` 下，避免 Pages 构建时再依赖子仓库路径。</p>
-                    <img class="hero-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" fetchpriority="high">
+            <div class="system-card system-card--radar">
+                <div class="system-card-head">
+                    <p class="eyebrow">Signal Map</p>
+                    <h2 class="system-card-title">把状态做成辅助信息，不压主视觉。</h2>
                 </div>
-
                 <div class="hero-radar" aria-hidden="true">
                     <div class="hero-radar-head">
                         <span>Signal Map</span>
@@ -92,7 +106,13 @@
                         <span><em>pages</em><strong>built</strong></span>
                     </div>
                 </div>
+            </div>
 
+            <div class="system-card system-card--icons">
+                <div class="system-card-head">
+                    <p class="eyebrow">Protocol Surface</p>
+                    <h2 class="system-card-title">主要协议入口留在这里，首屏不再碎。</h2>
+                </div>
                 <div class="icon-rack">
                     <div class="icon-chip"><img src="./assets/official/icons/subghz.svg" alt=""><span>Sub-GHz</span></div>
                     <div class="icon-chip"><img src="./assets/official/icons/nfc.svg" alt=""><span>NFC</span></div>

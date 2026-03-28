@@ -208,7 +208,7 @@
 
     const initCardWave = () => {
         const cards = Array.from(
-            document.querySelectorAll(".portal-card, .guide-card, .resource-card, .feature-card, .feature-tile, .pager-card, .closing-band, .site-footer"),
+            document.querySelectorAll(".system-card, .portal-card, .guide-card, .resource-card, .feature-card, .feature-tile, .pager-card, .closing-band, .site-footer"),
         );
         if (prefersReducedMotion || cards.length < 2) return;
 
@@ -225,7 +225,7 @@
 
     const mountFrameCorners = () => {
         document.querySelectorAll(
-            ".portal-card, .guide-card, .resource-card, .feature-card, .feature-tile, .pager-card, .closing-band, .doc-panel, .doc-meta-card, .doc-hud-panel, .toc-panel, .terminal-panel",
+            ".system-card, .portal-card, .guide-card, .resource-card, .feature-card, .feature-tile, .pager-card, .closing-band, .doc-panel, .doc-meta-card, .doc-hud-panel, .toc-panel, .terminal-panel",
         ).forEach((node) => {
             if (Array.from(node.children).some((child) => child.classList.contains("frame-corners"))) return;
             const frame = document.createElement("span");
