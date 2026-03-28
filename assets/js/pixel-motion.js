@@ -6,10 +6,10 @@
     if (!hosts.length) return;
 
     const CONFIG = {
-        hero: { cell: 7, density: 0.028, sweepSpeed: 0.112, signalSpeed: 5.3, accentRatio: 0.22, fps: 36, burstFactor: 0.34 },
-        guide: { cell: 8, density: 0.022, sweepSpeed: 0.092, signalSpeed: 4.4, accentRatio: 0.18, fps: 34, burstFactor: 0.26 },
-        doc: { cell: 8, density: 0.018, sweepSpeed: 0.082, signalSpeed: 4.1, accentRatio: 0.14, fps: 34, burstFactor: 0.24 },
-        reader: { cell: 6, density: 0.03, sweepSpeed: 0.118, signalSpeed: 5.8, accentRatio: 0.12, fps: 40, burstFactor: 0.38 },
+        hero: { cell: 6, density: 0.04, sweepSpeed: 0.142, signalSpeed: 6.2, accentRatio: 0.28, fps: 42, burstFactor: 0.42, packetFactor: 0.08 },
+        guide: { cell: 8, density: 0.022, sweepSpeed: 0.092, signalSpeed: 4.4, accentRatio: 0.18, fps: 34, burstFactor: 0.26, packetFactor: 0.04 },
+        doc: { cell: 8, density: 0.018, sweepSpeed: 0.082, signalSpeed: 4.1, accentRatio: 0.14, fps: 34, burstFactor: 0.24, packetFactor: 0.03 },
+        reader: { cell: 6, density: 0.03, sweepSpeed: 0.118, signalSpeed: 5.8, accentRatio: 0.12, fps: 40, burstFactor: 0.38, packetFactor: 0.05 },
     };
 
     class PixelField {
@@ -32,6 +32,7 @@
             this.signals = [];
             this.blips = [];
             this.bursts = [];
+            this.packets = [];
             this.lastFrame = 0;
             this.active = true;
             this.boost = 0;
@@ -103,10 +104,12 @@
             const signalCount = Math.max(6, Math.round(this.cols * this.config.density * 4.8));
             const blinkCount = Math.max(10, Math.round(this.cols * this.rows * this.config.density * 0.24));
             const burstCount = Math.max(2, Math.round(this.rows * this.config.burstFactor * 0.08));
+            const packetCount = Math.max(2, Math.round(this.cols * (this.config.packetFactor || 0.04)));
 
             this.signals = Array.from({ length: signalCount }, () => this.makeSignal(true));
             this.blips = Array.from({ length: blinkCount }, () => this.makeBlip());
             this.bursts = Array.from({ length: burstCount }, () => this.makeBurst());
+            this.packets = Array.from({ length: packetCount }, () => this.makePacket());
         }
 
         makeSignal(randomizeOffset = false) {
@@ -135,6 +138,17 @@
                 width: 6 + Math.floor(Math.random() * 12),
                 speed: 0.16 + Math.random() * 0.22,
                 phase: Math.random() * (this.cols + 18),
+                tint: Math.random() < this.config.accentRatio ? "accent" : "teal",
+            };
+        }
+
+        makePacket() {
+            return {
+                lane: Math.floor(Math.random() * this.rows),
+                phase: Math.random() * (this.cols + 24),
+                speed: 0.12 + Math.random() * 0.18,
+                drift: 0.8 + Math.random() * 1.6,
+                spread: 1 + Math.floor(Math.random() * 3),
                 tint: Math.random() < this.config.accentRatio ? "accent" : "teal",
             };
         }
@@ -193,6 +207,21 @@
             }
         }
 
+        drawPackets(time) {
+            for (const packet of this.packets) {
+                const lead = ((time * packet.speed * this.cols) + packet.phase) % (this.cols + 20) - 10;
+                const centerRow = packet.lane + Math.sin(time * packet.drift + packet.phase) * packet.spread;
+
+                for (let trail = 0; trail < 5; trail += 1) {
+                    const col = Math.floor(lead - trail);
+                    const row = Math.round(centerRow + (trail % 2 === 0 ? 0 : 1));
+                    const alpha = Math.max(0, 0.18 - trail * 0.03) * (1 + this.boost * 0.16);
+                    this.drawCell(col, row, alpha, packet.tint, 1);
+                    this.drawCell(col - 1, row, alpha * 0.56, packet.tint, 2);
+                }
+            }
+        }
+
         drawSweep(time) {
             const travel = (time * this.config.sweepSpeed * this.height) % (this.height + 120);
             const centerY = travel - 48;
@@ -213,6 +242,7 @@
             this.drawSignals(time);
             this.drawBlips(time);
             this.drawBursts(time);
+            this.drawPackets(time);
             this.drawSweep(time);
         }
 
