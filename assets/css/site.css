@@ -866,10 +866,10 @@ select {
 
 .hero-panel {
     display: grid;
-    grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
-    gap: 28px;
-    align-items: stretch;
-    padding: 26px 0 30px;
+    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+    gap: 22px;
+    align-items: start;
+    padding: 24px 0 18px;
 }
 
 .hero-copy,
@@ -917,9 +917,9 @@ select {
 }
 
 .hero-copy {
-    padding: 34px;
+    padding: 40px 38px;
     display: grid;
-    gap: 20px;
+    gap: 18px;
     animation: fadeInSlide 0.68s ease-out both;
 }
 
@@ -936,8 +936,9 @@ select {
 }
 
 .hero-title {
-    font-size: clamp(52px, 8vw, 92px);
-    max-width: 9ch;
+    font-size: clamp(42px, 5.8vw, 72px);
+    max-width: 10ch;
+    line-height: 1.02;
 }
 
 .hero-title::after,
@@ -954,8 +955,8 @@ select {
 }
 
 .hero-lead {
-    max-width: 58ch;
-    font-size: 17px;
+    max-width: 44ch;
+    font-size: 16px;
 }
 
 .hero-actions {
@@ -1354,7 +1355,7 @@ select {
 }
 
 .hero-visual {
-    padding: 26px;
+    padding: 20px;
     position: relative;
     overflow: hidden;
     animation: fadeInSlide 0.78s ease-out both;
@@ -1363,6 +1364,9 @@ select {
 .hero-visual-card {
     position: relative;
     z-index: 1;
+    display: grid;
+    gap: 16px;
+    align-content: start;
     border: 1px solid var(--line);
     border-radius: 22px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.038), rgba(255, 255, 255, 0.022));
@@ -1415,10 +1419,87 @@ select {
 .hero-shot {
     display: block;
     width: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    object-position: center top;
     border-radius: 18px;
     border: 1px solid var(--line);
     background: #0f1419;
     transition: border-color var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid), filter var(--motion-mid) var(--ease-fluid);
+}
+
+.home-systems {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.system-card {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    gap: 16px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
+    box-shadow: var(--shadow);
+}
+
+.system-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 10px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 52%);
+    opacity: 0.58;
+    animation: searchGridShift 22s linear infinite;
+}
+
+.system-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 46%;
+    height: 2px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255, 122, 38, 0.95), transparent);
+    transform: translateX(-130%);
+    opacity: 0.2;
+    animation: terminalSweepIdle 6.1s linear infinite;
+}
+
+.system-card > :not(.frame-corners) {
+    position: relative;
+    z-index: 1;
+}
+
+.system-card--wide {
+    grid-row: span 2;
+}
+
+.system-card-head {
+    display: grid;
+    gap: 10px;
+}
+
+.system-card-title {
+    margin: 0;
+    font-size: clamp(24px, 2.8vw, 36px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.system-card-lead {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.72;
+    max-width: 54ch;
 }
 
 .hero-radar {
@@ -1433,6 +1514,31 @@ select {
     background: rgba(7, 9, 13, 0.78);
     backdrop-filter: blur(12px);
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+}
+
+.system-card--radar .hero-radar {
+    position: relative;
+    inset: auto;
+    right: auto;
+    top: auto;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.system-card--radar .hero-radar-grid {
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.system-card--icons .icon-rack {
+    margin-top: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .hero-radar-head,
@@ -1813,6 +1919,7 @@ select {
     animation: signalSweep 0.78s cubic-bezier(.22, 1, .36, 1);
 }
 
+.system-card.is-wave,
 .portal-card.is-wave,
 .guide-card.is-wave,
 .resource-card.is-wave,
@@ -1831,6 +1938,7 @@ select {
     opacity: 0.96;
 }
 
+.system-card.is-wave::after,
 .portal-card.is-wave::after,
 .guide-card.is-wave::after,
 .feature-card.is-wave::after,
@@ -3844,6 +3952,7 @@ select {
 
 @media (max-width: 1080px) {
     .hero-panel,
+    .home-systems,
     .doc-hero,
     .reader-grid,
     .asset-board,
@@ -3867,12 +3976,8 @@ select {
         grid-template-columns: 1fr;
     }
 
-    .hero-radar {
-        position: relative;
-        right: auto;
-        top: auto;
-        width: min(100%, 260px);
-        margin: 16px 0 0 auto;
+    .system-card--wide {
+        grid-row: auto;
     }
 }
 
@@ -3899,6 +4004,7 @@ select {
 
     .hero-copy,
     .hero-visual,
+    .system-card,
     .guide-hero,
     .doc-hero,
     .doc-panel,
@@ -3913,6 +4019,10 @@ select {
     .guide-grid,
     .pager {
         grid-template-columns: 1fr;
+    }
+
+    .hero-panel {
+        gap: 18px;
     }
 
     .hero-console-row {
@@ -3994,7 +4104,6 @@ select {
 
     .hero-radar {
         width: 100%;
-        margin-top: 14px;
     }
 
     .guide-card-header {
@@ -4015,6 +4124,10 @@ select {
 
     .reader-activity-bars {
         height: 20px;
+    }
+
+    .system-card--icons .icon-rack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .official-icon-grid {
