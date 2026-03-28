@@ -13,6 +13,11 @@
     const pagePath = document.getElementById("docPath");
     const pageMode = document.getElementById("docMode");
     const sourceLink = document.getElementById("sourceLink");
+    const breadcrumbParent = document.getElementById("docBreadcrumbParent");
+    const breadcrumbCurrent = document.getElementById("docBreadcrumbCurrent");
+    const docStatusKind = document.getElementById("docStatusKind");
+    const docStatusRoute = document.getElementById("docStatusRoute");
+    const docStatusSource = document.getElementById("docStatusSource");
     const content = document.getElementById("docContent");
     const toc = document.getElementById("docToc");
     const pager = document.getElementById("docPager");
@@ -851,6 +856,37 @@
         ].join("");
     }
 
+    function applyDocumentMeta(displayTitle) {
+        const repoSegments = repoPath.split("/");
+        const fileLabel = repoSegments[repoSegments.length - 1] || repoPath;
+        let parentLabel = "知识库";
+        let parentHref = `${siteRoot}index.html`;
+        let kindLabel = "Markdown 文档";
+
+        if (repoPath.startsWith("CN/Guide/")) {
+            parentLabel = "中文课程";
+            parentHref = `${siteRoot}CN/Guide/index.html`;
+            kindLabel = "课程章节";
+        } else if (repoPath.startsWith("CN/")) {
+            parentLabel = "中文文档";
+            parentHref = `${siteRoot}viewer.html?file=${encodeURIComponent("CN/FlipperZero-Master-CN.md")}`;
+            kindLabel = "中文文档";
+        } else if (repoPath.startsWith("FlipperZero_资源库/")) {
+            parentLabel = "资源库";
+            parentHref = `${siteRoot}viewer.html?file=${encodeURIComponent("FlipperZero_资源库/FlipperZero_完整技术资源指南.md")}`;
+            kindLabel = "资源库条目";
+        }
+
+        if (breadcrumbParent) {
+            breadcrumbParent.textContent = parentLabel;
+            breadcrumbParent.href = parentHref;
+        }
+        if (breadcrumbCurrent) breadcrumbCurrent.textContent = displayTitle;
+        if (docStatusKind) docStatusKind.textContent = kindLabel;
+        if (docStatusRoute) docStatusRoute.textContent = body.dataset.modeLabel || "Runtime Render";
+        if (docStatusSource) docStatusSource.textContent = fileLabel;
+    }
+
     function renderError(message) {
         if (!content) return;
         content.innerHTML = `<div class="doc-error"><strong>页面没渲染出来。</strong><p>${message}</p><a class="ghost-button" href="${siteRoot}index.html">回首页</a></div>`;
@@ -944,6 +980,7 @@
             document.title = `${displayTitle} - Flipper Zero Teacher`;
             if (pageTitle) pageTitle.textContent = displayTitle;
             if (pageLead) pageLead.textContent = displayLead;
+            applyDocumentMeta(displayTitle);
 
             if (window.marked && typeof window.marked.parse === "function") {
                 window.marked.setOptions({

@@ -31,9 +31,21 @@
         <main class="reader-main" id="main-content">
             <section class="doc-hero pixel-motion-host" data-pixel-motion="doc">
                 <div>
+                    <nav class="doc-breadcrumb" aria-label="面包屑">
+                        <a href="./index.html">首页</a>
+                        <span>/</span>
+                        <a id="docBreadcrumbParent" href="./index.html">知识库</a>
+                        <span>/</span>
+                        <span id="docBreadcrumbCurrent">当前文档</span>
+                    </nav>
                     <p class="eyebrow" id="docEyebrow">Markdown Viewer</p>
                     <h1 class="doc-title" id="docTitle">正在载入文档…</h1>
                     <p class="doc-lead" id="docLead">课程外的 Markdown 文档统一走这个阅读器。这里会处理链接、关键词高亮和代码复制，不再直接暴露原始 Markdown。</p>
+                    <div class="doc-status-strip" aria-label="文档状态">
+                        <span id="docStatusKind">Markdown 单源</span>
+                        <span id="docStatusRoute">Runtime Render</span>
+                        <span id="docStatusSource">等待路径</span>
+                    </div>
                 </div>
                 <div class="doc-meta">
                     <div class="doc-meta-card">
@@ -93,6 +105,20 @@
 
             <nav class="pager" id="docPager"></nav>
         </main>
+
+        <footer class="site-footer">
+            <div class="site-footer-brand">
+                <strong>Flipper Zero Teacher</strong>
+                <p>官方资产、本地镜像、Markdown 阅读器和课程导航已经统一接进同一套 Pages 站点。</p>
+            </div>
+            <div class="site-footer-links">
+                <a href="./index.html">首页</a>
+                <a href="./CN/Guide/index.html">中文课程</a>
+                <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                <a href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">qFlipper</a>
+                <a href="https://github.com/dwgx/FlipperZeroTeacher" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+        </footer>
     </div>
 
     <script src="./assets/js/guide-manifest.js"></script>

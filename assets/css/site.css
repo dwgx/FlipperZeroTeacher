@@ -22,6 +22,11 @@
     --radius-md: 18px;
     --radius-sm: 12px;
     --page-width: 1240px;
+    --ease-fluid: cubic-bezier(.22, 1, .36, 1);
+    --ease-terminal: cubic-bezier(.16, 1, .3, 1);
+    --motion-fast: 180ms;
+    --motion-mid: 320ms;
+    --motion-slow: 620ms;
 }
 
 * {
@@ -249,6 +254,50 @@ body {
     }
 }
 
+@keyframes topbarSweep {
+    0%,
+    62% {
+        transform: translateX(-130%);
+        opacity: 0;
+    }
+
+    68% {
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateX(230%);
+        opacity: 0;
+    }
+}
+
+@keyframes searchGridShift {
+    from {
+        background-position: 0 0, 0 0;
+    }
+
+    to {
+        background-position: 0 14px, 14px 0;
+    }
+}
+
+@keyframes terminalSweepIdle {
+    0%,
+    72% {
+        transform: translateX(-130%);
+        opacity: 0;
+    }
+
+    78% {
+        opacity: 0.18;
+    }
+
+    100% {
+        transform: translateX(240%);
+        opacity: 0;
+    }
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -305,12 +354,14 @@ select {
     overflow: hidden;
     border-radius: inherit;
     pointer-events: none;
-    opacity: 0.82;
+    opacity: 0.8;
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
     background-size: 10px 10px;
-    animation: gridDrift 18s linear infinite;
+    animation: gridDrift 22s linear infinite;
+    transform: translateZ(0);
+    will-change: transform, opacity;
 }
 
 .pixel-motion-layer::before {
@@ -329,15 +380,15 @@ select {
     top: -30%;
     height: 28%;
     background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-    opacity: 0.18;
-    animation: heroScan 16s linear infinite;
+    opacity: 0.14;
+    animation: heroScan 18s linear infinite;
 }
 
 .pixel-motion-layer canvas {
     display: block;
     width: 100%;
     height: 100%;
-    opacity: 0.74;
+    opacity: 0.68;
 }
 
 [data-pixel-motion="guide"] .pixel-motion-layer,
@@ -366,6 +417,19 @@ select {
     backdrop-filter: blur(18px);
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
     animation: fadeInSlide 0.55s ease-out both;
+    overflow: hidden;
+}
+
+.site-topbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(93, 255, 219, 0.8), transparent);
+    opacity: 0;
+    animation: topbarSweep 16s linear infinite;
 }
 
 .site-brand {
@@ -431,12 +495,27 @@ select {
 .site-search-trigger,
 .ghost-button,
 .solid-button {
+    position: relative;
     border-radius: 999px;
     border: 1px solid var(--line);
     padding: 10px 16px;
     font-size: 14px;
     color: var(--text-muted);
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-fast) var(--ease-fluid), color var(--motion-fast) var(--ease-fluid), background var(--motion-fast) var(--ease-fluid);
+}
+
+.site-nav a::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 6px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(93, 255, 219, 0.78), transparent 82%);
+    opacity: 0.16;
+    transform: scaleX(0.14);
+    transform-origin: left center;
+    transition: transform var(--motion-mid) var(--ease-terminal), opacity var(--motion-mid) var(--ease-terminal);
 }
 
 .site-nav a:focus-visible,
@@ -445,6 +524,8 @@ select {
 .solid-button:focus-visible,
 .toolbar-button:focus-visible,
 .source-link:focus-visible,
+.doc-breadcrumb a:focus-visible,
+.site-footer-links a:focus-visible,
 .portal-card:focus-visible,
 .guide-card:focus-visible,
 .resource-card:focus-visible,
@@ -470,6 +551,12 @@ select {
     border-color: var(--accent-line);
     background: rgba(255, 122, 38, 0.1);
     color: var(--text);
+}
+
+.site-nav a:hover::after,
+.site-nav a[aria-current="page"]::after {
+    opacity: 0.72;
+    transform: scaleX(1);
 }
 
 .solid-button {
@@ -575,12 +662,31 @@ select {
     border-radius: calc(var(--radius-lg) + 2px);
 }
 
+.hero-copy,
+.guide-hero,
+.doc-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-copy::before,
+.guide-hero::before,
+.doc-hero::before {
+    content: "";
+    position: absolute;
+    left: 34px;
+    top: 22px;
+    width: 62px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(93, 255, 219, 0.78), transparent);
+    opacity: 0.28;
+    animation: topbarSweep 20s linear infinite;
+}
+
 .hero-copy {
     padding: 34px;
     display: grid;
     gap: 20px;
-    position: relative;
-    overflow: hidden;
     animation: fadeInSlide 0.68s ease-out both;
 }
 
@@ -631,6 +737,41 @@ select {
     text-transform: uppercase;
 }
 
+.doc-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: var(--text-soft);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.doc-breadcrumb a {
+    color: var(--text-soft);
+}
+
+.doc-breadcrumb a:hover {
+    color: var(--text);
+}
+
+.doc-status-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.doc-status-strip span {
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-soft);
+    font-size: 12px;
+}
+
 .hero-strip strong,
 .guide-metrics strong {
     color: var(--text);
@@ -654,7 +795,7 @@ select {
     padding: 20px;
     transform: translateZ(0);
     animation: cardPop 0.74s ease-out both;
-    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    transition: border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
     overflow: hidden;
 }
 
@@ -668,7 +809,7 @@ select {
     background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.08), transparent);
     opacity: 0.22;
     pointer-events: none;
-    animation: heroScan 11s linear infinite;
+    animation: heroScan 14s linear infinite;
 }
 
 .hero-visual-card::after {
@@ -703,7 +844,7 @@ select {
     border-radius: 18px;
     border: 1px solid var(--line);
     background: #0f1419;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    transition: border-color var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid), filter var(--motion-mid) var(--ease-fluid);
 }
 
 .icon-rack {
@@ -727,7 +868,7 @@ select {
     background: rgba(255, 255, 255, 0.025);
     color: var(--text-muted);
     font-size: 13px;
-    transition: transform 0.2s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
     animation: chipRise 0.6s ease backwards;
 }
 
@@ -745,6 +886,20 @@ select {
     animation: statusBlink 3.8s steps(2, end) infinite;
 }
 
+.icon-chip::after {
+    content: "";
+    position: absolute;
+    left: 44px;
+    right: 16px;
+    bottom: 11px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(93, 255, 219, 0.36), transparent 72%);
+    opacity: 0.22;
+    transform: scaleX(0.16);
+    transform-origin: left center;
+    transition: transform var(--motion-mid) var(--ease-terminal), opacity var(--motion-mid) var(--ease-terminal);
+}
+
 .icon-chip img {
     width: 20px;
     height: 20px;
@@ -758,6 +913,11 @@ select {
     border-color: var(--accent-line);
     background: rgba(255, 255, 255, 0.045);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.icon-chip:hover::after {
+    opacity: 0.68;
+    transform: scaleX(1);
 }
 
 .icon-chip:hover img {
@@ -895,7 +1055,7 @@ select {
     overflow: hidden;
     padding: 24px;
     clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);
-    transition: transform 0.2s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
     animation: fadeInSlide 0.72s ease-out both;
 }
 
@@ -929,6 +1089,7 @@ select {
     background: linear-gradient(90deg, transparent, rgba(255, 122, 38, 0.95), transparent);
     transform: translateX(-130%);
     opacity: 0;
+    animation: terminalSweepIdle 10.5s linear infinite;
 }
 
 .portal-card:hover::before,
@@ -941,6 +1102,19 @@ select {
     opacity: 1;
     animation: signalSweep 0.78s cubic-bezier(.22, 1, .36, 1);
 }
+
+.portal-grid > :nth-child(1)::after,
+.guide-grid > :nth-child(1)::after { animation-delay: 0.4s; }
+.portal-grid > :nth-child(2)::after,
+.guide-grid > :nth-child(2)::after { animation-delay: 1.1s; }
+.portal-grid > :nth-child(3)::after,
+.guide-grid > :nth-child(3)::after { animation-delay: 1.8s; }
+.portal-grid > :nth-child(4)::after,
+.guide-grid > :nth-child(4)::after { animation-delay: 2.5s; }
+.portal-grid > :nth-child(5)::after,
+.guide-grid > :nth-child(5)::after { animation-delay: 3.2s; }
+.portal-grid > :nth-child(6)::after,
+.guide-grid > :nth-child(6)::after { animation-delay: 3.9s; }
 
 .portal-card--primary {
     grid-column: span 6;
@@ -1060,6 +1234,38 @@ select {
     margin-top: 24px;
 }
 
+.closing-band {
+    margin-top: 28px;
+    padding: 28px;
+    display: grid;
+    gap: 16px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
+    box-shadow: var(--shadow);
+}
+
+.closing-title {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.closing-lead {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 62ch;
+}
+
+.closing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .section-header {
     display: grid;
     gap: 12px;
@@ -1105,7 +1311,7 @@ select {
     border-radius: 28px;
     align-items: center;
     animation: fadeInSlide 0.78s ease-out both;
-    transition: transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
 }
 
 .feature-card-copy {
@@ -1149,7 +1355,7 @@ select {
     border: 1px solid var(--line);
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.025);
-    transition: border-color 0.25s ease, background 0.25s ease;
+    transition: border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid);
 }
 
 .official-icon-cell::before {
@@ -1204,7 +1410,7 @@ select {
     border-radius: 24px;
     align-items: center;
     animation: fadeInSlide 0.82s ease-out both;
-    transition: transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
 }
 
 .feature-tile-image {
@@ -1242,7 +1448,7 @@ select {
     gap: 16px;
     padding: 22px;
     border-radius: 26px;
-    transition: transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
     animation: fadeInSlide 0.84s ease-out both;
 }
 
@@ -1408,6 +1614,55 @@ select {
     letter-spacing: 0.12em;
 }
 
+.site-footer {
+    margin: 22px 0 8px;
+    padding: 20px 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 18px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: var(--shadow);
+}
+
+.site-footer-brand {
+    display: grid;
+    gap: 8px;
+}
+
+.site-footer-brand strong {
+    font-size: 15px;
+}
+
+.site-footer-brand p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.site-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.site-footer-links a {
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-soft);
+    font-size: 13px;
+}
+
+.site-footer-links a:hover {
+    border-color: var(--accent-line);
+    color: var(--text);
+}
+
 .reader-main {
     margin-top: 18px;
 }
@@ -1431,6 +1686,7 @@ select {
     border-radius: 22px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
     box-shadow: var(--shadow);
+    overflow: hidden;
 }
 
 .tui-viewport {
@@ -1477,11 +1733,23 @@ select {
             transparent 2px,
             transparent 6px
         );
-    opacity: 0.16;
+    opacity: 0.13;
     pointer-events: none;
     mix-blend-mode: screen;
     animation: scanlinePulse 12s linear infinite;
     z-index: 2;
+}
+
+.scanline-overlay::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -24%;
+    height: 20%;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+    opacity: 0.12;
+    animation: heroScan 12s linear infinite;
 }
 
 .toolbar-search {
@@ -1523,6 +1791,7 @@ select {
     );
     opacity: 0.12;
     pointer-events: none;
+    animation: searchGridShift 18s linear infinite;
 }
 
 .search-results {
@@ -1545,7 +1814,7 @@ select {
     inset: -2px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), transparent 60%, transparent 100%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--motion-mid) var(--ease-fluid);
     pointer-events: none;
 }
 
@@ -1561,7 +1830,7 @@ select {
     border: 1px solid var(--result-ink);
     border-radius: 14px;
     opacity: 0;
-    transition: opacity 0.25s ease;
+    transition: opacity var(--motion-mid) var(--ease-fluid);
     pointer-events: none;
 }
 
@@ -1631,6 +1900,18 @@ select {
     mix-blend-mode: screen;
 }
 
+.search-results-loom::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -18%;
+    height: 18%;
+    background: linear-gradient(180deg, transparent, rgba(93, 255, 219, 0.08), transparent);
+    opacity: 0.1;
+    animation: heroScan 15s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .scanline-overlay,
     .search-results-loom,
@@ -1668,6 +1949,7 @@ select {
     background: rgba(255, 255, 255, 0.03);
     color: var(--text);
     cursor: pointer;
+    transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
 }
 
 .toolbar-button--accent {
@@ -1722,17 +2004,17 @@ select {
     color: var(--text);
     text-align: left;
     cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    transition: transform var(--motion-fast) var(--ease-terminal), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
 }
 
 .search-result-item:hover {
-    transform: translateY(-1px);
+    transform: translateX(2px);
     border-color: var(--accent-line);
     background: rgba(255, 255, 255, 0.045);
 }
 
 .search-result-item.is-active {
-    transform: translateY(-1px);
+    transform: translateX(2px);
     border-color: var(--accent-line);
     background: rgba(255, 122, 38, 0.08);
 }
@@ -1788,6 +2070,7 @@ select {
 
 .site-search-panel {
     position: relative;
+    overflow: hidden;
     width: min(880px, calc(100vw - 28px));
     margin: min(8vh, 72px) auto 0;
     padding: 24px;
@@ -1798,6 +2081,32 @@ select {
         linear-gradient(180deg, rgba(18, 22, 27, 0.98), rgba(11, 13, 16, 0.98));
     box-shadow: 0 40px 120px rgba(0, 0, 0, 0.48);
     animation: fadeInSlide 0.2s ease-out;
+}
+
+.site-search-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.016) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+    background-size: 12px 12px;
+    opacity: 0.12;
+    pointer-events: none;
+    animation: gridDrift 22s linear infinite;
+}
+
+.site-search-panel::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20%;
+    height: 18%;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+    opacity: 0.12;
+    pointer-events: none;
+    animation: heroScan 16s linear infinite;
 }
 
 .site-search-head {
@@ -1825,6 +2134,8 @@ select {
 }
 
 .site-search-box {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1832,6 +2143,18 @@ select {
     border: 1px solid var(--line);
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.025);
+}
+
+.site-search-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 6px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 10px);
+    opacity: 0.1;
+    pointer-events: none;
+    animation: searchGridShift 18s linear infinite;
 }
 
 .site-search-input {
@@ -1857,9 +2180,11 @@ select {
     background: rgba(255, 255, 255, 0.03);
     color: var(--text-muted);
     cursor: pointer;
+    transition: transform var(--motion-fast) var(--ease-terminal), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), color var(--motion-mid) var(--ease-fluid);
 }
 
 .site-search-tag:hover {
+    transform: translateY(-1px);
     border-color: var(--accent-line);
     color: var(--text);
 }
@@ -1889,14 +2214,33 @@ select {
 .site-search-result {
     display: grid;
     gap: 8px;
-    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--motion-fast) var(--ease-terminal), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid);
+}
+
+.site-search-result::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 42%;
+    background: linear-gradient(90deg, rgba(93, 255, 219, 0.16), transparent);
+    transform: translateX(-120%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .site-search-result:hover,
 .site-search-result.is-active {
-    transform: translateY(-1px);
+    transform: translateX(2px);
     border-color: var(--accent-line);
     background: rgba(255, 255, 255, 0.04);
+}
+
+.site-search-result:hover::before,
+.site-search-result.is-active::before {
+    opacity: 1;
+    animation: signalSweep 0.86s var(--ease-terminal);
 }
 
 .site-search-result-meta {
@@ -1928,6 +2272,7 @@ select {
     background: rgba(255, 255, 255, 0.03);
     color: var(--text-muted);
     cursor: pointer;
+    transition: transform var(--motion-fast) var(--ease-terminal), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), color var(--motion-mid) var(--ease-fluid);
 }
 
 .keyword-chip:hover {
@@ -2399,7 +2744,8 @@ select {
     }
 
     .feature-strip,
-    .resource-grid {
+    .resource-grid,
+    .site-footer {
         grid-template-columns: 1fr;
     }
 }
@@ -2441,6 +2787,10 @@ select {
 
     .feature-tile {
         grid-template-columns: 1fr;
+    }
+
+    .site-footer-links {
+        justify-content: flex-start;
     }
 
     .icon-rack {
@@ -2517,8 +2867,8 @@ select {
             transparent 1px,
             transparent 4px
         );
-    opacity: 0.08;
+    opacity: 0.06;
     pointer-events: none;
-    animation: scanlineShift 18s linear infinite;
+    animation: scanlineShift 24s linear infinite;
     z-index: 0;
 }

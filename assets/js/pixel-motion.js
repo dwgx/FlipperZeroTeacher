@@ -6,10 +6,10 @@
     if (!hosts.length) return;
 
     const CONFIG = {
-        hero: { cell: 8, density: 0.018, sweepSpeed: 0.08, signalSpeed: 4.4, accentRatio: 0.16 },
-        guide: { cell: 10, density: 0.014, sweepSpeed: 0.065, signalSpeed: 3.3, accentRatio: 0.12 },
-        doc: { cell: 10, density: 0.012, sweepSpeed: 0.06, signalSpeed: 3.1, accentRatio: 0.1 },
-        reader: { cell: 7, density: 0.022, sweepSpeed: 0.09, signalSpeed: 5.4, accentRatio: 0.08 },
+        hero: { cell: 8, density: 0.018, sweepSpeed: 0.078, signalSpeed: 4.1, accentRatio: 0.16, fps: 30, burstFactor: 0.22 },
+        guide: { cell: 10, density: 0.014, sweepSpeed: 0.062, signalSpeed: 3.1, accentRatio: 0.12, fps: 30, burstFactor: 0.18 },
+        doc: { cell: 10, density: 0.012, sweepSpeed: 0.058, signalSpeed: 2.9, accentRatio: 0.1, fps: 30, burstFactor: 0.16 },
+        reader: { cell: 7, density: 0.022, sweepSpeed: 0.086, signalSpeed: 4.9, accentRatio: 0.08, fps: 36, burstFactor: 0.28 },
     };
 
     class PixelField {
@@ -31,8 +31,11 @@
             this.rows = 0;
             this.signals = [];
             this.blips = [];
+            this.bursts = [];
             this.lastFrame = 0;
             this.active = true;
+            this.boost = 0;
+            this.boostTarget = 0;
             this.frameHandle = 0;
 
             this.onResize = this.resize.bind(this);
@@ -45,6 +48,22 @@
 
         installObservers() {
             window.addEventListener("resize", this.onResize, { passive: true });
+
+            this.host.addEventListener("pointerenter", () => {
+                this.boostTarget = 1;
+            });
+
+            this.host.addEventListener("pointerleave", () => {
+                this.boostTarget = 0;
+            });
+
+            this.host.addEventListener("focusin", () => {
+                this.boostTarget = 1;
+            });
+
+            this.host.addEventListener("focusout", () => {
+                this.boostTarget = 0;
+            });
 
             if ("ResizeObserver" in window) {
                 this.resizeObserver = new ResizeObserver(() => this.resize());
@@ -83,9 +102,11 @@
         seed() {
             const signalCount = Math.max(6, Math.round(this.cols * this.config.density * 4.8));
             const blinkCount = Math.max(10, Math.round(this.cols * this.rows * this.config.density * 0.24));
+            const burstCount = Math.max(2, Math.round(this.rows * this.config.burstFactor * 0.08));
 
             this.signals = Array.from({ length: signalCount }, () => this.makeSignal(true));
             this.blips = Array.from({ length: blinkCount }, () => this.makeBlip());
+            this.bursts = Array.from({ length: burstCount }, () => this.makeBurst());
         }
 
         makeSignal(randomizeOffset = false) {
@@ -105,6 +126,16 @@
                 phase: Math.random() * Math.PI * 2,
                 speed: 0.9 + Math.random() * 1.7,
                 tint: Math.random() < 0.12 ? "accent" : (Math.random() < 0.24 ? "teal" : "neutral"),
+            };
+        }
+
+        makeBurst() {
+            return {
+                row: Math.floor(Math.random() * this.rows),
+                width: 6 + Math.floor(Math.random() * 12),
+                speed: 0.16 + Math.random() * 0.22,
+                phase: Math.random() * (this.cols + 18),
+                tint: Math.random() < this.config.accentRatio ? "accent" : "teal",
             };
         }
 
@@ -128,12 +159,15 @@
         drawSignals(time) {
             for (const signal of this.signals) {
                 const cursor = ((time * signal.speed + signal.offset) % (this.rows + signal.length + 8)) - signal.length;
-                const head = Math.floor(cursor);
 
                 for (let trail = 0; trail < signal.length; trail += 1) {
-                    const row = head - trail;
-                    const alpha = Math.max(0, 0.24 - trail * 0.05);
-                    this.drawCell(signal.col, row, alpha, signal.tint, 1);
+                    const position = cursor - trail;
+                    const baseRow = Math.floor(position);
+                    const mix = position - baseRow;
+                    const alpha = Math.max(0, 0.22 - trail * 0.045) * (1 + this.boost * 0.18);
+
+                    this.drawCell(signal.col, baseRow, alpha * (1 - mix), signal.tint, 1);
+                    this.drawCell(signal.col, baseRow + 1, alpha * mix * 0.72, signal.tint, 1);
                 }
             }
         }
@@ -141,8 +175,21 @@
         drawBlips(time) {
             for (const blip of this.blips) {
                 const wave = (Math.sin(time * blip.speed + blip.phase) + 1) / 2;
-                const alpha = wave * wave * 0.16;
+                const alpha = wave * wave * (0.12 + this.boost * 0.03);
                 this.drawCell(blip.col, blip.row, alpha, blip.tint, 2);
+            }
+        }
+
+        drawBursts(time) {
+            for (const burst of this.bursts) {
+                const x = ((time * burst.speed * this.cols) + burst.phase) % (this.cols + burst.width + 12) - burst.width;
+
+                for (let offset = 0; offset < burst.width; offset += 1) {
+                    const col = Math.floor(x + offset);
+                    const fade = 1 - offset / burst.width;
+                    const alpha = fade * 0.08 * (1 + this.boost * 0.3);
+                    this.drawCell(col, burst.row, alpha, burst.tint, 2);
+                }
             }
         }
 
@@ -151,9 +198,9 @@
             const centerY = travel - 48;
             const gradient = this.ctx.createLinearGradient(0, centerY - 28, 0, centerY + 28);
             gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
-            gradient.addColorStop(0.45, "rgba(255, 255, 255, 0.03)");
-            gradient.addColorStop(0.5, "rgba(255, 122, 38, 0.045)");
-            gradient.addColorStop(0.55, "rgba(255, 255, 255, 0.03)");
+            gradient.addColorStop(0.42, `rgba(255, 255, 255, ${0.022 + this.boost * 0.012})`);
+            gradient.addColorStop(0.5, `rgba(255, 122, 38, ${0.038 + this.boost * 0.016})`);
+            gradient.addColorStop(0.58, `rgba(255, 255, 255, ${0.022 + this.boost * 0.012})`);
             gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
             this.ctx.fillStyle = gradient;
             this.ctx.fillRect(0, centerY - 28, this.width, 56);
@@ -161,16 +208,18 @@
 
         render(timestamp) {
             const time = timestamp * 0.001;
+            this.boost += (this.boostTarget - this.boost) * 0.08;
             this.ctx.clearRect(0, 0, this.width, this.height);
             this.drawSignals(time);
             this.drawBlips(time);
+            this.drawBursts(time);
             this.drawSweep(time);
         }
 
         loop(timestamp) {
             this.frameHandle = 0;
             if (!this.active) return;
-            if (timestamp - this.lastFrame >= 1000 / 24) {
+            if (timestamp - this.lastFrame >= 1000 / this.config.fps) {
                 this.lastFrame = timestamp;
                 this.render(timestamp);
             }
