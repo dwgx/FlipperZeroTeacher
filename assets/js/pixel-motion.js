@@ -6,10 +6,10 @@
     if (!hosts.length) return;
 
     const CONFIG = {
-        hero: { cell: 8, density: 0.018, sweepSpeed: 0.078, signalSpeed: 4.1, accentRatio: 0.16, fps: 30, burstFactor: 0.22 },
-        guide: { cell: 10, density: 0.014, sweepSpeed: 0.062, signalSpeed: 3.1, accentRatio: 0.12, fps: 30, burstFactor: 0.18 },
-        doc: { cell: 10, density: 0.012, sweepSpeed: 0.058, signalSpeed: 2.9, accentRatio: 0.1, fps: 30, burstFactor: 0.16 },
-        reader: { cell: 7, density: 0.022, sweepSpeed: 0.086, signalSpeed: 4.9, accentRatio: 0.08, fps: 36, burstFactor: 0.28 },
+        hero: { cell: 7, density: 0.028, sweepSpeed: 0.112, signalSpeed: 5.3, accentRatio: 0.22, fps: 36, burstFactor: 0.34 },
+        guide: { cell: 8, density: 0.022, sweepSpeed: 0.092, signalSpeed: 4.4, accentRatio: 0.18, fps: 34, burstFactor: 0.26 },
+        doc: { cell: 8, density: 0.018, sweepSpeed: 0.082, signalSpeed: 4.1, accentRatio: 0.14, fps: 34, burstFactor: 0.24 },
+        reader: { cell: 6, density: 0.03, sweepSpeed: 0.118, signalSpeed: 5.8, accentRatio: 0.12, fps: 40, burstFactor: 0.38 },
     };
 
     class PixelField {
@@ -175,7 +175,7 @@
         drawBlips(time) {
             for (const blip of this.blips) {
                 const wave = (Math.sin(time * blip.speed + blip.phase) + 1) / 2;
-                const alpha = wave * wave * (0.12 + this.boost * 0.03);
+                const alpha = wave * wave * (0.18 + this.boost * 0.04);
                 this.drawCell(blip.col, blip.row, alpha, blip.tint, 2);
             }
         }
@@ -187,7 +187,7 @@
                 for (let offset = 0; offset < burst.width; offset += 1) {
                     const col = Math.floor(x + offset);
                     const fade = 1 - offset / burst.width;
-                    const alpha = fade * 0.08 * (1 + this.boost * 0.3);
+                    const alpha = fade * 0.13 * (1 + this.boost * 0.34);
                     this.drawCell(col, burst.row, alpha, burst.tint, 2);
                 }
             }
@@ -198,9 +198,9 @@
             const centerY = travel - 48;
             const gradient = this.ctx.createLinearGradient(0, centerY - 28, 0, centerY + 28);
             gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
-            gradient.addColorStop(0.42, `rgba(255, 255, 255, ${0.022 + this.boost * 0.012})`);
-            gradient.addColorStop(0.5, `rgba(255, 122, 38, ${0.038 + this.boost * 0.016})`);
-            gradient.addColorStop(0.58, `rgba(255, 255, 255, ${0.022 + this.boost * 0.012})`);
+            gradient.addColorStop(0.42, `rgba(255, 255, 255, ${0.042 + this.boost * 0.018})`);
+            gradient.addColorStop(0.5, `rgba(255, 122, 38, ${0.08 + this.boost * 0.022})`);
+            gradient.addColorStop(0.58, `rgba(93, 255, 219, ${0.05 + this.boost * 0.018})`);
             gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
             this.ctx.fillStyle = gradient;
             this.ctx.fillRect(0, centerY - 28, this.width, 56);

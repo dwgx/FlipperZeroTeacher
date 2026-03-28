@@ -41,6 +41,7 @@
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
                     <h1 class="doc-title" id="docTitle">04. 构建、调试与工具链</h1>
                     <p class="doc-lead" id="docLead">本章负责把开发环境真正落地。前一章解决的是“应用模型是什么”，这一章解决的是“怎样把它构建出来、跑起来、调起来、更新起来”。如果没有清晰的工具链心智模型，后续很多问题都会混在一起：构建失败、设备运行失败、资源没打进去、日志看不到、更新路径不对。</p>
+                    <div class="terminal-panel terminal-panel--doc" data-terminal-stream="doc" aria-label="文档渲染日志"></div>
                     <div class="doc-status-strip" aria-label="文档状态">
                         <span id="docStatusKind">课程章节</span>
                         <span id="docStatusRoute">Guide Shell</span>
@@ -60,6 +61,20 @@
                             </div>
                         </dl>
                         <a class="source-link" id="sourceLink" href="../../CN/Guide/04-Build-Debug-Tools.md">查看源 Markdown</a>
+                    </div>
+                    <div class="doc-hud-panel" aria-label="阅读状态">
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">active</span>
+                            <strong class="doc-hud-value" id="docHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">progress</span>
+                            <strong class="doc-hud-value" id="docHudProgress">0%</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">search</span>
+                            <strong class="doc-hud-value" id="docHudSearch">idle</strong>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -96,6 +111,17 @@
                 </article>
 
                 <aside class="toc-panel">
+                    <div class="toc-hud" aria-label="目录追踪">
+                        <div class="toc-progress-rail" aria-hidden="true"><i id="tocProgressFill"></i></div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">active</span>
+                            <strong class="toc-hud-value" id="tocHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">track</span>
+                            <strong class="toc-hud-value" id="tocHudMeta">0 / 0 · 0%</strong>
+                        </div>
+                    </div>
                     <h2 class="toc-title">本页目录</h2>
                     <nav id="docToc">
                         <p class="empty-state">文档渲染后会在这里生成章节目录。</p>

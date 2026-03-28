@@ -41,6 +41,7 @@
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
                     <h1 class="doc-title" id="docTitle">06. 系统编程</h1>
                     <p class="doc-lead" id="docLead">当你已经理解 App 开发、工具链和脚本路线之后，就会遇到一个关键问题：哪些需求仍然能留在应用层，哪些需求已经进入系统层。本章的目标，就是帮助你建立“系统编程边界感”，知道什么时候需要进入平台层、硬件抽象层、资源打包层和测试层。</p>
+                    <div class="terminal-panel terminal-panel--doc" data-terminal-stream="doc" aria-label="文档渲染日志"></div>
                     <div class="doc-status-strip" aria-label="文档状态">
                         <span id="docStatusKind">课程章节</span>
                         <span id="docStatusRoute">Guide Shell</span>
@@ -60,6 +61,20 @@
                             </div>
                         </dl>
                         <a class="source-link" id="sourceLink" href="../../CN/Guide/06-System-Programming.md">查看源 Markdown</a>
+                    </div>
+                    <div class="doc-hud-panel" aria-label="阅读状态">
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">active</span>
+                            <strong class="doc-hud-value" id="docHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">progress</span>
+                            <strong class="doc-hud-value" id="docHudProgress">0%</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">search</span>
+                            <strong class="doc-hud-value" id="docHudSearch">idle</strong>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -96,6 +111,17 @@
                 </article>
 
                 <aside class="toc-panel">
+                    <div class="toc-hud" aria-label="目录追踪">
+                        <div class="toc-progress-rail" aria-hidden="true"><i id="tocProgressFill"></i></div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">active</span>
+                            <strong class="toc-hud-value" id="tocHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">track</span>
+                            <strong class="toc-hud-value" id="tocHudMeta">0 / 0 · 0%</strong>
+                        </div>
+                    </div>
                     <h2 class="toc-title">本页目录</h2>
                     <nav id="docToc">
                         <p class="empty-state">文档渲染后会在这里生成章节目录。</p>
