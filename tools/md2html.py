@@ -138,6 +138,16 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                 </article>
 
                 <aside class="toc-panel">
+                    <div class="reader-activity-rail" aria-label="阅读活动轨">
+                        <div class="reader-activity-head">
+                            <span class="reader-activity-label">rail</span>
+                            <strong class="reader-activity-mode" id="readerActivityMode">scan</strong>
+                        </div>
+                        <div class="reader-activity-bars" aria-hidden="true">
+                            <i></i><i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="reader-activity-tail" id="readerActivityPercent">0%</div>
+                    </div>
                     <div class="toc-hud" aria-label="目录追踪">
                         <div class="toc-progress-rail" aria-hidden="true"><i id="tocProgressFill"></i></div>
                         <div class="toc-hud-row">
