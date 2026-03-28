@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d10">
     <title>中文教学导航 - Flipper Zero Teacher</title>
     <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body class="guide-page">
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <div class="guide-shell">
         <header class="site-topbar">
             <a class="site-brand" href="../../index.html">
                 <span class="site-brand-mark site-brand-mark--image">
-                    <img src="../../assets/official/brand/flipper-device.svg" alt="Flipper Zero">
+                    <img src="../../assets/official/brand/flipper-device.svg" alt="Flipper Zero" width="360" height="156">
                 </span>
                 <span class="site-brand-text">
                     <strong>中文教学导航</strong>
                     <span>10 章主线课程 · Markdown 单源章节壳页</span>
                 </span>
             </a>
-            <nav class="site-nav">
+            <nav class="site-nav" aria-label="主导航">
                 <a href="../../index.html">首页</a>
                 <a href="../../viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
                 <a href="../../viewer.html?file=CN/qFlipper-全网融合总文档.md">qFlipper</a>
@@ -26,6 +28,7 @@
             </nav>
         </header>
 
+        <main id="main-content">
         <section class="guide-hero pixel-motion-host" data-pixel-motion="guide">
             <p class="eyebrow">CN Guide / Ordered Learning Path</p>
             <h1 class="guide-title">先按课程走，再把资料库吃透。</h1>
@@ -34,6 +37,11 @@
                 <a class="solid-button" href="../../viewer.html?file=CN/FlipperZero-Master-CN.md">先看主知识库</a>
                 <a class="ghost-button" href="../../viewer.html?file=CN/qFlipper-全网融合总文档.md">桌面端 / qFlipper</a>
                 <a class="ghost-button" href="../../viewer.html?file=CN/Official-Docs-CN-Full.md">官方精读总表</a>
+            </div>
+            <div class="guide-metrics" aria-label="课程摘要">
+                <span>10 章顺序主线</span>
+                <span>课程页与阅读器统一</span>
+                <span>支持全站模糊搜索</span>
             </div>
         </section>
 
@@ -46,6 +54,7 @@
                 </div>
             </div>
         </section>
+        </main>
     </div>
 
     <script src="../../assets/js/guide-manifest.js"></script>

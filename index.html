@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d10">
     <title>Flipper Zero Teacher</title>
     <link rel="stylesheet" href="./assets/css/site.css">
 </head>
 <body class="home-page">
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <div class="site-shell">
         <header class="site-topbar">
             <a class="site-brand" href="./index.html">
                 <span class="site-brand-mark site-brand-mark--image">
-                    <img src="./assets/official/brand/flipper-device.svg" alt="Flipper Zero">
+                    <img src="./assets/official/brand/flipper-device.svg" alt="Flipper Zero" width="360" height="156">
                 </span>
                 <span class="site-brand-text">
                     <strong>Flipper Zero Teacher</strong>
                     <span>官方资产 · 双语知识库</span>
                 </span>
             </a>
-            <nav class="site-nav">
+            <nav class="site-nav" aria-label="主导航">
                 <a href="./CN/Guide/index.html">中文课程</a>
                 <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
                 <a href="#official-assets">官方资产</a>
@@ -26,23 +28,31 @@
             </nav>
         </header>
 
+        <main id="main-content">
         <section class="hero-panel">
             <div class="hero-copy">
-                <p class="eyebrow">Official Assets + Better Reader UX</p>
-                <h1 class="hero-title">图标、资源、阅读交互，统一收口。</h1>
-                <p class="hero-lead">这次不是继续堆装饰，而是把可复用的 Flipper 官方图标、本地可部署的资源入口、以及 Markdown 阅读器里的链接、高亮和复制操作合成一套稳定系统。站点本身继续保持 Markdown 单源。</p>
+                <p class="eyebrow">Flipper Zero · Official Assets · Runtime Reader</p>
+                <h1 class="hero-title">把 Flipper Zero 的学习、工具和资料收成一条主线。</h1>
+                <p class="hero-lead">首页负责给出最短路径，阅读器负责承接 Markdown 单源，课程页负责顺序学习。官方资产、本地镜像、qFlipper 专题和社区高信号入口已经统一接进同一套静态站点。</p>
 
                 <div class="hero-actions">
                     <a class="solid-button" href="./CN/Guide/index.html">进入中文课程</a>
                     <a class="ghost-button" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">打开 qFlipper 专题</a>
                 </div>
+
+                <div class="hero-strip" aria-label="站点能力">
+                    <span>官方资产本地化</span>
+                    <span>Markdown 单源</span>
+                    <span>全站模糊搜索</span>
+                    <span>GitHub Pages 静态部署</span>
+                </div>
             </div>
 
             <div class="hero-visual pixel-motion-host" data-pixel-motion="hero">
                 <div class="hero-visual-card">
-                    <img class="hero-wordmark" src="./assets/official/brand/flipper-logo.svg" alt="Flipper Zero logo">
+                    <img class="hero-wordmark" src="./assets/official/brand/flipper-logo.svg" alt="Flipper Zero logo" width="270" height="25">
                     <p class="hero-visual-copy">官网和 qFlipper 源码里可复用的资产现在已经抽到站点自己的 `assets/official` 下，避免 Pages 构建时再依赖子仓库路径。</p>
-                    <img class="hero-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot">
+                    <img class="hero-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" fetchpriority="high">
                 </div>
 
                 <div class="icon-rack">
@@ -181,14 +191,14 @@
 
             <div class="feature-strip">
                 <a class="feature-tile" href="./Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/index.html">
-                    <img class="feature-tile-image" src="./assets/official/images/cover-development.webp" alt="Official development cover">
+                    <img class="feature-tile-image" src="./assets/official/images/cover-development.webp" alt="Official development cover" width="728" height="546" loading="lazy">
                     <div class="feature-tile-copy">
                         <h3>官方开发入口</h3>
                         <p>适合承接 Build / Debug / Dev Board / App 开发这条主线。</p>
                     </div>
                 </a>
                 <a class="feature-tile" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
-                    <img class="feature-tile-image" src="./assets/official/images/cover-usage.webp" alt="Official usage cover">
+                    <img class="feature-tile-image" src="./assets/official/images/cover-usage.webp" alt="Official usage cover" width="728" height="546" loading="lazy">
                     <div class="feature-tile-copy">
                         <h3>设备使用主线</h3>
                         <p>适合承接 Archive、Apps、协议域和日常使用理解。</p>
@@ -246,6 +256,7 @@
                 </a>
             </div>
         </section>
+        </main>
     </div>
     <script src="./assets/js/search-index.js"></script>
     <script src="./assets/js/site-search.js"></script>
