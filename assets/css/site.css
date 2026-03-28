@@ -3147,29 +3147,9 @@ select {
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    align-items: flex-start;
+    align-items: center;
 }
 
-.guide-card-signal {
-    display: inline-flex;
-    align-items: flex-end;
-    gap: 4px;
-    height: 30px;
-    margin-left: auto;
-}
-
-.guide-card-signal i {
-    width: 5px;
-    height: 100%;
-    border-radius: 999px;
-    background: linear-gradient(180deg, rgba(255, 122, 38, 0.22), rgba(93, 255, 219, 0.92));
-    transform-origin: center bottom;
-    animation: signalBarBounce 1.35s steps(4, end) infinite;
-}
-
-.guide-card-signal i:nth-child(2) { animation-delay: 0.12s; }
-.guide-card-signal i:nth-child(3) { animation-delay: 0.24s; }
-.guide-card-signal i:nth-child(4) { animation-delay: 0.36s; }
 
 .guide-card-number {
     width: 62px;
@@ -3191,6 +3171,8 @@ select {
     font-size: 46px;
     font-weight: 800;
     letter-spacing: -0.08em;
+    line-height: 1;
+    margin-left: auto;
 }
 
 .guide-card-title {
@@ -4883,14 +4865,6 @@ select {
     .guide-card-header {
         flex-wrap: wrap;
     }
-
-    .guide-card-signal {
-        order: 3;
-        width: 100%;
-        justify-content: flex-start;
-        margin-left: 0;
-    }
-
     .reader-activity-head {
         flex-direction: column;
         align-items: flex-start;
