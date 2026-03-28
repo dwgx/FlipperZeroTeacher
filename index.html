@@ -32,27 +32,80 @@
         <section class="hero-panel">
             <div class="hero-copy">
                 <p class="eyebrow">Flipper Zero · Official Assets · Runtime Reader</p>
-                <h1 class="hero-title">把 Flipper Zero 的学习、工具和资料收成一条主线。</h1>
-                <p class="hero-lead">首页负责给出最短路径，阅读器负责承接 Markdown 单源，课程页负责顺序学习。官方资产、本地镜像、qFlipper 专题和社区高信号入口已经统一接进同一套静态站点。</p>
+                <h1 class="hero-title">
+                    <span class="hero-title-inline">把学习路径、</span>
+                    <span class="hero-title-inline">工具链和资料，</span>
+                    <span class="hero-title-inline">收成一条主线。</span>
+                </h1>
+                <p class="hero-lead">首页先给出入口，课程页承接顺序学习，阅读器承接 Markdown，qFlipper 和官方资产承接桌面工作流。</p>
 
                 <div class="hero-actions">
                     <a class="solid-button" href="./CN/Guide/index.html">进入中文课程</a>
                     <a class="ghost-button" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">打开 qFlipper 专题</a>
                 </div>
 
-                <div class="hero-strip" aria-label="站点能力">
-                    <span><strong data-guide-count>10</strong> 章主线</span>
-                    <span><strong data-guide-minutes>0</strong> 分钟课程</span>
-                    <span><strong data-search-count>0</strong> 条检索入口</span>
-                    <span>GitHub Pages 静态部署</span>
+                <div class="hero-route-list" aria-label="快速路径">
+                    <a class="hero-route" href="./CN/Guide/index.html">
+                        <span class="hero-route-index">01</span>
+                        <span class="hero-route-body">
+                            <strong>中文课程</strong>
+                            <em>按顺序把设备、协议、开发和工具链走完整</em>
+                        </span>
+                        <span class="hero-route-tail">enter</span>
+                    </a>
+                    <a class="hero-route" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
+                        <span class="hero-route-index">02</span>
+                        <span class="hero-route-body">
+                            <strong>主知识库</strong>
+                            <em>先建立整体结构，再进入专题、镜像和源码</em>
+                        </span>
+                        <span class="hero-route-tail">mount</span>
+                    </a>
+                    <a class="hero-route" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">
+                        <span class="hero-route-index">03</span>
+                        <span class="hero-route-body">
+                            <strong>qFlipper 专题</strong>
+                            <em>桌面端更新、备份恢复、CLI 与基础远控</em>
+                        </span>
+                        <span class="hero-route-tail">dock</span>
+                    </a>
+                </div>
+
+                <div class="hero-sequence" data-hero-sequence aria-label="首页引导命令">
+                    <span class="hero-sequence-prompt">boot@teacher</span>
+                    <span class="hero-sequence-text">mount /CN/Guide route</span>
+                    <span class="hero-sequence-caret" aria-hidden="true"></span>
                 </div>
             </div>
 
-            <div class="hero-visual pixel-motion-host" data-pixel-motion="hero">
-                <div class="hero-visual-card">
-                    <img class="hero-wordmark" src="./assets/official/brand/flipper-logo.svg" alt="Flipper Zero logo" width="270" height="25">
-                    <p class="hero-visual-copy">官网和 qFlipper 源码里可复用的资产现在已经抽到站点自己的 `assets/official` 下，避免 Pages 构建时再依赖子仓库路径。</p>
-                    <img class="hero-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" fetchpriority="high">
+            <div class="hero-visual">
+                <div class="hero-visual-stage pixel-motion-host" data-pixel-motion="hero">
+                    <img class="hero-device-ghost" src="./assets/official/brand/flipper-device.svg" alt="" width="360" height="156">
+
+                    <div class="hero-status-notes" aria-hidden="true">
+                        <span>official assets mounted</span>
+                        <span><strong data-guide-count>0</strong> chapters online</span>
+                        <span><strong data-search-count>0</strong> routes indexed</span>
+                        <span><strong data-guide-minutes>0</strong> min guide track</span>
+                    </div>
+
+                    <div class="hero-screen-shell">
+                        <div class="hero-screen-head">
+                            <img class="hero-wordmark" src="./assets/official/brand/flipper-logo.svg" alt="Flipper Zero logo" width="270" height="25">
+                            <span class="hero-screen-mode">desktop / live</span>
+                        </div>
+                        <img class="hero-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" fetchpriority="high">
+                        <div class="hero-screen-dock" aria-label="桌面端能力">
+                            <span>qFlipper</span>
+                            <span>Backup</span>
+                            <span>CLI</span>
+                            <span>Viewer</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-signal-bars" aria-hidden="true">
+                        <i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
                 </div>
             </div>
         </section>
@@ -61,8 +114,8 @@
             <div class="system-card system-card--wide">
                 <div class="system-card-head">
                     <p class="eyebrow">Runtime Layer</p>
-                    <h2 class="system-card-title">把首页背后的运行态放到第二层，不抢首屏。</h2>
-                    <p class="system-card-lead">这里保留终端和监控感，但不再挤进主文案区域。这样第一眼先看懂站点是什么，第二眼再看系统怎么跑。</p>
+                    <h2 class="system-card-title">运行态留在第二层，首页先给入口。</h2>
+                    <p class="system-card-lead">终端、索引和日志继续保留，但降到首屏之后。先让人看懂站点，再看系统如何工作。</p>
                 </div>
                 <div class="hero-console" aria-label="运行状态">
                     <div class="hero-console-row">
@@ -87,7 +140,7 @@
             <div class="system-card system-card--radar">
                 <div class="system-card-head">
                     <p class="eyebrow">Signal Map</p>
-                    <h2 class="system-card-title">把状态做成辅助信息，不压主视觉。</h2>
+                    <h2 class="system-card-title">状态只做辅助，不压主视觉。</h2>
                 </div>
                 <div class="hero-radar" aria-hidden="true">
                     <div class="hero-radar-head">
@@ -111,7 +164,7 @@
             <div class="system-card system-card--icons">
                 <div class="system-card-head">
                     <p class="eyebrow">Protocol Surface</p>
-                    <h2 class="system-card-title">主要协议入口留在这里，首屏不再碎。</h2>
+                    <h2 class="system-card-title">协议入口集中在同一块。</h2>
                 </div>
                 <div class="icon-rack">
                     <div class="icon-chip"><img src="./assets/official/icons/subghz.svg" alt=""><span>Sub-GHz</span></div>
