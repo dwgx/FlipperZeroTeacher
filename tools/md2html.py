@@ -58,9 +58,21 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         <main class="reader-main" id="main-content">
             <section class="doc-hero pixel-motion-host" data-pixel-motion="doc">
                 <div>
+                    <nav class="doc-breadcrumb" aria-label="面包屑">
+                        <a href="../../index.html">首页</a>
+                        <span>/</span>
+                        <a id="docBreadcrumbParent" href="../../CN/Guide/index.html">中文课程</a>
+                        <span>/</span>
+                        <span id="docBreadcrumbCurrent">{title}</span>
+                    </nav>
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
                     <h1 class="doc-title" id="docTitle">{title}</h1>
                     <p class="doc-lead" id="docLead">{summary}</p>
+                    <div class="doc-status-strip" aria-label="文档状态">
+                        <span id="docStatusKind">课程章节</span>
+                        <span id="docStatusRoute">Guide Shell</span>
+                        <span id="docStatusSource">{repo_path}</span>
+                    </div>
                 </div>
                 <div class="doc-meta">
                     <div class="doc-meta-card">
@@ -120,6 +132,20 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
             <nav class="pager" id="docPager"></nav>
         </main>
+
+        <footer class="site-footer">
+            <div class="site-footer-brand">
+                <strong>{title}</strong>
+                <p>章节正文仍然来自同目录 Markdown，页面只是阅读器壳页。</p>
+            </div>
+            <div class="site-footer-links">
+                <a href="../../index.html">首页</a>
+                <a href="../../CN/Guide/index.html">课程导航</a>
+                <a href="../../viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                <a href="../../viewer.html?file=CN/qFlipper-全网融合总文档.md">qFlipper</a>
+                <a href="https://github.com/dwgx/FlipperZeroTeacher" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+        </footer>
     </div>
 
     <script src="../../assets/js/guide-manifest.js"></script>
