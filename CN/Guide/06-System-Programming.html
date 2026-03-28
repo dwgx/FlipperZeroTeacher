@@ -27,7 +27,7 @@
         </header>
 
         <main class="reader-main">
-            <section class="doc-hero">
+            <section class="doc-hero pixel-motion-host" data-pixel-motion="doc">
                 <div>
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
                     <h1 class="doc-title" id="docTitle">06. 系统编程</h1>
@@ -54,6 +54,8 @@
                 <div class="toolbar-search">
                     <label class="toolbar-label" for="docSearch">模糊搜索</label>
                     <input class="toolbar-input" id="docSearch" type="search" placeholder="搜索标题、术语、命令、正文">
+                    <span class="toolbar-cursor" aria-hidden="true"></span>
+                    <span class="toolbar-grid" aria-hidden="true"></span>
                     <span class="toolbar-status" id="docSearchStatus">未搜索</span>
                 </div>
                 <div class="toolbar-actions">
@@ -63,6 +65,7 @@
             </section>
 
             <section class="search-results" id="searchResults" hidden>
+                <div class="search-results-loom" aria-hidden="true"></div>
                 <div class="search-results-header">
                     <strong>搜索结果</strong>
                     <span id="searchResultsMeta">输入关键词后显示结果</span>
@@ -72,8 +75,9 @@
 
             <div class="keyword-bar" id="keywordBar"></div>
 
-            <div class="reader-grid">
+            <div class="reader-grid tui-viewport pixel-motion-host" data-pixel-motion="reader">
                 <article class="doc-panel markdown-body" id="docContent">
+                    <div class="scanline-overlay" aria-hidden="true"></div>
                     <p class="empty-state">正在读取 Markdown 内容…</p>
                 </article>
 
@@ -94,5 +98,6 @@
     <script src="../../assets/vendor/marked.min.js"></script>
     <script src="../../assets/js/reader.js"></script>
     <script src="../../assets/js/site-search.js"></script>
+    <script src="../../assets/js/pixel-motion.js"></script>
 </body>
 </html>
