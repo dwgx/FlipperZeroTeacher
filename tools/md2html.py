@@ -30,22 +30,24 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d10">
     <title>{title} - Flipper Zero Teacher</title>
     <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body class="reader-page" data-site-root="../../" data-fetch="{fetch_path}" data-repo-path="{repo_path}" data-title="{title_attr}" data-description="{summary_attr}" data-kicker="CN Guide" data-mode-label="Guide Shell · Markdown Runtime Render">
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <div class="reader-shell">
         <header class="site-topbar">
             <a class="site-brand" href="../../index.html">
                 <span class="site-brand-mark site-brand-mark--image">
-                    <img src="../../assets/official/brand/flipper-device.svg" alt="Flipper Zero">
+                    <img src="../../assets/official/brand/flipper-device.svg" alt="Flipper Zero" width="360" height="156">
                 </span>
                 <span class="site-brand-text">
                     <strong>{title}</strong>
                     <span>章节阅读器 · 内容来自同目录 Markdown</span>
                 </span>
             </a>
-            <nav class="site-nav">
+            <nav class="site-nav" aria-label="主导航">
                 <a href="../../index.html">首页</a>
                 <a href="../../CN/Guide/index.html">课程导航</a>
                 <a href="../../viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
@@ -53,7 +55,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
             </nav>
         </header>
 
-        <main class="reader-main">
+        <main class="reader-main" id="main-content">
             <section class="doc-hero pixel-motion-host" data-pixel-motion="doc">
                 <div>
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
@@ -80,7 +82,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
             <section class="doc-toolbar">
                 <div class="toolbar-search">
                     <label class="toolbar-label" for="docSearch">模糊搜索</label>
-                    <input class="toolbar-input" id="docSearch" type="search" placeholder="搜索标题、术语、命令、正文">
+                    <input class="toolbar-input" id="docSearch" type="search" placeholder="搜索标题、术语、命令、正文" autocomplete="off" spellcheck="false" enterkeyhint="search">
                     <span class="toolbar-cursor" aria-hidden="true"></span>
                     <span class="toolbar-grid" aria-hidden="true"></span>
                     <span class="toolbar-status" id="docSearchStatus">未搜索</span>
