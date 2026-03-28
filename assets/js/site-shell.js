@@ -157,6 +157,7 @@
 
     const renderTerminalPanel = (panel, items, title, visibleRows) => {
         let cursor = 0;
+        const refreshBase = pageKind === "home" ? 3200 : 1260;
 
         const draw = () => {
             const rows = [];
@@ -185,10 +186,12 @@
 
         if (prefersReducedMotion || items.length <= 1) return;
 
-        const refresh = 1260 + Math.min(visibleRows, 5) * 70;
+        const refresh = refreshBase + Math.min(visibleRows, 5) * 70;
         window.setInterval(() => {
             cursor = (cursor + 1) % items.length;
-            panel.classList.add("is-refreshing");
+            if (pageKind !== "home") {
+                panel.classList.add("is-refreshing");
+            }
             draw();
             window.setTimeout(() => {
                 panel.classList.remove("is-refreshing");
@@ -210,86 +213,24 @@
         const nodes = Array.from(document.querySelectorAll("[data-hero-sequence] .hero-sequence-text"));
         if (!nodes.length) return;
 
-        const frames = [
-            "mount /CN/Guide route",
-            "bind viewer shell for markdown",
-            `index ${searchCount || 0} searchable routes`,
-            "dock qFlipper desktop workflow",
-        ];
+        const frame = "mount /CN/Guide route";
 
         nodes.forEach((node) => {
             const wrapper = node.closest("[data-hero-sequence]");
-            if (prefersReducedMotion) {
-                node.textContent = frames[0];
-                wrapper?.classList.add("is-refreshing");
-                return;
-            }
-
-            let frameIndex = 0;
-            let charIndex = 0;
-            let deleting = false;
-
-            const tick = () => {
-                const frame = frames[frameIndex];
-
-                if (!deleting && charIndex === 0 && wrapper) {
-                    wrapper.classList.add("is-refreshing");
-                    window.setTimeout(() => wrapper.classList.remove("is-refreshing"), 260);
-                }
-
-                if (deleting) {
-                    charIndex = Math.max(0, charIndex - 1);
-                } else {
-                    charIndex = Math.min(frame.length, charIndex + 1);
-                }
-
-                node.textContent = frame.slice(0, charIndex);
-
-                let delay = deleting ? 26 : 44;
-
-                if (!deleting && charIndex >= frame.length) {
-                    deleting = true;
-                    delay = 1120;
-                } else if (deleting && charIndex <= 0) {
-                    deleting = false;
-                    frameIndex = (frameIndex + 1) % frames.length;
-                    delay = 180;
-                }
-
-                window.setTimeout(tick, delay);
-            };
-
-            node.textContent = "";
-            window.setTimeout(tick, 320);
+            node.textContent = frame;
+            wrapper?.classList.remove("is-refreshing");
         });
     };
 
     const initHeroSignals = () => {
-        const metrics = Array.from(document.querySelectorAll(".hero-metrics > div"));
         const notes = Array.from(document.querySelectorAll(".hero-status-notes span"));
-        const cycleNodes = (nodes, interval) => {
-            if (!nodes.length) return;
-            if (prefersReducedMotion || nodes.length === 1) {
-                nodes[0].classList.add("is-live");
-                return;
-            }
-
-            let index = 0;
-            const pulse = () => {
-                nodes.forEach((node) => node.classList.remove("is-live"));
-                nodes[index % nodes.length].classList.add("is-live");
-                index += 1;
-            };
-
-            pulse();
-            window.setInterval(pulse, interval);
-        };
-
-        cycleNodes(metrics, 1180);
-        cycleNodes(notes, 1320);
+        if (!notes.length) return;
+        notes.forEach((node) => node.classList.remove("is-live"));
+        notes[0].classList.add("is-live");
     };
 
     const initCardWave = () => {
+        if (pageKind === "home") return;
         const selector = pageKind === "home"
             ? ".hero-route, .system-card, .portal-card, .resource-card, .feature-card, .feature-tile, .closing-band, .site-footer"
             : ".system-card, .portal-card, .guide-card, .resource-card, .feature-card, .feature-tile, .pager-card, .closing-band, .site-footer";

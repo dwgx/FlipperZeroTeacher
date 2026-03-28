@@ -583,18 +583,20 @@ select {
 }
 
 [data-pixel-motion="hero"] .pixel-motion-layer {
-    background-size: 8px 8px;
-    opacity: 1;
+    background-size: 10px 10px;
+    opacity: 0.46;
+    animation: gridDrift 48s linear infinite;
+    mix-blend-mode: screen;
 }
 
 [data-pixel-motion="hero"] .pixel-motion-layer::after {
-    opacity: 0.22;
-    animation-duration: 13s;
+    opacity: 0.08;
+    animation: heroScan 22s linear infinite;
 }
 
 [data-pixel-motion="hero"] .pixel-motion-layer canvas {
-    opacity: 0.92;
-    filter: saturate(1.3) contrast(1.12);
+    opacity: 0.62;
+    filter: saturate(1.08) contrast(1.04);
 }
 
 [data-pixel-motion="reader"] .pixel-motion-layer {
@@ -616,6 +618,11 @@ select {
     animation: gridDrift 28s linear infinite;
 }
 
+.home-page::before {
+    opacity: 0.08;
+    animation: none;
+}
+
 .home-page::after,
 .guide-page::after {
     content: "";
@@ -629,6 +636,12 @@ select {
     background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.06), transparent);
     opacity: 0.14;
     animation: heroScan 18s linear infinite;
+}
+
+.home-page::before,
+.home-page::after {
+    animation: none;
+    opacity: 0.08;
 }
 
 .site-topbar {
@@ -660,6 +673,16 @@ select {
     background: linear-gradient(90deg, transparent, rgba(93, 255, 219, 0.8), transparent);
     opacity: 0.18;
     animation: topbarSweep 8s linear infinite;
+}
+
+.home-page .site-topbar {
+    backdrop-filter: none;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.home-page .site-topbar::after {
+    opacity: 0.08;
+    animation: none;
 }
 
 .topbar-telemetry {
@@ -923,8 +946,8 @@ select {
     border: 1px solid var(--line);
     border-radius: 34px;
     background:
-        radial-gradient(circle at 80% 16%, rgba(255, 122, 38, 0.16), transparent 24%),
-        radial-gradient(circle at 14% 18%, rgba(93, 255, 219, 0.08), transparent 20%),
+        radial-gradient(circle at 80% 16%, rgba(188, 197, 208, 0.08), transparent 24%),
+        radial-gradient(circle at 14% 18%, rgba(132, 188, 206, 0.05), transparent 20%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
         rgba(10, 13, 17, 0.92);
     box-shadow: var(--shadow);
@@ -949,7 +972,7 @@ select {
     pointer-events: none;
     background:
         linear-gradient(112deg, transparent 0%, rgba(255, 255, 255, 0.045) 45%, transparent 52%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 30%, transparent 72%, rgba(255, 122, 38, 0.05));
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 30%, transparent 72%, rgba(152, 198, 214, 0.025));
     opacity: 0.56;
 }
 
@@ -1071,7 +1094,6 @@ select {
     border-radius: 18px;
     background: rgba(8, 10, 14, 0.58);
     color: var(--text);
-    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
     overflow: hidden;
     transition: transform var(--motion-fast) var(--ease-fluid), border-color var(--motion-mid) var(--ease-fluid), background var(--motion-mid) var(--ease-fluid), box-shadow var(--motion-mid) var(--ease-fluid);
 }
@@ -1083,7 +1105,7 @@ select {
     pointer-events: none;
     background:
         repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 11px),
-        linear-gradient(90deg, rgba(255, 122, 38, 0.05), transparent 68%);
+        linear-gradient(90deg, rgba(186, 196, 206, 0.03), transparent 68%);
     opacity: 0.68;
 }
 
@@ -1093,11 +1115,11 @@ select {
     left: 0;
     top: 0;
     width: 42%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(93, 255, 219, 0.88), transparent);
-    transform: translateX(-140%);
-    opacity: 0.18;
-    animation: terminalSweepIdle 6.2s linear infinite;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(152, 198, 214, 0.64), transparent);
+    opacity: 0.08;
+    transform: none;
+    animation: none;
 }
 
 .hero-route:hover,
@@ -1124,7 +1146,7 @@ select {
 .hero-route-tail {
     position: relative;
     z-index: 1;
-    color: rgba(93, 255, 219, 0.9);
+    color: rgba(152, 198, 214, 0.82);
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -1158,6 +1180,20 @@ select {
     color: var(--text-soft);
 }
 
+.home-page .hero-route::after,
+.home-page .hero-sequence::after {
+    animation: none;
+    opacity: 0;
+}
+
+.home-page .hero-route:hover::after,
+.home-page .hero-route:focus-visible::after,
+.home-page .hero-sequence.is-refreshing::after {
+    animation: none;
+    opacity: 0.36;
+    transform: translateX(0);
+}
+
 .hero-sequence {
     position: relative;
     display: flex;
@@ -1180,7 +1216,7 @@ select {
     pointer-events: none;
     background:
         repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.022), rgba(255, 255, 255, 0.022) 1px, transparent 1px, transparent 11px),
-        linear-gradient(90deg, rgba(255, 122, 38, 0.04), transparent 60%);
+        linear-gradient(90deg, rgba(186, 196, 206, 0.03), transparent 60%);
     opacity: 0.72;
 }
 
@@ -1192,14 +1228,14 @@ select {
     width: 42%;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 122, 38, 0.9), transparent);
-    transform: translateX(-130%);
-    opacity: 0.24;
-    animation: terminalSweepIdle 5.2s linear infinite;
+    transform: none;
+    opacity: 0.08;
+    animation: none;
 }
 
 .hero-sequence.is-refreshing::after {
-    opacity: 0.92;
-    animation: signalSweep 0.72s cubic-bezier(.22, 1, .36, 1);
+    opacity: 0.08;
+    animation: none;
 }
 
 .hero-sequence-prompt,
@@ -1213,7 +1249,7 @@ select {
 }
 
 .hero-sequence-prompt {
-    color: rgba(93, 255, 219, 0.88);
+    color: rgba(152, 198, 214, 0.8);
     white-space: nowrap;
 }
 
@@ -1235,7 +1271,8 @@ select {
     border-radius: 2px;
     background: rgba(93, 255, 219, 0.86);
     box-shadow: 0 0 0 1px rgba(93, 255, 219, 0.16);
-    animation: cursorPulse 1s steps(2, end) infinite;
+    animation: none;
+    opacity: 0.36;
 }
 
 .hero-metrics {
@@ -1715,20 +1752,20 @@ select {
     height: 26%;
     pointer-events: none;
     background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.07), transparent);
-    opacity: 0.16;
-    animation: heroScan 15s linear infinite;
+    opacity: 0.06;
+    animation: none;
 }
 
 .hero-device-ghost {
     position: absolute;
-    right: -76px;
-    bottom: -42px;
-    width: min(620px, 78%);
+    right: 20px;
+    bottom: 16px;
+    width: min(420px, 52%);
     height: auto;
-    opacity: 0.3;
+    opacity: 0.1;
     filter: grayscale(1) brightness(1.08) contrast(1.06);
     transform-origin: 70% 50%;
-    animation: heroDeviceFloat 7.8s var(--ease-fluid) infinite;
+    animation: none;
 }
 
 .hero-status-notes {
@@ -1772,13 +1809,14 @@ select {
     border-radius: 999px;
     background: rgba(93, 255, 219, 0.88);
     box-shadow: 0 0 0 1px rgba(93, 255, 219, 0.14);
-    animation: statusBlink 3.1s steps(2, end) infinite;
+    animation: none;
+    opacity: 0.42;
 }
 
 .hero-status-notes span.is-live {
     color: var(--text);
-    border-color: rgba(255, 122, 38, 0.28);
-    transform: translateX(4px);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: none;
 }
 
 .hero-status-notes strong {
@@ -1799,11 +1837,11 @@ select {
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
         rgba(7, 9, 13, 0.74);
-    backdrop-filter: blur(16px);
-    box-shadow: 0 34px 72px rgba(0, 0, 0, 0.34);
+    backdrop-filter: none;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.26);
     overflow: hidden;
-    transform: rotate(-3deg);
-    animation: cardPop 0.74s ease-out both, heroScreenFloat 8.6s var(--ease-fluid) infinite;
+    transform: none;
+    animation: cardPop 0.54s ease-out both;
 }
 
 .hero-screen-shell::before {
@@ -1826,8 +1864,8 @@ select {
     height: 2px;
     background: linear-gradient(90deg, transparent, rgba(255, 122, 38, 0.9), transparent);
     transform: translateX(-130%);
-    opacity: 0.22;
-    animation: terminalSweepIdle 6s linear infinite;
+    opacity: 0.1;
+    animation: none;
 }
 
 .hero-screen-head,
@@ -1865,9 +1903,10 @@ select {
     z-index: 1;
     display: block;
     width: 100%;
-    min-height: 300px;
-    object-fit: cover;
-    object-position: center top;
+    aspect-ratio: 862 / 532;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
     border-radius: 20px;
     border: 1px solid var(--line);
     background: #0f1419;
@@ -1909,7 +1948,8 @@ select {
     margin-top: -3px;
     border-radius: 999px;
     background: rgba(93, 255, 219, 0.86);
-    animation: statusBlink 3.4s steps(2, end) infinite;
+    animation: none;
+    opacity: 0.42;
 }
 
 .hero-signal-bars {
@@ -1950,6 +1990,15 @@ select {
     transform: translateY(-2px);
     border-color: var(--accent-line);
     filter: saturate(1.04) contrast(1.03);
+}
+
+.home-page .hero-panel:hover .hero-screen-shell {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.26);
+}
+
+.home-page .hero-panel:hover .hero-shot {
+    transform: none;
+    filter: none;
 }
 
 .home-systems {
@@ -2514,6 +2563,36 @@ select {
     min-height: 176px;
 }
 
+.home-page .portal-grid {
+    margin-top: 12px;
+}
+
+.home-page .portal-card,
+.home-page .feature-card,
+.home-page .feature-tile,
+.home-page .resource-card,
+.home-page .official-icon-cell {
+    animation: none;
+}
+
+.home-page .portal-card::before,
+.home-page .feature-card::before,
+.home-page .feature-tile::before,
+.home-page .resource-card::before,
+.home-page .closing-band::before {
+    animation: none;
+    opacity: 0.22;
+}
+
+.home-page .portal-card::after,
+.home-page .feature-card::after,
+.home-page .feature-tile::after,
+.home-page .resource-card::after,
+.home-page .closing-band::after {
+    animation: none;
+    opacity: 0;
+}
+
 .portal-card-head {
     display: flex;
     align-items: center;
@@ -2746,6 +2825,59 @@ select {
 .closing-band::after { animation-delay: 1.8s; }
 .site-footer::after { animation-delay: 2.2s; }
 
+.home-page .site-topbar::after,
+.home-page .system-card::before,
+.home-page .system-card::after,
+.home-page .terminal-panel,
+.home-page .terminal-panel::before,
+.home-page .terminal-panel::after,
+.home-page .portal-card::before,
+.home-page .portal-card::after,
+.home-page .feature-card::before,
+.home-page .feature-card::after,
+.home-page .feature-tile::before,
+.home-page .feature-tile::after,
+.home-page .resource-card::before,
+.home-page .resource-card::after,
+.home-page .closing-band::before,
+.home-page .closing-band::after,
+.home-page .site-footer::before,
+.home-page .site-footer::after {
+    animation: none !important;
+}
+
+.home-page .system-card::before,
+.home-page .portal-card::before,
+.home-page .feature-card::before,
+.home-page .feature-tile::before,
+.home-page .resource-card::before,
+.home-page .closing-band::before,
+.home-page .site-footer::before {
+    opacity: 0.18;
+}
+
+.home-page .system-card::after,
+.home-page .portal-card::after,
+.home-page .feature-card::after,
+.home-page .feature-tile::after,
+.home-page .resource-card::after,
+.home-page .closing-band::after,
+.home-page .site-footer::after {
+    opacity: 0.04;
+}
+
+.home-page .topbar-telemetry {
+    display: none;
+}
+
+.home-page .home-systems {
+    grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+}
+
+.home-page .system-card--wide {
+    grid-row: auto;
+}
+
 .feature-card {
     position: relative;
     overflow: hidden;
@@ -2781,8 +2913,12 @@ select {
 .feature-card-image {
     width: 100%;
     display: block;
+    aspect-ratio: 862 / 532;
+    object-fit: contain;
+    object-position: center;
     border-radius: 18px;
     border: 1px solid var(--line);
+    background: #0f1419;
     transition: transform 0.6s cubic-bezier(.22, 1, .36, 1), border-color 0.25s ease;
 }
 
@@ -2861,9 +2997,11 @@ select {
 .feature-tile-image {
     width: 100%;
     height: 176px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     border-radius: 16px;
     border: 1px solid var(--line);
+    background: #0f1419;
     transition: transform 0.6s cubic-bezier(.22, 1, .36, 1), border-color 0.25s ease;
 }
 
@@ -2906,14 +3044,10 @@ select {
 }
 
 .feature-card:hover .feature-card-image,
-.feature-tile:hover .feature-tile-image {
-    transform: scale(1.005);
-    border-color: rgba(255, 255, 255, 0.16);
-}
-
+.feature-tile:hover .feature-tile-image,
 .feature-card.is-wave .feature-card-image,
 .feature-tile.is-wave .feature-tile-image {
-    transform: scale(1.01);
+    transform: none;
     border-color: rgba(255, 255, 255, 0.16);
 }
 

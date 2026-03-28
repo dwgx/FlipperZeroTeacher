@@ -1,12 +1,14 @@
 # 09. 固件参考 2025-2026
 
-[返回中文教学导航](README.md) | [上一章：08. 社区参考](08-Community-Reference.md) | [返回中文入口](../README.md)
+[返回中文教学导航](README.md) | [上一章：08. 社区参考](08-Community-Reference.md) | [下一章：10. 固件源码深度分析](10-Firmware-Source-Analysis.md) | [返回中文入口](../README.md)
 
 ## 本章作用
 
 本章补充截至 2025-2026 年的主流固件最新状态。社区固件（Unleashed、Momentum）更新频繁，功能演进快，需要定期同步。本章与 [08. 社区参考](08-Community-Reference.md) 的区别在于：08 章讲"如何判断社区资料价值"，本章讲"当前各固件实际有什么功能"。
 
 **注意**：社区固件功能可能随版本快速变化，使用前应核对官方 Release 页面获取最新信息。
+
+**进阶阅读**：如需深入了解固件源码架构、移植路线和维护风险评估，请阅读 [10. 固件源码深度分析](10-Firmware-Source-Analysis.md)。
 
 ---
 
@@ -289,4 +291,4 @@ applications/
 
 ---
 
-[返回中文教学导航](README.md) | [上一章：08. 社区参考](08-Community-Reference.md) | [返回中文入口](../README.md)
+[返回中文教学导航](README.md) | [上一章：08. 社区参考](08-Community-Reference.md) | [下一章：10. 固件源码深度分析](10-Firmware-Source-Analysis.md) | [返回中文入口](../README.md)
