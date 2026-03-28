@@ -15,7 +15,7 @@
                 </span>
                 <span class="site-brand-text">
                     <strong>09. 固件参考 2025-2026</strong>
-                    <span>章节壳页 · 内容来自同目录 Markdown</span>
+                    <span>章节阅读器 · 内容来自同目录 Markdown</span>
                 </span>
             </a>
             <nav class="site-nav">
@@ -52,14 +52,22 @@
 
             <section class="doc-toolbar">
                 <div class="toolbar-search">
-                    <label class="toolbar-label" for="docSearch">高亮词</label>
-                    <input class="toolbar-input" id="docSearch" type="search" placeholder="输入关键词，实时高亮正文">
-                    <span class="toolbar-status" id="docSearchStatus">未高亮</span>
+                    <label class="toolbar-label" for="docSearch">模糊搜索</label>
+                    <input class="toolbar-input" id="docSearch" type="search" placeholder="搜索标题、术语、命令、正文">
+                    <span class="toolbar-status" id="docSearchStatus">未搜索</span>
                 </div>
                 <div class="toolbar-actions">
-                    <button class="toolbar-button" id="docSearchClear" type="button">清除高亮</button>
+                    <button class="toolbar-button" id="docSearchClear" type="button">清空搜索</button>
                     <button class="toolbar-button toolbar-button--accent" id="copyPageUrl" type="button">复制当前链接</button>
                 </div>
+            </section>
+
+            <section class="search-results" id="searchResults" hidden>
+                <div class="search-results-header">
+                    <strong>搜索结果</strong>
+                    <span id="searchResultsMeta">输入关键词后显示结果</span>
+                </div>
+                <div class="search-results-list" id="searchResultsList"></div>
             </section>
 
             <div class="keyword-bar" id="keywordBar"></div>
@@ -82,7 +90,9 @@
     </div>
 
     <script src="../../assets/js/guide-manifest.js"></script>
+    <script src="../../assets/js/search-index.js"></script>
     <script src="../../assets/vendor/marked.min.js"></script>
     <script src="../../assets/js/reader.js"></script>
+    <script src="../../assets/js/site-search.js"></script>
 </body>
 </html>

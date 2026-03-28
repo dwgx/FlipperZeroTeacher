@@ -20,7 +20,14 @@
     const clearSearchButton = document.getElementById("docSearchClear");
     const copyPageUrlButton = document.getElementById("copyPageUrl");
     const searchStatus = document.getElementById("docSearchStatus");
+    const searchResults = document.getElementById("searchResults");
+    const searchResultsMeta = document.getElementById("searchResultsMeta");
+    const searchResultsList = document.getElementById("searchResultsList");
     const keywordBar = document.getElementById("keywordBar");
+    let searchIndex = [];
+    let currentSearchMatches = [];
+    let activeSearchResult = -1;
+    let searchInputTimer = null;
 
     const manifest = Array.isArray(window.GUIDE_MANIFEST) ? window.GUIDE_MANIFEST : [];
     const manifestMap = new Map(manifest.map((item) => [item.path, item]));
@@ -87,6 +94,33 @@
 
     function escapeRegExp(input) {
         return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    function escapeHtml(input) {
+        return input
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
+    }
+
+    function normalizeSearchText(input) {
+        return input
+            .toString()
+            .normalize("NFKC")
+            .toLowerCase()
+            .replace(/[【】()[\]{}：:、，,。.!?'"`]+/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
+
+    function normalizeDenseSearchText(input) {
+        return normalizeSearchText(input).replace(/[\s\-_/|.]+/g, "");
+    }
+
+    function regexMatches(regex, value) {
+        regex.lastIndex = 0;
+        return regex.test(value);
     }
 
     function stripDecorativeNav(markdown) {
@@ -223,7 +257,7 @@
     }
 
     function linkifyBareUrls(root) {
-        const nodes = collectTextNodes(root, (node) => bareUrlPattern.test(node.nodeValue));
+        const nodes = collectTextNodes(root, (node) => regexMatches(bareUrlPattern, node.nodeValue));
         nodes.forEach((node) => {
             replaceMatchesInTextNode(node, new RegExp(bareUrlPattern), (value) => {
                 const anchor = document.createElement("a");
@@ -249,7 +283,7 @@
 
     function highlightText(root, regex, className) {
         let count = 0;
-        const nodes = collectTextNodes(root, (node) => regex.test(node.nodeValue));
+        const nodes = collectTextNodes(root, (node) => regexMatches(regex, node.nodeValue));
         nodes.forEach((node) => {
             const hit = replaceMatchesInTextNode(node, new RegExp(regex.source, regex.flags), (value) => {
                 count += 1;
@@ -297,7 +331,7 @@
         keywordBar.querySelectorAll(".keyword-chip").forEach((button) => {
             button.addEventListener("click", () => {
                 if (searchInput) searchInput.value = button.dataset.term || "";
-                applySearchHighlight(button.dataset.term || "", true);
+                runSmartSearch(button.dataset.term || "", true);
             });
         });
     }
@@ -307,17 +341,339 @@
         clearHighlights(content, "search-highlight");
         const trimmed = query.trim();
         if (!trimmed) {
-            if (searchStatus) searchStatus.textContent = "未高亮";
-            return;
+            return 0;
         }
         const count = highlightText(content, new RegExp(escapeRegExp(trimmed), "gi"), "search-highlight");
-        if (searchStatus) {
-            searchStatus.textContent = count ? `命中 ${count} 处` : "未命中";
-        }
         if (shouldScroll) {
             const first = content.querySelector("mark.search-highlight");
             if (first) {
                 first.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }
+        return count;
+    }
+
+    function createBigrams(value) {
+        const dense = normalizeDenseSearchText(value);
+        if (!dense) return [];
+        if (dense.length === 1) return [dense];
+        const bigrams = [];
+        for (let index = 0; index < dense.length - 1; index += 1) {
+            bigrams.push(dense.slice(index, index + 2));
+        }
+        return bigrams;
+    }
+
+    function diceCoefficient(left, right) {
+        const leftBigrams = createBigrams(left);
+        const rightBigrams = createBigrams(right);
+        if (!leftBigrams.length || !rightBigrams.length) return 0;
+
+        const counts = new Map();
+        leftBigrams.forEach((item) => counts.set(item, (counts.get(item) || 0) + 1));
+
+        let overlap = 0;
+        rightBigrams.forEach((item) => {
+            const current = counts.get(item) || 0;
+            if (!current) return;
+            overlap += 1;
+            counts.set(item, current - 1);
+        });
+
+        return (2 * overlap) / (leftBigrams.length + rightBigrams.length);
+    }
+
+    function subsequenceScore(query, target) {
+        const left = normalizeDenseSearchText(query);
+        const right = normalizeDenseSearchText(target);
+        if (!left || !right) return 0;
+
+        let leftIndex = 0;
+        let rightIndex = 0;
+        let firstHit = -1;
+        let lastHit = -1;
+
+        while (leftIndex < left.length && rightIndex < right.length) {
+            if (left[leftIndex] === right[rightIndex]) {
+                if (firstHit === -1) firstHit = rightIndex;
+                lastHit = rightIndex;
+                leftIndex += 1;
+            }
+            rightIndex += 1;
+        }
+
+        if (leftIndex !== left.length) return 0;
+        const span = Math.max(1, lastHit - firstHit + 1);
+        const coverage = left.length / Math.max(right.length, left.length);
+        const compactness = left.length / span;
+        return coverage * 0.42 + compactness * 0.58;
+    }
+
+    function tokenizeSearchQuery(query) {
+        return normalizeSearchText(query).split(" ").filter(Boolean);
+    }
+
+    function getEntryKindLabel(kind) {
+        if (kind === "heading") return "标题";
+        if (kind === "code") return "命令 / 代码";
+        if (kind === "list") return "列表";
+        if (kind === "table") return "表格";
+        if (kind === "quote") return "引用";
+        return "正文";
+    }
+
+    function buildSearchIndex(root) {
+        const entries = [];
+        let currentHeading = pageTitle && pageTitle.textContent ? pageTitle.textContent.trim() : "正文";
+        let order = 0;
+
+        root.querySelectorAll("h2, h3, h4, p, li, blockquote, pre, td, th").forEach((element) => {
+            const tagName = element.tagName.toLowerCase();
+            const text = (element.textContent || "").replace(/\s+/g, " ").trim();
+            if (!text) return;
+
+            const kind =
+                /^h[2-4]$/.test(tagName)
+                    ? "heading"
+                    : tagName === "pre"
+                      ? "code"
+                      : tagName === "li"
+                        ? "list"
+                        : tagName === "blockquote"
+                          ? "quote"
+                          : tagName === "td" || tagName === "th"
+                            ? "table"
+                            : "body";
+
+            if (kind === "heading") {
+                currentHeading = text;
+            }
+
+            if (kind !== "heading" && kind !== "code" && text.length < 8) return;
+
+            if (!element.id) {
+                element.id = `${slugify(currentHeading || "section")}-${kind}-${order + 1}`;
+            }
+
+            const searchSource = `${currentHeading} ${text}`.trim();
+            entries.push({
+                id: element.id,
+                element,
+                kind,
+                order,
+                text,
+                heading: currentHeading,
+                normalizedText: normalizeSearchText(searchSource),
+                denseText: normalizeDenseSearchText(searchSource),
+            });
+            order += 1;
+        });
+
+        return entries;
+    }
+
+    function scoreSearchEntry(query, entry) {
+        const normalizedQuery = normalizeSearchText(query);
+        const denseQuery = normalizeDenseSearchText(query);
+        if (!normalizedQuery) return 0;
+
+        const tokens = tokenizeSearchQuery(query);
+        const exactIndex = entry.normalizedText.indexOf(normalizedQuery);
+        const denseIndex = denseQuery ? entry.denseText.indexOf(denseQuery) : -1;
+        let score = 0;
+
+        if (normalizedQuery.length === 1) {
+            return exactIndex !== -1 ? 3 : 0;
+        }
+
+        if (exactIndex !== -1) {
+            score += 3.1 - Math.min(exactIndex / 240, 0.42);
+        }
+
+        if (denseIndex !== -1) {
+            score += 1.7 - Math.min(denseIndex / 220, 0.32);
+        }
+
+        if (entry.heading && normalizeSearchText(entry.heading).includes(normalizedQuery)) {
+            score += 0.84;
+        }
+
+        tokens.forEach((token) => {
+            if (entry.normalizedText.includes(token)) {
+                score += 0.52;
+            } else {
+                score += diceCoefficient(token, entry.normalizedText) * 0.22;
+            }
+        });
+
+        score += diceCoefficient(denseQuery, entry.denseText) * 1.18;
+        score += subsequenceScore(denseQuery, entry.denseText) * 1.08;
+
+        if (entry.kind === "heading") score += 0.24;
+        if (entry.kind === "code" && looksLikeCommand(entry.text)) score += 0.2;
+        if (entry.text.length <= 120) score += 0.08;
+
+        return Number(score.toFixed(4));
+    }
+
+    function clipSearchSnippet(text, query) {
+        const normalizedText = normalizeSearchText(text);
+        const normalizedQuery = normalizeSearchText(query);
+        if (!normalizedQuery) return text.length > 160 ? `${text.slice(0, 160)}…` : text;
+
+        const hitIndex = normalizedText.indexOf(normalizedQuery);
+        if (hitIndex === -1 || text.length <= 180) {
+            return text.length > 180 ? `${text.slice(0, 180)}…` : text;
+        }
+
+        const start = Math.max(0, hitIndex - 40);
+        const end = Math.min(text.length, hitIndex + normalizedQuery.length + 88);
+        const prefix = start > 0 ? "…" : "";
+        const suffix = end < text.length ? "…" : "";
+        return `${prefix}${text.slice(start, end)}${suffix}`;
+    }
+
+    function highlightSearchSnippet(text, query) {
+        let output = escapeHtml(text);
+        const candidates = Array.from(
+            new Set([normalizeSearchText(query), ...tokenizeSearchQuery(query)].filter((token) => token.length >= 2)),
+        ).sort((left, right) => right.length - left.length);
+
+        candidates.forEach((token) => {
+            const pattern = new RegExp(escapeRegExp(token).replace(/\s+/g, "\\s+"), "gi");
+            output = output.replace(pattern, (value) => `<mark>${value}</mark>`);
+        });
+
+        return output;
+    }
+
+    function clearSearchResults() {
+        if (searchResults) searchResults.hidden = true;
+        if (searchResultsMeta) searchResultsMeta.textContent = "输入关键词后显示结果";
+        if (searchResultsList) searchResultsList.innerHTML = "";
+        currentSearchMatches = [];
+        activeSearchResult = -1;
+    }
+
+    function setActiveSearchResult(index) {
+        activeSearchResult = index;
+        if (!searchResultsList) return;
+        searchResultsList.querySelectorAll(".search-result-item").forEach((button, buttonIndex) => {
+            button.classList.toggle("is-active", buttonIndex === index);
+        });
+        const current = currentSearchMatches[index];
+        if (current && current.entry && current.entry.element) {
+            flashSearchTarget(current.entry.element);
+        }
+    }
+
+    function flashSearchTarget(element) {
+        if (!element) return;
+        element.classList.remove("search-target-focus");
+        void element.offsetWidth;
+        element.classList.add("search-target-focus");
+        window.clearTimeout(element.__focusTimer);
+        element.__focusTimer = window.setTimeout(() => {
+            element.classList.remove("search-target-focus");
+        }, 1800);
+    }
+
+    function focusSearchEntry(entry, query, shouldScroll) {
+        if (!entry || !entry.element) return;
+        const exactCount = applySearchHighlight(query, false);
+        if (shouldScroll) {
+            entry.element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        if (!exactCount) {
+            flashSearchTarget(entry.element);
+        }
+    }
+
+    function renderSearchResults(results, query) {
+        if (!searchResults || !searchResultsList || !searchResultsMeta) return;
+
+        if (!query.trim()) {
+            clearSearchResults();
+            return;
+        }
+
+        currentSearchMatches = results;
+        activeSearchResult = results.length ? 0 : -1;
+        searchResults.hidden = false;
+        searchResultsMeta.textContent = results.length ? `候选 ${results.length} 项 · ↑↓ 切换` : "没有接近结果";
+
+        if (!results.length) {
+            searchResultsList.innerHTML = '<p class="search-results-empty">没有找到接近的段落，试试更短的关键词或点击下面的关键词芯片。</p>';
+            return;
+        }
+
+        searchResultsList.innerHTML = results
+            .map(({ entry, score }, index) => {
+                const snippet = highlightSearchSnippet(clipSearchSnippet(entry.text, query), query);
+                return `
+                    <button class="search-result-item${index === 0 ? " is-active" : ""}" type="button" data-index="${index}">
+                        <span class="search-result-kind">${getEntryKindLabel(entry.kind)}</span>
+                        <strong class="search-result-heading">${escapeHtml(entry.heading || entry.text)}</strong>
+                        <span class="search-result-snippet">${snippet}</span>
+                        <span class="search-result-score">匹配度 ${Math.round(Math.min(score, 3) / 3 * 100)}%</span>
+                    </button>
+                `;
+            })
+            .join("");
+
+        searchResultsList.querySelectorAll(".search-result-item").forEach((button) => {
+            button.addEventListener("mouseenter", () => setActiveSearchResult(Number(button.dataset.index)));
+            button.addEventListener("click", () => {
+                const match = results[Number(button.dataset.index)];
+                setActiveSearchResult(Number(button.dataset.index));
+                focusSearchEntry(match && match.entry, query, true);
+            });
+        });
+    }
+
+    function runSmartSearch(query, shouldScroll) {
+        const trimmed = query.trim();
+        const exactCount = applySearchHighlight(trimmed, false);
+
+        if (!trimmed) {
+            if (searchStatus) searchStatus.textContent = "未搜索";
+            clearSearchResults();
+            return;
+        }
+
+        const results = searchIndex
+            .map((entry) => ({ entry, score: scoreSearchEntry(trimmed, entry) }))
+            .filter(({ score }) => {
+                const threshold = trimmed.length <= 2 ? 0.92 : trimmed.length <= 4 ? 0.66 : trimmed.length <= 8 ? 0.44 : 0.36;
+                return score >= threshold;
+            })
+            .sort((left, right) => right.score - left.score || left.entry.order - right.entry.order)
+            .slice(0, 8);
+
+        renderSearchResults(results, trimmed);
+
+        if (searchStatus) {
+            if (exactCount && results.length) {
+                searchStatus.textContent = `精确 ${exactCount} · 候选 ${results.length}`;
+            } else if (exactCount) {
+                searchStatus.textContent = `精确 ${exactCount}`;
+            } else if (results.length) {
+                searchStatus.textContent = `模糊 ${results.length}`;
+            } else {
+                searchStatus.textContent = "无结果";
+            }
+        }
+
+        if (shouldScroll) {
+            if (exactCount) {
+                const first = content.querySelector("mark.search-highlight");
+                if (first) {
+                    first.scrollIntoView({ behavior: "smooth", block: "center" });
+                    return;
+                }
+            }
+            if (results[0]) {
+                focusSearchEntry(results[0].entry, trimmed, true);
             }
         }
     }
@@ -503,20 +859,50 @@
     }
 
     function bindToolbar() {
+        if (searchInput) {
+            searchInput.placeholder = "搜索标题、术语、命令、正文，支持模糊匹配";
+            searchInput.autocomplete = "off";
+            searchInput.spellcheck = false;
+        }
         if (copyPageUrlButton) {
             copyPageUrlButton.addEventListener("click", () => copyText(window.location.href, copyPageUrlButton, "链接已复制"));
         }
         if (clearSearchButton) {
             clearSearchButton.addEventListener("click", () => {
                 if (searchInput) searchInput.value = "";
-                applySearchHighlight("", false);
+                runSmartSearch("", false);
             });
         }
         if (searchInput) {
-            searchInput.addEventListener("input", () => applySearchHighlight(searchInput.value, false));
+            searchInput.addEventListener("input", () => {
+                window.clearTimeout(searchInputTimer);
+                searchInputTimer = window.setTimeout(() => runSmartSearch(searchInput.value, false), 80);
+            });
             searchInput.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowDown" && currentSearchMatches.length) {
+                    event.preventDefault();
+                    const nextIndex = Math.min(activeSearchResult + 1, currentSearchMatches.length - 1);
+                    setActiveSearchResult(nextIndex);
+                    return;
+                }
+                if (event.key === "ArrowUp" && currentSearchMatches.length) {
+                    event.preventDefault();
+                    const nextIndex = Math.max(activeSearchResult - 1, 0);
+                    setActiveSearchResult(nextIndex);
+                    return;
+                }
                 if (event.key === "Enter") {
-                    applySearchHighlight(searchInput.value, true);
+                    event.preventDefault();
+                    if (currentSearchMatches.length && currentSearchMatches[Math.max(activeSearchResult, 0)]) {
+                        const match = currentSearchMatches[Math.max(activeSearchResult, 0)];
+                        focusSearchEntry(match.entry, searchInput.value, true);
+                        return;
+                    }
+                    runSmartSearch(searchInput.value, true);
+                }
+                if (event.key === "Escape") {
+                    searchInput.value = "";
+                    runSmartSearch("", false);
                 }
             });
         }
@@ -588,10 +974,13 @@
             buildToc(content);
             activateTocOnScroll();
             renderPager(repoPath);
+            searchIndex = buildSearchIndex(content);
 
             if (searchInput && initialQuery) {
                 searchInput.value = initialQuery;
-                applySearchHighlight(initialQuery, true);
+                runSmartSearch(initialQuery, true);
+            } else {
+                clearSearchResults();
             }
 
             if (window.location.hash) {
