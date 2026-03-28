@@ -124,6 +124,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
     <script src="../../assets/js/guide-manifest.js"></script>
     <script src="../../assets/js/search-index.js"></script>
+    <script src="../../assets/js/site-shell.js"></script>
     <script src="../../assets/vendor/marked.min.js"></script>
     <script src="../../assets/js/reader.js"></script>
     <script src="../../assets/js/site-search.js"></script>
@@ -160,6 +161,29 @@ def extract_summary(markdown_text: str) -> str:
     return "章节正文会从同目录 Markdown 实时渲染到阅读页。"
 
 
+def estimate_read_metrics(markdown_text: str) -> tuple[int, int, int]:
+    cleaned = strip_decorative_nav(markdown_text)
+    plain = cleaned
+    plain = re.sub(r"```[^\n]*", " ", plain)
+    plain = plain.replace("```", " ")
+    plain = re.sub(r"`([^`]+)`", r"\1", plain)
+    plain = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"\1", plain)
+    plain = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r"\1 \2", plain)
+    plain = re.sub(r"^\s{0,3}#{1,6}\s*", "", plain, flags=re.M)
+    plain = re.sub(r"^\s*[-*+]\s+", "", plain, flags=re.M)
+    plain = re.sub(r"^\s*\d+\.\s+", "", plain, flags=re.M)
+    plain = re.sub(r"^\s*\|\s*", " ", plain, flags=re.M)
+    plain = plain.replace("|", " ")
+    plain = re.sub(r"\s+", " ", plain).strip()
+
+    cjk_units = len(re.findall(r"[\u4e00-\u9fff]", plain))
+    latin_units = len(re.findall(r"[A-Za-z0-9_+-]+", plain))
+    units = cjk_units + latin_units
+    minutes = max(1, (units + 419) // 420)
+    sections = len(re.findall(r"^\s*#{2,3}\s+", cleaned, flags=re.M))
+    return units, minutes, sections
+
+
 def build_manifest() -> list[dict[str, str]]:
     docs = []
     md_files = sorted(path for path in GUIDE_DIR.glob("*.md") if path.name != "README.md")
@@ -167,6 +191,7 @@ def build_manifest() -> list[dict[str, str]]:
         markdown_text = md_file.read_text(encoding="utf-8")
         title = extract_title(markdown_text)
         summary = extract_summary(markdown_text)
+        units, minutes, sections = estimate_read_metrics(markdown_text)
         number = md_file.stem.split("-", 1)[0]
         docs.append(
             {
@@ -178,6 +203,9 @@ def build_manifest() -> list[dict[str, str]]:
                 "html": f"CN/Guide/{md_file.stem}.html",
                 "filename": md_file.name,
                 "stem": md_file.stem,
+                "units": units,
+                "minutes": minutes,
+                "sections": sections,
             }
         )
     return docs
