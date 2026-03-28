@@ -41,6 +41,7 @@
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
                     <h1 class="doc-title" id="docTitle">08. 社区参考</h1>
                     <p class="doc-lead" id="docLead">本章不是用来替代官方文档，而是帮助你在已经建立官方基线之后，系统吸收高信号社区资料。Flipper Zero 的社区生态很活跃，但其中混杂了样例仓库、数据仓库、第三方固件兼容说明、一次性实验项目和过时资料。真正有价值的做法，不是单纯收集得越多越好，而是先建立判断框架，再有选择地纳入知识库。</p>
+                    <div class="terminal-panel terminal-panel--doc" data-terminal-stream="doc" aria-label="文档渲染日志"></div>
                     <div class="doc-status-strip" aria-label="文档状态">
                         <span id="docStatusKind">课程章节</span>
                         <span id="docStatusRoute">Guide Shell</span>
@@ -60,6 +61,20 @@
                             </div>
                         </dl>
                         <a class="source-link" id="sourceLink" href="../../CN/Guide/08-Community-Reference.md">查看源 Markdown</a>
+                    </div>
+                    <div class="doc-hud-panel" aria-label="阅读状态">
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">active</span>
+                            <strong class="doc-hud-value" id="docHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">progress</span>
+                            <strong class="doc-hud-value" id="docHudProgress">0%</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">search</span>
+                            <strong class="doc-hud-value" id="docHudSearch">idle</strong>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -96,6 +111,17 @@
                 </article>
 
                 <aside class="toc-panel">
+                    <div class="toc-hud" aria-label="目录追踪">
+                        <div class="toc-progress-rail" aria-hidden="true"><i id="tocProgressFill"></i></div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">active</span>
+                            <strong class="toc-hud-value" id="tocHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">track</span>
+                            <strong class="toc-hud-value" id="tocHudMeta">0 / 0 · 0%</strong>
+                        </div>
+                    </div>
                     <h2 class="toc-title">本页目录</h2>
                     <nav id="docToc">
                         <p class="empty-state">文档渲染后会在这里生成章节目录。</p>

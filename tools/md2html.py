@@ -68,6 +68,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
                     <h1 class="doc-title" id="docTitle">{title}</h1>
                     <p class="doc-lead" id="docLead">{summary}</p>
+                    <div class="terminal-panel terminal-panel--doc" data-terminal-stream="doc" aria-label="文档渲染日志"></div>
                     <div class="doc-status-strip" aria-label="文档状态">
                         <span id="docStatusKind">课程章节</span>
                         <span id="docStatusRoute">Guide Shell</span>
@@ -87,6 +88,20 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                             </div>
                         </dl>
                         <a class="source-link" id="sourceLink" href="../../{repo_path}">查看源 Markdown</a>
+                    </div>
+                    <div class="doc-hud-panel" aria-label="阅读状态">
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">active</span>
+                            <strong class="doc-hud-value" id="docHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">progress</span>
+                            <strong class="doc-hud-value" id="docHudProgress">0%</strong>
+                        </div>
+                        <div class="doc-hud-row">
+                            <span class="doc-hud-label">search</span>
+                            <strong class="doc-hud-value" id="docHudSearch">idle</strong>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -123,6 +138,17 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                 </article>
 
                 <aside class="toc-panel">
+                    <div class="toc-hud" aria-label="目录追踪">
+                        <div class="toc-progress-rail" aria-hidden="true"><i id="tocProgressFill"></i></div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">active</span>
+                            <strong class="toc-hud-value" id="tocHudHeading">awaiting toc lock</strong>
+                        </div>
+                        <div class="toc-hud-row">
+                            <span class="toc-hud-label">track</span>
+                            <strong class="toc-hud-value" id="tocHudMeta">0 / 0 · 0%</strong>
+                        </div>
+                    </div>
                     <h2 class="toc-title">本页目录</h2>
                     <nav id="docToc">
                         <p class="empty-state">文档渲染后会在这里生成章节目录。</p>

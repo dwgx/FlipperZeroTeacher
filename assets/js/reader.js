@@ -13,6 +13,9 @@
     const pagePath = document.getElementById("docPath");
     const pageMode = document.getElementById("docMode");
     const sourceLink = document.getElementById("sourceLink");
+    const docHudHeading = document.getElementById("docHudHeading");
+    const docHudProgress = document.getElementById("docHudProgress");
+    const docHudSearch = document.getElementById("docHudSearch");
     const breadcrumbParent = document.getElementById("docBreadcrumbParent");
     const breadcrumbCurrent = document.getElementById("docBreadcrumbCurrent");
     const docStatusKind = document.getElementById("docStatusKind");
@@ -29,10 +32,25 @@
     const searchResultsMeta = document.getElementById("searchResultsMeta");
     const searchResultsList = document.getElementById("searchResultsList");
     const keywordBar = document.getElementById("keywordBar");
+    const tocHudHeading = document.getElementById("tocHudHeading");
+    const tocHudMeta = document.getElementById("tocHudMeta");
+    const tocProgressFill = document.getElementById("tocProgressFill");
     let searchIndex = [];
     let currentSearchMatches = [];
     let activeSearchResult = -1;
     let searchInputTimer = null;
+    let tocHeadings = [];
+    let sourceLabel = repoPath.split("/").pop() || repoPath;
+    let progressFrame = 0;
+
+    const hudState = {
+        activeHeading: "awaiting toc lock",
+        level: "--",
+        activeIndex: 0,
+        total: 0,
+        progress: 0,
+        search: "idle",
+    };
 
     const manifest = Array.isArray(window.GUIDE_MANIFEST) ? window.GUIDE_MANIFEST : [];
     const manifestMap = new Map(manifest.map((item) => [item.path, item]));
@@ -60,6 +78,32 @@
         "Archive",
         "Mobile App",
     ];
+
+    function renderHudState() {
+        if (docHudHeading) docHudHeading.textContent = hudState.activeHeading;
+        if (docHudProgress) docHudProgress.textContent = `${hudState.progress}%`;
+        if (docHudSearch) docHudSearch.textContent = hudState.search;
+        if (tocHudHeading) tocHudHeading.textContent = hudState.activeHeading;
+        if (tocHudMeta) {
+            const total = hudState.total || 0;
+            const active = hudState.activeIndex || 0;
+            tocHudMeta.textContent = total ? `${hudState.level} · ${active}/${total} · ${hudState.progress}%` : `${hudState.progress}%`;
+        }
+        if (tocProgressFill) {
+            const ratio = Math.max(0.06, Math.min(1, hudState.progress / 100 || 0.06));
+            tocProgressFill.style.transform = window.matchMedia("(max-width: 820px)").matches ? `scaleX(${ratio})` : `scaleY(${ratio})`;
+        }
+        if (docStatusRoute) {
+            docStatusRoute.textContent = `${body.dataset.modeLabel || "Runtime Render"} · ${hudState.progress}%`;
+        }
+        if (docStatusSource) {
+            if (hudState.total && hudState.level !== "--") {
+                docStatusSource.textContent = `${sourceLabel} :: ${hudState.level} ${hudState.activeIndex}/${hudState.total}`;
+            } else {
+                docStatusSource.textContent = sourceLabel;
+            }
+        }
+    }
 
     function normalizePath(path) {
         const parts = [];
@@ -552,12 +596,47 @@
         return output;
     }
 
+    function setSearchHudState(label) {
+        hudState.search = label || "idle";
+        renderHudState();
+    }
+
+    function markHeadingLive(heading) {
+        if (!heading) return;
+        heading.classList.remove("heading-live");
+        void heading.offsetWidth;
+        heading.classList.add("heading-live");
+        window.clearTimeout(heading.__liveTimer);
+        heading.__liveTimer = window.setTimeout(() => {
+            heading.classList.remove("heading-live");
+        }, 1200);
+    }
+
+    function updateReadingProgress() {
+        if (!content) return;
+        const rect = content.getBoundingClientRect();
+        const viewport = window.innerHeight || document.documentElement.clientHeight || 1;
+        const total = Math.max(1, content.scrollHeight - viewport * 0.55);
+        const travelled = Math.max(0, -rect.top + viewport * 0.18);
+        hudState.progress = Math.max(0, Math.min(100, Math.round((travelled / total) * 100)));
+        renderHudState();
+    }
+
+    function queueProgressUpdate() {
+        if (progressFrame) return;
+        progressFrame = window.requestAnimationFrame(() => {
+            progressFrame = 0;
+            updateReadingProgress();
+        });
+    }
+
     function clearSearchResults() {
         if (searchResults) searchResults.hidden = true;
         if (searchResultsMeta) searchResultsMeta.textContent = "输入关键词后显示结果";
         if (searchResultsList) searchResultsList.innerHTML = "";
         currentSearchMatches = [];
         activeSearchResult = -1;
+        setSearchHudState("idle");
     }
 
     function setActiveSearchResult(index) {
@@ -669,6 +748,16 @@
             }
         }
 
+        if (exactCount && results.length) {
+            setSearchHudState(`${trimmed} · ${Math.max(exactCount, results.length)} hits`);
+        } else if (exactCount) {
+            setSearchHudState(`${trimmed} · exact ${exactCount}`);
+        } else if (results.length) {
+            setSearchHudState(`${trimmed} · fuzzy ${results.length}`);
+        } else {
+            setSearchHudState("no hits");
+        }
+
         if (shouldScroll) {
             if (exactCount) {
                 const first = content.querySelector("mark.search-highlight");
@@ -716,8 +805,14 @@
     function buildToc(root) {
         if (!toc) return;
         const headings = Array.from(root.querySelectorAll("h2, h3"));
+        tocHeadings = headings;
+        hudState.total = headings.length;
         if (!headings.length) {
             toc.innerHTML = '<p class="empty-state">这页没有二级目录，适合直接顺着读。</p>';
+            hudState.activeHeading = "direct read mode";
+            hudState.level = "--";
+            hudState.activeIndex = 0;
+            renderHudState();
             return;
         }
         toc.className = "toc-list";
@@ -728,6 +823,10 @@
                 return `<a href="#${heading.id}"${padding}>${heading.textContent}</a>`;
             })
             .join("");
+        hudState.activeHeading = headings[0].textContent || "awaiting toc lock";
+        hudState.level = headings[0].tagName.toUpperCase();
+        hudState.activeIndex = 1;
+        renderHudState();
     }
 
     function activateTocOnScroll() {
@@ -748,6 +847,12 @@
                     if (entry.isIntersecting) {
                         links.forEach((item) => item.classList.remove("is-active"));
                         link.classList.add("is-active");
+                        const headingIndex = tocHeadings.indexOf(entry.target);
+                        hudState.activeHeading = entry.target.textContent || "section lock";
+                        hudState.level = entry.target.tagName.toUpperCase();
+                        hudState.activeIndex = headingIndex >= 0 ? headingIndex + 1 : 0;
+                        renderHudState();
+                        markHeadingLive(entry.target);
                     }
                 });
             },
@@ -859,6 +964,7 @@
     function applyDocumentMeta(displayTitle) {
         const repoSegments = repoPath.split("/");
         const fileLabel = repoSegments[repoSegments.length - 1] || repoPath;
+        sourceLabel = fileLabel;
         let parentLabel = "知识库";
         let parentHref = `${siteRoot}index.html`;
         let kindLabel = "Markdown 文档";
@@ -883,8 +989,7 @@
         }
         if (breadcrumbCurrent) breadcrumbCurrent.textContent = displayTitle;
         if (docStatusKind) docStatusKind.textContent = kindLabel;
-        if (docStatusRoute) docStatusRoute.textContent = body.dataset.modeLabel || "Runtime Render";
-        if (docStatusSource) docStatusSource.textContent = fileLabel;
+        renderHudState();
     }
 
     function renderError(message) {
@@ -950,6 +1055,8 @@
             return;
         }
 
+        renderHudState();
+
         if (pagePath) pagePath.textContent = repoPath;
         if (pageMode) pageMode.textContent = body.dataset.modeLabel || "Markdown · Runtime Render";
         if (pageEyebrow) {
@@ -1012,6 +1119,9 @@
             activateTocOnScroll();
             renderPager(repoPath);
             searchIndex = buildSearchIndex(content);
+            updateReadingProgress();
+            window.addEventListener("scroll", queueProgressUpdate, { passive: true });
+            window.addEventListener("resize", queueProgressUpdate, { passive: true });
 
             if (searchInput && initialQuery) {
                 searchInput.value = initialQuery;
