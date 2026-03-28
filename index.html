@@ -23,238 +23,243 @@
             <nav class="site-nav" aria-label="主导航">
                 <a href="./CN/Guide/index.html">中文课程</a>
                 <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
-                <a href="#official-assets">官方资产</a>
-                <a href="#community-resources">社区资源</a>
+                <a href="#docs-hub">文档目录</a>
+                <a href="#references">参考资源</a>
             </nav>
         </header>
 
-        <main id="main-content">
-        <section class="hero-panel">
-            <div class="hero-copy">
-                <p class="eyebrow">Flipper Zero · Official Assets · Runtime Reader</p>
-                <h1 class="hero-title">
-                    <span class="hero-title-inline">把学习路径、</span>
-                    <span class="hero-title-inline">工具链和资料，</span>
-                    <span class="hero-title-inline">收成一条主线。</span>
-                </h1>
-                <p class="hero-lead">首页先给出入口，课程页承接顺序学习，阅读器承接 Markdown，qFlipper 和官方资产承接桌面工作流。</p>
+        <main id="main-content" class="home-main">
+            <section class="home-hero">
+                <div class="home-hero-copy">
+                    <p class="eyebrow">Flipper Zero / GitHub Docs Hub</p>
+                    <div class="home-brand-note">先走主线，再进专题，再回仓库查细节。</div>
+                    <h1 class="home-hero-title">把课程、主知识库、专题文档收成一条清晰入口。</h1>
+                    <p class="home-hero-lead">这个首页只保留真正需要的入口，不再堆叠装饰动画。中文课程负责顺序学习，主知识库负责总览，qFlipper 和专题文档负责桌面端与细分主题，新增 Markdown 文档也统一收口。</p>
 
-                <div class="hero-actions">
-                    <a class="solid-button" href="./CN/Guide/index.html">进入中文课程</a>
-                    <a class="ghost-button" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">打开 qFlipper 专题</a>
+                    <div class="hero-actions">
+                        <a class="solid-button" href="./CN/Guide/index.html">进入中文课程</a>
+                        <a class="ghost-button" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">打开主知识库</a>
+                        <a class="ghost-button" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">阅读 qFlipper</a>
+                    </div>
+
+                    <dl class="home-hero-meta" aria-label="站点状态">
+                        <div>
+                            <dt>课程</dt>
+                            <dd>11 章主线</dd>
+                        </div>
+                        <div>
+                            <dt>模式</dt>
+                            <dd>Markdown 单源</dd>
+                        </div>
+                        <div>
+                            <dt>搜索</dt>
+                            <dd>按需加载索引</dd>
+                        </div>
+                    </dl>
                 </div>
 
-                <div class="hero-route-list" aria-label="快速路径">
-                    <a class="hero-route" href="./CN/Guide/index.html">
-                        <span class="hero-route-index">01</span>
-                        <span class="hero-route-body">
-                            <strong>中文课程</strong>
-                            <em>按顺序把设备、协议、开发和工具链走完整</em>
-                        </span>
-                        <span class="hero-route-tail">enter</span>
-                    </a>
-                    <a class="hero-route" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
-                        <span class="hero-route-index">02</span>
-                        <span class="hero-route-body">
-                            <strong>主知识库</strong>
-                            <em>先建立整体结构，再进入专题、镜像和源码</em>
-                        </span>
-                        <span class="hero-route-tail">mount</span>
-                    </a>
-                    <a class="hero-route" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">
-                        <span class="hero-route-index">03</span>
-                        <span class="hero-route-body">
+                <div class="home-hero-media">
+                    <div class="home-shot-wrap">
+                        <div class="home-shot-head">
+                            <span class="home-shot-title">qFlipper Workspace</span>
+                            <span class="home-shot-mode">desktop / official</span>
+                        </div>
+                        <img class="home-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" fetchpriority="high" decoding="async">
+                        <div class="home-shot-caption">
+                            <strong>桌面端工作流放在主视觉里，不再拆成三层重复卡片。</strong>
+                            <p>更新、备份、CLI、投屏和官方资产都围绕这条桌面链路展开，首页只给一个清楚的入口，不再把同一主题重复讲三遍。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-strip" id="start-here" aria-label="开始路径">
+                <a class="home-path" href="./CN/Guide/index.html">
+                    <span class="home-path-step">01</span>
+                    <div class="home-path-copy">
+                        <strong>从课程开始</strong>
+                        <p>11 章顺序主线，先把设备、协议、开发和工具链走完整。</p>
+                    </div>
+                    <span class="home-path-tail">CN Guide</span>
+                </a>
+                <a class="home-path" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
+                    <span class="home-path-step">02</span>
+                    <div class="home-path-copy">
+                        <strong>回到主知识库</strong>
+                        <p>总览整个仓库的结构，再按专题深入，不必在目录里反复翻找。</p>
+                    </div>
+                    <span class="home-path-tail">Master</span>
+                </a>
+                <a class="home-path" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">
+                    <span class="home-path-step">03</span>
+                    <div class="home-path-copy">
+                        <strong>进入专题文档</strong>
+                        <p>qFlipper、官方精读、App 合集和 RAG 索引都从这里分流。</p>
+                    </div>
+                    <span class="home-path-tail">Topics</span>
+                </a>
+            </section>
+
+            <section class="home-block" id="docs-hub">
+                <div class="section-header">
+                    <p class="eyebrow">Docs Hub</p>
+                    <h2 class="section-title">首页不再硬铺卡片，文档按职责分组。</h2>
+                    <p class="section-lead">主线课程负责顺序学习，核心文档负责总览和专题，索引文件负责查全，英文入口单独保留。新增 Markdown 现在有固定位置，不再被首页样式淹没。</p>
+                </div>
+
+                <div class="docs-hub">
+                    <section class="guide-overview" aria-labelledby="guide-overview-title">
+                        <div class="guide-overview-head">
+                            <h3 id="guide-overview-title">主线课程</h3>
+                            <p>课程页只承担顺序学习，不和专题文档混排。</p>
+                        </div>
+                        <ol class="guide-overview-list">
+                            <li><a href="./CN/Guide/00-Study-Map.html"><span class="guide-overview-index">00</span><span class="guide-overview-copy"><strong>学习总图</strong><span>先定路线和边界</span></span></a></li>
+                            <li><a href="./CN/Guide/01-Device-Ecosystem.html"><span class="guide-overview-index">01</span><span class="guide-overview-copy"><strong>设备与生态</strong><span>设备、桌面端、移动端、CLI</span></span></a></li>
+                            <li><a href="./CN/Guide/02-Protocol-Domains.html"><span class="guide-overview-index">02</span><span class="guide-overview-copy"><strong>协议域</strong><span>Sub-GHz、NFC、IR、BLE、iButton</span></span></a></li>
+                            <li><a href="./CN/Guide/03-App-Development.html"><span class="guide-overview-index">03</span><span class="guide-overview-copy"><strong>App 开发</strong><span>官方应用开发主线</span></span></a></li>
+                            <li><a href="./CN/Guide/04-Build-Debug-Tools.html"><span class="guide-overview-index">04</span><span class="guide-overview-copy"><strong>构建调试</strong><span>FBT、调试链路与工具</span></span></a></li>
+                            <li><a href="./CN/Guide/05-JavaScript.html"><span class="guide-overview-index">05</span><span class="guide-overview-copy"><strong>JavaScript</strong><span>脚本路线和运行边界</span></span></a></li>
+                            <li><a href="./CN/Guide/06-System-Programming.html"><span class="guide-overview-index">06</span><span class="guide-overview-copy"><strong>系统编程</strong><span>平台层、HAL 和底层理解</span></span></a></li>
+                            <li><a href="./CN/Guide/07-File-Formats.html"><span class="guide-overview-index">07</span><span class="guide-overview-copy"><strong>文件格式</strong><span>导入导出、格式接口与批处理</span></span></a></li>
+                            <li><a href="./CN/Guide/08-Community-Reference.html"><span class="guide-overview-index">08</span><span class="guide-overview-copy"><strong>社区参考</strong><span>高信号社区资料筛选</span></span></a></li>
+                            <li><a href="./CN/Guide/09-Firmware-Reference-2025.html"><span class="guide-overview-index">09</span><span class="guide-overview-copy"><strong>固件参考</strong><span>2025-2026 主流社区固件</span></span></a></li>
+                            <li><a href="./CN/Guide/10-Firmware-Source-Analysis.html"><span class="guide-overview-index">10</span><span class="guide-overview-copy"><strong>固件源码分析</strong><span>面向开发者的源码级架构阅读</span></span></a></li>
+                        </ol>
+                    </section>
+
+                    <div class="docs-columns">
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-core">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-core">核心文档</h3>
+                                <p>先看结构，再看专题。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=README.md"><strong>仓库入口 README</strong><span>站点入口、目录结构和总体使用方式。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/FlipperZero-Master-CN.md"><strong>中文主知识库</strong><span>设备、协议、工具链和阅读顺序总框架。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/Official-Docs-CN-Full.md"><strong>官方精读总表</strong><span>中文整理后的官方资料深读入口。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/qFlipper-全网融合总文档.md"><strong>qFlipper 全网融合总文档</strong><span>桌面端更新、备份恢复、CLI 和基础远控。</span></a></li>
+                            </ul>
+                        </section>
+
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-topic">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-topic">专题集合</h3>
+                                <p>把新增 Markdown 固定收进首页。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=CN/Apps/趣味App完全收录.md"><strong>趣味 App 完全收录</strong><span>按玩法和技术点整理的应用集合。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/FlipperZero-AI-Pack-CN.md"><strong>AI 规则包</strong><span>给 AI 使用这个仓库时的边界与检索约束。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/qFlipper-RAG-索引.md"><strong>qFlipper RAG 索引</strong><span>面向检索和二次整理的专题索引页。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/qFlipper-来源矩阵.md"><strong>qFlipper 来源矩阵</strong><span>专题材料来源、口径和整理范围。</span></a></li>
+                            </ul>
+                        </section>
+
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-indexes">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-indexes">索引与清单</h3>
+                                <p>查全、核对和追踪整理进度。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=All-Markdown-Manifest.md"><strong>All Markdown Manifest</strong><span>仓库 Markdown 文件清单。</span></a></li>
+                                <li><a href="./viewer.html?file=Official-Docs-Coverage.md"><strong>Official Docs Coverage</strong><span>官方资料覆盖和整理进度。</span></a></li>
+                                <li><a href="./viewer.html?file=Wiki-Resources/README.md"><strong>Wiki Resources</strong><span>镜像、快照和外部资料落盘说明。</span></a></li>
+                                <li><a href="./viewer.html?file=Legacy/README.md"><strong>Legacy</strong><span>历史版本和旧整理方式的保留入口。</span></a></li>
+                            </ul>
+                        </section>
+
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-en">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-en">English</h3>
+                                <p>英文入口不再藏在搜索结果里。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=EN/README.md"><strong>English README</strong><span>英文入口和总体说明。</span></a></li>
+                                <li><a href="./viewer.html?file=EN/FlipperZero-Master-EN.md"><strong>Master Guide EN</strong><span>英文主知识库总览。</span></a></li>
+                                <li><a href="./viewer.html?file=EN/Official-Docs-EN-Full.md"><strong>Official Docs EN</strong><span>英文官方资料整合页。</span></a></li>
+                                <li><a href="./viewer.html?file=EN/FlipperZero-AI-Pack-EN.md"><strong>AI Pack EN</strong><span>英文 AI 检索规则包。</span></a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-block" id="references">
+                <div class="section-header">
+                    <p class="eyebrow">References</p>
+                    <h2 class="section-title">官方入口和社区入口放在同一层，但角色分开。</h2>
+                    <p class="section-lead">官方入口负责稳定基线，社区入口负责补充样例和发现层。首页只保留高信号入口，不再把所有资源都做成同一种卡片。</p>
+                </div>
+
+                <div class="reference-showcase">
+                    <a class="reference-media reference-media--shot" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">
+                        <img class="reference-media-image" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" loading="lazy" decoding="async">
+                        <div class="reference-media-copy">
                             <strong>qFlipper 专题</strong>
-                            <em>桌面端更新、备份恢复、CLI 与基础远控</em>
-                        </span>
-                        <span class="hero-route-tail">dock</span>
+                            <p>桌面端更新、备份恢复、CLI、基础远控和官方资产，统一从这条链路进入。</p>
+                        </div>
                     </a>
-                </div>
 
-                <div class="hero-sequence" data-hero-sequence aria-label="首页引导命令">
-                    <span class="hero-sequence-prompt">boot@teacher</span>
-                    <span class="hero-sequence-text">mount /CN/Guide route</span>
-                    <span class="hero-sequence-caret" aria-hidden="true"></span>
-                </div>
-            </div>
+                    <div class="reference-media-grid">
+                        <a class="reference-media" href="./viewer.html?file=CN/Official-Docs-CN-Full.md">
+                            <img class="reference-media-image" src="./assets/official/images/cover-development.webp" alt="Official development cover" width="728" height="546" loading="lazy" decoding="async">
+                            <div class="reference-media-copy">
+                                <strong>官方开发总表</strong>
+                                <p>直接进入中文整理后的官方资料主线，覆盖 Build、Debug、Dev Board 和 App 开发。</p>
+                            </div>
+                        </a>
 
-            <div class="hero-visual">
-                <div class="hero-visual-stage pixel-motion-host" data-pixel-motion="hero">
-                    <img class="hero-device-ghost" src="./assets/official/brand/flipper-device.svg" alt="" width="360" height="156">
-
-                    <div class="hero-status-notes" aria-hidden="true">
-                        <span><strong data-guide-count>0</strong> chapters online</span>
-                        <span>official assets mounted</span>
+                        <a class="reference-media" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
+                            <img class="reference-media-image" src="./assets/official/images/cover-usage.webp" alt="Official usage cover" width="728" height="546" loading="lazy" decoding="async">
+                            <div class="reference-media-copy">
+                                <strong>设备使用主线</strong>
+                                <p>承接设备使用、Archive、Apps 和协议域理解。</p>
+                            </div>
+                        </a>
                     </div>
+                </div>
 
-                    <div class="hero-screen-shell">
-                        <div class="hero-screen-head">
-                            <img class="hero-wordmark" src="./assets/official/brand/flipper-logo.svg" alt="Flipper Zero logo" width="270" height="25">
-                            <span class="hero-screen-mode">desktop / live</span>
+                <div class="reference-columns">
+                    <section class="reference-list" aria-labelledby="reference-official">
+                        <h3 id="reference-official">官方入口</h3>
+                        <p>优先放稳定、长期可复用的页面。</p>
+                        <div class="reference-links">
+                            <a class="reference-link" href="./viewer.html?file=CN/Official-Docs-CN-Full.md"><strong>官方文档总表</strong><span>中文整理后的官方资料深读入口，适合从首页直接开始。</span></a>
+                            <a class="reference-link" href="./viewer.html?file=CN/Official-Docs-CN-Full.md"><strong>官方精读总表</strong><span>中文整理的官方资料深读入口。</span></a>
+                            <a class="reference-link" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md"><strong>qFlipper 专题</strong><span>桌面端工作流和官方资产整理。</span></a>
                         </div>
-                        <img class="hero-shot" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot" width="862" height="532" fetchpriority="high">
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </section>
 
-        <section class="portal-grid">
-            <a class="portal-card portal-card--primary" href="./CN/Guide/index.html">
-                <div class="portal-card-head">
-                    <span class="portal-icon"><img src="./assets/official/icons/developer-mode.svg" alt=""></span>
-                    <div class="portal-label">Path / CN Guide</div>
-                </div>
-                <h2 class="portal-title">按章节走主线，不再迷路。</h2>
-                <p class="portal-summary">中文课程仍然是最稳入口。10 章课程继续承担“先看什么、按什么顺序看”的角色，适合先建立完整工作流，再回到专题文档深挖。</p>
-                <div class="portal-footer">
-                    <span>10 Chapters</span>
-                    <span>顺序阅读</span>
-                    <span>卡片目录</span>
-                </div>
-                <div class="portal-ghost">00</div>
-            </a>
-
-            <a class="portal-card portal-card--wide" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
-                <div class="portal-card-head">
-                    <span class="portal-icon"><img src="./assets/official/icons/update.svg" alt=""></span>
-                    <div class="portal-label">Core / Master</div>
-                </div>
-                <h2 class="portal-title">主知识库</h2>
-                <p class="portal-summary">主知识库继续是总框架入口，但现在走统一阅读页，支持目录、URL 点击、高亮词和复制命令，不再直接甩原始 Markdown。</p>
-                <div class="portal-footer">
-                    <span>Viewer Route</span>
-                    <span>统一阅读器</span>
-                </div>
-                <div class="portal-ghost">KB</div>
-            </a>
-
-            <a class="portal-card portal-card--wide" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">
-                <div class="portal-card-head">
-                    <span class="portal-icon"><img src="./assets/official/icons/usb-connected.svg" alt=""></span>
-                    <div class="portal-label">Desktop / qFlipper</div>
-                </div>
-                <h2 class="portal-title">qFlipper 专题</h2>
-                <p class="portal-summary">按官方口径整理：跨平台桌面端、固件与数据更新、内部存储备份恢复、CLI、投屏与基础远控。资源入口已经接进首页，不需要再回仓库翻文件。</p>
-                <div class="portal-footer">
-                    <span>Official Desktop</span>
-                    <span>Backup / CLI</span>
-                </div>
-                <div class="portal-ghost">QF</div>
-            </a>
-
-        </section>
-
-        <section class="home-section" id="official-assets">
-            <div class="section-header">
-                <p class="eyebrow">Official Assets</p>
-                <h2 class="section-title">把官网和 qFlipper 里能复用的图标、图像直接放进站点。</h2>
-                <p class="section-lead">这些资产现在已经复制到主仓库自己的 `assets/official`，不会再受子仓库或 Pages checkout 行为影响。首页、专题页和文档页都能直接用。</p>
-            </div>
-
-            <div class="asset-board">
-                <a class="feature-card" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">
-                    <div class="feature-card-copy">
-                        <div class="portal-card-head">
-                            <span class="portal-icon"><img src="./assets/official/icons/backup.svg" alt=""></span>
-                            <div class="portal-label">Official Desktop Tool</div>
+                    <section class="reference-list" aria-labelledby="reference-community">
+                        <h3 id="reference-community">社区精选</h3>
+                        <p>只保留高信号导航仓库和教程桥梁。</p>
+                        <div class="reference-links">
+                            <a class="reference-link" href="https://github.com/djsime1/awesome-flipperzero" target="_blank" rel="noreferrer"><strong>awesome-flipperzero</strong><span>适合作为发现层总入口，帮助找项目、工具和生态分支。</span></a>
+                            <a class="reference-link" href="https://github.com/UberGuidoZ/Flipper" target="_blank" rel="noreferrer"><strong>UberGuidoZ / Flipper</strong><span>高密度资料导航仓库，适合做资料库和排障入口。</span></a>
+                            <a class="reference-link" href="https://github.com/jamisonderek/flipper-zero-tutorials" target="_blank" rel="noreferrer"><strong>flipper-zero-tutorials</strong><span>官方文档和真实开发之间的桥梁，适合看 GPIO、UI 和调试落地写法。</span></a>
                         </div>
-                        <h3 class="feature-card-title">qFlipper UI 预览</h3>
-                        <p class="feature-card-summary">把 qFlipper 自己的截图和 symbolic icon 抽进来后，首页入口终于能直接表达“桌面端管理、更新、备份、CLI”这条能力链。</p>
-                        <div class="resource-tags">
-                            <span>Screenshot</span>
-                            <span>Backup</span>
-                            <span>Update</span>
-                        </div>
-                    </div>
-                    <img class="feature-card-image" src="./assets/official/images/qflipper-screenshot.png" alt="qFlipper screenshot">
-                </a>
-
-                <div class="official-icon-grid">
-                    <div class="official-icon-cell"><img src="./assets/official/icons/subghz.svg" alt=""><strong>Sub-GHz</strong><span>协议域图标</span></div>
-                    <div class="official-icon-cell"><img src="./assets/official/icons/nfc.svg" alt=""><strong>NFC</strong><span>协议域图标</span></div>
-                    <div class="official-icon-cell"><img src="./assets/official/icons/update.svg" alt=""><strong>Update</strong><span>桌面端动作</span></div>
-                    <div class="official-icon-cell"><img src="./assets/official/icons/backup.svg" alt=""><strong>Backup</strong><span>桌面端动作</span></div>
+                    </section>
                 </div>
-            </div>
+            </section>
 
-            <div class="feature-strip">
-                <a class="feature-tile" href="./Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/index.html">
-                    <img class="feature-tile-image" src="./assets/official/images/cover-development.webp" alt="Official development cover" width="728" height="546" loading="lazy">
-                    <div class="feature-tile-copy">
-                        <h3>官方开发入口</h3>
-                        <p>适合承接 Build / Debug / Dev Board / App 开发这条主线。</p>
-                    </div>
-                </a>
-                <a class="feature-tile" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
-                    <img class="feature-tile-image" src="./assets/official/images/cover-usage.webp" alt="Official usage cover" width="728" height="546" loading="lazy">
-                    <div class="feature-tile-copy">
-                        <h3>设备使用主线</h3>
-                        <p>适合承接 Archive、Apps、协议域和日常使用理解。</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="home-section" id="community-resources">
-            <div class="section-header">
-                <p class="eyebrow">Community Picks</p>
-                <h2 class="section-title">优秀社区资源直接放首页，但保持筛选。</h2>
-                <p class="section-lead">这里只放高信号入口，不做无差别罗列。它们分别承担导航、资料库、教程桥梁和插件开发最小例子四种角色。</p>
-            </div>
-
-            <div class="resource-grid">
-                <a class="resource-card" href="https://github.com/djsime1/awesome-flipperzero" target="_blank" rel="noreferrer">
-                    <div class="resource-card-head">
-                        <span class="resource-icon"><img src="./assets/official/icons/developer-mode.svg" alt=""></span>
-                        <span class="resource-source">GitHub / Community</span>
-                    </div>
-                    <h3 class="resource-card-title">awesome-flipperzero</h3>
-                    <p class="resource-card-summary">最适合做“发现层”的总入口。用它找项目、工具、仓库和生态分支，比自己乱搜更稳。</p>
-                    <div class="resource-tags"><span>导航</span><span>筛选</span><span>总览</span></div>
-                </a>
-
-                <a class="resource-card" href="https://github.com/UberGuidoZ/Flipper" target="_blank" rel="noreferrer">
-                    <div class="resource-card-head">
-                        <span class="resource-icon"><img src="./assets/official/icons/usb-connected.svg" alt=""></span>
-                        <span class="resource-source">GitHub / Community</span>
-                    </div>
-                    <h3 class="resource-card-title">UberGuidoZ / Flipper</h3>
-                    <p class="resource-card-summary">高密度资源导航仓库，适合做硬件、资料、工具和排障入口，但仍然要放在官方基线之后使用。</p>
-                    <div class="resource-tags"><span>资料库</span><span>硬件</span><span>排障</span></div>
-                </a>
-
-                <a class="resource-card" href="https://github.com/jamisonderek/flipper-zero-tutorials" target="_blank" rel="noreferrer">
-                    <div class="resource-card-head">
-                        <span class="resource-icon"><img src="./assets/official/icons/update.svg" alt=""></span>
-                        <span class="resource-source">GitHub / Tutorials</span>
-                    </div>
-                    <h3 class="resource-card-title">flipper-zero-tutorials</h3>
-                    <p class="resource-card-summary">官方文档和真实开发之间的桥梁。适合看 GPIO、UI、调试、系统行为这些主题的落地写法。</p>
-                    <div class="resource-tags"><span>教程</span><span>开发</span><span>桥梁</span></div>
-                </a>
-
-            </div>
-        </section>
-
-        <footer class="site-footer">
-            <div class="site-footer-brand">
-                <strong>Flipper Zero Teacher</strong>
-                <p>这是一个把官方资产、本地镜像、课程导航和 Markdown 阅读器统一收口的静态知识库。</p>
-            </div>
-            <div class="site-footer-links">
-                <a href="./CN/Guide/index.html">中文课程</a>
-                <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
-                <a href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">qFlipper</a>
-                <a href="./Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/index.html">官方镜像</a>
-                <a href="https://github.com/dwgx/FlipperZeroTeacher" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-        </footer>
+            <footer class="site-footer">
+                <div class="site-footer-brand">
+                    <strong>Flipper Zero Teacher</strong>
+                    <p>课程、Markdown 阅读器、官方镜像和专题文档现在共用同一套更轻的首页入口。</p>
+                </div>
+                <div class="site-footer-links">
+                    <a href="./CN/Guide/index.html">中文课程</a>
+                    <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                    <a href="./viewer.html?file=EN/README.md">English</a>
+                    <a href="./viewer.html?file=All-Markdown-Manifest.md">文档清单</a>
+                    <a href="https://github.com/dwgx/FlipperZeroTeacher" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </footer>
         </main>
     </div>
+
     <script src="./assets/js/guide-manifest.js"></script>
-    <script src="./assets/js/search-index.js"></script>
     <script src="./assets/js/site-shell.js"></script>
     <script src="./assets/js/site-search.js"></script>
-    <script src="./assets/js/pixel-motion.js"></script>
 </body>
 </html>

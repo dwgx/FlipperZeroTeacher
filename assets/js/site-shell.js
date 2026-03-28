@@ -157,7 +157,6 @@
 
     const renderTerminalPanel = (panel, items, title, visibleRows) => {
         let cursor = 0;
-        const refreshBase = pageKind === "home" ? 3200 : 1260;
 
         const draw = () => {
             const rows = [];
@@ -183,20 +182,6 @@
         };
 
         draw();
-
-        if (prefersReducedMotion || items.length <= 1) return;
-
-        const refresh = refreshBase + Math.min(visibleRows, 5) * 70;
-        window.setInterval(() => {
-            cursor = (cursor + 1) % items.length;
-            if (pageKind !== "home") {
-                panel.classList.add("is-refreshing");
-            }
-            draw();
-            window.setTimeout(() => {
-                panel.classList.remove("is-refreshing");
-            }, 220);
-        }, refresh);
     };
 
     const initTerminalPanels = () => {
@@ -230,22 +215,7 @@
     };
 
     const initCardWave = () => {
-        if (pageKind === "home") return;
-        const selector = pageKind === "home"
-            ? ".hero-route, .system-card, .portal-card, .resource-card, .feature-card, .feature-tile, .closing-band, .site-footer"
-            : ".system-card, .portal-card, .guide-card, .resource-card, .feature-card, .feature-tile, .pager-card, .closing-band, .site-footer";
-        const cards = Array.from(document.querySelectorAll(selector));
-        if (prefersReducedMotion || cards.length < 2) return;
-
-        let index = 0;
-        const pulse = () => {
-            cards.forEach((card) => card.classList.remove("is-wave"));
-            cards[index % cards.length].classList.add("is-wave");
-            index += 1;
-        };
-
-        pulse();
-        window.setInterval(pulse, pageKind === "home" ? 1480 : 980);
+        return;
     };
 
     const mountFrameCorners = () => {
@@ -261,9 +231,6 @@
         });
     };
 
-    mountFrameCorners();
-    injectTopbarTelemetry();
-    injectFooterTelemetry();
     initTerminalPanels();
     initHeroSequence();
     initHeroSignals();

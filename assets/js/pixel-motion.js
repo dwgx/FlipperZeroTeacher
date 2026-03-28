@@ -1,7 +1,11 @@
 (function () {
+    const body = document.body;
+    if (!body || body.dataset.enablePixelMotion !== "true") return;
+
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (media.matches) return;
     const lowPower =
+        navigator.connection?.saveData === true ||
         (typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 4) ||
         (typeof navigator.hardwareConcurrency === "number" && navigator.hardwareConcurrency <= 4);
 
@@ -30,7 +34,7 @@
             this.host.prepend(this.layer);
 
             this.ctx = this.canvas.getContext("2d", { alpha: true });
-            this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+            this.dpr = 1;
             this.width = 0;
             this.height = 0;
             this.cols = 0;

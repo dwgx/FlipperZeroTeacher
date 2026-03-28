@@ -1,9 +1,8 @@
 (function () {
     const body = document.body;
     const topbar = document.querySelector(".site-nav");
-    const searchIndex = Array.isArray(window.SITE_SEARCH_INDEX) ? window.SITE_SEARCH_INDEX : [];
 
-    if (!body || !topbar || !searchIndex.length) return;
+    if (!body || !topbar) return;
 
     const aliasMap = {
         flipperzero: ["flipper zero", "flipperzero", "fz"],
@@ -23,6 +22,15 @@
     };
 
     const quickTerms = ["qFlipper", "Sub-GHz", "NFC", "RFID", "刷机", "CLI", "App 开发", "频率"];
+    const searchScriptUrl = new URL("./search-index.js", document.currentScript?.src || window.location.href).href;
+
+    let searchIndex = Array.isArray(window.SITE_SEARCH_INDEX) ? window.SITE_SEARCH_INDEX : null;
+    let withCache = null;
+    let loadPromise = null;
+    let inputTimer = 0;
+    let activeIndex = 0;
+    let currentResults = [];
+    let requestToken = 0;
 
     const normalize = (value) =>
         (value || "")
@@ -82,24 +90,60 @@
         return false;
     };
 
-    const withCache = searchIndex.map((entry) => {
-        const title = normalize(entry.title);
-        const summary = normalize(entry.summary);
-        const text = normalize(entry.text);
-        const path = normalize(entry.path);
-        const parent = normalize(entry.parent || "");
+    const buildCache = (entries) =>
+        entries.map((entry) => {
+            const title = normalize(entry.title);
+            const summary = normalize(entry.summary);
+            const text = normalize(entry.text);
+            const path = normalize(entry.path);
+            const parent = normalize(entry.parent || "");
 
-        return {
-            ...entry,
-            _title: title,
-            _summary: summary,
-            _text: text,
-            _path: path,
-            _parent: parent,
-            _compactTitle: compact(entry.title),
-            _compactSearch: compact(`${entry.title} ${entry.parent || ""} ${entry.summary} ${entry.text} ${entry.path}`),
-        };
-    });
+            return {
+                ...entry,
+                _title: title,
+                _summary: summary,
+                _text: text,
+                _path: path,
+                _parent: parent,
+                _compactTitle: compact(entry.title),
+                _compactSearch: compact(`${entry.title} ${entry.parent || ""} ${entry.summary} ${entry.text} ${entry.path}`),
+            };
+        });
+
+    const updateSearchCount = () => {
+        if (!Array.isArray(searchIndex)) return;
+        document.querySelectorAll("[data-search-count]").forEach((node) => {
+            node.textContent = String(searchIndex.length);
+        });
+    };
+
+    const ensureSearchIndex = async () => {
+        if (withCache) return withCache;
+
+        if (Array.isArray(window.SITE_SEARCH_INDEX) && window.SITE_SEARCH_INDEX.length) {
+            searchIndex = window.SITE_SEARCH_INDEX;
+            withCache = buildCache(searchIndex);
+            updateSearchCount();
+            return withCache;
+        }
+
+        if (!loadPromise) {
+            loadPromise = new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.src = searchScriptUrl;
+                script.async = true;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error("无法载入全站搜索索引。"));
+                document.head.appendChild(script);
+            });
+        }
+
+        await loadPromise;
+        searchIndex = Array.isArray(window.SITE_SEARCH_INDEX) ? window.SITE_SEARCH_INDEX : [];
+        withCache = buildCache(searchIndex);
+        updateSearchCount();
+        return withCache;
+    };
 
     const scoreEntry = (entry, query) => {
         const variants = expandQuery(query);
@@ -135,6 +179,7 @@
         if (isSubsequence(rawCompact, entry._compactTitle)) score += 28;
         if (isSubsequence(rawCompact, entry._compactSearch)) score += 12;
 
+        if (entry.kind === "doc") score += 14;
         if (entry.kind === "section") score += 6;
         if (entry.kind === "guide") score += 12;
         if (entry.kind === "resource") score += 4;
@@ -142,15 +187,33 @@
         return score;
     };
 
+    const limitResults = (entries) => {
+        const docPaths = new Set(entries.filter((entry) => entry.kind === "doc").map((entry) => entry.path));
+        const pathCounts = new Map();
+        const limited = [];
+
+        for (const entry of entries) {
+            const count = pathCounts.get(entry.path) || 0;
+            const limit = entry.kind === "doc" ? 1 : docPaths.has(entry.path) ? 1 : 2;
+            if (count >= limit) continue;
+            pathCounts.set(entry.path, count + 1);
+            limited.push(entry);
+            if (limited.length >= 10) break;
+        }
+
+        return limited;
+    };
+
     const searchEntries = (query) => {
         const trimmed = query.trim();
-        if (!trimmed) return [];
+        if (!trimmed || !withCache) return [];
 
-        return withCache
+        const ranked = withCache
             .map((entry) => ({ ...entry, _score: scoreEntry(entry, trimmed) }))
             .filter((entry) => entry._score >= 38)
-            .sort((left, right) => right._score - left._score)
-            .slice(0, 10);
+            .sort((left, right) => right._score - left._score);
+
+        return limitResults(ranked);
     };
 
     const renderSnippet = (entry) => {
@@ -187,14 +250,12 @@
     const searchButton = document.createElement("button");
     searchButton.type = "button";
     searchButton.className = "site-search-trigger";
-    searchButton.innerHTML = `<span>搜索</span><kbd>⌘K</kbd>`;
+    searchButton.innerHTML = "<span>搜索</span><kbd>⌘K</kbd>";
     topbar.appendChild(searchButton);
 
     const input = overlay.querySelector(".site-search-input");
     const results = overlay.querySelector(".site-search-results");
     const status = overlay.querySelector(".site-search-status");
-    let activeIndex = 0;
-    let currentResults = [];
 
     const renderEmpty = () => {
         results.innerHTML = `
@@ -205,8 +266,34 @@
         `;
     };
 
-    const renderResults = (query) => {
-        currentResults = searchEntries(query);
+    const renderLoading = () => {
+        results.innerHTML = `
+            <div class="site-search-empty">
+                <strong>正在载入搜索索引。</strong>
+                <p>首次打开会按需加载，后续会直接复用。</p>
+            </div>
+        `;
+    };
+
+    const renderError = (message) => {
+        results.innerHTML = `
+            <div class="site-search-empty">
+                <strong>搜索暂时不可用。</strong>
+                <p>${message}</p>
+            </div>
+        `;
+    };
+
+    const syncActiveResult = () => {
+        results.querySelectorAll(".site-search-result").forEach((element, index) => {
+            element.classList.toggle("is-active", index === activeIndex);
+        });
+    };
+
+    const renderResults = async (query) => {
+        const requestId = requestToken + 1;
+        requestToken = requestId;
+        currentResults = [];
         activeIndex = 0;
 
         if (!query.trim()) {
@@ -214,6 +301,22 @@
             renderEmpty();
             return;
         }
+
+        status.textContent = "正在准备搜索索引…";
+        renderLoading();
+
+        try {
+            await ensureSearchIndex();
+        } catch (error) {
+            if (requestToken !== requestId) return;
+            status.textContent = "搜索索引加载失败。";
+            renderError(error.message || "请稍后重试。");
+            return;
+        }
+
+        if (requestToken !== requestId) return;
+
+        currentResults = searchEntries(query);
 
         if (!currentResults.length) {
             status.textContent = "没有找到足够接近的结果。";
@@ -243,24 +346,25 @@
             .join("");
     };
 
+    const scheduleRender = (query) => {
+        window.clearTimeout(inputTimer);
+        inputTimer = window.setTimeout(() => {
+            void renderResults(query);
+        }, 90);
+    };
+
     const setOpen = (open, preset = "") => {
         if (open) {
             overlay.removeAttribute("hidden");
             body.classList.add("search-open");
             input.value = preset || input.value;
-            renderResults(input.value);
+            void renderResults(input.value);
             window.setTimeout(() => input.focus(), 30);
             return;
         }
 
         overlay.setAttribute("hidden", "");
         body.classList.remove("search-open");
-    };
-
-    const syncActiveResult = () => {
-        results.querySelectorAll(".site-search-result").forEach((element, index) => {
-            element.classList.toggle("is-active", index === activeIndex);
-        });
     };
 
     searchButton.addEventListener("click", () => setOpen(true));
@@ -273,12 +377,12 @@
         button.addEventListener("click", () => {
             const term = button.dataset.searchTerm || "";
             input.value = term;
-            renderResults(term);
+            void renderResults(term);
             input.focus();
         });
     });
 
-    input.addEventListener("input", () => renderResults(input.value));
+    input.addEventListener("input", () => scheduleRender(input.value));
     input.addEventListener("keydown", (event) => {
         if (!currentResults.length) return;
 
@@ -313,6 +417,11 @@
             setOpen(false);
         }
     });
+
+    if (Array.isArray(searchIndex) && searchIndex.length) {
+        withCache = buildCache(searchIndex);
+        updateSearchCount();
+    }
 
     renderEmpty();
 })();
