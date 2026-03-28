@@ -29,7 +29,9 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <div class="reader-shell">
         <header class="site-topbar">
             <a class="site-brand" href="../../index.html">
-                <span class="site-brand-mark">{number}</span>
+                <span class="site-brand-mark site-brand-mark--image">
+                    <img src="../../assets/official/brand/flipper-device.svg" alt="Flipper Zero">
+                </span>
                 <span class="site-brand-text">
                     <strong>{title}</strong>
                     <span>章节壳页 · 内容来自同目录 Markdown</span>
@@ -66,6 +68,20 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
                     </div>
                 </div>
             </section>
+
+            <section class="doc-toolbar">
+                <div class="toolbar-search">
+                    <label class="toolbar-label" for="docSearch">高亮词</label>
+                    <input class="toolbar-input" id="docSearch" type="search" placeholder="输入关键词，实时高亮正文">
+                    <span class="toolbar-status" id="docSearchStatus">未高亮</span>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="toolbar-button" id="docSearchClear" type="button">清除高亮</button>
+                    <button class="toolbar-button toolbar-button--accent" id="copyPageUrl" type="button">复制当前链接</button>
+                </div>
+            </section>
+
+            <div class="keyword-bar" id="keywordBar"></div>
 
             <div class="reader-grid">
                 <article class="doc-panel markdown-body" id="docContent">
@@ -158,7 +174,6 @@ def write_shells(docs: list[dict[str, str]]) -> None:
                 summary_attr=html.escape(doc["summary"], quote=True),
                 fetch_path=html.escape(doc["filename"], quote=True),
                 repo_path=html.escape(doc["path"], quote=True),
-                number=html.escape(doc["number"]),
             ),
             encoding="utf-8",
         )
