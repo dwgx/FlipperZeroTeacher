@@ -298,6 +298,19 @@ body {
     }
 }
 
+@keyframes dataLinePulse {
+    0%,
+    100% {
+        transform: scaleX(0.18);
+        opacity: 0.18;
+    }
+
+    50% {
+        transform: scaleX(0.88);
+        opacity: 0.58;
+    }
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -314,6 +327,8 @@ select {
 .reader-shell,
 .guide-shell,
 .fallback-shell {
+    position: relative;
+    z-index: 1;
     width: min(var(--page-width), calc(100vw - 32px));
     margin: 0 auto;
 }
@@ -354,7 +369,7 @@ select {
     overflow: hidden;
     border-radius: inherit;
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.96;
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
@@ -362,6 +377,7 @@ select {
     animation: gridDrift 22s linear infinite;
     transform: translateZ(0);
     will-change: transform, opacity;
+    mix-blend-mode: screen;
 }
 
 .pixel-motion-layer::before {
@@ -388,7 +404,8 @@ select {
     display: block;
     width: 100%;
     height: 100%;
-    opacity: 0.68;
+    opacity: 1;
+    filter: saturate(1.18) contrast(1.06);
 }
 
 [data-pixel-motion="guide"] .pixel-motion-layer,
@@ -398,7 +415,36 @@ select {
 
 [data-pixel-motion="reader"] .pixel-motion-layer {
     background-size: 8px 8px;
-    opacity: 0.9;
+    opacity: 1;
+}
+
+.home-page::before,
+.guide-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.028) 1px, transparent 1px, transparent 12px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 12px);
+    opacity: 0.18;
+    animation: gridDrift 28s linear infinite;
+}
+
+.home-page::after,
+.guide-page::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -18%;
+    height: 16%;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+    opacity: 0.14;
+    animation: heroScan 18s linear infinite;
 }
 
 .site-topbar {
@@ -727,7 +773,9 @@ select {
 
 .hero-strip span,
 .guide-metrics span {
-    padding: 9px 12px;
+    position: relative;
+    overflow: hidden;
+    padding: 9px 12px 9px 28px;
     border-radius: 999px;
     border: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.03);
@@ -735,6 +783,105 @@ select {
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.hero-strip span::before,
+.guide-metrics span::before,
+.doc-status-strip span::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+    border-radius: 999px;
+    background: rgba(93, 255, 219, 0.84);
+    opacity: 0.24;
+    animation: statusBlink 3.3s steps(2, end) infinite;
+}
+
+.hero-strip span::after,
+.guide-metrics span::after,
+.doc-status-strip span::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    right: 10px;
+    bottom: 8px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(93, 255, 219, 0.38), transparent 74%);
+    opacity: 0.26;
+    transform-origin: left center;
+    animation: dataLinePulse 4.8s var(--ease-terminal) infinite;
+}
+
+.hero-console {
+    display: grid;
+    gap: 10px;
+    margin-top: 2px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(8, 10, 14, 0.72);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.hero-console--compact {
+    max-width: 760px;
+}
+
+.hero-console-row {
+    display: grid;
+    grid-template-columns: 72px minmax(100px, 1fr) max-content;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-console-label,
+.hero-console-value {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.hero-console-label {
+    color: var(--text-soft);
+}
+
+.hero-console-value {
+    color: var(--text-muted);
+}
+
+.hero-console-track {
+    position: relative;
+    height: 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03) 8px, transparent 8px, transparent 14px),
+        rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+}
+
+.hero-console-track i {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    bottom: 1px;
+    width: 34%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgba(93, 255, 219, 0.16), rgba(93, 255, 219, 0.58), rgba(255, 122, 38, 0.42));
+    box-shadow: 0 0 14px rgba(93, 255, 219, 0.16);
+    animation: terminalSweepIdle 3.6s linear infinite;
+}
+
+.hero-console-row:nth-child(2) .hero-console-track i {
+    animation-delay: 0.8s;
+}
+
+.hero-console-row:nth-child(3) .hero-console-track i {
+    animation-delay: 1.6s;
 }
 
 .doc-breadcrumb {
@@ -764,7 +911,9 @@ select {
 }
 
 .doc-status-strip span {
-    padding: 9px 12px;
+    position: relative;
+    overflow: hidden;
+    padding: 9px 12px 9px 28px;
     border-radius: 999px;
     border: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.03);
@@ -894,10 +1043,11 @@ select {
     bottom: 11px;
     height: 1px;
     background: linear-gradient(90deg, rgba(93, 255, 219, 0.36), transparent 72%);
-    opacity: 0.22;
-    transform: scaleX(0.16);
+    opacity: 0.28;
+    transform: scaleX(0.24);
     transform-origin: left center;
     transition: transform var(--motion-mid) var(--ease-terminal), opacity var(--motion-mid) var(--ease-terminal);
+    animation: dataLinePulse 4.6s var(--ease-terminal) infinite;
 }
 
 .icon-chip img {
@@ -1072,10 +1222,13 @@ select {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent 52%);
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 10px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 52%);
     pointer-events: none;
     opacity: 0.72;
     transition: opacity 0.25s ease;
+    animation: searchGridShift 20s linear infinite;
 }
 
 .portal-card::after,
@@ -1085,11 +1238,11 @@ select {
     left: 0;
     top: 0;
     width: 44%;
-    height: 1px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, rgba(255, 122, 38, 0.95), transparent);
     transform: translateX(-130%);
-    opacity: 0;
-    animation: terminalSweepIdle 10.5s linear infinite;
+    opacity: 0.2;
+    animation: terminalSweepIdle 5.6s linear infinite;
 }
 
 .portal-card:hover::before,
@@ -2783,6 +2936,16 @@ select {
     .guide-grid,
     .pager {
         grid-template-columns: 1fr;
+    }
+
+    .hero-console-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .hero-console-value {
+        font-size: 11px;
+        letter-spacing: 0.1em;
     }
 
     .feature-tile {
