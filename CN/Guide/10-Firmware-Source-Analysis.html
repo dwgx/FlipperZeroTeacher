@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0b0d10">
-    <title>06. 系统编程 - Flipper Zero Teacher</title>
+    <title>10. 固件源码深度分析 - Flipper Zero Teacher</title>
     <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
-<body class="reader-page" data-site-root="../../" data-fetch="06-System-Programming.md" data-repo-path="CN/Guide/06-System-Programming.md" data-title="06. 系统编程" data-description="当你已经理解 App 开发、工具链和脚本路线之后，就会遇到一个关键问题：哪些需求仍然能留在应用层，哪些需求已经进入系统层。本章的目标，就是帮助你建立“系统编程边界感”，知道什么时候需要进入平台层、硬件抽象层、资源打包层和测试层。" data-kicker="CN Guide" data-mode-label="Guide Shell · Markdown Runtime Render">
+<body class="reader-page" data-site-root="../../" data-fetch="10-Firmware-Source-Analysis.md" data-repo-path="CN/Guide/10-Firmware-Source-Analysis.md" data-title="10. 固件源码深度分析" data-description="本章与 [09. 固件参考](09-Firmware-Reference-2025.md) 的区别：" data-kicker="CN Guide" data-mode-label="Guide Shell · Markdown Runtime Render">
     <a class="skip-link" href="#main-content">跳到正文</a>
     <div class="reader-shell">
         <header class="site-topbar">
@@ -16,7 +16,7 @@
                     <img src="../../assets/official/brand/flipper-device.svg" alt="Flipper Zero" width="360" height="156">
                 </span>
                 <span class="site-brand-text">
-                    <strong>06. 系统编程</strong>
+                    <strong>10. 固件源码深度分析</strong>
                     <span>章节阅读器 · 内容来自同目录 Markdown</span>
                 </span>
             </a>
@@ -36,16 +36,16 @@
                         <span>/</span>
                         <a id="docBreadcrumbParent" href="../../CN/Guide/index.html">中文课程</a>
                         <span>/</span>
-                        <span id="docBreadcrumbCurrent">06. 系统编程</span>
+                        <span id="docBreadcrumbCurrent">10. 固件源码深度分析</span>
                     </nav>
                     <p class="eyebrow" id="docEyebrow">CN Guide</p>
-                    <h1 class="doc-title" id="docTitle">06. 系统编程</h1>
-                    <p class="doc-lead" id="docLead">当你已经理解 App 开发、工具链和脚本路线之后，就会遇到一个关键问题：哪些需求仍然能留在应用层，哪些需求已经进入系统层。本章的目标，就是帮助你建立“系统编程边界感”，知道什么时候需要进入平台层、硬件抽象层、资源打包层和测试层。</p>
+                    <h1 class="doc-title" id="docTitle">10. 固件源码深度分析</h1>
+                    <p class="doc-lead" id="docLead">本章与 [09. 固件参考](09-Firmware-Reference-2025.md) 的区别：</p>
                     <div class="terminal-panel terminal-panel--doc" data-terminal-stream="doc" aria-label="文档渲染日志"></div>
                     <div class="doc-status-strip" aria-label="文档状态">
                         <span id="docStatusKind">课程章节</span>
                         <span id="docStatusRoute">Guide Shell</span>
-                        <span id="docStatusSource">CN/Guide/06-System-Programming.md</span>
+                        <span id="docStatusSource">CN/Guide/10-Firmware-Source-Analysis.md</span>
                     </div>
                 </div>
                 <div class="doc-meta">
@@ -53,14 +53,14 @@
                         <dl>
                             <div>
                                 <dt>Source</dt>
-                                <dd id="docPath">CN/Guide/06-System-Programming.md</dd>
+                                <dd id="docPath">CN/Guide/10-Firmware-Source-Analysis.md</dd>
                             </div>
                             <div>
                                 <dt>Mode</dt>
                                 <dd id="docMode">Guide Shell · Markdown Runtime Render</dd>
                             </div>
                         </dl>
-                        <a class="source-link" id="sourceLink" href="../../CN/Guide/06-System-Programming.md">查看源 Markdown</a>
+                        <a class="source-link" id="sourceLink" href="../../CN/Guide/10-Firmware-Source-Analysis.md">查看源 Markdown</a>
                     </div>
                     <div class="doc-hud-panel" aria-label="阅读状态">
                         <div class="doc-hud-row">
@@ -144,7 +144,7 @@
 
         <footer class="site-footer">
             <div class="site-footer-brand">
-                <strong>06. 系统编程</strong>
+                <strong>10. 固件源码深度分析</strong>
                 <p>章节正文仍然来自同目录 Markdown，页面只是阅读器壳页。</p>
             </div>
             <div class="site-footer-links">

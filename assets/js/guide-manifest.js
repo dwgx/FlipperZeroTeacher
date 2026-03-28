@@ -125,8 +125,21 @@ window.GUIDE_MANIFEST = [
     "html": "CN/Guide/09-Firmware-Reference-2025.html",
     "filename": "09-Firmware-Reference-2025.md",
     "stem": "09-Firmware-Reference-2025",
-    "units": 1924,
+    "units": 1979,
     "minutes": 5,
     "sections": 19
+  },
+  {
+    "order": 10,
+    "number": "10",
+    "title": "10. 固件源码深度分析",
+    "summary": "本章与 [09. 固件参考](09-Firmware-Reference-2025.md) 的区别：",
+    "path": "CN/Guide/10-Firmware-Source-Analysis.md",
+    "html": "CN/Guide/10-Firmware-Source-Analysis.html",
+    "filename": "10-Firmware-Source-Analysis.md",
+    "stem": "10-Firmware-Source-Analysis",
+    "units": 10313,
+    "minutes": 25,
+    "sections": 40
   }
 ];

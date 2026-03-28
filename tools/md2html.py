@@ -11,18 +11,13 @@ import html
 import json
 import re
 from pathlib import Path
-from urllib.parse import quote
+
+import build_search_index as global_search_index
 
 
 ROOT = Path(__file__).resolve().parent.parent
 GUIDE_DIR = ROOT / "CN" / "Guide"
 MANIFEST_PATH = ROOT / "assets" / "js" / "guide-manifest.js"
-SEARCH_INDEX_PATH = ROOT / "assets" / "js" / "search-index.js"
-SEARCH_EXCLUDE = {
-    "All-Markdown-Manifest.md",
-    "Official-Docs-Coverage.md",
-    "CN/qFlipper-RAG-索引.md",
-}
 
 
 PAGE_TEMPLATE = """<!DOCTYPE html>
@@ -185,7 +180,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     </div>
 
     <script src="../../assets/js/guide-manifest.js"></script>
-    <script src="../../assets/js/search-index.js"></script>
     <script src="../../assets/js/site-shell.js"></script>
     <script src="../../assets/vendor/marked.min.js"></script>
     <script src="../../assets/js/reader.js"></script>
@@ -294,14 +288,6 @@ def write_shells(docs: list[dict[str, str]]) -> None:
         )
 
 
-def slugify(value: str) -> str:
-    slug = value.strip().lower()
-    slug = re.sub(r"[【】()[\]{}：:、，,。.!?\"'`]+", " ", slug)
-    slug = re.sub(r"\s+", "-", slug)
-    slug = slug.strip("-")
-    return slug or "section"
-
-
 def strip_decorative_nav(markdown_text: str) -> str:
     nav_line_pattern = re.compile(r"^\s*(\[[^\]]+\]\([^)]+\)\s*(\|\s*\[[^\]]+\]\([^)]+\)\s*)+)\s*$")
     lines = markdown_text.splitlines()
@@ -316,132 +302,12 @@ def strip_decorative_nav(markdown_text: str) -> str:
     return "\n".join(lines)
 
 
-def markdown_to_text(markdown_text: str, limit: int = 360) -> str:
-    text = strip_decorative_nav(markdown_text)
-    text = re.sub(r"```[^\n]*", " ", text)
-    text = text.replace("```", " ")
-    text = re.sub(r"`([^`]+)`", r"\1", text)
-    text = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"\1", text)
-    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r"\1 \2", text)
-    text = re.sub(r"^\s{0,3}#{1,6}\s*", "", text, flags=re.M)
-    text = re.sub(r"^\s*[-*+]\s+", "", text, flags=re.M)
-    text = re.sub(r"^\s*\d+\.\s+", "", text, flags=re.M)
-    text = re.sub(r"^\s*\|\s*", " ", text, flags=re.M)
-    text = text.replace("|", " ")
-    text = re.sub(r"\s+", " ", text).strip()
-    return text[:limit]
-
-
-def resolve_doc_href(repo_path: str, anchor: str = "") -> str:
-    if repo_path == "CN/Guide/README.md":
-        href = "CN/Guide/index.html"
-    elif repo_path.startswith("CN/Guide/") and repo_path.endswith(".md"):
-        href = repo_path[:-3] + ".html"
-    else:
-        href = f"viewer.html?file={quote(repo_path, safe='/')}"
-    if anchor:
-        href = f"{href}#{anchor}"
-    return href
-
-
-def classify_doc(repo_path: str) -> tuple[str, str]:
-    if repo_path.startswith("CN/Guide/"):
-        return "guide", "课程"
-    if repo_path.startswith("FlipperZero_资源库/"):
-        return "resource", "资源库"
-    if repo_path.startswith("CN/"):
-        return "doc", "中文文档"
-    return "doc", "文档"
-
-
-def collect_sections(markdown_text: str) -> list[dict[str, str]]:
-    lines = strip_decorative_nav(markdown_text).splitlines()
-    sections: list[dict[str, str]] = []
-    current: dict[str, str] | None = None
-
-    for line in lines:
-        match = re.match(r"^(#{2,3})\s+(.+)$", line.strip())
-        if match:
-            if current:
-                current["text"] = markdown_to_text(current["text"], limit=160)
-                sections.append(current)
-            current = {
-                "title": match.group(2).strip(),
-                "level": str(len(match.group(1))),
-                "text": "",
-                "anchor": slugify(match.group(2)),
-            }
-            continue
-        if current is not None:
-            current["text"] += f"{line}\n"
-
-    if current:
-        current["text"] = markdown_to_text(current["text"], limit=160)
-        sections.append(current)
-
-    return sections
-
-
-def build_search_index() -> list[dict[str, str]]:
-    search_paths: list[Path] = []
-    search_paths.extend(sorted(path for path in ROOT.glob("*.md")))
-    search_paths.extend(sorted(path for path in (ROOT / "CN").rglob("*.md")))
-    search_paths.extend(sorted(path for path in (ROOT / "FlipperZero_资源库").rglob("*.md")))
-
-    entries: list[dict[str, str]] = []
-
-    for path in search_paths:
-        repo_path = path.relative_to(ROOT).as_posix()
-        if repo_path in SEARCH_EXCLUDE:
-            continue
-        markdown_text = path.read_text(encoding="utf-8")
-        cleaned_markdown = strip_decorative_nav(markdown_text)
-        title = extract_title(cleaned_markdown)
-        summary = extract_summary(cleaned_markdown)
-        search_text = markdown_to_text(cleaned_markdown, limit=480)
-        kind, group = classify_doc(repo_path)
-
-        entries.append(
-            {
-                "kind": kind,
-                "group": group,
-                "title": title,
-                "summary": summary,
-                "text": search_text,
-                "path": repo_path,
-                "href": resolve_doc_href(repo_path),
-            }
-        )
-
-        for section in collect_sections(cleaned_markdown):
-            entries.append(
-                {
-                    "kind": "section",
-                    "group": group,
-                    "title": section["title"],
-                    "summary": section["text"] or summary,
-                    "text": f"{title} {section['title']} {section['text']}".strip(),
-                    "path": repo_path,
-                    "href": resolve_doc_href(repo_path, section["anchor"]),
-                    "parent": title,
-                }
-            )
-
-    return entries
-
-
-def write_search_index(entries: list[dict[str, str]]) -> None:
-    payload = json.dumps(entries, ensure_ascii=False, indent=2)
-    SEARCH_INDEX_PATH.write_text(f"window.SITE_SEARCH_INDEX = {payload};\n", encoding="utf-8")
-
-
 def main() -> None:
     docs = build_manifest()
     write_manifest(docs)
     write_shells(docs)
-    search_entries = build_search_index()
-    write_search_index(search_entries)
-    print(f"generated {len(docs)} guide shells, manifest, and {len(search_entries)} search entries")
+    global_search_index.main()
+    print(f"generated {len(docs)} guide shells, manifest, and refreshed global search index")
 
 
 if __name__ == "__main__":

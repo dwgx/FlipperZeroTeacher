@@ -809,6 +809,34 @@
         });
     }
 
+    function rewriteMediaSources(root, currentPath) {
+        const baseDir = dirname(currentPath);
+        root.querySelectorAll("img[src]").forEach((image) => {
+            const rawSrc = image.getAttribute("src");
+            if (!rawSrc) return;
+
+            if (!/^(?:[a-z]+:)?\/\//i.test(rawSrc) && !rawSrc.startsWith("data:")) {
+                const resolved = resolvePath(baseDir, rawSrc);
+                image.setAttribute("src", `${siteRoot}${resolved}`);
+            }
+
+            image.loading = image.loading || "lazy";
+            image.decoding = "async";
+            image.addEventListener("error", () => {
+                if (image.dataset.errorHandled === "1") return;
+                image.dataset.errorHandled = "1";
+                image.classList.add("is-broken");
+
+                const fallback = document.createElement("p");
+                fallback.className = "image-fallback";
+                fallback.textContent = image.alt
+                    ? `图片未载入：${image.alt}`
+                    : "图片未载入，原始地址可能已经失效。";
+                image.insertAdjacentElement("afterend", fallback);
+            });
+        });
+    }
+
     function installHeadingIds(root) {
         const seen = new Map();
         root.querySelectorAll("h1, h2, h3, h4").forEach((heading) => {
@@ -1034,7 +1062,7 @@
         if (searchInput) {
             searchInput.addEventListener("input", () => {
                 window.clearTimeout(searchInputTimer);
-                searchInputTimer = window.setTimeout(() => runSmartSearch(searchInput.value, false), 80);
+                searchInputTimer = window.setTimeout(() => runSmartSearch(searchInput.value, false), 140);
             });
             searchInput.addEventListener("keydown", (event) => {
                 if (event.key === "ArrowDown" && currentSearchMatches.length) {
@@ -1125,6 +1153,7 @@
 
             installHeadingIds(content);
             rewriteLinks(content, repoPath);
+            rewriteMediaSources(content, repoPath);
             linkifyBareUrls(content);
             enhanceInlineCode(content);
             enhanceCodeBlocks(content);
