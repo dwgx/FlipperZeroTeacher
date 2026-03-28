@@ -472,10 +472,10 @@ select {
     left: 0;
     top: 0;
     width: 24%;
-    height: 1px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, rgba(93, 255, 219, 0.8), transparent);
-    opacity: 0;
-    animation: topbarSweep 16s linear infinite;
+    opacity: 0.18;
+    animation: topbarSweep 8s linear infinite;
 }
 
 .site-brand {
@@ -751,6 +751,19 @@ select {
 .hero-title {
     font-size: clamp(52px, 8vw, 92px);
     max-width: 9ch;
+}
+
+.hero-title::after,
+.guide-title::after,
+.doc-title::after {
+    content: "▉";
+    display: inline-block;
+    margin-left: 0.16em;
+    color: rgba(93, 255, 219, 0.86);
+    font-size: 0.8em;
+    line-height: 0.9;
+    vertical-align: baseline;
+    animation: statusBlink 1.35s steps(2, end) infinite;
 }
 
 .hero-lead {
@@ -1373,6 +1386,26 @@ select {
     letter-spacing: 0.12em;
 }
 
+.portal-footer span {
+    position: relative;
+    overflow: hidden;
+    padding-left: 16px;
+}
+
+.portal-footer span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    margin-top: -2px;
+    border-radius: 999px;
+    background: rgba(93, 255, 219, 0.8);
+    opacity: 0.26;
+    animation: statusBlink 3.2s steps(2, end) infinite;
+}
+
 .portal-ghost {
     position: absolute;
     right: 22px;
@@ -1449,10 +1482,52 @@ select {
 .feature-card,
 .feature-tile,
 .resource-card {
+    position: relative;
+    overflow: hidden;
     border: 1px solid var(--line);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
     box-shadow: var(--shadow);
 }
+
+.feature-card::before,
+.feature-tile::before,
+.resource-card::before,
+.closing-band::before,
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 10px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 52%);
+    opacity: 0.62;
+    animation: searchGridShift 22s linear infinite;
+}
+
+.feature-card::after,
+.feature-tile::after,
+.resource-card::after,
+.closing-band::after,
+.site-footer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 46%;
+    height: 2px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255, 122, 38, 0.95), transparent);
+    transform: translateX(-130%);
+    opacity: 0.2;
+    animation: terminalSweepIdle 6.4s linear infinite;
+}
+
+.feature-card::after { animation-delay: 0.3s; }
+.feature-tile::after { animation-delay: 0.9s; }
+.resource-card::after { animation-delay: 1.4s; }
+.closing-band::after { animation-delay: 1.8s; }
+.site-footer::after { animation-delay: 2.2s; }
 
 .feature-card {
     position: relative;
