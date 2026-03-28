@@ -182,21 +182,6 @@ select {
     line-height: 1.7;
 }
 
-.meta-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.meta-pill {
-    padding: 8px 12px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--text-muted);
-    font-size: 13px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
 .home-page {
     padding-bottom: 64px;
 }
@@ -254,31 +239,19 @@ select {
     gap: 12px;
 }
 
-.hero-notes {
-    display: grid;
-    gap: 12px;
-}
-
-.hero-note {
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
+.hero-note-compact {
+    max-width: 52ch;
     color: var(--text-muted);
-    line-height: 1.65;
-}
-
-.hero-note strong {
-    display: inline-block;
-    min-width: 86px;
-    color: var(--text);
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
 }
 
 .hero-visual {
     padding: 26px;
     position: relative;
     overflow: hidden;
+    animation: fadeInSlide .9s ease-out backwards;
 }
 
 .hero-visual-card {
@@ -288,6 +261,8 @@ select {
     border-radius: 22px;
     background: rgba(255, 255, 255, 0.03);
     padding: 20px;
+    transform: translateZ(0);
+    animation: cardPop .6s ease-out backwards;
 }
 
 .hero-wordmark {
@@ -319,6 +294,7 @@ select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     margin-top: 16px;
+    animation: rackFade .65s ease-out backwards;
 }
 
 .icon-chip {
@@ -328,14 +304,54 @@ select {
     padding: 12px;
     border: 1px solid var(--line);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, 0.015);
     color: var(--text-muted);
     font-size: 13px;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
 
 .icon-chip img {
     width: 20px;
     height: 20px;
+}
+
+.icon-chip:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, .25);
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardPop {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rackFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .signal-stack {
