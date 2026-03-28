@@ -18,7 +18,8 @@
                         <p class="guide-card-summary">${item.summary}</p>
                     </div>
                     <div class="guide-card-footer">
-                        <span>Markdown 单源</span>
+                        <span>${item.sections || 0} 个小节</span>
+                        <span>约 ${item.minutes || 1} 分钟</span>
                         <span>进入章节 →</span>
                     </div>
                 </a>

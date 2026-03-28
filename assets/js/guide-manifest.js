@@ -7,7 +7,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/00-Study-Map.md",
     "html": "CN/Guide/00-Study-Map.html",
     "filename": "00-Study-Map.md",
-    "stem": "00-Study-Map"
+    "stem": "00-Study-Map",
+    "units": 1148,
+    "minutes": 3,
+    "sections": 12
   },
   {
     "order": 1,
@@ -17,7 +20,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/01-Device-Ecosystem.md",
     "html": "CN/Guide/01-Device-Ecosystem.html",
     "filename": "01-Device-Ecosystem.md",
-    "stem": "01-Device-Ecosystem"
+    "stem": "01-Device-Ecosystem",
+    "units": 1051,
+    "minutes": 3,
+    "sections": 13
   },
   {
     "order": 2,
@@ -27,7 +33,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/02-Protocol-Domains.md",
     "html": "CN/Guide/02-Protocol-Domains.html",
     "filename": "02-Protocol-Domains.md",
-    "stem": "02-Protocol-Domains"
+    "stem": "02-Protocol-Domains",
+    "units": 1033,
+    "minutes": 3,
+    "sections": 14
   },
   {
     "order": 3,
@@ -37,7 +46,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/03-App-Development.md",
     "html": "CN/Guide/03-App-Development.html",
     "filename": "03-App-Development.md",
-    "stem": "03-App-Development"
+    "stem": "03-App-Development",
+    "units": 1080,
+    "minutes": 3,
+    "sections": 14
   },
   {
     "order": 4,
@@ -47,7 +59,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/04-Build-Debug-Tools.md",
     "html": "CN/Guide/04-Build-Debug-Tools.html",
     "filename": "04-Build-Debug-Tools.md",
-    "stem": "04-Build-Debug-Tools"
+    "stem": "04-Build-Debug-Tools",
+    "units": 1016,
+    "minutes": 3,
+    "sections": 13
   },
   {
     "order": 5,
@@ -57,7 +72,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/05-JavaScript.md",
     "html": "CN/Guide/05-JavaScript.html",
     "filename": "05-JavaScript.md",
-    "stem": "05-JavaScript"
+    "stem": "05-JavaScript",
+    "units": 947,
+    "minutes": 3,
+    "sections": 12
   },
   {
     "order": 6,
@@ -67,7 +85,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/06-System-Programming.md",
     "html": "CN/Guide/06-System-Programming.html",
     "filename": "06-System-Programming.md",
-    "stem": "06-System-Programming"
+    "stem": "06-System-Programming",
+    "units": 993,
+    "minutes": 3,
+    "sections": 13
   },
   {
     "order": 7,
@@ -77,7 +98,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/07-File-Formats.md",
     "html": "CN/Guide/07-File-Formats.html",
     "filename": "07-File-Formats.md",
-    "stem": "07-File-Formats"
+    "stem": "07-File-Formats",
+    "units": 1001,
+    "minutes": 3,
+    "sections": 13
   },
   {
     "order": 8,
@@ -87,7 +111,10 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/08-Community-Reference.md",
     "html": "CN/Guide/08-Community-Reference.html",
     "filename": "08-Community-Reference.md",
-    "stem": "08-Community-Reference"
+    "stem": "08-Community-Reference",
+    "units": 2403,
+    "minutes": 6,
+    "sections": 18
   },
   {
     "order": 9,
@@ -97,6 +124,9 @@ window.GUIDE_MANIFEST = [
     "path": "CN/Guide/09-Firmware-Reference-2025.md",
     "html": "CN/Guide/09-Firmware-Reference-2025.html",
     "filename": "09-Firmware-Reference-2025.md",
-    "stem": "09-Firmware-Reference-2025"
+    "stem": "09-Firmware-Reference-2025",
+    "units": 1924,
+    "minutes": 5,
+    "sections": 19
   }
 ];

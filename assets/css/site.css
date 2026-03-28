@@ -466,6 +466,12 @@ select {
     color: var(--text);
 }
 
+.site-nav a[aria-current="page"] {
+    border-color: var(--accent-line);
+    background: rgba(255, 122, 38, 0.1);
+    color: var(--text);
+}
+
 .solid-button {
     color: #140d09;
     border-color: transparent;
@@ -623,6 +629,13 @@ select {
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.hero-strip strong,
+.guide-metrics strong {
+    color: var(--text);
+    font-weight: 800;
+    margin-right: 6px;
 }
 
 .hero-visual {
@@ -1385,6 +1398,7 @@ select {
 .guide-card-footer {
     margin-top: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 14px;
