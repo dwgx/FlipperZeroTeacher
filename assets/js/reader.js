@@ -35,6 +35,8 @@
     const tocHudHeading = document.getElementById("tocHudHeading");
     const tocHudMeta = document.getElementById("tocHudMeta");
     const tocProgressFill = document.getElementById("tocProgressFill");
+    const readerActivityMode = document.getElementById("readerActivityMode");
+    const readerActivityPercent = document.getElementById("readerActivityPercent");
     let searchIndex = [];
     let currentSearchMatches = [];
     let activeSearchResult = -1;
@@ -92,6 +94,21 @@
         if (tocProgressFill) {
             const ratio = Math.max(0.06, Math.min(1, hudState.progress / 100 || 0.06));
             tocProgressFill.style.transform = window.matchMedia("(max-width: 820px)").matches ? `scaleX(${ratio})` : `scaleY(${ratio})`;
+        }
+        if (readerActivityPercent) {
+            readerActivityPercent.textContent = `${hudState.progress}%`;
+        }
+        if (readerActivityMode) {
+            const mode = hudState.search !== "idle"
+                ? (hudState.search === "no hits" ? "miss" : "search")
+                : hudState.total && hudState.activeIndex
+                    ? "lock"
+                    : hudState.progress > 0
+                        ? "scroll"
+                        : "scan";
+            readerActivityMode.textContent = mode;
+            const rail = readerActivityMode.closest(".reader-activity-rail");
+            if (rail) rail.dataset.mode = mode;
         }
         if (docStatusRoute) {
             docStatusRoute.textContent = `${body.dataset.modeLabel || "Runtime Render"} · ${hudState.progress}%`;

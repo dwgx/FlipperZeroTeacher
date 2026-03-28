@@ -11,6 +11,7 @@
                     <div class="guide-card-label">Chapter / ${item.number}</div>
                     <div class="guide-card-header">
                         <div class="guide-card-number">${item.number}</div>
+                        <div class="guide-card-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
                         <div class="guide-card-ghost">${item.number}</div>
                     </div>
                     <div>
