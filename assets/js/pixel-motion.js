@@ -1,12 +1,18 @@
 (function () {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (media.matches) return;
+    const lowPower =
+        (typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 4) ||
+        (typeof navigator.hardwareConcurrency === "number" && navigator.hardwareConcurrency <= 4);
 
-    const hosts = Array.from(document.querySelectorAll("[data-pixel-motion]"));
+    const hosts = Array.from(document.querySelectorAll("[data-pixel-motion]")).filter((host) => {
+        if (host.dataset.pixelMotion !== "hero") return true;
+        return !lowPower;
+    });
     if (!hosts.length) return;
 
     const CONFIG = {
-        hero: { cell: 6, density: 0.04, sweepSpeed: 0.142, signalSpeed: 6.2, accentRatio: 0.28, fps: 42, burstFactor: 0.42, packetFactor: 0.08 },
+        hero: { cell: 8, density: 0.018, sweepSpeed: 0.082, signalSpeed: 3.6, accentRatio: 0.12, fps: 20, burstFactor: 0.06, packetFactor: 0.02 },
         guide: { cell: 8, density: 0.022, sweepSpeed: 0.092, signalSpeed: 4.4, accentRatio: 0.18, fps: 34, burstFactor: 0.26, packetFactor: 0.04 },
         doc: { cell: 8, density: 0.018, sweepSpeed: 0.082, signalSpeed: 4.1, accentRatio: 0.14, fps: 34, burstFactor: 0.24, packetFactor: 0.03 },
         reader: { cell: 6, density: 0.03, sweepSpeed: 0.118, signalSpeed: 5.8, accentRatio: 0.12, fps: 40, burstFactor: 0.38, packetFactor: 0.05 },
@@ -101,10 +107,12 @@
         }
 
         seed() {
-            const signalCount = Math.max(6, Math.round(this.cols * this.config.density * 4.8));
-            const blinkCount = Math.max(10, Math.round(this.cols * this.rows * this.config.density * 0.24));
-            const burstCount = Math.max(2, Math.round(this.rows * this.config.burstFactor * 0.08));
-            const packetCount = Math.max(2, Math.round(this.cols * (this.config.packetFactor || 0.04)));
+            const minSignals = this.kind === "hero" ? 2 : 6;
+            const minBlips = this.kind === "hero" ? 3 : 10;
+            const signalCount = Math.max(minSignals, Math.round(this.cols * this.config.density * 4.8));
+            const blinkCount = Math.max(minBlips, Math.round(this.cols * this.rows * this.config.density * 0.24));
+            const burstCount = this.config.burstFactor > 0 ? Math.max(this.kind === "hero" ? 0 : 2, Math.round(this.rows * this.config.burstFactor * 0.08)) : 0;
+            const packetCount = this.config.packetFactor > 0 ? Math.max(this.kind === "hero" ? 0 : 2, Math.round(this.cols * this.config.packetFactor)) : 0;
 
             this.signals = Array.from({ length: signalCount }, () => this.makeSignal(true));
             this.blips = Array.from({ length: blinkCount }, () => this.makeBlip());
@@ -154,6 +162,11 @@
         }
 
         color(tint, alpha) {
+            if (this.kind === "hero") {
+                if (tint === "accent") return `rgba(152, 198, 214, ${alpha})`;
+                if (tint === "teal") return `rgba(132, 188, 206, ${alpha})`;
+                return `rgba(194, 203, 214, ${alpha})`;
+            }
             if (tint === "accent") return `rgba(255, 122, 38, ${alpha})`;
             if (tint === "teal") return `rgba(93, 255, 219, ${alpha})`;
             return `rgba(210, 219, 229, ${alpha})`;

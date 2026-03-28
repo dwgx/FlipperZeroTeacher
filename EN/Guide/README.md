@@ -1,7 +1,7 @@
 # 🧭 Flipper Zero Learning Tree
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Course-10Chapters-green?style=flat&logo=book" alt="chapters">
+  <img src="https://img.shields.io/badge/Course-11Chapters-green?style=flat&logo=book" alt="chapters">
   <img src="https://img.shields.io/badge/Level-Beginner to Advanced-blue?style=flat&logo=star" alt="level">
 </p>
 
@@ -22,7 +22,8 @@
 | 06 | [System Programming](06-System-Programming.md) | ⭐⭐⭐ | HAL/Testing/Low-level |
 | 07 | [File Formats](07-File-Formats.md) | ⭐⭐ | Format layer & interfaces |
 | 08 | [Community Reference](08-Community-Reference.md) | ⭐⭐ | High-signal community |
-| 09 | [Firmware Ref 2025-2026](09-Firmware-Reference-2025.md) | ⭐⭐ | Firmware comparison |
+| 09 | [Firmware Ref 2025-2026](09-Firmware-Reference-2025.md) | ⭐⭐ | Feature comparison |
+| 10 | [Firmware Source Analysis](10-Firmware-Source-Analysis.md) | ⭐⭐⭐ | Source-level architecture |
 
 ---
 
@@ -45,7 +46,7 @@
                                                        │
                                                        ▼
                                                ┌────────────┐
-                                               │   08-09    │
+                                               │   08-10    │
                                                │Community+  │
                                                │ Firmware   │
                                                └────────────┘

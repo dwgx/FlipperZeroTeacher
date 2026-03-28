@@ -1,7 +1,7 @@
 # 🧭 Flipper Zero 中文教学导航
 
 <p align="center">
-  <img src="https://img.shields.io/badge/课程-10章-green?style=flat&logo=book" alt="chapters">
+  <img src="https://img.shields.io/badge/课程-11章-green?style=flat&logo=book" alt="chapters">
   <img src="https://img.shields.io/badge/难度-入门到进阶-blue?style=flat&logo=star" alt="level">
 </p>
 
@@ -22,7 +22,8 @@
 | 06 | [系统编程](06-System-Programming.md) | ⭐⭐⭐ | HAL/测试/底层 |
 | 07 | [文件格式](07-File-Formats.md) | ⭐⭐ | 格式层与接口 |
 | 08 | [社区参考](08-Community-Reference.md) | ⭐⭐ | 高信号社区资料 |
-| 09 | [固件参考 2025-2026](09-Firmware-Reference-2025.md) | ⭐⭐ | 社区固件对比 |
+| 09 | [固件参考 2025-2026](09-Firmware-Reference-2025.md) | ⭐⭐ | 社区固件功能对比 |
+| 10 | [固件源码深度分析](10-Firmware-Source-Analysis.md) | ⭐⭐⭐ | 源码级架构分析 |
 
 ---
 
@@ -43,7 +44,7 @@
                                                        │
                                                        ▼
                                                ┌────────────┐
-                                               │   08-09    │
+                                               │   08-10    │
                                                │ 社区+固件  │
                                                │ 扩展选择   │
                                                └────────────┘
