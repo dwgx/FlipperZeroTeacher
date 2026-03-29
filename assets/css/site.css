@@ -5447,7 +5447,7 @@ select {
 
 .flipper-sim-led {
     position: absolute;
-    left: 66.81%;
+    left: 66.25%;
     top: 60.58%;
     width: clamp(5px, 1.2%, 8px);
     aspect-ratio: 1;
