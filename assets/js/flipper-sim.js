@@ -291,10 +291,12 @@
             ArrowLeft: "left",
             ArrowRight: "right",
             Enter: "ok",
+            " ": "ok",
+            Spacebar: "ok",
             Escape: "back",
             Backspace: "back",
         };
-        const control = keyMap[event.key];
+        const control = keyMap[event.key] || (event.code === "Space" ? "ok" : "");
         if (!control) return;
         event.preventDefault();
         handleControl(control);
