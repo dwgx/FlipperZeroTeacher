@@ -1,5 +1,306 @@
-assets/css/site.css:5484:.flipper-pad-key {
-assets/css/site.css:5497:.flipper-pad-key--accent {
-assets/css/site.css:5597:.home-path-tail,
-assets/css/site.css:5796:.reference-media-image--labs {
-assets/css/site.css:6053:    .home-path-tail {
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d10">
+    <title>Flipper Zero Teacher</title>
+    <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body class="home-page">
+    <a class="skip-link" href="#main-content">跳到正文</a>
+    <div class="site-shell">
+        <header class="site-topbar">
+            <a class="site-brand" href="./index.html">
+                <span class="site-brand-mark site-brand-mark--image">
+                    <img src="./assets/official/brand/flipper-device.svg" alt="Flipper Zero" width="360" height="156">
+                </span>
+                <span class="site-brand-text">
+                    <strong>Flipper Zero Teacher</strong>
+                    <span>官方资产 · 双语知识库</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="主导航">
+                <a href="./CN/Guide/index.html">中文课程</a>
+                <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                <a href="#docs-hub">文档目录</a>
+                <a href="#references">参考资源</a>
+            </nav>
+        </header>
+
+        <main id="main-content" class="home-main">
+            <section class="home-hero">
+                <div class="home-hero-copy">
+                    <p class="eyebrow">Flipper Zero / GitHub Docs Hub</p>
+                    <div class="home-brand-note">先走主线，再进专题，再回仓库查细节。</div>
+                    <h1 class="home-hero-title">把课程、主知识库、专题文档收成一条清晰入口。</h1>
+                    <p class="home-hero-lead">这个首页只保留真正需要的入口，不再堆叠装饰动画。中文课程负责顺序学习，主知识库负责总览，桌面端工作流直接放进主视觉，新增 Markdown 文档也统一收口。</p>
+
+                    <div class="hero-actions">
+                        <a class="solid-button" href="./CN/Guide/index.html">进入中文课程</a>
+                        <a class="ghost-button" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">打开主知识库</a>
+                        <a class="ghost-button" href="./viewer.html?file=CN/qFlipper-全网融合总文档.md">进入桌面端工作流</a>
+                    </div>
+
+                    <dl class="home-hero-meta" aria-label="站点状态">
+                        <div>
+                            <dt>课程</dt>
+                            <dd>11 章主线</dd>
+                        </div>
+                        <div>
+                            <dt>模式</dt>
+                            <dd>Markdown 单源</dd>
+                        </div>
+                        <div>
+                            <dt>搜索</dt>
+                            <dd>按需加载索引</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="home-hero-media">
+                    <div class="home-shot-wrap home-shot-wrap--sim">
+                        <div class="home-shot-head">
+                            <span class="home-shot-title">Flipper Zero Simulator</span>
+                            <span class="home-shot-mode">interactive / css + js</span>
+                        </div>
+                        <div class="flipper-sim" data-flipper-sim tabindex="0" aria-label="Interactive Flipper Zero simulator">
+                            <div class="flipper-sim-stage">
+                                <div class="flipper-sim-shell">
+                                    <div class="flipper-sim-screen">
+                                        <div class="flipper-sim-status">
+                                            <span data-sim-mode>Desktop</span>
+                                            <span data-sim-position>1 / 4</span>
+                                        </div>
+                                        <div class="flipper-sim-screen-body">
+                                            <div class="flipper-sim-menu" data-sim-menu></div>
+                                            <div class="flipper-sim-detail" data-sim-detail></div>
+                                        </div>
+                                        <div class="flipper-sim-softkeys">
+                                            <span data-sim-softkey-left>move</span>
+                                            <span data-sim-softkey-center>ok</span>
+                                            <span data-sim-softkey-right>back</span>
+                                        </div>
+                                    </div>
+
+                                    <button class="flipper-hit flipper-hit--up" type="button" data-button="up" aria-label="Up"></button>
+                                    <button class="flipper-hit flipper-hit--down" type="button" data-button="down" aria-label="Down"></button>
+                                    <button class="flipper-hit flipper-hit--left" type="button" data-button="left" aria-label="Left"></button>
+                                    <button class="flipper-hit flipper-hit--right" type="button" data-button="right" aria-label="Right"></button>
+                                    <button class="flipper-hit flipper-hit--ok" type="button" data-button="ok" aria-label="OK"></button>
+                                    <button class="flipper-hit flipper-hit--back" type="button" data-button="back" aria-label="Back"></button>
+                                </div>
+                            </div>
+
+                            <div class="flipper-sim-instructions" aria-hidden="true">
+                                <span>方向键切换</span>
+                                <span>OK 进入</span>
+                                <span>Back 返回</span>
+                            </div>
+                            <div class="flipper-sim-pad" aria-label="Simulator controls">
+                                <button class="flipper-pad-key" type="button" data-button="left" aria-label="Left">Left</button>
+                                <button class="flipper-pad-key" type="button" data-button="up" aria-label="Up">Up</button>
+                                <button class="flipper-pad-key" type="button" data-button="right" aria-label="Right">Right</button>
+                                <button class="flipper-pad-key" type="button" data-button="down" aria-label="Down">Down</button>
+                                <button class="flipper-pad-key flipper-pad-key--accent" type="button" data-button="ok" aria-label="OK">OK</button>
+                                <button class="flipper-pad-key" type="button" data-button="back" aria-label="Back">Back</button>
+                            </div>
+                        </div>
+                        <div class="home-shot-caption">
+                            <strong>把设备外观、按钮逻辑和首页入口揉成一个主视觉。</strong>
+                            <p>这不是乱飘的插画，而是一个可点按的 Flipper Zero 设备模拟器。用方向键和 OK 在桌面端工作流、构建调试、协议域和资料入口之间切换。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-strip" id="start-here" aria-label="开始路径">
+                <a class="home-path" href="./CN/Guide/index.html">
+                    <span class="home-path-step">01</span>
+                    <div class="home-path-copy">
+                        <strong>从课程开始</strong>
+                        <p>11 章顺序主线，先把设备、协议、开发和工具链走完整。</p>
+                    </div>
+                    <span class="home-path-tail">CN Guide</span>
+                </a>
+                <a class="home-path" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
+                    <span class="home-path-step">02</span>
+                    <div class="home-path-copy">
+                        <strong>回到主知识库</strong>
+                        <p>总览整个仓库的结构，再按专题深入，不必在目录里反复翻找。</p>
+                    </div>
+                    <span class="home-path-tail">Master</span>
+                </a>
+                <a class="home-path" href="./viewer.html?file=All-Markdown-Manifest.md">
+                    <span class="home-path-step">03</span>
+                    <div class="home-path-copy">
+                        <strong>查看索引与清单</strong>
+                        <p>新增 Markdown、覆盖率和历史快照从这里核对，不再靠首页猜它们放在哪。</p>
+                    </div>
+                    <span class="home-path-tail">Manifest</span>
+                </a>
+            </section>
+
+            <section class="home-block" id="docs-hub">
+                <div class="section-header">
+                    <p class="eyebrow">Docs Hub</p>
+                    <h2 class="section-title">首页不再硬铺卡片，文档按职责分组。</h2>
+                    <p class="section-lead">主线课程负责顺序学习，核心文档负责总览和专题，索引文件负责查全，英文入口单独保留。新增 Markdown 现在有固定位置，不再被首页样式淹没。</p>
+                </div>
+
+                <div class="docs-hub">
+                    <section class="guide-overview" aria-labelledby="guide-overview-title">
+                        <div class="guide-overview-head">
+                            <h3 id="guide-overview-title">主线课程</h3>
+                            <p>课程页只承担顺序学习，不和专题文档混排。</p>
+                        </div>
+                        <ol class="guide-overview-list">
+                            <li><a href="./CN/Guide/00-Study-Map.html"><span class="guide-overview-index">00</span><span class="guide-overview-copy"><strong>学习总图</strong><span>先定路线和边界</span></span></a></li>
+                            <li><a href="./CN/Guide/01-Device-Ecosystem.html"><span class="guide-overview-index">01</span><span class="guide-overview-copy"><strong>设备与生态</strong><span>设备、桌面端、移动端、CLI</span></span></a></li>
+                            <li><a href="./CN/Guide/02-Protocol-Domains.html"><span class="guide-overview-index">02</span><span class="guide-overview-copy"><strong>协议域</strong><span>Sub-GHz、NFC、IR、BLE、iButton</span></span></a></li>
+                            <li><a href="./CN/Guide/03-App-Development.html"><span class="guide-overview-index">03</span><span class="guide-overview-copy"><strong>App 开发</strong><span>官方应用开发主线</span></span></a></li>
+                            <li><a href="./CN/Guide/04-Build-Debug-Tools.html"><span class="guide-overview-index">04</span><span class="guide-overview-copy"><strong>构建调试</strong><span>FBT、调试链路与工具</span></span></a></li>
+                            <li><a href="./CN/Guide/05-JavaScript.html"><span class="guide-overview-index">05</span><span class="guide-overview-copy"><strong>JavaScript</strong><span>脚本路线和运行边界</span></span></a></li>
+                            <li><a href="./CN/Guide/06-System-Programming.html"><span class="guide-overview-index">06</span><span class="guide-overview-copy"><strong>系统编程</strong><span>平台层、HAL 和底层理解</span></span></a></li>
+                            <li><a href="./CN/Guide/07-File-Formats.html"><span class="guide-overview-index">07</span><span class="guide-overview-copy"><strong>文件格式</strong><span>导入导出、格式接口与批处理</span></span></a></li>
+                            <li><a href="./CN/Guide/08-Community-Reference.html"><span class="guide-overview-index">08</span><span class="guide-overview-copy"><strong>社区参考</strong><span>高信号社区资料筛选</span></span></a></li>
+                            <li><a href="./CN/Guide/09-Firmware-Reference-2025.html"><span class="guide-overview-index">09</span><span class="guide-overview-copy"><strong>固件参考</strong><span>2025-2026 主流社区固件</span></span></a></li>
+                            <li><a href="./CN/Guide/10-Firmware-Source-Analysis.html"><span class="guide-overview-index">10</span><span class="guide-overview-copy"><strong>固件源码分析</strong><span>面向开发者的源码级架构阅读</span></span></a></li>
+                        </ol>
+                    </section>
+
+                    <div class="docs-columns">
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-core">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-core">核心文档</h3>
+                                <p>先看结构，再看专题。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=README.md"><strong>仓库入口 README</strong><span>站点入口、目录结构和总体使用方式。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/FlipperZero-Master-CN.md"><strong>中文主知识库</strong><span>设备、协议、工具链和阅读顺序总框架。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/Official-Docs-CN-Full.md"><strong>官方精读总表</strong><span>中文整理后的官方资料深读入口。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/README.md"><strong>中文入口 README</strong><span>中文资料入口、阅读顺序和导航收口。</span></a></li>
+                            </ul>
+                        </section>
+
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-topic">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-topic">专题集合</h3>
+                                <p>只保留不和主视觉重复的专题入口。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=CN/Apps/趣味App完全收录.md"><strong>趣味 App 完全收录</strong><span>按玩法和技术点整理的应用集合。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/FlipperZero-AI-Pack-CN.md"><strong>AI 规则包</strong><span>给 AI 使用这个仓库时的边界与检索约束。</span></a></li>
+                                <li><a href="./CN/Guide/10-Firmware-Source-Analysis.html"><strong>固件源码分析</strong><span>进入源码级架构阅读和模块关系梳理。</span></a></li>
+                            </ul>
+                        </section>
+
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-indexes">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-indexes">索引与清单</h3>
+                                <p>查全、核对和追踪整理进度。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=All-Markdown-Manifest.md"><strong>All Markdown Manifest</strong><span>仓库 Markdown 文件清单。</span></a></li>
+                                <li><a href="./viewer.html?file=Official-Docs-Coverage.md"><strong>Official Docs Coverage</strong><span>官方资料覆盖和整理进度。</span></a></li>
+                                <li><a href="./viewer.html?file=Wiki-Resources/README.md"><strong>Wiki Resources</strong><span>镜像、快照和外部资料落盘说明。</span></a></li>
+                                <li><a href="./viewer.html?file=Legacy/README.md"><strong>Legacy</strong><span>历史版本和旧整理方式的保留入口。</span></a></li>
+                            </ul>
+                        </section>
+
+                        <section class="doc-shelf" aria-labelledby="doc-shelf-en">
+                            <div class="doc-shelf-head">
+                                <h3 id="doc-shelf-en">English</h3>
+                                <p>英文入口不再藏在搜索结果里。</p>
+                            </div>
+                            <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=EN/README.md"><strong>English README</strong><span>英文入口和总体说明。</span></a></li>
+                                <li><a href="./viewer.html?file=EN/FlipperZero-Master-EN.md"><strong>Master Guide EN</strong><span>英文主知识库总览。</span></a></li>
+                                <li><a href="./viewer.html?file=EN/Official-Docs-EN-Full.md"><strong>Official Docs EN</strong><span>英文官方资料整合页。</span></a></li>
+                                <li><a href="./viewer.html?file=EN/FlipperZero-AI-Pack-EN.md"><strong>AI Pack EN</strong><span>英文 AI 检索规则包。</span></a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-block" id="references">
+                <div class="section-header">
+                    <p class="eyebrow">References</p>
+                    <h2 class="section-title">官方入口和社区入口放在同一层，但角色分开。</h2>
+                    <p class="section-lead">官方入口负责稳定基线，社区入口负责补充样例和发现层。首页只保留高信号入口，不再把所有资源都做成同一种卡片。</p>
+                </div>
+
+                <div class="reference-showcase">
+                    <a class="reference-media reference-media--shot" href="./viewer.html?file=CN/Official-Docs-CN-Full.md">
+                        <img class="reference-media-image reference-media-image--hero" src="./assets/official/images/cover-development.webp" alt="Flipper Zero official development artwork" width="728" height="546" loading="lazy" decoding="async">
+                        <div class="reference-media-copy">
+                            <strong>官方资料主线</strong>
+                            <p>把开发、调试、应用模型和设备能力收在同一条官方入口里。桌面端工作流已经放进 Hero，这里只保留稳定主线。</p>
+                        </div>
+                    </a>
+
+                    <div class="reference-media-grid">
+                        <a class="reference-media" href="./viewer.html?file=CN/FlipperZero-Master-CN.md">
+                            <img class="reference-media-image reference-media-image--usage" src="./assets/official/images/cover-usage.webp" alt="Flipper Zero official usage artwork" width="728" height="546" loading="lazy" decoding="async">
+                            <div class="reference-media-copy">
+                                <strong>设备与协议主线</strong>
+                                <p>设备使用、协议域和应用理解单独收一层，用真实官方图承接内容，不再重复摆设备轮廓。</p>
+                            </div>
+                        </a>
+
+                        <a class="reference-media" href="https://github.com/djsime1/awesome-flipperzero" target="_blank" rel="noreferrer">
+                            <img class="reference-media-image reference-media-image--labs" src="./Wiki-Resources/Deployable-Web-Mirror/Flipper-Official-Docs/_external/cdn.flipperzero.one/ec/Flipper_Zero_WiFi_devboard_laptop_CDN__ecb33f2e4c2c3167.jpg" alt="Flipper Zero dev board connected to a laptop" width="1280" height="669" loading="lazy" decoding="async">
+                            <div class="reference-media-copy">
+                                <strong>社区发现层</strong>
+                                <p>项目、插件、硬件扩展和教程从这里发散。它是发现层，不再和官方主线抢同一段首页空间。</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reference-columns">
+                    <section class="reference-list" aria-labelledby="reference-community">
+                        <h3 id="reference-community">社区精选</h3>
+                        <p>只保留高信号导航仓库和教程桥梁。</p>
+                        <div class="reference-links">
+                            <a class="reference-link" href="https://github.com/djsime1/awesome-flipperzero" target="_blank" rel="noreferrer"><strong>awesome-flipperzero</strong><span>适合作为发现层总入口，帮助找项目、工具和生态分支。</span></a>
+                            <a class="reference-link" href="https://github.com/UberGuidoZ/Flipper" target="_blank" rel="noreferrer"><strong>UberGuidoZ / Flipper</strong><span>高密度资料导航仓库，适合做资料库和排障入口。</span></a>
+                            <a class="reference-link" href="https://github.com/jamisonderek/flipper-zero-tutorials" target="_blank" rel="noreferrer"><strong>flipper-zero-tutorials</strong><span>官方文档和真实开发之间的桥梁，适合看 GPIO、UI 和调试落地写法。</span></a>
+                        </div>
+                    </section>
+
+                    <section class="reference-list" aria-labelledby="reference-indexes">
+                        <h3 id="reference-indexes">索引与清单</h3>
+                        <p>新增 Markdown、覆盖率和历史快照从这里核对。</p>
+                        <div class="reference-links">
+                            <a class="reference-link" href="./viewer.html?file=All-Markdown-Manifest.md"><strong>All Markdown Manifest</strong><span>仓库 Markdown 文件总清单，新增文档先在这里落位核对。</span></a>
+                            <a class="reference-link" href="./viewer.html?file=Official-Docs-Coverage.md"><strong>Official Docs Coverage</strong><span>看哪些官方资料已经整理进仓库，哪些还在补。</span></a>
+                            <a class="reference-link" href="./viewer.html?file=Legacy/README.md"><strong>Legacy</strong><span>历史版本和旧整理方式仍保留在这里，方便回查。</span></a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <footer class="site-footer">
+                <div class="site-footer-brand">
+                    <strong>Flipper Zero Teacher</strong>
+                    <p>课程、Markdown 阅读器、官方镜像和专题文档现在共用同一套更轻的首页入口。</p>
+                </div>
+                <div class="site-footer-links">
+                    <a href="./CN/Guide/index.html">中文课程</a>
+                    <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                    <a href="./viewer.html?file=EN/README.md">English</a>
+                    <a href="./viewer.html?file=All-Markdown-Manifest.md">文档清单</a>
+                    <a href="https://github.com/dwgx/FlipperZeroTeacher" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="./assets/js/guide-manifest.js"></script>
+    <script src="./assets/js/site-shell.js"></script>
+    <script src="./assets/js/flipper-sim.js"></script>
+    <script src="./assets/js/site-search.js"></script>
+</body>
+</html>
