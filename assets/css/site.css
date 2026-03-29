@@ -5447,12 +5447,13 @@ select {
 
 .flipper-sim-led {
     position: absolute;
-    left: 66.2%;
-    top: 59.8%;
+    left: 66.81%;
+    top: 60.58%;
     width: clamp(5px, 1.2%, 8px);
     aspect-ratio: 1;
     border-radius: 999px;
     background: var(--sim-led-color, #8effac);
+    transform: translate(-50%, -50%);
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.08),
         0 0 6px var(--sim-led-glow, rgba(142, 255, 172, 0.35));
@@ -5645,26 +5646,26 @@ select {
     0%,
     100% {
         opacity: 0.68;
-        transform: scale(0.98);
+        transform: translate(-50%, -50%) scale(0.98);
     }
     50% {
         opacity: 0.9;
-        transform: scale(1.04);
+        transform: translate(-50%, -50%) scale(1.04);
     }
 }
 
 @keyframes flipperLedPing {
     0% {
         opacity: 0.8;
-        transform: scale(0.96);
+        transform: translate(-50%, -50%) scale(0.96);
     }
     45% {
         opacity: 1;
-        transform: scale(1.28);
+        transform: translate(-50%, -50%) scale(1.28);
     }
     100% {
         opacity: 0.82;
-        transform: scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
