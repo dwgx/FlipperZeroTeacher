@@ -28,6 +28,8 @@ This manifest lists the actual current files in `FlipperZero-Final`.
 - `CN/Topics/README.md`
 - `CN/Topics/BLE-Implementation.md`
 - `CN/Topics/IR-Database-Guide.md`
+- `CN/Topics/Learning-Roadmap.md`
+- `CN/Topics/Troubleshooting.md`
 
 ### English
 

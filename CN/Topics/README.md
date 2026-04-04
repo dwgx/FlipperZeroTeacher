@@ -9,6 +9,8 @@
 |---|---|
 | [BLE 实装指南 — X-BLE Spam / X-FindMy](./BLE-Implementation.md) | 用官方 `furi_hal_bt_extra_beacon_*` 单一 API 复现 Apple / Google / Samsung / Microsoft 等 14 个近距离广播协议的实装笔记，含 14 个 GitHub 项目对比 + 4 种代码架构模式 + OSS 化方案。 |
 | [IR 数据库完整指南](./IR-Database-Guide.md) | 28 个 IR 资源全景对比（Lucaslhm / heytem / UberGuidoZ / LIRC / Pronto / Global Cache 等）· 三档可靠度分级 · 最短获取路径 · 格式转换工具表。 |
+| [学习路线图](./Learning-Roadmap.md) | 玩家 → 探索者 → 改装者 → 开发者 四阶段课程，0h → 200h+，每阶段验收标准明确。 |
+| [常见问题排查](./Troubleshooting.md) | 10 大类常见问题 Q&A（qFlipper / SubGHz TX / MFC auth / DESFire / BLE crash / BadUSB 键盘布局 / SD 卡等）。 |
 
 ## 追加预定
 
@@ -16,8 +18,6 @@
 - NFC MFC 字典构建指南 (`mf_classic_dict_user.nfc`)
 - Sleep Saver 128x64 binary format (.ssbg) 规格
 - BadUSB Rubber Ducky 交叉参考
-- Flipper Zero 学习路线（新手 0h → 专家 200h+）
-- 常见问题排查（qFlipper / SubGHz TX / MFC auth / BLE crash 等）
 
 ## 专题追加标准
 
