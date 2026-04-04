@@ -6,6 +6,7 @@
     <meta name="theme-color" content="#0b0d10">
     <title>Flipper Zero Teacher</title>
     <link rel="stylesheet" href="./assets/css/site.css">
+    <link rel="stylesheet" href="./assets/css/topics-extras.css">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#main-content">跳到正文</a>
@@ -23,6 +24,7 @@
             <nav class="site-nav" aria-label="主导航">
                 <a href="./CN/Guide/index.html">中文课程</a>
                 <a href="./viewer.html?file=CN/FlipperZero-Master-CN.md">主知识库</a>
+                <a href="#topics">专题</a>
                 <a href="#docs-hub">文档目录</a>
                 <a href="#references">参考资源</a>
             </nav>
@@ -32,6 +34,11 @@
             <section class="home-hero">
                 <div class="home-hero-copy">
                     <p class="eyebrow">Flipper Zero / GitHub Docs Hub</p>
+                    <div class="terminal-boot" aria-hidden="true">
+                        <span class="terminal-boot-line" data-typewriter><span class="terminal-boot-prompt">flipper@zero:~$</span> boot --mode=teacher</span>
+                        <span class="terminal-boot-line" data-typewriter><span class="terminal-boot-ok">[OK]</span> knowledge_base loaded <span class="terminal-boot-dim">— 11 guides · 2 topics · bilingual</span></span>
+                        <span class="terminal-boot-line" data-typewriter><span class="terminal-boot-prompt">flipper@zero:~$</span> cat /etc/motd &amp;&amp; _</span>
+                    </div>
                     <div class="home-brand-note">先走主线，再进专题，再回仓库查细节。</div>
                     <h1 class="home-hero-title">把课程、主知识库、专题文档收成一条清晰入口。</h1>
                     <p class="home-hero-lead">这个首页只保留真正需要的入口，不再堆叠装饰动画。中文课程负责顺序学习，主知识库负责总览，桌面端工作流直接放进主视觉，新增 Markdown 文档也统一收口。</p>
@@ -142,6 +149,47 @@
                 </a>
             </section>
 
+            <section class="topics-spotlight" id="topics" aria-labelledby="topics-spotlight-title">
+                <div class="topics-spotlight-head">
+                    <div>
+                        <p class="eyebrow">Topics · 专题深入</p>
+                        <h2 id="topics-spotlight-title">把一件事说透，而不是概览。</h2>
+                    </div>
+                    <p>主线课程给你地图；专题把实装细节、实机验证、OSS 化路径整理成独立页面。每一篇都带有可复现的步骤。</p>
+                </div>
+                <div class="topics-grid">
+                    <a class="topic-card" href="./viewer.html?file=CN/Topics/BLE-Implementation.md">
+                        <span class="topic-card-tag">BLE · OSS-READY</span>
+                        <h3 class="topic-card-title">X-BLE Spam / X-FindMy 实装ガイド</h3>
+                        <p class="topic-card-copy">官方 <code>furi_hal_bt_extra_beacon_*</code> API のみで Apple / Google / Samsung / Microsoft の近接プロトコルを 39 種類再現。パケット仕様、MAC ローテーション、再現手順まで。</p>
+                        <div class="topic-card-meta">
+                            <span>OFW 1.4+</span>
+                            <span>39 devices</span>
+                            <span>real-hw verified</span>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="./viewer.html?file=CN/Topics/IR-Database-Guide.md">
+                        <span class="topic-card-tag">IR · DATASET GUIDE</span>
+                        <h3 class="topic-card-title">IR 数据库完全ガイド</h3>
+                        <p class="topic-card-copy">Lucaslhm vs heytem の 2 大リポジトリを頭から比較。Pronto / LIRC からの変換、Flipper への一括取り込みワークフローまで。</p>
+                        <div class="topic-card-meta">
+                            <span>3500+ .ir</span>
+                            <span>parsed / raw</span>
+                            <span>bulk sync</span>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="./viewer.html?file=CN/Topics/README.md">
+                        <span class="topic-card-tag">INDEX</span>
+                        <h3 class="topic-card-title">专题目录 · 还会继续长</h3>
+                        <p class="topic-card-copy">Sub-GHz rolling code, NFC MFC dictionary, Sleep Saver .ssbg format, BadUSB cross-reference —— 専題追加は実機検証済みを条件に。</p>
+                        <div class="topic-card-meta">
+                            <span>CN + EN</span>
+                            <span>live index</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
             <section class="home-block" id="docs-hub">
                 <div class="section-header">
                     <p class="eyebrow">Docs Hub</p>
@@ -190,6 +238,8 @@
                                 <p>只保留不和主视觉重复的专题入口。</p>
                             </div>
                             <ul class="doc-shelf-list">
+                                <li><a href="./viewer.html?file=CN/Topics/BLE-Implementation.md"><strong>BLE 实装ガイド</strong><span>X-BLE Spam / X-FindMy の実装メモ、OSS 化準備資料。</span></a></li>
+                                <li><a href="./viewer.html?file=CN/Topics/IR-Database-Guide.md"><strong>IR 数据库ガイド</strong><span>Lucaslhm / heytem 比較、変換ツール、取り込み手順。</span></a></li>
                                 <li><a href="./viewer.html?file=CN/Apps/趣味App完全收录.md"><strong>趣味 App 完全收录</strong><span>按玩法和技术点整理的应用集合。</span></a></li>
                                 <li><a href="./viewer.html?file=CN/FlipperZero-AI-Pack-CN.md"><strong>AI 规则包</strong><span>给 AI 使用这个仓库时的边界与检索约束。</span></a></li>
                                 <li><a href="./CN/Guide/10-Firmware-Source-Analysis.html"><strong>固件源码分析</strong><span>进入源码级架构阅读和模块关系梳理。</span></a></li>
