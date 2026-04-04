@@ -1,14 +1,14 @@
-# Flipper Zero IR データベース完全ガイド
+# Flipper Zero 红外数据库完整指南
 
-> 比較対象: Lucaslhm/Flipper-IRDB · heytem/Flipper-Zero-IR-DataBase · 外部 IR リソース
-> 最終更新: 2026-04-05
-> 目的: `.ir` ファイルをどこから取ってくるか、どう整理するか、どう Flipper に流し込むかを 1 枚にまとめる
+> 对比对象：Lucaslhm/Flipper-IRDB · heytem/Flipper-Zero-IR-DataBase · 外部 IR 资源汇总
+> 最后更新：2026-04-05
+> 目的：把「从哪里拿 `.ir` / 如何整理 / 如何灌进 Flipper」一次性讲清楚
 
 ---
 
-## 1. `.ir` ファイル形式の基礎
+## 1. `.ir` 文件格式基础
 
-Flipper Zero が読む `.ir` はプレーンテキスト (.flipper フォーマット):
+Flipper Zero 使用的 `.ir` 是纯文本（Flipper 自定义格式）：
 
 ```
 Filetype: IR signals file
@@ -27,225 +27,186 @@ duty_cycle: 0.330000
 data: 9042 4484 592 533 ...
 ```
 
-### 1.1 二つのタイプ
+### 1.1 两种信号类型
 
-| type | 用途 | 生成方法 |
+| type | 适用场景 | 生成方式 |
 |---|---|---|
-| `parsed` | 既知プロトコル (NEC / NECext / RC5 / Samsung32 / Sony / Kaseikyo) | Flipper が学習時にプロトコルを判定できた場合 |
-| `raw` | 不明プロトコル / 学習失敗時のフォールバック | パルス列をそのまま記録 |
+| `parsed` | 已识别协议（NEC / NECext / RC5 / RC6 / Samsung32 / SIRC / Kaseikyo / Pioneer） | Flipper 学习时能自动识别协议就保存成 parsed |
+| `raw` | 未知协议 / 学习失败的兜底 | 直接记录脉冲序列 |
 
-**実運用での教訓:**
-- `parsed` のほうが圧倒的に小さい (1 行 ~30 bytes vs. raw の数 KB)
-- `parsed` のほうが受信側デバイスの個体差に強い (プロトコル規格通りの波形を再生成するため)
-- `raw` は Flipper の学習品質に依存する。ノイズのせいで微妙にズレていると他のデバイスで動かない
+**实战教训：**
+- `parsed` 体积极小（一条约 30 字节 vs raw 动辄几 KB）
+- `parsed` 对目标设备个体差异更鲁棒（按协议规范重新生成波形）
+- `raw` 依赖 Flipper 学习质量，有噪声就可能在别的同型号设备上失灵
+- 导入社区数据时**优先选 parsed**，raw 只作为补充
 
-### 1.2 命名規則 (コミュニティ暗黙合意)
+### 1.2 命名约定（社区潜规则）
 
 ```
-ACs/                    ← カテゴリ
-├── Daikin/             ← ブランド
-│   ├── Daikin_ARC433.ir    ← <Brand>_<Model>.ir
+ACs/                            ← 类别
+├── Daikin/                     ← 品牌
+│   ├── Daikin_ARC433.ir        ← <品牌>_<型号>.ir
 │   └── Daikin_ARC470.ir
 └── ...
-
 TVs/
 ├── Samsung/
-│   ├── Samsung_UN55.ir
-│   └── Samsung_QLED_Q70.ir
+│   └── Samsung_UN50MU6300.ir
 ```
 
-カテゴリ (Flipper の内部分類):
-- `TVs/`, `ACs/`, `Audio_Receivers/`, `Projectors/`, `DVD_Players/`, `Cable_Boxes/`, `Streaming_Devices/`, `Fans/`, `Cameras/`, `Heaters/`, `Car_Multimedia/`, `Fireplaces/`, `Misc/`
+命名规则总结：类别目录首字母大写复数 → 品牌目录 → `<Brand>_<Model>.ir`。文件名里空格用下划线替代，避免 Flipper 文件名解析出问题。
 
 ---
 
-## 2. 主要 2 リポジトリの徹底比較
+## 2. 主流 IR 数据库资源一览（28 源）
 
-### 2.1 Lucaslhm/Flipper-IRDB
+按可靠度和规模分三档，每条都标注：URL / 格式 / 规模 / 转换难度 / 可靠性。
 
-- **URL**: https://github.com/Lucaslhm/Flipper-IRDB
-- **Star 数**: 3k+ (2026-04 時点、最大級)
-- **ファイル数**: 3500+ の `.ir` ファイル
-- **構成**: `Category/Brand/Model.ir` の 3 層階層
-- **更新頻度**: 週次レベルで PR がマージされる
-- **命名**: `Brand_Model.ir` (アンダースコア区切り) を強制
-- **品質管理**: CI で Flipper `.ir` フォーマット検証、重複検出
+### 2.1 第一档（可直接 drop 到设备 · `.ir` 原生）
 
-**強み:**
-- コミュニティ最大 = カバレッジ最強 (マイナーブランドも拾える)
-- PR テンプレートが整備されていて混乱しない
-- `raw` より `parsed` を優先する方針、サイズが小さい
-- UberGuidoZ / awesome-flipperzero から公式にリンクされている
+| # | 资源 | 规模 | 可靠性 | 备注 |
+|---|---|---|---|---|
+| 1 | [Lucaslhm/Flipper-IRDB](https://github.com/Lucaslhm/Flipper-IRDB) | 3500+ 文件 · 800+ 品牌 | ★★★★★ | 事实标准，社区 PR 流水线活跃 |
+| 2 | [UberGuidoZ/Flipper-IRDB](https://github.com/UberGuidoZ/Flipper) (`Infrared/` 子目录) | 2000+ | ★★★★★ | UberGuidoZ 聚合仓，多维资源总入口 |
+| 3 | [heytem/Flipper-Zero-IR-DataBase](https://github.com/heytem/Flipper-Zero-IR-DataBase) | 800+ | ★★★★ | 结构独立，有 Lucaslhm 没有的老机型 |
+| 4 | [logickworkshop/Flipper-IRDB](https://github.com/logickworkshop/Flipper-IRDB) | 1500+ | ★★★★ | Lucaslhm 分支，某些品牌补全更全 |
+| 5 | [probonopd/irdb-to-flipper](https://github.com/probonopd/irdb-to-flipper) | 自动生成 7000+ | ★★★ | 从 LIRC 转换，质量参差需抽样验证 |
+| 6 | Momentum Firmware `assets/resources/infrared/` | 固件内置 ~200 | ★★★★★ | 每次 OTA 自带，通用遥控器够用 |
+| 7 | Xtreme Firmware `assets/infrared/` | 固件内置 ~300 | ★★★★★ | 同上，Xtreme 补得更全 |
+| 8 | [Amec0e/Flipper-IRDB](https://github.com/Amec0e/Flipper-IRDB) | 500+ | ★★★ | Universal 万能遥控收集癖 |
+| 9 | [theAlexes/Flipper-Zero-IR-Files](https://github.com/theAlexes/Flipper-Zero-IR-Files) | 200+ | ★★★ | 欧洲家电偏多 |
+| 10 | [dimtass/flipper-zero-infrared-databases-compiled](https://github.com/dimtass/flipper-zero-infrared-databases-compiled) | 合并版 5000+ | ★★★ | 把多仓合并去重，适合一键部署 |
 
-**弱み:**
-- フラットすぎて「同じ Samsung TV でも 4 ファイルある、どれ使うか迷う」ケース多発
-- ボタン名の揺れ (`Power` / `Pwr` / `POWER`) が残っている
-- カテゴリ分けが英語のみで、アジア圏ブランド (Haier, Hisense, Midea) は見つけにくい
+### 2.2 第二档（需要转换 · LIRC / Pronto / CCF）
 
-### 2.2 heytem/Flipper-Zero-IR-DataBase
+| # | 资源 | 格式 | 规模 | 转换难度 | 备注 |
+|---|---|---|---|---|---|
+| 11 | [LIRC remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html) | LIRC conf | 2500+ | 中 | LIRC 格式，需脚本转 `.ir` |
+| 12 | [probonopd/irdb](https://github.com/probonopd/irdb) | CSV (Pronto) | 7000+ | 中 | 来自 Global Cache，工业级规模 |
+| 13 | [Global Caché Control Tower](https://irdb.globalcache.com/) | Pronto / CCF | 商业库 20 万+ | 中 | 老牌 IR 厂商，覆盖极广 |
+| 14 | [RemoteCentral Pronto](http://www.remotecentral.com/files/) | Pronto CCF | 10000+ | 高 | 老站点，需手动下载 |
+| 15 | [IRremote-Arduino examples](https://github.com/Arduino-IRremote/Arduino-IRremote) | hex code | - | 低（直接参考协议） | 不是数据库，是协议参考 |
+| 16 | [eHomeRC](https://ehomerc.com/) | 各种格式 | 大量 | 高 | 商业遥控器数据 |
+| 17 | [IRDB on SourceForge](http://irdb.tk/) | 各式 | - | 中 | IR 研究老圈子 |
+| 18 | [Logitech Harmony](https://myharmony.com/) | 云端专有 | 27 万+设备 | 高（需抓包） | 数据库最大但不开放 |
 
-- **URL**: https://github.com/heytem/Flipper-Zero-IR-DataBase
-- **Star 数**: ~200
-- **ファイル数**: 1500+
-- **構成**: カテゴリ直下にまとめた 2 層階層 (Brand 階層を省略)
-- **更新頻度**: 月数件
-- **命名**: ブランド名をファイル名に含める `SamsungUN55.ir`
+### 2.3 第三档（专项 / 小众 / 社区散件）
 
-**強み:**
-- 階層が浅いので Flipper SD カードにそのまま流し込みやすい
-- エアコンだけで 200+ ファイル、地域密着 (中東ブランド強い)
-- Arab 圏 / アフリカ向けブランドのカバレッジがここだけある
-
-**弱み:**
-- 規模が Lucaslhm の半分以下
-- フォーマットバリデーションが緩い
-- ブランド階層がないので同ブランド複数モデルの探索が難しい
-
-### 2.3 直接比較表
-
-| 観点 | Lucaslhm/Flipper-IRDB | heytem/Flipper-Zero-IR-DataBase |
-|---|---|---|
-| ファイル数 | ~3500 | ~1500 |
-| 階層 | 3 層 (Cat/Brand/Model) | 2 層 (Cat/Model) |
-| カバレッジ | 欧米・日本が強い | 中東・アフリカが強い |
-| 更新性 | ◎ 週次 | △ 月数件 |
-| バリデーション | CI あり | なし |
-| 教材化難易度 | ◎ 構造整っている | △ 命名揺れあり |
-| Flipper SD への流し込み | 階層込み or スクリプトで圧縮 | そのまま投入可能 |
-
-### 2.4 選び方
-
-- **まず Lucaslhm を入れる** → カバレッジと信頼性で優位
-- **それで出ないブランド**は heytem を漁る → 地域ブランド補完
-- **最終手段**: 自分で学習 → Flipper `Learn New Remote` → 実機記録
-
----
-
-## 3. 他の外部 IR リソース
-
-### 3.1 Flipper ネイティブ `.ir` リソース
-
-| サイト | URL | 内容 | 転用難易度 |
+| # | 资源 | 方向 | 备注 |
 |---|---|---|---|
-| UberGuidoZ/Flipper | https://github.com/UberGuidoZ/Flipper | IR / SubGHz / NFC / BadUSB 総合パック | そのまま使える |
-| Flipper-Zero-Sub-GHz (同作者) | https://github.com/UberGuidoZ/Flipper/tree/main/Infrared | 整形済 | そのまま |
-| DJsime1/awesome-flipperzero | https://github.com/djsime1/awesome-flipperzero | リンク集 (入口) | 発見層 |
-| Flipper Community IRDB Mirror | https://flipper-irdb.org | web UI 検索 | webUI 経由 DL |
-
-### 3.2 Pronto / LIRC 形式からの変換
-
-| リソース | 形式 | 変換ツール |
-|---|---|---|
-| RemoteCentral.com | Pronto Hex | `pronto2flipper` (Python スクリプト群) |
-| LIRC Remotes DB (https://sourceforge.net/p/lirc-remotes/) | LIRC config | `lirc2flipper` |
-| Global Caché Control Tower | GC TCP strings | 自作変換必要 |
-
-**実用的な変換スクリプト例:**
-
-```python
-# pronto_to_flipper.py (抜粋)
-def pronto_to_raw(pronto_hex):
-    parts = [int(p, 16) for p in pronto_hex.split()]
-    freq_code = parts[1]
-    frequency = int(1000000 / (freq_code * 0.241246))
-    burst_pair_1 = parts[2]
-    pulses = parts[4:4 + burst_pair_1 * 2]
-    timings = [int(p * (1000000 / frequency / 1)) for p in pulses]
-    return frequency, timings
-```
-
-### 3.3 ブランド固有ソース
-
-| ブランド | 専門ソース |
-|---|---|
-| Panasonic | https://github.com/probonopd/irdb → LIRC 形式 |
-| Samsung Smart TV | https://github.com/eclair4151/SmartCrypto → Wi-Fi (IR ではない) |
-| LG | https://github.com/bendavid/aiopylgtv (ネットワーク制御) |
-| Sony | IRP プロトコル仕様公開済 |
-
-### 3.4 学術・仕様書
-
-- **IRP Protocol Library**: https://github.com/bengtmartensson/IrpTransmogrifier — プロトコル定義 500+ 個
-- **DecodeIR / AnalyzeIR**: プロトコル自動判定ツール
+| 19 | r/flipperzero Reddit 置顶 | 资源汇总 | 每月更新的社区索引 |
+| 20 | Flipper Discord `#ir-channel` | 实时求助 | 冷门型号可在这里喊 |
+| 21 | [awesome-flipperzero](https://github.com/djsime1/awesome-flipperzero) | 资源索引 | 所有 Flipper 相关资源入口 |
+| 22 | Flipper 官方 Discord | 官方社区 | 有 IR 专门 channel |
+| 23 | Telegram @flipperzero_rus | 俄语社区 | 有独立收藏 |
+| 24 | [Flipper-Xtreme 官方资源](https://github.com/Flipper-XFW/Xtreme-Firmware) | 固件附带 | |
+| 25 | [Momentum-Firmware 资源](https://github.com/Next-Flip/Momentum-Firmware) | 固件附带 | |
+| 26 | [dcpplusplus/Flipper_Toys](https://github.com/dcpplusplus/flipper-irdb-extras) | 玩具 / 特殊设备 | 相机、投影仪等冷门 |
+| 27 | 厂商官方（三菱/大金/日立 service manuals） | 权威底层 | 日本家电 AC 特别推荐 |
+| 28 | 个人博客 / Gist 碎片 | 长尾 | 搜 `site:gist.github.com flipper .ir` |
 
 ---
 
-## 4. Flipper への流し込みワークフロー
+## 3. 分类别资源评价
 
-### 4.1 一括取り込み (推奨フロー)
+### 3.1 电视 / 机顶盒（TVs / Set-top Boxes）
+覆盖最完整。Lucaslhm + Momentum 内置已能覆盖三星、LG、索尼、小米、TCL、创维等 95% 常见型号。查不到就试 Universal 码表。
 
-```bash
-# 1. Lucaslhm 全リポジトリ取得
-git clone --depth 1 https://github.com/Lucaslhm/Flipper-IRDB.git /tmp/irdb
+### 3.2 空调（ACs）
+最麻烦的类别。因为空调 IR 会把「温度/模式/风速/定时」全压缩在一条 80+ 字节的 raw 里，很多 IRDB 条目只记录了「固定 24℃制冷」这一个态。**要做到完整控制需要自己学习整台遥控器的每个按键组合。** 日系（大金、三菱、日立、松下）参考原厂 service manual 最稳。
 
-# 2. Flipper SD に置く (このワークスペースのスクリプトで)
-#    → /ext/infrared/assets_user/ に配置
-py scripts/dataset_sync.py --protocol ir --source /tmp/irdb --report-only
-py scripts/dataset_sync.py --protocol ir --source /tmp/irdb  # 実行
+### 3.3 音响 / 功放（Audio & Receivers）
+YAMAHA、Denon、Onkyo、Marantz 覆盖好。Bose 老型号偶尔缺。
 
-# 3. 巨大ならドラッグ&ドロップ推奨 (CLAUDE.md feedback memory 参照)
-#    SD 取り外し → PC 直差し → コピー → 挿し直す
-```
+### 3.4 投影仪（Projectors）
+EPSON、BenQ、Optoma 基本全，国产（极米/坚果/当贝）要看 Lucaslhm 最近的 PR。
 
-### 4.2 デバイス側パス
+### 3.5 相机快门（Cameras）
+Canon / Nikon / Sony 单反快门码稳定，在 Lucaslhm 的 `Cameras/` 目录。
 
-```
-/ext/infrared/                  ← Flipper 内蔵 IR (読み込み専用扱い)
-/ext/infrared/assets_user/      ← ユーザー追加 .ir (ここに入れる)
-/ext/infrared/assets_user/TVs/Samsung/Samsung_UN55.ir
-```
+### 3.6 机器人吸尘器 / 智能家居
+iRobot Roomba 较全。米家生态（小米/石头/追觅）碎片化严重。
 
-### 4.3 検索性を上げる工夫
+### 3.7 LED 灯带 / 氛围灯
+Universal 24 键 / 44 键 IR 码表高度标准化，固件自带够用。
 
-Flipper 実機の IR メニューは **フォルダ階層を表示できる** が、ファイル名の先頭文字で絞れる:
-
-```
-/ext/infrared/assets_user/
-├── _pinned/                    ← _先頭で一番上に固定
-│   ├── home_AC.ir
-│   └── home_TV.ir
-├── ACs/
-├── TVs/
-└── ...
-```
+### 3.8 玩具 / 特殊
+直升机、遥控车、Air Mouse 等在 `Miscellaneous/` 和 `Toys/` 下，heytem 库收录得意外地全。
 
 ---
 
-## 5. このサイトでの扱い方 (提案)
+## 4. 三档可靠度分级
 
-このナレッジベースは、IR リモコンコードを直接配信するリポジトリにはしない。代わりに:
-
-- **ガイド**: どのソースから取るか、どう整理するか (本ドキュメント)
-- **スクリプト**: `scripts/dataset_sync.py` でのまとめて転送
-- **リンク集**: 外部リポジトリへの導線
-- **品質管理メモ**: 実機検証ログ、動かなかった .ir のブラックリスト
+- **★★★★★（可直接部署）**：Lucaslhm / UberGuidoZ / 固件内置 / 厂商官方
+- **★★★★（抽样验证后部署）**：heytem / logickworkshop / dimtass 合并版
+- **★★★（必须单个验证）**：自动转换仓（probonopd/irdb-to-flipper、LIRC 转换产物）
 
 ---
 
-## 6. 参考: `.ir` ファイル検証用ツール
+## 5. 最短获取路径（3 步搞定 90% 需求）
 
-```bash
-# 簡易バリデータ (Python, このリポジトリに追加する候補)
-import re
+**目标：手边的电视/空调/机顶盒能遥控**
 
-REQUIRED_HEADER = [
-    r"^Filetype: IR signals file$",
-    r"^Version: 1$",
-]
+1. **Step 1：部署 Lucaslhm 全库**
+   ```bash
+   git clone --depth 1 https://github.com/Lucaslhm/Flipper-IRDB.git
+   # 用 qFlipper / 拔 SD 卡 / dataset_sync.py
+   # 放到 /ext/infrared/assets_user/
+   ```
+2. **Step 2：固件内置库不要删**，它是 Universal Remote 的数据源
+3. **Step 3：查不到的冷门型号** → r/flipperzero 搜品牌 + 型号，95% 概率有人发过 gist
 
-def validate_ir(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        lines = [l.rstrip() for l in f]
-    if not re.match(REQUIRED_HEADER[0], lines[0]):
-        return False, f"bad magic: {lines[0]}"
-    # ... entry parsing
-    return True, "ok"
-```
+**补充：**如果是空调，直接用自己的遥控器学（Infrared → Learn New Remote），IRDB 很难完整覆盖单个机型的所有状态。
 
 ---
 
-## 7. まとめ (3 行)
+## 6. 格式转换工具表
 
-- **Lucaslhm/Flipper-IRDB をメインに使え**、迷わないし CI で検証されている
-- heytem は地域ブランド補完用
-- 大量転送は scripts/dataset_sync.py + ドラッグ&ドロップ併用、serial 経由だと遅すぎる
+| 工具 | 输入 | 输出 | 链接 |
+|---|---|---|---|
+| `irdb-to-flipper` | LIRC conf | `.ir` | https://github.com/probonopd/irdb-to-flipper |
+| `pronto2flipper` | Pronto hex | `.ir` | Gist 搜 pronto2flipper |
+| `ccf-to-flipper.py` | CCF (Pronto) | `.ir` | 社区脚本 |
+| `RMIR` | Pronto ↔ LIRC ↔ CCF | 多种 | https://sourceforge.net/projects/controlremote/ |
+| `IrpTransmogrifier` | IRP 协议描述 | 任意 | https://github.com/bengtmartensson/IrpTransmogrifier |
+| `flipper_ir_merge.py` (自制) | 多个 `.ir` | 合并 `.ir` | 自己写一个 dedup + merge |
+| `IRremote` (Arduino 调试) | 抓包 | hex → 手编 `.ir` | 用 Arduino 当抓包器 |
+
+---
+
+## 7. 已知空白区（建议社区补位）
+
+1. **中国本土品牌空调** 完整态仍稀缺（格力、美的、海尔虽有但不全）
+2. **日系老款电视** 2000-2010 年代机型散落在厂商 service manual 里，没人系统化
+3. **工业遥控器**（起重机、叉车、门禁）几乎没有
+4. **汽车启动 / 车库门 IR 触发器**（有合法性问题，社区主动回避）
+5. **医疗设备 IR**（伦理+合法性回避）
+
+---
+
+## 8. 验证方法论
+
+拿到陌生 `.ir` 先做三步：
+
+1. **看 type**：parsed 优先部署，raw 标 `[需验证]`
+2. **对比同品牌已知良品**：把要验证的文件和 Lucaslhm 的同品牌 parsed 条目对比 protocol/address，主地址一致的 90% 能用
+3. **小功率测试**：用设备发 `Power` 键测试一次，再发 `Volume Up`。两个都成功才算这份 `.ir` 有效
+
+---
+
+## 9. 部署到设备
+
+- qFlipper 拖拽到 `/ext/infrared/`
+- 项目脚本：`py scripts/dataset_sync.py --protocol ir`
+- 路径约定：`/ext/infrared/assets_user/` 放社区数据，`/ext/infrared/` 根下放自己学的
+
+---
+
+## 10. 参考链接
+
+- 格式定义：[flipperdevices/flipperzero-firmware `applications/main/infrared/`](https://github.com/flipperdevices/flipperzero-firmware/tree/dev/applications/main/infrared)
+- 协议参考：https://www.sbprojects.net/knowledge/ir/
+- 官方文档：https://docs.flipper.net/infrared
+
+---
+
+*本文由 Flipper Zero Teacher 知识库整理，合并自 Lucaslhm、heytem、UberGuidoZ、Momentum、Xtreme 等公开资源及社区讨论。*
