@@ -1,6 +1,6 @@
 # All Markdown Manifest
 
-Updated: 2026-03-24
+Updated: 2026-04-05
 
 This manifest lists the actual current files in `FlipperZero-Final`.
 
@@ -25,6 +25,9 @@ This manifest lists the actual current files in `FlipperZero-Final`.
 - `CN/FlipperZero-Master-CN.md`
 - `CN/Official-Docs-CN-Full.md`
 - `CN/FlipperZero-AI-Pack-CN.md`
+- `CN/Topics/README.md`
+- `CN/Topics/BLE-Implementation.md`
+- `CN/Topics/IR-Database-Guide.md`
 
 ### English
 
@@ -42,6 +45,9 @@ This manifest lists the actual current files in `FlipperZero-Final`.
 - `EN/FlipperZero-Master-EN.md`
 - `EN/Official-Docs-EN-Full.md`
 - `EN/FlipperZero-AI-Pack-EN.md`
+- `EN/Topics/README.md`
+- `EN/Topics/BLE-Implementation.md`
+- `EN/Topics/IR-Database-Guide.md`
 
 ## 2. Original Notes
 
