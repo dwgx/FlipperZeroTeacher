@@ -7,17 +7,20 @@
 
 | 专题 | 说明 |
 |---|---|
-| [BLE 实装ガイド — X-BLE Spam / X-FindMy](./BLE-Implementation.md) | 官方 `furi_hal_bt_extra_beacon_*` 单一 API で Apple / Google / Samsung / Microsoft の近接プロトコルを 39 種類再現した実装メモ。OSS 化用資料。 |
-| [IR 数据库完全ガイド](./IR-Database-Guide.md) | Lucaslhm / heytem 2 大リポジトリの比較 · Pronto/LIRC 変換 · Flipper への一括取り込みワークフロー。 |
+| [BLE 实装指南 — X-BLE Spam / X-FindMy](./BLE-Implementation.md) | 用官方 `furi_hal_bt_extra_beacon_*` 单一 API 复现 Apple / Google / Samsung / Microsoft 等 14 个近距离广播协议的实装笔记，含 14 个 GitHub 项目对比 + 4 种代码架构模式 + OSS 化方案。 |
+| [IR 数据库完整指南](./IR-Database-Guide.md) | 28 个 IR 资源全景对比（Lucaslhm / heytem / UberGuidoZ / LIRC / Pronto / Global Cache 等）· 三档可靠度分级 · 最短获取路径 · 格式转换工具表。 |
 
-## 追加予定
+## 追加预定
 
-- Sub-GHz ロールコード解析実装メモ
-- NFC MFC 辞書ビルド指南 (mf_classic_dict_user.nfc)
-- Sleep Saver 128x64 binary format (.ssbg) 仕様
+- Sub-GHz 滚码分析实装笔记
+- NFC MFC 字典构建指南 (`mf_classic_dict_user.nfc`)
+- Sleep Saver 128x64 binary format (.ssbg) 规格
 - BadUSB Rubber Ducky 交叉参考
+- Flipper Zero 学习路线（新手 0h → 专家 200h+）
+- 常见问题排查（qFlipper / SubGHz TX / MFC auth / BLE crash 等）
 
-専題追加の基準:
-- 既存主線課程で扱いきれない深度
-- 実機検証済み
-- 再現可能な手順が書ける
+## 专题追加标准
+
+- 既有主线课程讲不透的深度
+- 有实机验证
+- 可以写出可复现步骤
