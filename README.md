@@ -1,9 +1,9 @@
 # 🐬 Flipper Zero 教学知识库
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/yourusername/FlipperZero-Final?style=flat&logo=github" alt="stars">
-  <img src="https://img.shields.io/github/forks/yourusername/FlipperZero-Final?style=flat&logo=github" alt="forks">
-  <img src="https://img.shields.io/github/license/yourusername/FlipperZero-Final?style=flat" alt="license">
+  <img src="https://img.shields.io/github/stars/dwgx/FlipperZeroTeacher?style=flat&logo=github" alt="stars">
+  <img src="https://img.shields.io/github/forks/dwgx/FlipperZeroTeacher?style=flat&logo=github" alt="forks">
+  <img src="https://img.shields.io/github/license/dwgx/FlipperZeroTeacher?style=flat" alt="license">
 </p>
 
 > 📚 双语教学型知识库 | 官方文档 | 社区精选 | AI 友好
