@@ -1,131 +1,135 @@
-# 🐬 Flipper Zero 教学知识库
+# FlipperZeroTeacher
 
-<p align="center">
-  <img src="https://img.shields.io/github/stars/dwgx/FlipperZeroTeacher?style=flat&logo=github" alt="stars">
-  <img src="https://img.shields.io/github/forks/dwgx/FlipperZeroTeacher?style=flat&logo=github" alt="forks">
-  <img src="https://img.shields.io/github/license/dwgx/FlipperZeroTeacher?style=flat" alt="license">
-</p>
+**Bilingual Flipper Zero knowledge base — documentation, learning paths, and AI-ready reference packs.**
 
-> 📚 双语教学型知识库 | 官方文档 | 社区精选 | AI 友好
+**双语 Flipper Zero 教学知识库 — 官方文档整理、结构化学习路径、AI/RAG 参考包。**
+
+Live site / 在线阅读: https://dwgx.github.io/FlipperZeroTeacher/
 
 ---
 
-## ✨ 快速开始
+## Overview / 概述
 
-| 入口 | 适合人群 | 描述 |
-|:---:|:---:|:---|
-| 🧭 [中文教学导航](CN/Guide/README.md) | 初学者 | 按课程顺序系统学习 |
-| 📖 [中文主知识库](CN/FlipperZero-Master-CN.md) | 进阶 | 建立全局视角 |
-| 🤖 [中文 AI 规则包](CN/FlipperZero-AI-Pack-CN.md) | 开发者 | RAG/检索系统专用 |
+FlipperZeroTeacher is a bilingual (English / Chinese) knowledge base for the Flipper Zero multi-tool. It brings together official documentation, structured learning paths, curated community resources, and retrieval-friendly AI packs into a single navigable repository.
+
+Targets: beginners building a mental model of the device, developers writing Flipper apps, and anyone assembling a RAG corpus of high-signal Flipper Zero material.
+
+The repo is content only — Markdown guides plus archived HTML documentation. No application to compile; deployed as a static site via GitHub Pages.
 
 ---
 
-## 📂 仓库目录
+FlipperZeroTeacher 是一个双语（中/英）Flipper Zero 知识库。把官方文档、学习路径、社区精选资源、AI/RAG 参考包全部整合到一个仓库里。
+
+面向人群：刚入坑想搞懂设备的新手、写 Flipper 应用的开发者、以及需要高质量 Flipper Zero 语料做 RAG 检索的人。
+
+仓库纯内容，Markdown + 静态 HTML，无需编译，通过 GitHub Pages 直接发布。
+
+---
+
+## Features / 功能
+
+- **Bilingual coverage / 双语覆盖** — parallel `CN/` and `EN/` trees covering the same topics
+- **Course-style learning path / 课程式学习路径** — numbered `Guide/` sequence (00–10): study map, device ecosystem, protocol domains, app development, build/debug tooling, JavaScript, system programming, file formats, community references, 2025 firmware reference
+- **Protocol-domain topics / 协议专题** — SubGHz, NFC/RFID, IR database, BLE, troubleshooting, learning roadmap
+- **AI/RAG reference packs / AI 参考包** — `FlipperZero-AI-Pack-CN/EN.md` with source trust hierarchy (official docs > official GitHub > curated community > ecosystem context), designed for retrieval-augmented prompting and system prompts
+- **Local technical resource library / 本地技术资源库** (`FlipperZero_资源库/`) — SubGHz frequency database, NFC/RFID & BLE deep-dives, firmware flashing guide, helper shell script, example Flipper app source code
+- **Offline documentation mirror / 离线文档镜像** (`Wiki-Resources/`) — archived copies of `docs.flipper.net` and developer doxygen output
+- **HTML renderings / HTML 版本** — guide chapters ship both `.md` and `.html`; the repo deploys as a GitHub Pages static site
+
+---
+
+## Tech Stack / 技术栈
+
+This is a documentation project, not a software package.
+
+| Layer | Detail |
+|-------|--------|
+| Content | GitHub-Flavored Markdown + static HTML |
+| Publishing | GitHub Pages via GitHub Actions (`.github/workflows/pages.yml`) |
+| Example code | C sources + `application.fam` + `flipper_tools.sh` (illustrative) |
+
+---
+
+## Project Structure / 项目结构
 
 ```
-FlipperZero-Final/
-├── 📁 CN/                          # 中文主目录
-│   ├── 📖 Guide/                   # 课程学习路线
-│   │   ├── 00-Study-Map.md         # 学习总图
-│   │   ├── 01-Device-Ecosystem.md  # 设备与生态
-│   │   ├── 02-Protocol-Domains.md  # 协议域
-│   │   ├── 03-App-Development.md   # App 开发
-│   │   ├── 04-Build-Debug-Tools.md # 构建调试
-│   │   ├── 05-JavaScript.md        # JavaScript
-│   │   ├── 06-System-Programming.md # 系统编程
-│   │   ├── 07-File-Formats.md      # 文件格式
-│   │   ├── 08-Community-Reference.md # 社区参考
-│   │   └── 09-Firmware-Reference-2025.md # 固件参考
-│   ├── 📖 FlipperZero-Master-CN.md # 主知识库
-│   ├── 📖 FlipperZero-AI-Pack-CN.md # AI 规则包
-│   ├── 📖 Official-Docs-CN-Full.md # 官方文档精读
-│   ├── 📖 qFlipper-全网融合总文档.md # 桌面端指南
-│   └── 📁 Apps/                    # 应用收录
-│
-├── 📁 EN/                          # 英文镜像
-│   └── (结构同 CN/)
-│
-├── 📁 FlipperZero_资源库/           # 本地技术资源
-│   ├── 📊 频率数据库/               # SubGHz 频率
-│   ├── 📡 BLE蓝牙功能详解.md        # 蓝牙技术
-│   ├── 💳 NFC_RFID_技术详解.md      # NFC/RFID
-│   ├── 🔧 固件刷机指南/             # 刷机教程
-│   └── 💻 示例代码/                 # 代码示例
-│
-├── 📁 Wiki-Resources/              # 官方资源存档
-│   ├── 📦 Official-Source-Repos/    # 官方源码
-│   │   ├── qflipper/               # 桌面端应用
-│   │   ├── flipper-application-catalog/ # 应用目录
-│   │   └── docs/                   # 官方文档
-│   └── 🕸️ Deployable-Web-Mirror/   # 网页快照
-│
-├── 📁 Legacy/                      # 早期资料存档
-├── 📁 Original-Notes/               # 原始笔记
-└── 📄 README.md                    # 本文件
+FlipperZeroTeacher/
+├── CN/                         # 中文知识库
+│   ├── Guide/                  # 编号课程 (00–10), .md + .html
+│   ├── Topics/                 # BLE, IR, roadmap, troubleshooting
+│   ├── Apps/                   # 趣味App完全收录
+│   ├── FlipperZero-Master-CN.md
+│   ├── FlipperZero-AI-Pack-CN.md
+│   └── Official-Docs-CN-Full.md
+├── EN/                         # English mirror
+│   ├── Guide/ Topics/ Apps/
+│   ├── FlipperZero-Master-EN.md
+│   ├── FlipperZero-AI-Pack-EN.md
+│   └── Official-Docs-EN-Full.md
+├── FlipperZero_资源库/          # 本地技术资源
+│   ├── 频率数据库/              # SubGHz frequency database
+│   ├── 固件刷机指南/            # Firmware flashing guide
+│   ├── 工具脚本/                # flipper_tools.sh
+│   └── 示例代码/                # application.fam + C examples
+├── Wiki-Resources/             # Offline mirrors of official docs
+│   ├── Deployable-Web-Mirror/
+│   └── Markdown-Link-Archive/
+├── Legacy/                     # Earlier all-in-one reference (archived)
+├── Original-Notes/             # Original desktop notes
+├── .github/workflows/pages.yml # GitHub Pages deploy
+└── LICENSE                     # MIT
 ```
 
 ---
 
-## 🗺️ 学习路线
+## Getting Started / 快速开始
 
+No installation or build required. It's Markdown and HTML.
+
+**Read online:** https://dwgx.github.io/FlipperZeroTeacher/ or browse directly on GitHub.
+
+**Read locally:**
+
+```bash
+git clone https://github.com/dwgx/FlipperZeroTeacher.git
+cd FlipperZeroTeacher
 ```
-第1步 ──▶ 第2步 ──▶ 第3步 ──▶ 第4步 ──▶ 第5步 ──▶ ...
-  ▼          ▼          ▼          ▼          ▼
-00学习总图 → 01设备生态 → 02协议域 → 03App开发 → 04构建调试
+
+**Entry points / 入口:**
+
+| Language | Start here |
+|----------|-----------|
+| 中文 | `CN/Guide/README.md` (学习路径) · `CN/FlipperZero-Master-CN.md` · `CN/FlipperZero-AI-Pack-CN.md` |
+| English | `EN/README.md` · `EN/Guide/README.md` · `EN/FlipperZero-Master-EN.md` · `EN/FlipperZero-AI-Pack-EN.md` |
+
+**Optional local preview:**
+
+```bash
+python -m http.server 8000
+# open http://localhost:8000/
 ```
 
-| 序号 | 章节 | 内容 |
-|:---:|:---|:---|
-| 00 | 学习总图 | 整体路线与边界判断 |
-| 01 | 设备与生态 | qFlipper、Mobile App、CLI |
-| 02 | 协议域 | SubGHz、NFC、RFID、IR、BLE |
-| 03 | App 开发 | 官方应用开发主线 |
-| 04 | 构建调试 | 环境搭建与调试流程 |
-| 05 | JavaScript | 脚本路线 |
-| 06 | 系统编程 | 平台层与系统层 |
-| 07 | 文件格式 | 格式层接口 |
-| 08 | 社区参考 | 高信号社区资料 |
-| 09 | 固件参考 | Momentum/Unleashed/Marauder |
+<!-- TODO: confirm intended local-preview workflow -->
 
 ---
 
-## 🔧 核心工具
+## Usage / 使用方法
 
-| 工具 | 用途 | 文档 |
-|:---|:---|:---|
-| qFlipper | 桌面端管理 | [qFlipper全网融合总文档](CN/qFlipper-全网融合总文档.md) |
-| Flipper CLI | 命令行工具 | [CLI文档](CN/Guide/04-Build-Debug-Tools.md) |
-| Mobile App | 移动端控制 | 官方文档 |
-
----
-
-## 📚 资源导航
-
-- 📖 [Official-Docs-Coverage.md](Official-Docs-Coverage.md) - 官方资料覆盖表
-- 📋 [All-Markdown-Manifest.md](All-Markdown-Manifest.md) - 文件清单
-- 🗂️ [Wiki-Resources/README.md](Wiki-Resources/README.md) - 官方资源入口
+- **Learning / 学习** — follow the numbered `Guide/` chapters in order (00 → 10) in your preferred language.
+- **Reference / 查阅** — jump to a protocol topic under `CN/Topics/` or `EN/Topics/`, or the frequency database under `FlipperZero_资源库/频率数据库/`.
+- **AI / retrieval / AI 检索** — use the AI Pack files as system-prompt or RAG control rules. They define a source trust hierarchy: official docs first, then official Flipper GitHub repos, then curated community, with alternative-firmware repos as ecosystem context only.
+- **Example app code / 示例代码** — C files and `application.fam` under `FlipperZero_资源库/示例代码/` are illustrative references for Flipper app development.
 
 ---
 
-## 📜 使用原则
+## Status / 状态
 
-> ✅ 优先阅读中文主线
-> ✅ 优先采用官方资料
-> ✅ 社区资料仅作补充
-> ✅ 先理解协议，再进入场景
+Active. Content carries 2026 update dates. `CN/` and `EN/` are the maintained structure; `Legacy/` and `Original-Notes/` are retained as historical material.
 
----
-
-## 🌐 其他语言
-
-- [English Entry](EN/README.md)
-- [English Learning Tree](EN/Guide/README.md)
-- [English Master Guide](EN/FlipperZero-Master-EN.md)
+活跃维护中。内容标注 2026 更新日期。`CN/` 和 `EN/` 是当前主结构；`Legacy/` 和 `Original-Notes/` 作为历史存档保留。
 
 ---
 
-<div align="center">
+## License / 许可证
 
-**⭐ Star 这个仓库，一起构建最好的 Flipper Zero 知识库！**
-
-</div>
+[MIT](LICENSE) — Copyright (c) 2026 dwgx
