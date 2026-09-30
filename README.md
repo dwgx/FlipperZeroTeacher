@@ -4,9 +4,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner.svg?t=a326ab3b20bd" />
-  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg?t=a326ab3b20bd" />
-  <img src="docs/assets/banner.svg?t=a326ab3b20bd" width="100%" alt="FlipperZeroTeacher — Flipper Zero 双语文档、学习路径与可直接喂给 AI 的参考包" />
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner.svg?t=cb0835169094" />
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg?t=cb0835169094" />
+  <img src="docs/assets/banner.svg?t=cb0835169094" width="100%" alt="FlipperZeroTeacher — Flipper Zero 双语文档、学习路径与可直接喂给 AI 的参考包" />
 </picture>
 
 <br/>
