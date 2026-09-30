@@ -1,5 +1,24 @@
 # FlipperZeroTeacher
 
+<!-- dwgx-banner:BEGIN -->
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner.svg?t=a326ab3b20bd" />
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg?t=a326ab3b20bd" />
+  <img src="docs/assets/banner.svg?t=a326ab3b20bd" width="100%" alt="FlipperZeroTeacher — Flipper Zero 双语文档、学习路径与可直接喂给 AI 的参考包" />
+</picture>
+
+<br/>
+
+HTML · MIT · ★3
+
+[docs](https://dwgx.github.io/FlipperZeroTeacher/)
+
+</div>
+<!-- dwgx-banner:END -->
+
+
 **Bilingual Flipper Zero knowledge base — documentation, learning paths, and AI-ready reference packs.**
 
 **双语 Flipper Zero 教学知识库 — 官方文档整理、结构化学习路径、AI/RAG 参考包。**
